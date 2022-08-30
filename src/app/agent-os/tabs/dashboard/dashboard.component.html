@@ -1,0 +1,51 @@
+<div class="row mb-2">
+    <div class="col col-md-7 px-0">
+        <app-customer-location></app-customer-location>
+    </div>
+    <div class="col col-md-5 ps-1 pe-0">
+        <mat-card class="h-100 p-0">
+            <mat-card-content class="p-2">
+                <mat-card class="border-left-blue account-preferences-alert">
+                    <h6 class="alert-message">
+                        <i class="fa-solid fa-info-circle info-icon"></i>
+                        <span class="ms-2">Please confirm Account Preferences</span>
+                    </h6>
+                </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="row mb-2">
+    <div class="col col-md-7 px-0">
+        <mat-card class="h-100 p-0">
+            <app-data-card cardName="account"></app-data-card>
+            <div class="current-services mx-1">Current Services Monthly Rate: $157.39</div>
+
+            <div class="row m-1">
+                <div class="col px-1">
+                    <app-device-card type="Video" sectionName="device-summary"></app-device-card>
+                </div>
+                <div class="col px-1">
+                    <app-device-card type="Internet" sectionName="device-summary"></app-device-card>
+                </div>
+                <div class="col px-1">
+                    <app-device-card type="Voice" sectionName="device-summary"></app-device-card>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col col-md-5 ps-1 pe-0">
+        <mat-card class="p-0 h-100">
+            <app-data-card cardName="billing"></app-data-card>
+            <app-billing-card-widget cardName="billing-widget"></app-billing-card-widget>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-4">
+        <app-service-status></app-service-status>
+    </div>
+    <div class="col col-md-8">
+        <app-order-status></app-order-status>
+    </div>
+</div>

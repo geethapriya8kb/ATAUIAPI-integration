@@ -1,0 +1,36 @@
+{
+    "hithistory":[
+        {
+            "Date and Time":"",
+            "Category":"",
+            "Details":"",
+            "Performed By":""
+        },
+        {
+            "Date and Time":"",
+            "Category":"",
+            "Details":"",
+            "Performed By":""
+        }
+    ],
+    "provisionhistory":[
+        {
+            "Date and Time":"",
+            "Category":"",
+            "Details":"",
+            "Performed By":""
+        },
+        {
+            "Date and Time":"",
+            "Category":"",
+            "Details":"",
+            "Performed By":""
+        }
+    ],
+    "hitHistoryColumn":[
+        "Date and Time",
+        "Category",
+        "Details",
+        "Performed By"
+    ]
+}

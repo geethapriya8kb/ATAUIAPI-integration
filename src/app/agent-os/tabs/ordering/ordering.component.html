@@ -1,0 +1,251 @@
+<mat-card class="orderbody" *ngIf="isOrderMove;else other_content">
+    <p class="order-font">Serviceability</p>
+    <div class="row">
+            <mat-card *ngFor="let i of data.icons" class="col-md-4">
+                <img src="{{i.path}}" height="30" width="30">
+                <b class="m-l-3">{{i.channel}}</b>
+                <span style="float:right">{{i.amount}}</span>
+            </mat-card>
+    </div>
+    <p>Asterisk (*) Denotes Pending Service</p>
+
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4 w-100" matSort>
+        <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold table-bgcolor">
+                {{column}}</th>
+            <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay">
+        </tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
+        </tr>
+    </table>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <h5>Active offer (s)</h5>
+        </div>
+        <div class="col-md-2">
+            <a href="">DISCONNECT</a>
+        </div>
+        <div class="col-md-2">
+            <a href="">TRANSFER</a>
+        </div>
+        <div class="col-md-2">
+            <a>NEW CONNECT</a>
+        </div>
+        <div class="col-md-1">
+            <a>RESTART</a>
+        </div>
+        <div class="col-md-2">
+            <a href="">CHANGE OF SERVICE</a><br><br>
+            <a href="">SEASONAL SUSPEND</a>
+        </div>
+    </div><br><br>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header style="background-color: whitesmoke;">
+                <mat-panel-title>
+                    <div class="col-md-12">
+                        <h5>1Y TV Select + Internet with Wifi</h5>
+                    </div>
+                </mat-panel-title>
+                <mat-panel-description>
+                    $165.65
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="row m-t-10">
+                <div class="col-md-3">
+                    <p class="lable-edit">Spectrum video .... $ 85.97</p>
+                    <table mat-table [dataSource]="expansionDataSource" multiTemplateDataRows
+                        class="mb-3 mat-elevation-z8 mt-4 w-100" matSort>
+                        <ng-container matColumnDef="{{column}}" *ngFor="let column of expcolumnsToDisplay">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold table-bgcolor">
+                                {{column}}</th>
+                            <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="expcolumnsToDisplay">
+                        </tr>
+                        <tr mat-row *matRowDef="let element; columns: expcolumnsToDisplay;" class="example-element-row">
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</mat-card>
+    <!-- <br>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <div class="col-md-12">
+                        1Y TV Select + Internet with Wifi
+                    </div>
+                </mat-panel-title>
+                <mat-panel-description>
+                    $165.65
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion> -->
+
+
+<ng-template #other_content>
+    <div class="card mt-1 p-2">
+        <div class="container-fluid">
+            <div class="head">
+                <h4 class="headstyle text-center">Offer Selection > </h4>
+            </div>
+            <div class="orderbody">
+                <div>
+                    <form [formGroup]="ordervalue" (ngSubmit)="orderdata()">
+                        <p class="font-style">Customer Information</p><br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="fname" class="form-label" style="font-size: small">First name</label>
+                                <input type="text" id="fname" name="fname" placeholder="First Name" formControlName="firstname" class="p-1 form-outline" size="40">
+                            </div>
+                            <div class="col-md-2 offset-1">
+                                <label for="lname" class="form-label" style="font-size: small">First name</label>
+                                <input type="text" id="fname" name="lname" placeholder="Last Name" formControlName="lastname" class="p-1 form-outline" size="40">
+                            </div>
+                            <div class="col-md-2 offset-1">
+                                <label for="pphone" class="form-label" style="font-size: small">Primary Phone</label>
+                                <input type="number" id="pphone" name="pphone" placeholder="(xxx) xxx-xxxx"
+                                    class="phone-input form-outline" maxlength="10" formControlName="primaryPhone">
+                            </div>
+                            <div class="col-md-2 offset-1">
+                                <label for="aphone" class="form-label" style="font-size: small">Alternate Phone</label>
+                                <input type="number" id="aphone" name="aphone" placeholder="(xxx) xxx-xxxx"
+                                    class="phone-input form-outline" maxlength="10" formControlName="alternatePhone">
+                            </div>
+                        </div><br><br>
+                    </form>
+                    <hr>
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h4>Offer Selection</h4>
+                            <div class="row pt-2">
+                                <div class="col-xs-2 col-md-2">
+                                    <label class="lable-edit">LOB Play</label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="singleplay"><input type="checkbox" id="singleplay"><span
+                                            class="p-l-3">Single Play</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="doubleplay"><input type="checkbox" id="doubleplay"><span
+                                            class="p-l-3">Double Play</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="tripleplay"><input type="checkbox" id="tripleplay"><span
+                                            class="p-l-3">Triple Play</span></label>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-xs-2 col-md-2">
+                                    <label class="lable-edit">LOB </label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="video"><input type="checkbox" id="video"><span
+                                            class="p-l-3">Video</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="internet"><input type="checkbox" id="internet"><span
+                                            class="p-l-3">Internet</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="voice"><input type="checkbox" id="voice"><span
+                                            class="p-l-3">Voice</span></label>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-xs-2 col-md-2">
+                                    <label class="lable-edit">Offer Type</label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="promo"><input type="checkbox" id="promo"><span
+                                            class="p-l-3">Promotional</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="standard"><input type="checkbox" id="standard"><span
+                                            class="p-l-3">Standard</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="add"><input type="checkbox" id="add"><span
+                                            class="p-l-3">Add-On</span></label>
+                                </div>
+                                <div class="col-xs-2 col-md-2">
+                                    <label for="reten"><input type="checkbox" id="reten"><span
+                                            class="p-l-3">Retention</span></label>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-xs-2 col-md-2">
+                                    <label class="lable-edit">Search:</label>
+                                </div>
+                                <div class="col-xs-5 col-md-5">
+                                    <input type="text" id="search" name="search"
+                                        placeholder="Search By Offer Name Or ID Or Stuff codes" class="p-l-3" size="90">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h4>Self Install Eligible</h4>
+                            <div class="row pt-2">
+                                <div class="col-xs-5 col-md-5">
+                                    <label for="offer" class="lable-edit">Selected
+                                        Offer(s)</label>
+                                    <select name="offer" id="offer" class="install-pm">
+                                        <option value="none" selected>None</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row pt-2">
+                    <table class="table table-striped table-bordered" class="tab-border">
+                        <thead class="lable-edit">
+                            <tr class="blue-bg text-center ">
+                                <th scope="col order-table-th"></th>
+                                <th scope="col w-30">Type</th>
+                                <th scope="col w-30">Offer Name</th>
+                                <th scope="col w-30">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="lable-edit" *ngFor="let i of data.ordercontent">
+                            <tr class="text-center">
+                                <th class="text-center;">
+                                    <i class="{{i.sym}}"></i>
+                                </th>
+                                <td>{{i.Type}}</td>
+                                <td>{{i.OfferName}}</td>
+                                <td>{{i.Price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-2">
+                    <button type="button" class="btn button-bg w-100">Clear Order</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn button-bg w-100">Back</button>
+                </div>
+                <div class="col-md-2 offset-4">
+                    <button type="button" class="btn button-bg w-100">Next</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn button-bg ml-2 w-100">Competitive Edge</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</ng-template> 

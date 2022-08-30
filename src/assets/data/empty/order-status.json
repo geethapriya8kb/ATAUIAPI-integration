@@ -1,0 +1,30 @@
+{
+  "orderStatusTable": [
+    
+  ],
+  "orderStatusColumns": [
+    "Order",
+    "OrderType",
+    "Status",
+    "Reason",
+    "SalesID",
+    "icon"
+  ],
+  "statusLabel": "Order Status",
+  "status": [],
+  "typeLabel": "Order Types",
+  "type": [],
+  "heading": "Orders",
+  "tasks": [
+    {
+      "label": "",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "",
+      "dialog": "EditAccountDialogComponent",
+      "width": "60"
+    }
+  ]
+}

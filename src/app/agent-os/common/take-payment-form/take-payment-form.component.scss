@@ -1,0 +1,44 @@
+
+.btn-step1{
+    width: 40%; 
+    border-radius: 10px;
+    padding: 0 10px;
+}
+.tp-flex {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .tp-flex-space{
+display: flex;
+justify-content:space-between;
+align-items: center;
+flex-wrap: wrap;
+  }
+  .tp-flex-around{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+      }
+.btn-step2{
+    width: 20%; 
+    border-radius: 10px;
+}
+.back-btn{
+    margin-left:-38%;
+    cursor: pointer;
+}
+.close-icon{
+margin-left: 96%;
+}
+::ng-deep x.mat-step-header .mat-step-icon-selected {
+    background-color: red;
+}
+.ml-3{
+  margin-left: 30px;
+}
+.border-top{
+  border-top:5px solid green;
+}

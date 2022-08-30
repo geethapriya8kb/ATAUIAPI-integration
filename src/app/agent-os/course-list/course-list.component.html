@@ -1,0 +1,52 @@
+<div class="agent-os my-0">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row class="text-center">
+            <span class="mat-display-1 my-0 capitalize">{{currentFlow}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="full-background-gradient ml-0 mr-0 p-0 w-100 h-100" *ngIf="flowInfo?.groups?.length">
+        <div class="py-3">
+            <div class="my-3 mx-5 px-5">
+                <mat-accordion *ngIf="flowInfo?.groups?.length > 1" color="primary" multi>
+                    <div *ngFor="let group of flowInfo.groups" class="mb-3">
+                        <mat-expansion-panel [disabled]="!group.options || group.options.length == 0" expanded>
+                            <mat-expansion-panel-header class="course-expansion-panel-header">
+                                <mat-panel-title class="text-white">{{group.name}}</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="py-3 row">
+                                <div class="col col-md-3 px-0 text-center" *ngFor="let option of group.options">
+                                    <button mat-raised-button aria-label="icon button" class="icon-button my-2"
+                                        (click)="openFlow(option.name)">
+                                        <p>
+                                            <span class="fa-stack py-1" [ngClass]="option.color">
+                                                <em [ngClass]="icons" *ngFor="let icons of option.icons"></em>
+                                            </span>
+                                        </p>
+                                        <span class="card-text">{{option.name}}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </div>
+                </mat-accordion>
+
+                <div class="py-3 row" *ngIf="flowInfo?.groups?.length == 1">
+                    <ng-container *ngFor="let group of flowInfo.groups">
+                        <div class="col col-md-3 px-0" *ngFor="let option of group.options">
+                            <button mat-raised-button aria-label="icon button" class="icon-button my-2"
+                                (click)="openFlow(option.name)">
+                                <p>
+                                    <span class="fa-stack py-1" [ngClass]="option.color">
+                                        <i *ngFor="let icons of option.icons" [ngClass]="icons" aria-hidden="true"></i>
+                                    </span>
+                                </p>
+                                <span class="card-text">{{option.name}}</span>
+                            </button>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

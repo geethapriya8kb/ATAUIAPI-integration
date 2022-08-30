@@ -1,0 +1,37 @@
+<i class="fa fa-close float-end" (click)="close()"></i>
+<h4 class="fw-bold">Manage Future Payment</h4>
+<hr>
+<h5 class="fw-bold">Account Information</h5>
+<hr>
+<mat-card class="bg-light">
+<div class="row">
+    <div class="col-md-4" *ngFor="let item of data?.futureInfo | keyvalue:returnZero">
+        <p class="fw-bold">{{item.key}}</p>
+        <p>{{item.value}}</p>
+    </div>
+</div>
+</mat-card>
+<h5 class="fw-bold mt-3">Current Future Dated Payments</h5>
+<table class="table table-striped">
+<tbody>
+    <tr>
+        <ng-container *ngFor="let item of data?.futureInput |keyvalue:returnZero">           
+            <th>{{item.key}}</th>
+        </ng-container>        
+    </tr>
+    <tr>
+        <ng-container *ngFor="let item of data?.futureInput |keyvalue:returnZero"> 
+            <td *ngIf="item.value==='radio'"><input type="{{item.value}}"></td>          
+            <td *ngIf="item.value!='radio'">{{item.value}}</td>
+        </ng-container>        
+    </tr>
+</tbody>
+</table>
+<div class="row text-center mt-5">
+    <div class="col-md-6">
+        <button class="rounded-pill w-100" mat-raised-button color="primary">Delete</button>
+    </div>
+    <div class="col-md-6">
+        <button class="rounded-pill w-100" mat-raised-button color="primary" (click)="close()">Cancel</button>
+    </div>
+</div>

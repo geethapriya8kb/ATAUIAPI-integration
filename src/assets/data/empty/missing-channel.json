@@ -1,0 +1,23 @@
+{
+    "content":{
+        "TV Overview":{
+        "Number of Receivers":"",
+        "Recent Work Orders":""
+    }
+       
+    },
+    "packageCodes":{
+        "TV Package Codes":{
+        "Price Greater than $0":[{"Dvr Receiver (4)":""},{"Interact Srv (4)":""},{"DVR SVC 2-4":""}],
+        "Price equal to $0":[{"Basic":"","L Vod":""},{"Exp Basic":"","Spec Guide":""},{"Brdcst TV Sc":"","ODN Guide":""}]
+       
+    }
+       
+    },
+    "channelInfo":{
+        "Channel Info":{
+        "Entitlements and Lineup":"View Details in Entitlements Tools",
+        "Audit Info":"View Details in CorPortal"
+    }       
+    }
+}

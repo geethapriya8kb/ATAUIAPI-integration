@@ -1,0 +1,54 @@
+{
+    "menu": [
+      {
+        "label": "Call Reason",
+        "link": "/aos/main/call-reason",
+        "index": 0
+      },
+      {
+        "label": "Dashboard",
+        "link": "/aos/main/dashboard",
+        "index": 1
+      },
+      {
+        "label": "Field Operations",
+        "link": "/aos/main/field-operations",
+        "index": 2
+      },
+      {
+        "label": "ETD",
+        "link": "/aos/main/etd",
+        "index": 3
+      },
+      {
+        "label": "Billing",
+        "link": "/aos/main/billing",
+        "index": 4
+      },
+      {
+        "label": "Device Management",
+        "link": "/aos/main/device-management",
+        "index": 5
+      },
+      {
+        "label": "Ordering",
+        "link": "/aos/main/ordering",
+        "index": 6
+      },
+      {
+        "label": "Troubleshooting",
+        "link": "/aos/main/troubleshooting",
+        "index": 7
+      },
+      {
+        "label": "Mobile",
+        "link": "/aos/main/mobile",
+        "index": 8
+      },
+      {
+        "label": "Tools",
+        "link": "/aos/main/tools",
+        "index": 9
+      }
+    ]
+  }

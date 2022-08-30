@@ -1,0 +1,7 @@
+ <svg viewBox="0 0 32 32" data-icon="ki-tv-f" aria-hidden="true" style="fill: rgb(255, 255, 255);">
+            <path
+                d="M28,4H4A2,2,0,0,0,2,6V23a2,2,0,0,0,2,2H6L5,28H7l1-3H24l1,3h2l-1-3h2a2,2,0,0,0,2-2V6A2,2,0,0,0,28,4Zm0,19H4V6H28Z">
+            </path>
+            <path d="M6 8H26V21H6z"></path>
+        </svg>
+      

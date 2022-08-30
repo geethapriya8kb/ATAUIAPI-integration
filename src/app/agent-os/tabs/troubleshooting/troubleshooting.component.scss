@@ -1,0 +1,113 @@
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+  min-width: 0 !important;
+  padding: 3px !important;
+  margin: 3px !important;
+}
+::ng-deep .alerts .mat-tab-list .mat-tab-label {
+  background-color: rgb(225, 225, 225) !important;
+  font-weight: 500;
+  opacity: 1;
+}
+::ng-deep .alerts .mat-tab-header {
+  background: rgb(0, 90, 132) !important;
+}
+::ng-deep .symptoms .mat-tab-list .mat-tab-label {
+  opacity: 1;
+  font-weight: 500;
+}
+.blue-bar {
+  max-height: 30px;
+  width: 100%;
+  background: rgb(0, 90, 132);
+  padding: 0px 0px 1px;
+}
+.blue-bar p {
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  font-weight: 500;
+}
+
+.icon-red {
+  color: #d64843;
+}
+.border-red {
+  border-top: 5px solid #d64843;
+}
+
+.border-blue {
+  border-top: 5px solid rgb(56, 181, 243);
+}
+.border-yellow {
+  border-top: 5px solid rgb(250, 164, 26);
+}
+
+.table td,
+.table th {
+  padding: 5px;
+}
+
+.f-12 {
+  font-size: 12px;
+  box-sizing: border-box;
+  line-height: 1.35;
+}
+.event-text-highlight {
+  color: rgb(95, 129, 157);
+  font-weight: 700;
+}
+.issue-id {
+  position: absolute;
+  right: 6%;
+}
+.index-box-green {
+  background: rgb(122, 193, 66) !important;
+  padding: 6px 8px;
+}
+.icon {
+  color: rgb(122, 193, 66) !important;
+  padding: 6px 8px;
+}
+.symptom-list {
+  cursor: pointer;
+  color: #428bca;
+  width: 100%;
+}
+
+::ng-deep .symptoms .agent-os-main .mat-expansion-panel {
+  background: #eee !important;
+  color: rgba(0, 0, 0, 0.87);
+}
+.ts-acount {
+  border: 1px solid black;
+}
+::ng-deep .troubleshooting .mat-tab-label {
+  height: 24px !important;
+}
+.bg-grey {
+  background-color: rgb(225, 225, 225);
+}
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+.expand {
+  font-size: 12px;
+  box-sizing: border-box;
+  font-family: "Spectrum Sans", -apple-system, system-ui, BlinkMacSystemFont,
+    "Sefoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.35;
+  color: #333;
+  font-weight: 500;
+}
+.ml-65{
+  margin-left: 65%;
+}
+.search-input{
+  padding: 0.275rem 0.75rem !important;
+}
+.event-list{
+  color: #428bca;
+  width:15%;
+  margin:2px;
+}

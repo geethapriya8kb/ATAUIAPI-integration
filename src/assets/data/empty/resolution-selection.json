@@ -1,0 +1,241 @@
+{
+    "CallType": [
+      {
+        "CallTypeName": "Billing",
+        "Issues": [
+          {
+            "IssueName": "Payment Related",
+            "Causes": [
+              {
+                "CauseName": "Bill Payment",
+                "Resolution": ["Customer education", "Credit Card Auto Pay(Online)","Escaleted(Note Required)","Payment-Processed by Agent","Payment-Transfer to IVR","Promise to Pay-Processed by Agent","Promise to Pay-Transfer to IVR","Credit Card Auto Pay"]
+              },
+              {
+                "CauseName": "Payment Issue/Misapplied Payment",
+                "Resolution": ["Customer education", "Credit Card Auto Pay","Escaleted(Note Required)","Transfer to IVR","UCM Form Submitted","IVR Issue-Processed by Agent","Online Site Issue-Processed by Agent","Payment-Processed by Agent"]
+              },
+              {
+                "CauseName": "Payment Extension",
+                "Resolution": ["Customer education", "Credit Card Auto Pay","Escaleted(Note Required)","Payment-Processed by Agent","Transfer to IVR"]
+              }
+            ]
+          },
+          {
+            "IssueName": "Billing Inquirise",
+            "Causes": [
+              {
+                "CauseName": "Bill Question about Deu Date",
+                "Resolution": ["Added Services", "Customer Education-Balance","Customer Education-Charge","Escaleted(Note Required)","Removed Sevices","Transfer to Retension(Cancel Request)"]
+              },
+              {
+                "CauseName": "Prorate",
+                "Resolution": ["Added Services", "Customer Education-Balance","Customer Education-Charge","Escaleted(Note Required)","Removed Sevices","Transfer to Retension(Cancel Request)"]
+              },
+              {
+                "CauseName": "Discount Ending",
+                "Resolution": ["Added Services", "Customer Education-Balance","Customer Education-Charge","Escaleted(Note Required)","Removed Sevices","Transfer to Retension(Cancel Request)","Customer Education-New Rate"]
+              },
+              {
+                "CauseName": "Rate Inquiry",
+                "Resolution": ["Added Services", "Customer Education-Balance","Customer Education-Charge","Escaleted(Note Required)","Removed Sevices","Transfer to Retension(Cancel Request)","Customer Education-New Rate","Customer Education"]
+              },
+              {
+                "CauseName": "Billing Question",
+                "Resolution": ["Added Services", "Escaleted(Note Required)","Removed Sevices","Transfer to Retension(Cancel Request)","Customer Education"]
+              }
+            ]
+          },
+          {
+            "IssueName": "Change of Services",
+            "Causes": [
+              {
+                "CauseName": "Add Equipment",
+                "Resolution": ["Added Services","Charter Store Eqp.Pickup","Customer Education","Direct Ship","Escaleted(Note Required)","Removed Sevices","Setup Truck Roll- Proffessional Install (COS)","Transferred to Retension","mTransferred to Sales"]
+              },
+              {
+                "CauseName": "Change / Remove Equipment",
+                "Resolution":["Added Services","Charter Store Eqp.Pickup","Customer Education","Direct Ship","Escaleted(Note Required)","Removed Sevices","Setup Truck Roll- Proffessional Install (COS)","Transferred to Retension","mTransferred to Sales"]
+              },
+              {
+                "CauseName": "Disconnect Service- All services",
+                "Resolution": ["Added Services","Charter Store Eqp.Pickup","Customer Education","Direct Ship","Escaleted(Note Required)","Removed Sevices","Setup Truck Roll- Proffessional Install (COS)","Transferred to Retension","Transferred to Sales","Home Shipment","Set Up Truck Roll","Spectrum Store Equipment Pickup"]
+              },
+              {
+                "CauseName": "Downgrade Service Request ",
+                "Resolution": ["Added Services","Charter Store Eqp.Pickup","Customer Education","Direct Ship","Escaleted(Note Required)","Removed Sevices","Setup Truck Roll- Proffessional Install (COS)","Transferred to Retension","Transferred to Sales","Home Shipment","Set Up Truck Roll","Spectrum Store Equipment Pickup"]
+              },
+              {
+                "CauseName": "Offer Comparison",
+                "Resolution": ["Added Services","Charter Store Eqp.Pickup","Customer Education","Direct Ship","Escaleted(Note Required)","Removed Sevices","Setup Truck Roll- Proffessional Install (COS)","Transferred to Retension","Transferred to Sales","Home Shipment","Set Up Truck Roll","Spectrum Store Equipment Pickup"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "CallTypeName": "CB Billing",
+        "Issues": [
+          {
+            "IssueName": "General Enquiry",
+            "Causes": [
+              {
+                "CauseName": "Agency Letter Form",
+                "Resolution": ["Escalated", "Sent self help","Other(Note Required)"]
+              },
+              {
+                "CauseName": "Customer Contact Preference",
+                "Resolution": ["Customer Education","Updated Contact Preference"]
+              },
+              {
+                "CauseName": "Cert of Insurance/ W9 Form Request",
+                "Resolution": ["Escalated", "Sent self help","Other(Note Required)"]
+              },
+              {
+                "CauseName": "Channel Addiction Request",
+                "Resolution": ["Escalated", "Customer Ed- Services","Customer Ed- Channel Changes","Other(Note Required)"]
+              }
+            ]
+          },
+          {
+            "IssueName": "Out of Scope (Transfer)",
+            "Causes": [
+              {
+                "CauseName": "Enterprise Account Issue",
+                "Resolution": ["v Enterprise Billing","Transfer to Enterprise Tech Support"]
+              },
+              {
+                "CauseName": "Billing Issue",
+                "Resolution": ["Transfer to Residential Billing","Transfer to National Billing","Transfer to Bulk Boilling","Transfer to Billing","Other(Note Required)"]
+              },
+              {
+                "CauseName": "Service Address Correction",
+                "Resolution": ["Transfer to Sales"]
+              },
+              {
+                "CauseName": "Move/ Transfer",
+                "Resolution": ["Transfer to Sales"]
+              },
+              {
+                "CauseName": "Repair Issue",
+                "Resolution": ["Transfer to CCST","Transfer to National Tech Support","Transfer to Voice Repair","Transfer to Bulk Repair","Transfer to Repair","Other(Note Required)"]
+              }
+            ]
+          },
+          {
+            "IssueName": "Hot Topics",
+            "Causes": [
+              {
+                "CauseName": "BGS Question about Deu Date",
+                "Resolution": ["Customer Education","Transfer Retention","Escalation"]
+              },
+              {
+                "CauseName": "BGS Question about Auto Pay",
+                "Resolution": ["Customer Education","Transfer Retention","Escalation"]
+              },
+              {
+                "CauseName": "PPV- Purchase",
+                "Resolution": ["Ordered Event"]
+              },
+              {
+                "CauseName": "Move/ Transfer",
+                "Resolution": ["Transfer to Sales"]
+              },
+              {
+                "CauseName": "Repair Issue",
+                "Resolution": ["Transfer to CCST","Transfer to National Tech Support","Transfer to Voice Repair","Transfer to Bulk Repair","Transfer to Repair","Other(Note Required)"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "CallTypeName": "CB HSI",
+        "Issues": [
+          {
+            "IssueName": "Appointment Related",
+            "Causes": [
+              {
+                "CauseName": "Confirm Appointment",
+                "Resolution": ["Entered ETD ticket", "Rescheduled appointment","Other(Note Required)","Provided Estimated Time of Arrival"]
+              },
+              {
+                "CauseName": "Reschedule Appointment",
+                "Resolution": ["Entered ETD ticket", "Rescheduled appointment","Other(Note Required)","Provided Estimated Time of Arrival"]
+              },
+              {
+                "CauseName": "Technician Late or No Show ",
+                "Resolution": ["Entered ETD ticket", "Rescheduled appointment","Other(Note Required)","Provided Estimated Time of Arrival","Escalated"]
+              },
+              {
+                "CauseName": "Cancel Appointment",
+                "Resolution": ["Cancel Appointment- Outage in Area","Cancel Appointment- Service Restored" ]
+              },
+              {
+                "CauseName": "Customer Missed Appointment",
+                "Resolution": ["Entered ETD ticket", "Rescheduled appointment","Provided Estimated Time of Arrival"]
+              },
+              {
+                "CauseName": "Damage Assesment",
+                "Resolution": ["Cudtomer Ed-Policy","Other(Note Required)","Escalated"]
+              },
+              {
+                "CauseName": "Disconnected in Error",
+                "Resolution": ["Cudtomer Ed-Policy","Truck Roll","Escalated","Entered ETD ticket"]
+              }
+            ]
+          },
+          {
+            "IssueName": "Account Management",
+            "Causes": [
+              {
+                "CauseName": "Change Request",
+                "Resolution": ["Cannot Authenticate Caller","Customer Ed","Other(Note Required)","Escalated","Transfer to Sales"]
+              },
+              {
+                "CauseName": "Channel Line Up Card Request",
+                "Resolution": ["Case Created","Escalated","Customer Ed- Online Availability"]
+              },
+              {
+                "CauseName": "Disconnect Request",
+                "Resolution": ["Added Services","Downgraded Services","Other(Note Required)","Resolved Technical Issue","Transfer to Retention"]
+              },
+              {
+                "CauseName": "Physical Move",
+                "Resolution": ["Cannnot Authenticate Caller","Customer Ed","Other(Note Required)","Escalated","Transfer to Sales"]
+              },
+              {
+                "CauseName": "Reconnect",
+                "Resolution":  ["Cannnot Authenticate Caller","Customer Ed","Other(Note Required)","Escalated","Transfer to Sales"]
+              }
+            ]
+          },
+          {
+            "IssueName": "General Enquiry",
+            "Causes": [
+              {
+                "CauseName": "Advertising/Marketing/Special Promotion",
+                "Resolution": ["Customer Ed- Bill/Pricing/Taxes","Customer Ed- Services","Other(Note Required)"]
+              },
+              {
+                "CauseName": "Agency Letter Form",
+                "Resolution": ["Sent self help","Other(Note Required)","Escalated"]
+              },
+              {
+                "CauseName": "Channel Removal",
+                "Resolution":  ["Customer Ed- Bill/Pricing/Taxes","Customer Ed- Services","Other(Note Required)"]
+              },
+              {
+                "CauseName": "Spectrum Store Location",
+                "Resolution": ["Directed to Local Office","Other(Note Required)"]
+              },
+              {
+                "CauseName": "Web Based Video Content",
+                "Resolution": ["Complaint","Other(Note Required)","Customer Ed- Services","Customer Ed- Availability"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

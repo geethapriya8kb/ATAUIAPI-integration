@@ -1,0 +1,34 @@
+{
+    "info":{
+        "Account No":"89888765877098",
+        "First Name":"John",
+        "Last Name":"Smith",
+        "SSN/Tax Id":"****1638"
+   
+    },
+    "input":[{
+        "label":"*Security Code",
+        "type":"text",
+        "controlName":"securityCode"
+    },
+    {
+        "label":"*Security Code",
+        "type":"text",
+        "controlName":"srityCode"
+    }
+   
+],
+"futureInfo":{
+    "Account #":"8998787686",
+    "Customer No":"John Smith"
+},
+"futureInput":{
+    "":"radio",
+    "Payment Date":"06-01-22",
+    "Amount to Pay":"$50.00",
+    "Transaction ID":"037448",
+    "Type":"Visa",
+    "Card/Acct #":"*4113",
+    "Name":"John Smith"
+}
+}

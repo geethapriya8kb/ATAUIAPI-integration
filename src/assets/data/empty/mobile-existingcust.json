@@ -1,0 +1,95 @@
+{
+    "mobileBilling": [
+        {
+            "Amount Due": "",
+            "Overage": "",
+            "Billing Cycle start": "",
+            "Billing Cycle End": "",
+            "Amount Paid Due": ""
+        },
+        {
+            "Auto Pay Date":"",
+            "Last Payment Status":"",
+            "Credit Card on file": ""
+        }
+    ],
+    "customer":[
+       {    "cardName":"",
+            "email":"",
+            "contact":"",
+            "address":"",
+            "emailicon":"fa-solid fa-envelope",
+            "phoneicon":"fa-solid fa-phone"
+        }
+    ],
+   
+    "mobileAccount": [
+       {            
+            "First Name": "",
+            "Mobile account number": "",
+            "Last Name": ""
+        },
+       {
+            "Customer Satus": "",
+            "Contact Name": ""
+        }
+       
+    ],
+    "mobileDeviceTable": [
+        
+      ],
+      "orderStatusColumns": [
+        "Nickname", "DeviceType", "MDN", "CurrentUsage", "PlanType", "PlanPrice","LineStatus","icon"
+      ],
+      "mobileOrderTable": [
+      
+      ],
+      "mobileOrderColumns": [
+        "OrderID", "OrderDate", "Status", "Channel","Location","AgentID","Icon"
+      ],
+      "mobileHistory": [
+        
+       
+    ],
+    "mobileHistoryColumns": [
+        "Date And Time","Category","Status","Details","Performed By"
+             
+      ],
+      "mobileStatement": {
+        "current cycle":{
+            "Data": "",
+            "Services & Devices": "",
+            "Total": "",
+            "Payment": "",
+            "Balance": ""
+        },
+        "05-24-2022":{
+            "Data": "",
+            "Services & Devices": "",
+            "Total": "",
+            "Payment": "",
+            "Balance": ""
+        },
+        "04-24-2022":{
+             "Data": "",
+            "Services & Devices": "",
+            "Total": "",
+            "Payment": "",
+            "Balance": ""
+        },
+        "03-24-2022":{
+             "Data": "",
+            "Services & Devices": "",
+            "Total": "",
+            "Payment": "",
+            "Balance": ""
+        },
+        "02-24-2022":{
+            "Data": "",
+            "Services & Devices": "",
+            "Total": "",
+            "Payment": "",
+            "Balance": ""
+        }
+      }
+}

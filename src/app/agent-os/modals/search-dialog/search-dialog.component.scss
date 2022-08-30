@@ -1,0 +1,130 @@
+:host {
+    font-size: 0.875rem !important;
+}
+
+.toggle-button-container {
+    display: inline-flex;
+    padding: 2px;
+    border-radius: 8px;
+    background-color: #e4e8ee;
+
+    .toggle-button {
+        min-width: 120px;
+        min-height: auto;
+        border-radius: 8px;
+        border-width: 0;
+        background-color: transparent;
+        padding: 2px;
+        font-size: 0.875rem;
+
+        &.active {
+            background-color: #0073d1;
+            color: white;
+        }
+    }
+}
+
+.account-location-selection {
+    border: 1px solid #d8dde6;
+    margin: 12px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #63738a;
+
+    .form-label {
+        font-weight: 700;
+    }
+}
+
+::ng-deep {
+    .nav-pills {
+        height: 27px;
+        background-color: lightgray;
+        padding: 2px;
+        border-radius: 8px;
+
+        .nav-link {
+            height: 23px;
+            min-width: 120px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 0.875rem;
+            padding: 0 !important;
+        }
+    }
+
+    .search-dialog {
+        .mat-dialog-container {
+            background-color: #f5f5f5 !important;
+            padding: 0 !important;
+            min-height: calc(50vh - 100px);
+            overflow-x: hidden;
+        }
+
+        .mat-dialog-title {
+            background-color: white !important;
+            margin-bottom: 0 !important;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .close-button {
+            box-shadow: none;
+            border: none !important;
+            background-color: transparent;
+        }
+    }
+}
+
+.vertical-align-center {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+}
+
+.form-controls {
+    .card {
+        border: none !important;
+    }
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+.content-padding {
+    padding: 10px !important
+}
+
+.form-label {
+    font-weight: bold;
+    text-align: right;
+    padding-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.search-option-section {
+    border: 1px solid #d8dde6;
+    margin: 12px;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.border-card {
+    border-top: 6px solid #38b5f3;
+}
+
+.btn-rounded {
+    border-radius: 30px;
+    font-size: 0.875rem;
+}
+
+.close-icon {
+    background-color: white;
+}

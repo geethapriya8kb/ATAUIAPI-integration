@@ -1,0 +1,249 @@
+<div class="side-nav agent-os-main">
+    <div class="white-div">
+        <div class="mt-1">
+            <button mat-stroked-button color="primary" (click)="openDialog()" class="btn-rounded">
+                <mat-icon svgIcon="aos-search" class="mat-custom-icon px-1"></mat-icon>
+                <span class="px-1 small">Search</span>
+            </button>
+
+            <button mat-stroked-button color="secondary" class="btn-rounded">
+                <mat-icon svgIcon="aos-last-results" class="mat-custom-icon px-1"></mat-icon>
+                <span class="px-1" style="font-size:13px ;">Last Results</span>
+            </button>
+
+            <button mat-stroked-button color="primary" class="btn-rounded">
+                <mat-icon svgIcon="aos-recently-viewed" class="mat-custom-icon px-1"></mat-icon>
+                <span class="px-1">Recently Viewed</span>
+            </button>
+
+            <button mat-stroked-button  color="secondary" class="btn-rounded" [disabled]="!searchflag"
+                (click)="clearData()">
+                <mat-icon class="mat-custom-icon px-1" svgIcon="aos-close"></mat-icon>
+                <span class="px-1">Clear</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="white-div">
+        <span class="side-bar-section-header">Customer and Location Info</span>
+        <p>
+            <span class="side-nav-italic-text">Search to find account and location info.</span>
+        </p>
+        <p>
+            <mat-tab-group class="w-100">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Internet, TV &<br />
+                        Home Phone
+                    </ng-template>
+                    <span *ngIf="!searchflag" class="empty-msg">No Account Found</span>
+                    <ng-container *ngIf="searchflag">
+                        <div class="mt-1 font-edit">
+                            <div class="row">
+                                <div class="col-md-5 me-4">John Smith
+                                    <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
+                                </div>
+                                <button class="col-md-6 btn-verify"><span>Verify & Authenticate</span></button>
+                            </div>
+                        </div>
+                        <p class="m-0 p-0">Local Time: 10:34 AM EST</p>
+                        <mat-card class="mt-2" style="background-color: whitesmoke;">
+                            <div class="flex-style mr-1 mt-0 p-0">
+                                <div *ngFor="let info of custInfo | keyvalue: returnZero">
+                                    <h6 class="text-secondary mb-0 mt-0">{{info.key}}</h6>
+                                    <div>{{info.value}}
+                                        <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </ng-container>
+                </mat-tab>
+                <mat-tab label="Mobile">
+                    <mat-label class="empty-msg">
+                        No Mobile service.
+                    </mat-label>
+                </mat-tab>
+                <mat-tab label="Location">
+                    <span *ngIf="!searchflag" class="empty-msg">No Account Found </span>
+                    <ng-container *ngIf="searchflag">
+                        <mat-label class="empty-msg">
+                            123 main st, saint louis, mo 63141-5791<br />
+                            Local Time: 11:40 AM EST
+                        </mat-label>
+                    </ng-container>
+                </mat-tab>
+            </mat-tab-group>
+        </p>
+    </div>
+
+    <br />
+
+    <div>
+        <mat-expansion-panel class="p-0 relevent-knowledge">
+            <mat-expansion-panel-header>
+                <span class="side-bar-section-header p-1">Relevant Knowledge</span>
+            </mat-expansion-panel-header>
+
+            <mat-tab-group class="w-100">
+                <mat-tab class="col-xs-1 mb-5">
+                    <ng-template mat-tab-label>
+                        Recommended<br />
+                        Articles
+                    </ng-template>
+                    <div>
+                        <span *ngIf="!searchflag"> No recommended articles are available.</span>
+                        <ul *ngIf="searchflag">
+                            <ng-container *ngFor="let item of articlesdata.content | keyvalue">
+                                <li *ngFor="let valItem of item.value | keyvalue">
+                                    <a href="{{ valItem.value }}" target="_blank">
+                                        <p>{{valItem.key}}</p>
+                                    </a>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </mat-tab>
+                <mat-tab label="CoPilot Links" class="p-5">
+                    <ng-container *ngIf="!searchflag">No recommended articles are available.</ng-container>
+                    <ng-container *ngIf="searchflag">
+                        <h6 *ngFor="let item of linkdata.content | keyvalue">{{item.key}}</h6>
+                        <ul>
+                            <ng-container *ngFor="let item of linkdata.content | keyvalue">
+                                <li *ngFor="let valItem of item.value | keyvalue">
+                                    <a href="{{ valItem.value }}" target="_blank">
+                                        <p>{{valItem.key}}</p>
+                                    </a>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </ng-container>
+                </mat-tab>
+                <mat-tab label="Helpful Hints">
+                    <span *ngIf="!searchflag"> No templates to display</span>
+                    <ng-container *ngIf="searchflag">
+                        <mat-expansion-panel *ngFor="let item of helpfuldata.content | keyvalue">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <div class="pl-2">
+                                        <h5>{{item.key}}</h5>
+                                    </div>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div *ngFor="let valItem of item.value | keyvalue">
+                                <a class="link-primary" href="#" target="_blank" *ngIf="valItem.key != 'subitems'">
+                                    <p>{{valItem.key}}</p>
+                                </a>
+                                <ng-container *ngIf="valItem.key === 'subitems'">
+                                    <mat-expansion-panel *ngFor="let subitem of valItem.value | keyvalue">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                <div class="pl-2">
+                                                    <h5>{{subitem.key}}</h5>
+                                                </div>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <div *ngFor="let val of subitem.value | keyvalue">
+                                            <a class="link-primary" href="#" target="_blank">
+                                                <p>{{val.key}}</p>
+                                            </a>
+                                        </div>
+                                    </mat-expansion-panel>
+                                </ng-container>
+                            </div>
+                        </mat-expansion-panel>
+                    </ng-container>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        CoPilot<br />
+                        Updates
+                    </ng-template>
+                    <span *ngIf="!searchflag"> No updates are available.</span>
+                    <ng-container *ngIf="searchflag">
+                        <div *ngFor="let date of copilotUpdateData.content | keyvalue">
+                            <h6 class="dateTitle">{{date.key}}</h6>
+                            <ng-container *ngFor="let item of date | keyvalue">
+                                <ul>
+                                    <li *ngFor="let valItem of item.value | keyvalue">
+                                        <a class="link-primary"
+                                            href="https://charterukm.custhelp.com/app/answers/answer_view/a_id/1017247/clickSrc/Gateway_CoPilotAlerts"
+                                            target="_blank">
+                                            <p>{{valItem.key}}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-expansion-panel>
+    </div>
+    <br />
+    <div >
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <span class="side-bar-section-header">Resolution, Notes & Interaction</span>
+            </mat-expansion-panel-header>
+
+            <div>
+                <mat-tab-group>
+                    Resolution & Notetaking
+                    <mat-tab label="Resolution & Notetaking">
+                        <ng-container *ngIf="!searchflag">No Updates to Display</ng-container>
+                        <ng-container *ngIf="searchflag">
+                            <br />
+                            <ul class="editnav nav nav-tabs" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active b" id="pills-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                        aria-selected="true">Add Resolution</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link b" id="pills-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-profile" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">Add Notes</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <app-add-resolution></app-add-resolution>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+
+                                </div>
+                            </div>
+                        </ng-container>
+                    </mat-tab>
+                    <mat-tab label="Historic Notes">
+                        No items to display
+                    </mat-tab>
+                    <mat-tab label="Interactions">
+                        <span *ngIf="!searchflag"> No updates are available.</span>
+                        <ng-container *ngIf="searchflag">
+                            <mat-expansion-panel *ngFor="let item of actiondata.content">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <i class="{{item.icon}}" style="font-size:20px;"></i>
+                                        <span class="ml-5">
+                                            <div>
+                                                <span class="panel-header">{{item.scr}}</span><br>
+                                                <span class="panel-header1">{{item.status}}</span>
+                                            </div>
+                                        </span>
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        <span class="panel-time">{{item.time}}</span>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                            </mat-expansion-panel>
+                        </ng-container>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </mat-expansion-panel>
+    </div>
+</div>

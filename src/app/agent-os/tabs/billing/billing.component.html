@@ -1,0 +1,51 @@
+<div class="row my-3 px-2">
+    <div class="col col-md-7 px-1">
+        <app-customer-location></app-customer-location>
+    </div>
+    <div class="col col-md-5 px-1">
+        <mat-card class="h-100 p-0">
+            <mat-card-content class="p-2">
+                <mat-card class="border-left-blue account-preferences-alert">
+                    <h6 class="alert-message">
+                        <i class="fa-solid fa-info-circle info-icon"></i>
+                        <span class="ms-2">Please confirm Account Preferences</span>
+                    </h6>
+                </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row  px-2 mb-3">
+    <div class="col col-md-4 px-2">
+        <mat-card>
+            <app-data-card cardName="billing-billing"></app-data-card>
+        </mat-card>
+    </div>
+    <div class="col col-md-8 px-2">
+        <mat-card>
+            <app-data-card cardName="billing-history"></app-data-card>
+            <app-data-card cardName="account"></app-data-card>
+            <app-billing-card-widget cardName="billing-widget"></app-billing-card-widget>
+            <div class="row mx-0">
+                <div class="col px-1">
+                    <app-device-card type="Video" sectionName="device-summary"></app-device-card>
+                </div>
+                <div class="col px-1">
+                    <app-device-card type="Internet" sectionName="device-summary"></app-device-card>
+                </div>
+                <div class="col px-1">
+                    <app-device-card type="Voice" sectionName="device-summary"></app-device-card>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="row px-2 mb-3">
+    <div class="col col-md-4">
+        <app-service-status></app-service-status>
+    </div>
+    <div class="col col-md-8">
+        <app-order-status></app-order-status>
+    </div>
+</div>

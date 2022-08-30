@@ -1,0 +1,115 @@
+{
+    "content": {
+        "Internet": {
+            "subitems": {
+                "Connectivity": {
+                    "Cannot Connect Troubleshooting": "#",
+                    "Intermittency": "#",
+                    "Slow Internet Speeds": "#"
+                },
+                "Customer Self Install Trees": {
+                    "Self Install ": "#",
+                    "NextGen Self Install ": "#"
+                },
+                "Internet Services": {
+                    "DVR Troubleshooting": "#",
+                    "Charter Security Suite": "#",
+                    "My Spectrum Mobile App": "#",
+                    "Spectrum TV App": "#",
+                    "Spectrum.net / Email Troubleshooting": "#",
+                    "TV On The Go / Mobile Apps": "#"
+                },
+                "Pilot Trees": {
+                    "Automation Test Tree": "#",
+                    "Converged Connectivity": "#",
+                    "Converged Internet Features": "#",
+                    "DOJ Internet": "#",
+                    "Security Suite / McFee": "#",
+                    "Spectrum Home Security": "#",
+                    "Slow Internet Speeds SCP": "#",
+                    "Spectrum NET Troubleshooting": "#"
+                },
+                "SCS Managed Wifi": {
+                    "Internet Connetivity": "#"
+                },
+                "Wifi Password Request or Chg": {
+                    "Wifi Password Request/Change": "#"
+                }
+            }
+        },
+        "Voice": {
+            "subitems": {
+                "Cannot Make or Recieve calls": {
+                    "Cannot Make International Phone Calls": "#",
+                    "Cannot Make Local or Long Distance Phone Calls": "#",
+                    "Cannot Receive Any Phone Calls": "#",
+                    "Cannot Receive Collect Phone Calls": "#"
+                },
+                "Customer Self Install Trees": {
+                    "Self Install ": "#"
+                },
+                "Degraded Service": {
+                    "Cannot Hear Caller On the Phone": "#",
+                    "Crosstalk on the Phone": "#",
+                    "Echo on the Phone": "#",
+                    "One-Way Audio on the Phone": "#",
+                    "Phone is Dropping Calls": "#",
+                    "Slow Dial Tone on the Phone": "#",
+                    "Static or Interference on the Phone": "#"
+                },
+                "Dial Tone Issues": {
+                    "Intermittent Dial Tone ": "#",
+                    "No Dial Tone ": "#"
+                },
+                "Features and Voicemail": {
+                    "Phone Features": "#"
+                },
+                "Pilot Tress- Test Team Only!": {
+                    "Automation Test Tree ": "#",
+                    "Mobile - Audio Issues": "#",
+                    "Mobile - RMA Team": "#",
+                    "Mobile - RMA Tier 1": "#",
+                    "Telephone Toll Free Troubleshooting - TWC/BHN": "#"
+                }
+            }
+        },
+        "Video": {
+            "subitems": {
+                "Audio": {
+                    "Audio Issue": "#"
+                },
+                "Customer Self Install Trees": {
+                    "Self Install ": "#"
+                },
+                "Equipment": {
+                    "CableCard Issue ": "#",
+                    "DVR Functionality": "#",
+                    "Equipment Issues ": "#",
+                    "Remote Control Problem": "#"
+                },
+                "Feature": {
+                    "CIDTV": "#",
+                    "Guide Issue/ Guide Errors ": "#",
+                    "Guide Settings": "#",
+                    "Equipment Issues ": "#",
+                    "VOD/PPV Issues": "#"
+                },
+                "Picture": {
+                    "ALL LOB Out ": "#",
+                    "Cable Box Error Codes": "#",
+                    "Missing Channels/Channel Unavail/No Signal/Black Screen ": "#",
+                    "Picture Quality": "#"
+                },
+                "Pilot Trees": {
+                    "Converged Remote Control Issues": "#",
+                    "DOJ - LCHTR - Limited Mode/Spectrum Tv Unavailable Error": "#",
+                    "DOJ - LCHTR - Retrieving Channel Information (RCI) Activate Your Service Error": "#",
+                    "DOJ DAV All Biller DYWTU All Channels Agents": "#",
+                    "DOJ DAV All Biller DYWTU Gold Keys Agents": "#",
+                    "DOJ DAV All Biller DYWTU SCAgents": "#",
+                    "DOJ DAV LCHTR CSG Limited Mode": "#"
+                }
+            }
+        }
+    }
+}

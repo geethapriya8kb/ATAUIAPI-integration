@@ -1,0 +1,89 @@
+mat-tab-group.vertical {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+:host ::ng-deep .vertical .mat-tab-labels {
+  flex-direction: column;
+}
+
+.paperless-billing {
+  font-size: 15px !important;
+}
+
+.location_font {
+  font-size: 12px !important;
+  text-align: right;
+  line-height: 1.625;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}
+
+.btn-rounded {
+  border-radius: 30px;
+  font-size: 0.875rem;
+}
+
+.icon-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grey-icon {
+  color: #959595;
+}
+
+.blue-icon {
+  color: #30b2f3;
+}
+
+.customer-location-tab {
+  .input-group-text {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .form-control {
+    box-shadow: none;
+    border-radius: 0.25rem !important;
+  }
+}
+
+.cust-address {
+  .cust-loc-tab {
+    color: #63738a;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 0 1rem !important;
+    text-align: left;
+    width: 100%;
+    height: 36px;
+
+    &.active {
+      background-color: #eaeff1;
+      border: 1px solid #dfdfdf;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      color: #0073d1;
+    }
+  }
+
+  textarea {
+    height: 85px !important;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+:host ::ng-deep .mat-tab-body-content {
+  height: 100%;
+  overflow: hidden !important;
+}

@@ -1,0 +1,130 @@
+<div class="div-style">
+    <p>Ticket: 11177952 > Work Ticket</p>
+</div>
+<mat-card class="card-style">
+    <app-data-card cardName="etd-workTicket"></app-data-card>
+</mat-card>
+
+<mat-card>
+    <div class="row w-100">
+        <div class="col col-md-4">
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">1st Contact Attempt: </label>
+                <select style="height: 30px; width:50%">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Msg Left">Msg Left</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">2nd Contact Attempt: </label>
+                <select disabled style="height: 30px; width:50%">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Msg Left">Msg Left</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">3rd Contact Attempt: </label>
+                <select disabled style="height: 30px; width:50%">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Msg Left">Msg Left</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">No Truck Roll Req: </label>
+                <input type="checkbox" id="a">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Job: </label>
+                <input type="text" id="a">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Arrival Date: </label>
+                <input type="date">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Between: </label>
+                <select style="height: 30px; width:10%">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select style="height: 30px; width:20%" class="ml-2">
+                    <option value="AM">AM</option> 
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">And: </label>
+                <select style="height: 30px; width:10%">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select style="height: 30px; width:20%" class="ml-2">
+                    <option value="AM">AM</option> 
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Customer SLA Refused: </label>
+                <input type="checkbox" id="a">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Customer SLA Comments: </label>
+                <textarea rows="4" cols="50"></textarea>
+            </div>
+        </div>
+        <div class="col col-md-7">
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">OOC: </label>
+                <input type="checkbox" id="a">
+                <select style="height: 30px; width:80%" class="ml-4">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Msg Left">Msg Left</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Outage: </label>
+                <input type="number" id="a" class="ml-3">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px; margin-bottom: 10px;">Create Work: </label><br><br>
+                <label style="font-weight:bold; font-size: 12px">Field Ops Comments: </label>
+                <span style="float:right; font-size:12px; font-weight: bold;">Remaining Character:256</span>
+                <textarea rows="6" cols="100"></textarea>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-weight:bold; font-size: 12px;">Customer Care Comments: </label>
+                <span style="float:right; font-size:12px; font-weight: bold;">Remaining Character:256</span>
+                <textarea disabled rows="6" cols="100"></textarea>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;" class="mt-2">
+        <button class="btn">Cancel/Back to Queue</button>
+        <button style="margin-left: 70%;" class="btn">Save Changes</button>
+        <button style="float:right; margin-left:10px ;" class="btn">Save and close Ticket</button>
+    </div>
+</mat-card>

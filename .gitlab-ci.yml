@@ -1,0 +1,46 @@
+stages:
+  - build
+  - test
+  - deploy
+
+default:
+  tags:
+    - Dind
+
+image: docker:19.03.12
+
+services:
+  - docker:19.03.12-dind
+
+build-docker-image:
+  stage: build
+  script:    
+    - docker build -t agent-training-academy-ui:build .
+
+test-code-with-coverage:
+  image: node:16.13.2
+  stage: test
+  script:
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
+    - sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' 
+    - apt-get update && apt-get install -y google-chrome-stable
+    - npm install --force
+    - npm run test:ci
+  artifacts:
+    paths:
+      - coverage/
+
+deploy-dev:
+  stage: deploy
+  script:
+    - apk add --update curl
+    - echo $NEXUS_PASS | docker login docker.aws.ccit.ops.charter.com --username $NEXUS_USER --password-stdin
+    - docker build -t docker.aws.ccit.ops.charter.com/ata/agent-training-academy-ui:$CI_COMMIT_SHORT_SHA .
+    - docker push docker.aws.ccit.ops.charter.com/ata/agent-training-academy-ui:$CI_COMMIT_SHORT_SHA
+    - docker tag docker.aws.ccit.ops.charter.com/ata/agent-training-academy-ui:$CI_COMMIT_SHORT_SHA docker.aws.ccit.ops.charter.com/ata/agent-training-academy-ui:dev
+    - docker push docker.aws.ccit.ops.charter.com/ata/agent-training-academy-ui:dev
+    # - curl -X PUT -k -H "Content-Type:application/json" -H "Accept:application/json" -H "Cache-Control:no-cache" -H "Pragma:no-cache" -H "Connect:keep-alive" -H "Accept-Encoding:gzip, deflate, br" -H "Authorization:Bearer $RANCHER_DEV_SPCTRM" -i "https://rancher.dev.spctrm.net/v3/project/c-5wm7p:p-mcnht/workloads/deployment:desktop-ata-common:agent-training-academy-ui?action=redeploy" --data-binary "$(echo "{\"id\":\"docker.aws.ccit.ops.charter.com/ata/agent-training-academy-ui:dev\",\"annotations\":{\"cattle.io/timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%SZ")\"}}")" --compressed
+  only:
+    - development
+    - release*
+    - main

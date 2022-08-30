@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" *ngFor="let item of data.popup | keyvalue">
+            <div *ngFor="let i of item.value | keyvalue">
+                <label>{{i.key}}</label>
+                <h6>{{i.value}}</h6>
+            </div>
+        </div>
+        <ng-container *ngIf="data.rows && data.rows.length">
+            <div class="row col-md-12" *ngFor="let row of data.rows; let rowIndex = index;">
+                <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
+                    <div class="mb-3">
+                        <label for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label">{{column.label}}</label>
+                        <textarea class="form-control" id="row-{{rowIndex}}-col-{{colIndex}}" placeholder=""></textarea>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h6 class="table-label mt-4 p-2">Line of Business</h6>
+            <div>
+                <p>0 entries returned - 0 entries matched</p>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="table-header">Line of Business</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data.checkbox">
+                            <td>
+                                <label><input type="checkbox" disabled="" />{{item.label}}</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h6 class="table-label mt-4 p-2">Outage Areas</h6>
+            <div>
+                <p>1 entries returned - 1 entries matched</p>
+            </div>
+            <div>
+                <table class="table table-bordered" *ngFor="let el of data.outage[0] | keyvalue: returnZero">
+                    <thead class="table-header">
+                        {{el.key}}
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{el.value}}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn-green event-btn pl-3 pr-3 me-2">Close</button>
+        <button class="btn-grey event-btn pl-3 pr-3 me-2">Refresh</button>
+    </div>
+</div>

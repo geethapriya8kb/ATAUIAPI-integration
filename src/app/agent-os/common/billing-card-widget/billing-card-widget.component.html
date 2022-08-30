@@ -1,0 +1,24 @@
+<div *ngIf="data.orientation === 'horizontal'">
+    <div class="row mx-0">
+        <div class="col col-md-6 col-sm-3 col-xl-6" *ngFor="let item of data.content | keyvalue:returnZero">            
+            <mat-card class="p-1 mt-1">
+                <mat-card-content class="px-1">
+                    <p class="date-text">
+                        <span>{{item.key}}</span>
+                        <span class="float-end">
+                            <i class="fa fa-list-ul icon-color"></i>
+                        </span>
+                    </p>
+                    <p class="small-text" *ngFor="let subitem of $any(item).value| keyvalue">
+                        <span [ngClass]="{'text-right': data.labelAlignment === 'right'}">{{subitem.key}}</span>
+                        <span class="float-end">{{subitem.value.value}}</span>
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
+  
+

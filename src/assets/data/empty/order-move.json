@@ -1,0 +1,77 @@
+{
+    "icons": [
+        {
+            "path": "",
+            "amount":"",
+            "channel":""
+        },
+        {
+            "path": "",
+            "amount":"",
+            "channel":""
+        },
+        {
+            "path": "",
+            "amount":"",
+            "channel":""
+        }
+    ],
+    "content": [
+        {
+            "Order Number": "",
+            "Order Status": "",
+            "Order Date": "",
+            "Order Type": "",
+            "Scheduled Date": "",
+            "Completion Date": "",
+            "Sales Agent ID": "",
+            "Sales Agent Name": ""
+        }
+    ],
+    "ordercol": [
+        "Order Number",
+        "Order Status",
+        "Order Date",
+        "Order Type",
+        "Scheduled Date",
+        "Completion Date",
+        "Sales Agent ID",
+        "Sales Agent Name"
+    ],
+    "expansioncontent":[
+        {
+            "Quantity":"",
+            "Service":"",
+            "Amount":""
+        },
+        {
+            "Quantity":"",
+            "Service":"",
+            "Amount":""
+        },
+        {
+            "Quantity":"",
+            "Service":"",
+            "Amount":""
+        }
+    ],
+    "expansioncol":[
+        "Quantity",
+        "Service",
+        "Amount"
+    ],
+    "ordercontent":[
+        {
+            "sym":"",
+            "Type":"",
+            "OfferName":"",
+            "Price":""
+        },
+        {
+            "sym":"",
+            "Type":"",
+            "OfferName":"",
+            "Price":""
+        }
+    ]
+}

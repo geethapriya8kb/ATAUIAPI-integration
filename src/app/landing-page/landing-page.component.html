@@ -1,0 +1,48 @@
+<div class="row jumbotron app-bg">
+  <div class="col"></div>
+  <div class="col mt-5">
+    <mat-card class="mt-5 px-3">
+      <div class="text-center">
+        <div>
+          <p>
+            <img src="/assets/Spectrum_Logo_RGB.png" width="70%">
+          </p>
+
+          <p class="titlePage">Agent Training Academy</p>
+
+          <p>
+            <em class="fa-solid fa-user-graduate fa-5x my-3"></em>
+          </p>
+        </div>
+      </div>
+
+      <mat-card-content >
+        <div class="px-4">
+          <div *ngIf="selectedApplication === null; then noAppSelected else AppSelected"></div>
+          <ng-template #noAppSelected>
+            <div class="my-2" *ngFor="let application of applications">
+              <button mat-raised-button  class="app-button"
+                (click)="selectApp(application)">{{application.name}}</button>
+            </div>
+          </ng-template>
+          <ng-template #AppSelected>
+            <div class="my-2" *ngFor="let app of selectedApplication.flows">
+              <button mat-raised-button  class="app-button" (click)="click(app)">{{app.name}}</button>
+            </div>
+          </ng-template>
+
+          <p class="text-start small">
+            Get the latest version of the <a class="app-link" href="#">ATA Instructor Script</a> on Chalk. If you do not have access,
+            please <a class="app-link" href="#">Contact Us</a>
+          </p>          
+          <p class="text-end small">
+            <a class="app-link" href="#">What's New?</a>
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col">
+   
+  </div>
+  </div>

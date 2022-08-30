@@ -1,0 +1,92 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "Billing": {
+      "Amount Due": {
+        "value": "",
+        "type": "text"
+      },
+      "Date": {
+        "value": "",
+        "type": "text"
+      },
+      "Last Paid": {
+        "value": "",
+        "type": "text"
+      },
+      "Monthly Rate": {
+        "value": "",
+        "type": "text"
+      }
+    },
+    "": {
+      "Last Statement Balance": {
+        "value": "",
+        "type": "text"
+      },
+      "Pending Payment": {
+        "value": "",
+        "type": "text"
+      },
+      "PPV Limit": {
+        "value": "",
+        "type": "text"
+      },
+      "PPV Usage": {
+        "value": "",
+        "type": "text"
+      },
+      "Autopay Date": {
+        "value": "",
+        "type": "text"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "View Statement PDFs",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "View Statements",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Take a Payment",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Manage Autopay",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Manage Wallet",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Manage Future Payment",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "View Adjustment History",
+      "dialog": "View Statement PDFs",
+      "width": "60"
+    },
+    {
+      "label": "PPV",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Credit Calculator",
+      "dialog": "",
+      "width": "60"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+hr {
+  border-width: 0;
+  margin: 5px 0 3px;
+  height: 1.5px;
+  background-color: #d1d1d1;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.menu-button {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  font-weight: bold;
+  background: transparent !important;
+  border: none;
+}
+
+.head {
+  background-color: cornflowerblue;
+}
+
+.order-font {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.order-margin {
+  margin: 10px;
+}
+
+.order-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.orderbody{
+  overflow-x:hidden; 
+  overflow-y:scroll; 
+  height:450px
+}
+
+.font-style {
+  font-size: 18px;
+}
+
+.phone-input {
+  padding: 5px;
+  width: 250px;
+}
+
+.lable-edit {
+  font-size: small;
+  font-weight: bold;
+}
+
+.m-l-3 {
+  margin-left: 3px;
+}
+.p-l-3 {
+  padding-left: 3px;
+}
+
+.p-t-10 {
+  padding-top: 10px;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.install-pm {
+  width: 300px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.blue-bg {
+  background-color: cornflowerblue;
+}
+
+.tab-border {
+  border: 1px white solid;
+  width: 98%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.order-table-th {
+  padding-left: 20px;
+  width: 10%;
+}
+
+.table-bg {
+  font-size: 16px;
+  color: green;
+}
+
+.button-bg {
+  border-radius: 13px;
+  background-color: #dfdfde;
+}
+
+.w-33 {
+  width: 33%;
+}
+
+.table-bgcolor{
+  background-color: #eceff1; 
+  color:black
+}

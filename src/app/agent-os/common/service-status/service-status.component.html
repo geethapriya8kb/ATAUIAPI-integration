@@ -1,0 +1,59 @@
+<mat-card>
+    <div>
+        <span class="section-title">{{data.heading}}</span>
+    </div>
+    <div class="row p-0 m-0">
+        <table class="mt-2 w-100">
+            <thead>
+                <tr>
+                    <th></th>
+                    <ng-container *ngFor="let item of types">
+                        <th *ngIf="item !== 'type'" class="text-center key-header">{{item}}</th>
+                    </ng-container>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data.channel">
+                    <td class="text-center key-header">{{item.type}}</td>
+                    <td class="text-center">
+                        <span *ngIf="item.Video === 'yes'">
+                            <mat-icon svgIcon="aos-check-mark" class="check-mark"></mat-icon>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span *ngIf="item.Internet === 'yes'">
+                            <mat-icon svgIcon="aos-check-mark" class="check-mark"></mat-icon>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span *ngIf="item.Voice === 'yes'">
+                            <mat-icon svgIcon="aos-check-mark" class="check-mark"></mat-icon>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-container *ngIf="data.modem">
+            <div class="col-xs-12 mt-3 mb-3" *ngFor="let modem of data.modem[0] | keyvalue">
+                <span class="key-value">{{modem.key}}: {{modem.value}}</span>
+                <a href="#" class="hoverThis">
+                    <mat-icon svgIcon="aos-copy-blue" class="dark-blue"></mat-icon>
+                </a>
+            </div>
+        </ng-container>
+        <table class="mt-2 w-100">
+            <tr>
+                <th *ngFor="let item of service" class="text-center key-header">{{item}}</th>
+            </tr>
+            <tr *ngFor="let item of data.serviceDetails">
+                <td class="text-center">
+                    <span *ngIf="item.Subscribed === 'yes'">
+                        <mat-icon svgIcon="aos-check-mark" class="check-mark"></mat-icon>
+                    </span>
+                </td>
+                <td class="text-center key-value">{{item.Speed}}</td>
+                <td class="text-center key-value">{{item.Mbps}}</td>
+            </tr>
+        </table>
+    </div>
+</mat-card>

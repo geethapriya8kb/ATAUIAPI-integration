@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp";
+@import "./assets/themes/agent-os-theme.scss";
+@import './assets/themes/ata-toolbar-theme.scss';
+@import "./assets/styles/colors.scss";
+@import "./assets/styles/fonts";
+@import './assets/styles/agent-os-custom.scss';
+
+html,
+body {
+  height: 100%;
+  overflow:auto;
+  margin: 0;
+}
+
+body {
+  font-family: "Spectrum Sans", -apple-system, system-ui, BlinkMacSystemFont,
+    "Sefoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.175rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.mat-menu-panel {
+  border: 1px solid #004b6c;
+}
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-primary {
+  color: $agent-os-primary-color  !important;
+}
+
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: #f0fff3 !important;
+}
+
+.mat-raised-button.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  color: #f0fff3 !important;
+  background-color: $agent-os-primary-color  !important;
+}
+
+.key-header {
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  text-align: right;
+  line-height: 1.625;
+}
+
+.key-value {
+  font-size: 12px !important;
+  text-align: left;
+  line-height: 1.625;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.input-style {
+  border: 1px solid #9ba9bd;
+  cursor: not-allowed;
+  background-color: #d8dde6;
+}
+
+table {
+  width: 100%;
+}
+
+.color-white {
+  color: white;
+}
+
+.tv-icon {
+  color: #0077bc !important;
+}
+
+.voice-icon {
+  color: #96004d;
+}
+
+.globe-icon {
+  color: #faa41a;
+}
+
+.border-blue {
+  border-top: 5px solid rgb(56, 181, 243);
+}
+
+.info-icon {
+  color: rgb(56, 181, 243);
+}
+
+.no-records {
+  margin-top: 10px;
+  padding: 5px;
+  color: rgb(66, 139, 202);
+  text-align: center;
+}
+
+.col-md-8-5 {
+  flex: 0 0 auto;
+  width: 68%;
+}
+
+.mat-raised-button.mat-success{
+  color: #f0fff3 !important;
+  background-color: $agent-os-success-color  !important;
+}
+
+.mat-raised-button.mat-secondary{
+  color: #f0fff3 !important;
+  background-color: $agent-os-secondary-color  !important;
+}

@@ -1,0 +1,250 @@
+<div class="row">
+    <div class="col col-md-6 mt-2">
+        <ng-container *ngFor="let item of data.customer">
+            <div class="blue-barTS">
+                <p class="f-12">Mobile Customer</p>
+            </div>
+            <mat-card>
+                <mat-card-content class="mt-2">
+                    <div class="row">
+                        <div class="row col-md-6 m-0 cust-address">
+                            <div class="col col-md-3 px-0">
+                                <div class="row m-0">
+                                    <div class="col px-0">
+                                        <button class="cust-loc-tab" mat-icon-button (click)="activeIndex = 0"
+                                            [ngClass]="{ 'active': activeIndex == 0 }">
+                                            <i class="fas fa-location-dot"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row m-0">
+                                    <div class="col px-0">
+                                        <button class="cust-loc-tab" mat-icon-button (click)="activeIndex = 1"
+                                            [ngClass]="{ 'active': activeIndex == 1 }">
+                                            <i class="fas fa-credit-card"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row m-0">
+                                    <div class="col px-0">
+                                        <button class="cust-loc-tab" mat-icon-button (click)="activeIndex = 2"
+                                            [ngClass]="{ 'active': activeIndex == 2 }">
+                                            <i class="fas fa-truck"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-md-8 px-0">
+                                <textarea title="address" class="form-control" value="{{item.address}}"
+                                    rows="20"> </textarea>
+                            </div>
+                        </div>
+                        <div class="col col-md-5">
+                            <div class="d-flex">
+                                <i class="{{item.emailicon}} m-2"></i>
+                                <input class="form-control email-text" value="{{item.email}}" disabled />
+                            </div>
+                            <div class="d-flex mt-2">
+                                <i class="{{item.phoneicon}} m-2"></i>
+                                <input disabled class="form-control contact-text" style="cursor: not-allowed;"
+                                    value="{{item.contact}}" />
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </ng-container>
+
+        <div class="mt-2">
+            <div class="blue-barTS">
+                <p class="f-12">Mobile Account</p>
+            </div>
+            <mat-card>
+                <div class="row">
+                    <div class="col col-md-5" *ngFor="let item of data.mobileAccount | keyvalue:returnZero">
+                        <ng-container *ngFor="let i of item.value | keyvalue:returnZero">
+                            <mat-card-content><b>{{i.key}}</b>:{{i.value}}</mat-card-content>
+                        </ng-container>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="col col-md-6 mt-2">
+        <div class="blue-barTS">
+            <p class="f-12">Mobile Billing</p>
+        </div>
+        <mat-card>
+            <div class="row">
+                <div class="col col-md-4" *ngFor="let item of data.mobileBilling | keyvalue:returnZero">
+                    <ng-container *ngFor="let i of item.value | keyvalue:returnZero">
+                        <mat-card-content><b>{{i.key}}</b>:{{i.value}}</mat-card-content>
+                    </ng-container>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col col-md-6 col-sm-6 col-xs-6">
+        <div class="blue-barTS">
+            <p class="f-12">Mobile Devices</p>
+        </div>
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+            <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+                <td mat-cell *matCellDef="let element">
+                    <div *ngIf="column == 'icon' && !expanded">
+                        <button mat-mini-fab color="primary" [class.example-expanded-row]="expandedElement === element"
+                            (click)="expandedElement = expandedElement === element ? null : element">
+                            <mat-icon>{{ expandedElement !==element ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                            </mat-icon>
+                        </button>
+                    </div>
+                    {{element[column]}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length +1">
+                    <div class="example-element-detail"
+                        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div>
+                            <div class="row-detail" *ngFor="let item of element.content | keyvalue">
+                                <p class="block-title">{{item.key}}</p>
+                                <p class="fw-bold fs-6">{{item.value}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+        <div *ngIf="dataSource.data.length === 0">
+            <p class="no-records">No Mobile Devices found</p>
+        </div>
+        <div class="blue-barTS mt-2">
+            <p class="f-12">Mobile Order</p>
+        </div>
+        <table mat-table [dataSource]="mobileDataSource" multiTemplateDataRows class="mat-elevation-z8">
+            <ng-container matColumnDef="{{column}}" *ngFor="let column of mobileColumnsToDisplay">
+                <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+                <td mat-cell *matCellDef="let element">
+                    <div *ngIf="column == 'Icon' && !expanded">
+                        <button mat-mini-fab color="primary" [class.example-expanded-row]="expandedElement === element"
+                            (click)="expandedElement = expandedElement === element ? null : element">
+                            <mat-icon>
+                                {{ expandedElement !==element ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+                            </mat-icon>
+                        </button>
+                    </div>
+                    {{element[column]}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length +1">
+                    <div class="example-element-detail"
+                        [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div>
+                            <div class="row-detail" *ngFor="let item of element.content | keyvalue">
+                                <p class="block-title">{{item.key}}</p>
+                                <p class="fw-bold fs-6">{{item.value}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="mobileColumnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: mobileColumnsToDisplay;" class="example-element-row"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+        <div *ngIf="mobileDataSource.data.length === 0">
+            <p class="no-records">No Order found</p>
+        </div>
+    </div>
+
+    <div class="col col-md-6">
+        <div>
+            <div class="blue-barTS">
+                <p class="f-12">Mobile Statement</p>
+            </div>
+            <mat-card>
+                <mat-card-content>
+                    <div class="row ml-5">
+                        <ng-container *ngFor="let item of data.mobileStatement | keyvalue:returnZero">
+                            <mat-card class="col col-md-3 m-2 fw-bold">
+                                <tr class="d-flex m-0 p-1 justify-content-between bg-grey">
+                                    <td>{{item.key}}</td>
+                                    <td><i class="fa fa-check rounded-circle bg-green p-1 color-white"></i></td>
+                                </tr>
+                                <tr class="small" *ngFor="let i of item.value | keyvalue:returnZero">
+                                    <td>{{i.key}}</td>
+                                    <td>{{i.value}}</td>
+                                </tr>                               
+                                <button  (click)="click($event,'view','30%','100%',item.key)" class="color-blue btn btn-link text-decoration-none"><h6 class="small fw-bold">View Details</h6></button><br />
+                                <p>
+                                    *Taxes, fees & other charges are included in monthly recurring charges.
+                                    <span>
+                                        <button  (click)="click($event,'learn','40%','50%')" class="color-blue btn btn-link text-decoration-none"><h6 class="small fw-light">Learn More</h6></button>
+                                    </span>
+                                </p>
+                            </mat-card>
+                        </ng-container>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="blue-barTS mt-2">
+        <p class="f-12 m-0 ps-2 ">Mobile History Activation</p>
+    </div>
+    <mat-card>
+        <div class="col-md-4 m-2">
+            <label>Details</label>
+            <input type="search" (keyup)="applyFilter($event)" #input class="form-control" placeholder="Search"
+                aria-label="Search" />
+        </div>
+        <table mat-table [dataSource]="historyDataSource" multiTemplateDataRows class="mat-elevation-z8">
+            <ng-container matColumnDef="{{column}}" *ngFor="let column of historyColumnsToDisplay">
+                <th mat-header-cell *matHeaderCellDef><b>{{column}}</b></th>
+                <td class="row-element" mat-cell *matCellDef="let element">
+                    {{element[column]}}
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="historyColumnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns:historyColumnsToDisplay;" class="example-element-row"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the search "{{input.value}}"</td>
+            </tr>
+        </table>
+        <div *ngIf="historyDataSource.data.length === 0">
+            <p class="no-records">No Mobile Activation History found</p>
+        </div>
+    </mat-card>
+</div>
+
+
+<!-- mobile page for eligible and ineligible customers -->
+<!-- <div class="text-center">
+    <mat-card class="m-2" style="background-color:white;">
+       
+        <i class="fa-solid fa-circle-check fs-1" style="color:green ;"></i>
+        <p class="fw-bold fs-6">This customer is eligible for mobile</p>
+        <ng-conntainer *ngFor="let item of data.eligibility | keyvalue:returnZero">
+            <p> {{item.key}}</p>
+            <mat-card class="mx-0" style="background-color:grey ;">
+                <div *ngFor="let i of item.value| keyvalue:returnZero">
+                    <p style="text-align:start ;"> <span><i class="fa-solid fa-check fs-6" style="color:green ;"></i></span>{{i.key}}</p>
+                </div>
+            </mat-card>
+        </ng-conntainer>
+    </mat-card>
+</div> -->

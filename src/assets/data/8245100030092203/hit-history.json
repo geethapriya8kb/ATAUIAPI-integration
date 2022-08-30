@@ -1,0 +1,36 @@
+{
+    "hithistory":[
+        {
+            "Date and Time":"08/27/2021 11:01:56 AM",
+            "Category":"Refresh Hit",
+            "Details":"CH16BJNG38HJ - SUCCESS",
+            "Performed By":"Gateway DeviceManagement:dreno"
+        },
+        {
+            "Date and Time":"08/26/2021 12:01:56 AM",
+            "Category":"HIT",
+            "Details":"DH16BJNG38HJ - SUCCESS",
+            "Performed By":"Gateway DeviceManagement:dreno"
+        }
+    ],
+    "provisionhistory":[
+        {
+            "Date and Time":"08/26/2021 12:10:26 PM",
+            "Category":"ADD",
+            "Details":"PERFORMING ACTIVATION FOR VIDEO SERVICE ON SN: E4PBRR34T105006",
+            "Performed By":"GATWY:dreno"
+        },
+        {
+            "Date and Time":"07/02/2021 2:10:26 PM",
+            "Category":"ADD",
+            "Details":"PERFORMING ACTIVATION FOR VIDEO SERVICE ON SN: E4PBRR34T105006",
+            "Performed By":"GATWY:dreno"
+        }
+    ],
+    "hitHistoryColumn":[
+        "Date and Time",
+        "Category",
+        "Details",
+        "Performed By"
+    ]
+}

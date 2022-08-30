@@ -1,0 +1,38 @@
+.grid-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.card-container {
+  flex: 1 2 150px;
+  border: 1px solid #d8dde6 !important;
+  padding: 8px !important;
+  background: #fff;
+  border-radius: 4px;
+}
+
+
+.icon-color {
+  color: #008cff;
+  font-size: 0.875rem;
+}
+
+.date-text {
+  color: #000;
+  font-size: 0.875rem;
+  font-family: "Spectrum Sans", -apple-system, system-ui, BlinkMacSystemFont,
+    "Sefoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin-bottom: 8px !important;
+}
+
+.small-text {
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0 !important;
+}
+.text-right{
+  text-align: right;
+}

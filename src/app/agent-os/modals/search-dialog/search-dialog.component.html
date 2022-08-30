@@ -1,0 +1,262 @@
+<div class="agent-os-main">
+    <div class="row mx-0 bg-white">
+        <div class="col col-md-6">
+            <span mat-dialog-title class="ml-2 font-weight-bold">Search</span>
+        </div>
+        <div class="col col-md-6 text-end">
+            <button (click)="close()" class="btn close-button">
+                <em class="fa fa-close"></em>
+            </button>
+        </div>
+    </div>
+    <div class="row m-0 bg-white p-0">
+        <div class="col col-md-12 p-0">
+            <span class="toggle-button-container mx-2">
+                <button class="toggle-button" [ngClass]="{'active': activeSection == 'account'}"
+                    (click)="activeSection = 'account'">Account</button>
+                <button class="toggle-button" [ngClass]="{'active': activeSection == 'location'}"
+                    (click)="activeSection = 'location'">Location</button>
+            </span>
+        </div>
+    </div>
+    <div *ngIf="activeSection === 'account'">
+        <div class="row p-0 bg-white ">
+            <div class="col col-md-7 col-sm-7">
+                <div class="row w-100 account-location-selection">
+                    <div class="col col-md-3 pt-2 d-flex">
+                        <mat-icon color="primary" class="material-icons-outlined">info</mat-icon>
+                        <span class="mt-1 ps-1" >Search using:</span>
+                    </div>
+                    <div class="col col-md-5 vertical-align-center">
+
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label px-2" for="flexRadioDefault1">
+                            <span class="form-label"><strong>Video, Internet, Voice</strong></span><br />
+                            <span>Account Information</span>
+                        </label>
+                    </div>
+                    <div class="form-check vertical-align-center col col-md-4">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label px-2" for="flexRadioDefault2">
+                            <span class="form-label"><strong>Mobile</strong></span><br />
+                            <span>Account Information</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form [formGroup]="searchAccountForm" (ngSubmit)="findAccount()">
+            <div class="row my-2 mx-0 form-controls">
+                <div class="col col-md-6">
+                    <div class="bg-white p-3 h-100">
+                        <div class="row m-2">
+                            <div class="col form-label">Phone Number</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="phoneNumber" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Account Number</div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="accountNumber"
+                                    formControlName="accountNumber" />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Last Name</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="lastName" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">First Name</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="firstName" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">SSN/Tax ID</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="ssnTaxId" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Company Name</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="companyName" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <div class="bg-white p-3">
+                        <div class="row m-2">
+                            <div class="col form-label">Location ID</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="locationId" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Street Number</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="streetNumber" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Street Name</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="streetName" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Aparment Number</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="apartmentNumber" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">City</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="city" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">State</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="state" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Zip Code</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="zipCode" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row w-100 mx-0">
+                <div class="col col-md-12">
+                    <mat-card>
+                        <mat-card-content>
+                            <mat-card class="my-4 mx-2 border-card ">
+                                <mat-card-content>
+                                    <div>
+                                        <em class="fas fa-info-circle 3x text-primary"></em>
+                                        <span class="px-2">The following search fields are available for L-CHTR only.</span>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                            <div class="m-4" style="display: flex;">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label px-2" for="flexRadioDefault2">
+                                    <span class="form-label"><strong>CM</strong></span><br />
+                                </label>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label px-2" for="flexRadioDefault2">
+                                    <span class="form-label"><strong>MTA</strong></span><br />
+                                </label>
+                            </div>
+                            <div class="row m-4">
+                                <div class="col col-md-6">
+                                    <div class="row m-2">
+                                        <div class="col-md-4 form-label">Mac Address</div>
+                                        <div class="col col-md-8">
+                                            <input type="text" class="form-control input-style" id="macaddress" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-4 form-label">Serial Number</div>
+                                        <div class="col col-md-8">
+                                            <input type="text" class="form-control input-style" id="serialnumber"
+                                                disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-6">
+                                    <div class="row m-2">
+                                        <div class="col-md-4 form-label">Order Number</div>
+                                        <div class="col col-md-8">
+                                            <input type="text" class="form-control input-style" id="ordernumber" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-md-4 form-label">Job Number</div>
+                                        <div class="col col-md-8">
+                                            <input type="text" class="form-control input-style" id="jobnumber" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="activeSection==='location'" class="row p-4 mx-0">
+        <div class="col col-md-6">
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="searchAccountForm" (ngSubmit)="findAccount()">
+                        <div class="row m-2">
+                            <div class="col form-label">Location ID</div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="locationId" formControlName="locationId" />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Address 1</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="address1" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Address 2</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="address2" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">City</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="city" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">State</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="state" disabled />
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="col form-label">Zip Code</div>
+                            <div class="col">
+                                <input type="text" class="form-control input-style" id="zipCode" disabled />
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col col-md-2">
+            <button mat-raised-button color="primary" class="btn-rounded" (click)="findAccount()">
+                <span class="px-1">Find Account</span>
+            </button>
+        </div>
+        <div class="col col-md-6">
+            <button mat-stroked-button color="primary" class="btn-rounded" (click)=" resetForm()">
+                <span class="px-1">Clear</span>
+            </button>
+        </div>
+        <div class="col col-md-1" style="margin-left:150px ;">
+            <button mat-stroked-button color="primary" class="btn-rounded">
+                <span class="px-1">Cancel</span>
+            </button>
+        </div>
+    </div>
+</div>

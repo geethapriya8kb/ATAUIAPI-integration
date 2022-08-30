@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@import '../palette/ata-toolbar-palette.scss';
+@include mat-core();
+
+.ata-toolbar {
+    $ata-toolbar-primary: mat-palette($ata-toolbar-primary-color, 900, 800, 900);
+    $ata-toolbar-accent: mat-palette($ata-toolbar-accent-color, 900, 800, 900);
+    $ata-toolbar-warn: mat-palette($ata-toolbar-warn-color, 800, 700, 900);
+
+    $ata-toolbar-theme: mat-dark-theme((color: (primary: $ata-toolbar-primary,
+                accent: $ata-toolbar-accent,
+                warn: $ata-toolbar-warn,
+            )));
+
+    @include angular-material-theme($ata-toolbar-theme);
+}

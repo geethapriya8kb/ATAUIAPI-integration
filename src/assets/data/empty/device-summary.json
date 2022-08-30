@@ -1,0 +1,68 @@
+{
+ 
+  "content": {
+    "Video": [ "No Video Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"],
+    "Internet": [ "No Internet Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"],
+    "Voice": [ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
+  },
+  
+  "icons": {
+    "Video":{
+      "path": "../../assets/images/blue-check.png"
+    },
+    "Internet": {
+      "path": "../../assets/images/orange-computer.png"
+    },
+    "Voice": {
+      "path": "../../assets/images/purple-receiver.png"
+    }
+  },
+  "eventHistoryTable": [
+    {
+    "LOB":"../../assets/images/tv-blue.png",
+    "Type":"",
+    "Service Status":"",
+    "Device Status":"",
+    "Signal/Details":"",
+    "Model":"",
+    "MAC":"",
+    "Serial No":"",
+    "Description":"",
+    "Actions":""
+    },
+    {"LOB":"../../assets/images/computer-gold.png",
+      "Type":"",
+      "Service Status":"",
+      "Device Status":"",
+      "Signal/Details":"",
+      "Model":"",
+      "MAC":"",
+      "Serial No":"",
+      "Description":"",
+      "Actions":""
+      },
+      {"LOB":"../../assets/images/phone-purple.png",
+        "Type":"",
+        "Service Status":"",
+        "Device Status":"",
+        "Signal/Details":"",
+        "Model":"",
+        "MAC":"",
+        "Serial No":"",
+        "Description":"",
+        "Actions":""
+        }
+  ],
+  "eventHistoryColumns": [
+    "LOB",
+    "Type",
+    "Service Status",
+    "Device Status",
+    "Signal/Details",
+    "Model",
+    "MAC",
+    "Serial No",
+    "Description",
+    "Actions"
+  ]
+}

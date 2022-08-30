@@ -1,0 +1,27 @@
+.app-title {
+  text-decoration: none !important;
+  color: #0062b2 !important;
+}
+
+.ata-toolbar {
+  .app-title {
+    color: white !important;
+  }
+
+  .course-list-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
+.labelContainer {
+  min-width: 236px;
+  text-align: center;
+}
+
+.contact-button {
+  background-color: #17a2b8;
+  border: none;
+}

@@ -1,0 +1,93 @@
+{
+  "orientation": "horizontal",
+  "labelAlignment": "right",
+  "content": {
+    "Account": {
+      "Salutation": {
+        "value": "MR",
+        "type": "label"
+      },
+      "Customer Name": {
+        "value": "Sunil Radhakrishnan",
+        "type": "label"
+      },
+      "Solo Account ID": {
+        "value": "123476576",
+        "type": "label"
+      },
+      "National Account": {
+        "value": "NAT12654654",
+        "type": "label"
+      },
+      "Acct Type": {
+        "value": "RES",
+        "type": "label"
+      },
+      "Authorized Users": {
+        "value": "Sunil Radhakrishnan",
+        "type": "select",
+        "options": ["Sunil Radhakrishnan"]
+      },
+      "Seasonal Begin Date": {
+        "value": "12-23-2021",
+        "type": "label"
+      },
+      "Seasonal End Date": {
+        "value": "12-29-2021",
+        "type": "label"
+      }
+    },
+    "Acct: 8245100030092203": {
+      "Account Status": {
+        "value": "Active",
+        "type": "label"
+      },
+      "Disconnect Type": {
+        "value": "none",
+        "type": "label"
+      },
+      "Classification": {
+        "value": "G",
+        "type": "label"
+      },
+      "Bulk": {
+        "value": "N",
+        "type": "label"
+      },
+      "Connection Date": {
+        "value": "11-23-2016",
+        "type": "label"
+      },
+      "Auto Pay": {
+        "value": "N",
+        "type": "label"
+      },
+      "Online Customer Portal": {
+        "value": null,
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "Edit Customer",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "Edit Account Access",
+      "dialog": "EditAccountDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "Contact Preferences",
+      "dialog": "ContactPreferencesComponent",
+      "width": "60"
+    },
+    {
+      "label": "CIMT",
+      "dialog": "",
+      "width": "60"
+    }
+  ]
+}

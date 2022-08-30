@@ -1,0 +1,30 @@
+<div>
+  <ul class="list-group list-position" *ngIf="callTypeList.length">
+    <h6 class="key-header">Select a Call Type</h6>
+    <li class="list-group-item" *ngFor="let item of callTypeList"
+      [ngClass]="selectedOption == item.CallTypeName ? 'activate-class' : 'deactivate-class'"
+      (click)="onSelectCalltype(item);selectedOption = item.CallTypeName">{{item.CallTypeName}}
+    </li>
+  </ul>
+
+  <ul class="list-group list-position" *ngIf="issueList.length">
+    <h6 class="key-header">Select an Issue</h6>
+    <li class="list-group-item" *ngFor="let issue of issueList"
+      [ngClass]="selectedIssueType == issue.IssueName ? 'activate-class' : 'deactivate-class'"
+      (click)="onSelectIssue(issue);selectedIssueType = issue.IssueName">{{issue.IssueName}}</li>
+  </ul>
+
+  <ul class="list-group list-position" *ngIf="causesList.length">
+    <h6 class="key-header">Select a Cause</h6>
+    <li class="list-group-item" *ngFor="let cause of causesList"
+      [ngClass]="selectedCauseType== cause.CauseName ? 'activate-class' : 'deactivate-class'"
+      (click)="onSelectCause(cause); selectedCauseType=cause.CauseName">{{cause.CauseName}}</li>
+  </ul>
+
+  <ul class="list-group list-position" *ngIf="resolutionList.length">
+    <h6 class="key-header">Select a Resolution</h6>
+    <li class="list-group-item" *ngFor="let resolutionItem of resolutionList"
+      [ngClass]="selectedresolutionType== resolutionItem ? 'activate-class' : 'deactivate-class'"
+      (click)="onSelectResolution(resolutionItem);selectedresolutionType=resolutionItem">{{resolutionItem}}</li>
+  </ul>
+</div>

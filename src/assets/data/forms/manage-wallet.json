@@ -1,0 +1,49 @@
+{
+  "info": {
+    "Account #": "86574839375833",
+    "Customer Name": "Thomas Late-Smith"
+  },
+  "rows": [
+    {
+      "columns": [
+        {
+          "label": "Payment Method Nickname(Optional)",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Card Number",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false
+        },
+        {
+          "label": "Expiration Date",
+          "type": "text",
+          "class": "col col-md-3",
+          "required": false
+        },
+        {
+          "label": "CVV",
+          "type": "text",
+          "class": "col col-md-3",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "radio": [
+    {
+      "label": "Credit/Debit Card"
+    },
+    {
+      "label": "Electronic Fund Transfer (EFT)"
+    }
+  ]
+   
+}

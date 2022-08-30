@@ -1,0 +1,95 @@
+{
+    "content": [
+       
+    ],
+    "etdcol": [
+        "Ticket",
+        "SLA Call Time",
+        "Account",
+        "City",
+        "Node",
+        "Reason",
+        "Status",
+        "Owner",
+        "Cust Type"
+    ],
+    "historytab": [
+        
+    ],
+    "historycol": [
+        "Modified On",
+        "Modified By",
+        "Action",
+        "Contact Results",
+        "Comments"
+    ],
+    "etd": [
+        [
+            {
+                "info": {
+                    "Contact": "",
+                    "Phone 1": "",
+                    "Phone 2":"",
+                    "Node": "",
+                    "City/Status": "",
+                    "Region": "",
+                    "Mgmt": "",
+                    "SLA Call Time": ""
+                },
+                "header": {
+                    "Acct:": "002044872555 (C)"
+                }
+            }
+        ],
+        [
+            {
+                "info": {
+                    "Reason": "",
+                    "Job": "",
+                    "Arrival Window": "",
+                    "Owner": "",
+                    "Customer SLA refused": ""
+                },
+                "header": {
+                    "Customer Contact made": ""
+                }
+            },
+            {
+                "header": {
+                    "Customer Contact made": ""
+                }
+            },
+            {
+                "header": {
+                    "Field Ops Comments": ""
+                },
+                "info": {
+                    "OOC Reason": ""
+                }
+            }
+        ],
+        [
+            {
+                "header": {
+                    "Customer Contact made": ""
+                },
+                "info": {
+                    "Commercial": ""
+                }
+            },
+            {
+                "header": {
+                    "Field Ops Comments": ""
+                }
+            }
+        ]
+    ],
+    "myticketcol": [
+        "Modified On",
+        "Modified By",
+        "Action",
+        "Contact Results",
+        "Comments"
+    ],
+    "mytickettab": {}
+}

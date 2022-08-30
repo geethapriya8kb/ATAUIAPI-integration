@@ -1,0 +1,31 @@
+<p class="my-0" [ngClass]="{'ata-toolbar': isCourseList}">
+    <mat-toolbar [color]="isCourseList ? 'primary': ''" class="course-list-toolbar">
+        <div>
+            <a href="#" class="app-title d-flex">
+                <span>
+                    <em class="fa-solid fa-user-graduate fa-2x"></em>
+                </span>
+                <span class="ps-2 pe-3 small mt-1">AGENT TRAINING ACADEMY </span>
+            </a>
+        </div>
+
+        <button mat-stroked-button color="primary" *ngIf="!isCourseList" (click)=goback()>
+            <i class="fa-solid fa-circle-chevron-left"></i>
+            <span class="px-2 capitalize"> {{currentFlow}} Course List</span>
+        </button>
+
+        <div class="mx-3 labelContainer" *ngIf="!isCourseList">
+            <button mat-flat-button (click)="return" color="primary">{{labelValue}}</button>
+        </div>
+        <div class="col"></div>
+        <button *ngIf="!isCourseList" class="color-white contact-button rounded-3">            
+            <span class="fs-6">                
+                <a class="text-decoration-none color-white">
+                    <i class="fa-solid fa-comment-dots small p-1"></i>Contact Us</a>
+            </span>
+        </button>
+
+    </mat-toolbar>
+</p>
+
+<router-outlet></router-outlet>

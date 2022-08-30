@@ -1,0 +1,68 @@
+.card-edit {
+    margin-bottom: 10px;
+    padding: 0px;
+    width: 100%;
+
+    .header-edit {
+        background-color: #d3dfe5;
+        padding: 0.25rem 0.5rem;
+        text-align: center;
+
+
+        .title-font {
+            font-size: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+
+    .content-style {
+        margin: 15px
+    }
+
+    .mat-card-content {
+        font-size: 12px;
+    }
+}
+
+::ng-deep .main .mat-tab-label {
+    margin: 10px;
+    color: black !important;
+}
+
+.header-bold {
+    font-weight: bold;
+    font-size: 0.875rem;
+    text-align: center !important;
+}
+
+// .form-label {
+//     font-size: 12px !important;
+//     font-weight: 600 !important;
+// }
+
+.form-control,
+.form-select {
+    font-size: 12px !important;
+}
+
+.mat-button-xs {
+    font-size: 11px !important;
+    min-width: 60px !important;
+    line-height: 24px !important;
+}
+
+.mat-button-sm {
+    font-size: 0.875rem !important;
+    min-width: 80px !important;
+    line-height: 26px !important;
+}
+
+.color-header {
+    background-color: #eceff1;
+    color: black
+}
+
+.w-10{
+    width: 10%;
+}

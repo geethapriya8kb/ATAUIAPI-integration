@@ -1,0 +1,91 @@
+{
+    "orientation": "vertical",
+    "labelAlignment": "right",
+    "content": {
+        "Billing": {
+            "Last Statement Monthly Rate": {
+                "value": "",
+                "type": "text"
+            },
+            "Taxes and Fees": {
+                "value": "",
+                "type": "text"
+            },
+            "Last Statement Total Rate": {
+                "value": "",
+                "type": "text"
+            }
+        },
+        "": {
+            "Amount Due": {
+                "value": "",
+                "type": "text"
+            },
+            "Current Balance": {
+                "value": "",
+                "type": "text"
+            },
+            "Pending Payment": {
+                "value": "",
+                "type": "text"
+            },
+            "Last Paid": {
+                "value": "",
+                "type": "text"
+            }
+        },
+        " ": {
+            "PPV Limit": {
+                "value": "",
+                "type": "text"
+            },
+            "PPV Usage": {
+                "value": "",
+                "type": "text"
+            }
+        },
+        "  ": {
+            "P2P": {
+                "value": "",
+                "type": "text"
+            },
+            "Future Payments": {
+                "value": "",
+                "type": "text"
+            }
+        },
+        "   ": {
+            "Late Fee": {
+                "value": "",
+                "type": "text"
+            },
+            "Delinquent Days": {
+                "value": "",
+                "type": "text"
+            },
+            "Delinquent Amount": {
+                "value": "",
+                "type": "text"
+            },
+            "Cycle Day": {
+                "value": "",
+                "type": "text"
+            },
+            "Soft Disco Date": {
+                "value": "",
+                "type": "text"
+            },
+            "Hard Disco Date": {
+                "value": "",
+                "type": "text"
+            }
+        }
+    },
+    "tasks": [
+        {
+            "label": "Edit Customer",
+            "dialog": "EditCustomerDialogComponent",
+            "width": "60"
+        }
+    ]
+}

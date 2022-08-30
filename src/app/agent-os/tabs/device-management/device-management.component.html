@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col col-md-8">
+        <mat-card>
+            <mat-card-title class="card-header-blue">Service Status Summary</mat-card-title>
+            <mat-card-content>
+                <div class="row mx-0">
+                    <div class="col px-1">
+                        <app-device-card type="Video" sectionName="device-summary"></app-device-card>
+                    </div>
+                    <div class="col px-1">
+                        <app-device-card type="Internet" sectionName="device-summary"></app-device-card>
+                    </div>
+                    <div class="col px-1">
+                        <app-device-card type="Voice" sectionName="device-summary"></app-device-card>
+                    </div>
+                    <label class="fw-bold mt-1 lh-base">Asterisk(*) Denotes Pending Service</label>
+                </div>
+                <div *ngIf="!styleVal" class="row mt-5">
+                    <label class="fw-bold smaller">Outage/Maint Board</label>                   
+                    <ng-container *ngFor="let item of data.content | keyvalue:returnZero">
+                        <div class="col col-md-4 col-xs-1">
+                            <mat-card class="bg-green text-center ">
+                                <i class="fa-solid fa-check fa-1x"></i>
+                                {{item.key}}
+                            </mat-card>
+                        </div>
+                    </ng-container>                
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col col-md-4 ">
+        <mat-card>
+            <mat-card-content>
+                <mat-card class="card-border">
+                    <i class="fa-solid fa-info-circle blue-icon fs-6"></i> Alerts Not Supported
+                </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col col-md-12 mt-3">
+        <mat-card>
+            <mat-card-title class="card-header-blue">Devices
+                <i class="fa-solid fa-sync fa-1x float-end"></i>
+            </mat-card-title>
+            <mat-card-content>
+                <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                        <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+                        <td mat-cell *matCellDef="let element"><span *ngIf="column==='LOB'">
+                                <button (click)="element.visible=!element.visible" class="bg-white border-0">
+                                    <span >
+                                        <em class="fas" [ngClass]="{ 'fa-caret-up': element.visible, 'fa-caret-down': !element.visible }"></em>
+                                    </span>
+                                </button>
+                                <img class="width-25 mb-1" src="{{element[column]}}"></span>
+                            <span *ngIf="column!='LOB'"><span *ngIf="element.visible===true">{{element[column]}}</span></span>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay">
+                    </tr>
+                    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
+                    </tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+

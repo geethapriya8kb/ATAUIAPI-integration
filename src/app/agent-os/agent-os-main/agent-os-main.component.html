@@ -1,0 +1,36 @@
+<div class="agent-os-main">
+    <mat-toolbar color="primary">
+        <div class="row">
+            <div class="col col-md-1">              
+                    <mat-icon class="logo"  svgIcon="spectrum-logo"></mat-icon>               
+            </div>
+            <div class="col col-md-11">
+                <mat-tab-group class="app-tabs" (focusChange)="handleFocusChange($event)">
+                    <ng-container *ngFor="let menu of menuItems; let i = index">
+                        <mat-tab label="{{ menu.label }}" [ngClass]="{'mat-tab-label-active': i === selectedIdx}">
+                        </mat-tab>
+                    </ng-container>
+                </mat-tab-group>
+            </div>
+        </div>
+    </mat-toolbar>
+
+    <div class="wrapper">
+
+        <!-- Page Content -->
+        <div id="content" class="content" [ngClass]="{ 'col-md-12': !showsidebar, 'col-md-8': showsidebar }">
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+            <button class="btn btn-sm btn-primary show-hide-side-bar-icon" (click)="toggleSidebar()">
+                <span>
+                    <em class="fas" [ngClass]="{ 'fa-caret-right': showsidebar, 'fa-caret-left': !showsidebar }"></em>
+                </span>
+            </button>
+        </div>
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar" [ngClass]="{ 'active': showsidebar }" *ngIf="showsidebar">
+            <app-side-bar></app-side-bar>
+        </nav>
+    </div>
+</div>

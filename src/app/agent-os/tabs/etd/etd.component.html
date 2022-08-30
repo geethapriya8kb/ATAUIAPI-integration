@@ -1,0 +1,206 @@
+<mat-card>
+    <mat-tab-group mat-align-tabs="start" class="main">
+        <mat-tab label="All Tickets">
+            <mat-card>
+                <form [formGroup]="etdvalue" (ngSubmit)="etddata()">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row mx-0 ">
+                            <div class="col-md-1 col-sm-1 p-1 w-10">
+                                <label for="startdate" class="fw-bold small mb-2">Start:</label>
+                                <input type="date" class="form-control form-control-sm " id="startdate"
+                                    formControlName="startdate">
+                            </div>
+                            <div class="col-md-1 col-sm-1 p-1 w-10">
+                                <label for="enddate" class="fw-bold small mb-2">End:</label>
+                                <input type="date" class="form-control form-control-sm" id="enddate"
+                                    formControlName="enddate">
+                            </div>
+                            <div class="col-md-1 col-sm-1 p-1 w-10">
+                                <label for="custtype" class="fw-bold small mb-2">Cust Type:</label>
+                                <select name="cust-type" id="custtype" class="form-select form-select-sm"
+                                    formControlName="custtype">
+                                    <option value="All" selected>ALL</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Residential">Residential</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 col-sm-3 p-1">
+                                <label for="reasons" class="fw-bold small mb-2">Reasons:</label>
+                                <select name="reasons" id="reasons" class="form-select form-select-sm"
+                                    formControlName="reasons">
+                                    <option value="All" selected>ALL</option>
+                                    <option value="Home security product/Offline">Home security product/Offline</option>
+                                    <option value="Medical issue">Medical issue</option>
+                                    <option value="Coax TC">Coax TC</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 col-sm-3 p-1">
+                                <label for="mgmtarea" class="fw-bold small mb-2">Mgmt Area:</label>
+                                <select name="mgmt-area" id="mgmtarea" class="form-select form-select-sm"
+                                    formControlName="mgmtarea">
+                                    <option value="All">ALL</option>
+                                    <option value="Brooklyn / Queens (TWC)">Brooklyn / Queens (TWC)</option>
+                                    <option value="Central Texas (TWC)">Central Texas (TWC)</option>
+                                    <option value="Hawaii (TWC)">Hawaii (TWC)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 col-sm-1 p-1 w-10">
+                                <label for="status" class="fw-bold small mb-2">Status:</label>
+                                <select name="status" id="status" class="form-select form-select-sm"
+                                    formControlName="status">
+                                    <option value="OPEN">OPEN</option>
+                                    <option value="CLOSED">CLOSED</option>
+                                    <option value="IN-PROGRESS">IN-PROGRESS</option>
+                                    <option value="OUTAGE<">OUTAGE</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 col-sm-1 p-1 text-end">
+                                <button type="submit" mat-raised-button color="success" class="p-0  mat-button-xs "
+                                    (click)="etddata()">Search
+                                </button><br>
+                                <button type="button" mat-raised-button color="success"
+                                    class="mt-1 p-0 mat-button-xs">Export
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row mt-4 ml-3">
+                            <div class="col-md-1 col-sm-1">
+                                <input class="ms-2" type="radio" id="account" value="account" name="sel">Account &nbsp;
+                            </div>
+                            <div class="col-md-1 col-sm-1">
+                                <input type="radio" id="ticket" value="ticket" name="sel">Ticket
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <input class="form-outline" type="search" id="form1" class="form-control"
+                                    aria-label="Search" formControlName="form1" >
+                            </div>
+                            <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
+                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4"
+                    matSort>
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
+                            {{column}}</th>
+                        <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay">
+                    </tr>
+                    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
+                    </tr>
+                </table>
+                <div *ngIf="dataSource.data.length === 0">
+                    <p class="no-records">No Ticket found</p>
+                </div>
+            </mat-card>
+            <mat-card class="card mt-4">
+                <div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4"><strong>Ticket:</strong>11177548 (Escalated 1)
+                            <br> <strong>Status:</strong>Open
+                        </div>
+                        <div class="col-md-4 col-sm-4 text-center">
+                            <strong>Video</strong>
+                            <strong class="ms-4">HSI</strong>
+                            <strong class="ms-4">Phone</strong>
+                            <br>
+                            <i class="fa fa-check-square  me-5" aria-hidden="true"></i>
+                            <i class="fa fa-check-square me-4" aria-hidden="true"></i>
+                            <i class="fa fa-check-square ms-4" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-4 col-sm-4 text-end"> <i class="fa fac">&#xf021;</i>&nbsp;
+                            <button type="button" mat-raised-button color="success" class="me-1 mat-button-sm">
+                                Assign to me
+                            </button>
+                            <button type="button" mat-raised-button color="success" class="mat-button-sm"
+                                routerLink="work-ticket">
+                                WorkTicket
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+
+            <mat-card class="mt-2">
+                <mat-tab-group mat-align-tabs="start">
+                    <mat-tab label="Details">
+                        <div class="row mx-0 my-1" *ngIf="data.etd && data.etd.length">
+                            <div class="col" *ngFor="let etdlist of data.etd">
+                                <mat-card class="card-edit" *ngFor="let etd of etdlist">
+                                    <ng-container *ngIf="etd.header">
+                                        <mat-card-header class="header-edit"
+                                            *ngFor="let p of etd.header | keyvalue:returnZero">
+                                            <mat-card-title class="title-font mb-0">
+                                                {{p.key}} {{p.value}}
+                                            </mat-card-title>
+                                        </mat-card-header>
+                                    </ng-container>
+                                    <ng-container *ngIf="etd.info">
+                                        <mat-card-content class="content-style">
+                                            <div *ngFor="let i of etd.info | keyvalue:returnZero" class="my-1">
+                                                <div><strong>
+                                                        {{i.key}}</strong>: {{i.value}}
+                                                </div>
+                                            </div>
+                                        </mat-card-content>
+                                    </ng-container>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="History">
+                        <div class="row mt-4 mb-4">
+                            <div class="col-md-4">
+                                <b>Submitted By:</b> P786543
+                            </div>
+                            <div class="col-md-4">
+                                <b>Submitted On:</b> 1/21/20 5:20 PM
+                            </div>
+                            <div class="col-md-4">
+                                <b>Submitted Location:</b> MARYLAND HEIGHTS, MO
+                            </div>
+                        </div>
+                        <table mat-table [dataSource]="hisdataSource" multiTemplateDataRows
+                            class="mb-3 mat-elevation-z8" matSort>
+                            <ng-container matColumnDef="{{column}}" *ngFor="let column of hiscolumnsToDisplay">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
+                                    {{column}}</th>
+                                <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="hiscolumnsToDisplay">
+                            </tr>
+                            <tr mat-row *matRowDef="let element; columns: hiscolumnsToDisplay;"
+                                class="example-element-row">
+                            </tr>
+                        </table>
+                        <div *ngIf="hisdataSource.data.length === 0">
+                            <p class="no-records">No History found</p>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="My Tickets">
+            <table mat-table [dataSource]="myticketdataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8"
+                matSort>
+                <ng-container matColumnDef="{{column}}" *ngFor="let column of ticketcolumnsToDisplay">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
+                        {{column}}</th>
+                    <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="ticketcolumnsToDisplay">
+                </tr>
+                <tr mat-row *matRowDef="let element; columns: ticketcolumnsToDisplay;" class="example-element-row">
+                </tr>
+            </table>
+            <div *ngIf="myticketdataSource.data.length === 0">
+                <p class="no-records">No Ticket found</p>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

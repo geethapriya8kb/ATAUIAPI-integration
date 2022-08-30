@@ -1,0 +1,29 @@
+<i class="fa fa-close float-end" (click)="close()"></i>
+<h4 class="fw-bold">Edit Account Acess</h4>
+<mat-card class="bg-light mt-2">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let item of data?.info | keyvalue:returnZero">
+            <p class="fw-bold">{{item.key}}</p>
+            <p>{{item.value}}</p>
+        </div>
+    </div>
+</mat-card>
+<h4 class="fw-bold mt-3">Security Information</h4>
+<hr>
+<div *ngFor="let item of data?.input" class="d-flex">
+    <form [formGroup]="form">
+        <label class="fw-bold me-2 ms-5">{{item.label}}</label>
+        <input formControlName="{{item.controlName}}" class="form-control w-25" type="{{item.type}}">
+    </form>
+</div>
+<div class="row mt-3">
+    <div class="col-md-1">
+        <button class="rounded-pill " mat-raised-button color="primary" (click)="formData()">Submit</button>
+    </div>
+    <div class="col-md-1">
+        <button class="rounded-pill " mat-raised-button color="primary" (click)="reset()">Reset</button>
+    </div>
+    <div class="col-md-1">
+        <button class="rounded-pill" mat-raised-button color="primary" (click)="close()">Close</button>
+    </div>
+</div>

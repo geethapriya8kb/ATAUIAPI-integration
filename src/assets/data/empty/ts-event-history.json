@@ -1,0 +1,14 @@
+{
+  "eventHistoryTable": [
+    
+  ],
+  "eventHistoryColumns": [
+    "Event Start Time",
+    "Event ID",
+    "Event Description",
+    "Status",
+    "Condition",
+    "Event Verified",
+    "Ticket Resolved Time"
+  ]
+}

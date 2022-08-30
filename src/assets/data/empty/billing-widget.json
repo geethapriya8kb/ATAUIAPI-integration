@@ -1,0 +1,20 @@
+{
+  "orientation": "horizontal",
+  "labelAlignment": "right",
+  "content": {
+    "": {
+      "Previous_Bal": {
+        "value": "",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  }
+}

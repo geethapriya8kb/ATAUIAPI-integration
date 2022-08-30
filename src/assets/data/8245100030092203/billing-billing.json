@@ -1,0 +1,90 @@
+{
+  "orientation": "vertical",
+  "content": {
+    "Billing": {
+      "Last Statement Monthly Rate": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Taxes and Fees": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Last Statement Total Rate": {
+        "value": "$0.00",
+        "type": "label"
+      }
+    },
+    "": {
+      "Amount Due": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Current Balance": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Pending Payment": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Last Paid": {
+        "value": "$0.00",
+        "type": "label"
+      }
+    },
+    " ": {
+      "PPV Limit": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "PPV Usage": {
+        "value": "$0.00",
+        "type": "label"
+      }
+    },
+    "  ": {
+      "P2P": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Future Payments": {
+        "value": "$0.00",
+        "type": "label"
+      }
+    },
+    "   ": {
+      "Late Fee": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Delinquent Days": {
+        "value": "0",
+        "type": "label"
+      },
+      "Delinquent Amount": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Cycle Day": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Soft Disco Date": {
+        "value": "N/A",
+        "type": "label"
+      },
+      "Hard Disco Date": {
+        "value": "N/A",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "Edit Customer",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+@import '../palette/agent-os-palette.scss';
+@include mat-core();
+
+.agent-os-main {
+    $agent-os-primary: mat-palette($agent-os-primary-color, 900, 800, 900);
+    $agent-os-accent: mat-palette($agent-os-accent-color, 900, 800, 900);
+    $agent-os-warn: mat-palette($agent-os-warn-color, 800, 700, 900);
+
+    $agent-os-theme: mat-light-theme((color: (primary: $agent-os-primary,
+                accent: $agent-os-accent,
+                warn: $agent-os-warn,
+            )));
+
+    @include angular-material-theme($agent-os-theme);
+
+    @media (prefers-color-scheme: light) {
+        @include angular-material-color($agent-os-theme);
+    }
+}

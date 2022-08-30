@@ -1,0 +1,45 @@
+{
+  "deviceConnectivityTable": [
+      {
+          "position": "1",
+          "Type": "Video",
+          "EquipStatus": "WIP - Transit",
+          "Model": "DCX3510M",
+          "LOBCapability": "tvicon",
+          "Serial": "C17TF7898",
+          "MAC": "Multiple",
+          "AddedDate": "2022-05-28"
+      },
+      {
+          "position": "2",
+          "Type": "eMTA/AWG",
+          "EquipStatus": "WIP - Transit",
+          "Model": "DCX3510M",
+          "LOBCapability": "globeicon",
+          "Serial": "DCA2856540CFD",
+          "MAC": "Multiple",
+          "AddedDate": "2022-01-28"
+      },
+      {
+          "position": "3",
+          "Type": "eMTA",
+          "EquipStatus": "Active",
+          "Model": "UBEE E31U2V1",
+          "LOBCapability": "voiceIcon",
+          "Serial": "DCA2856540CFD",
+          "MAC": "Multiple",
+          "AddedDate": "2022-05-3"
+      }
+  ],
+  "deviceConnectivityColumns": [
+      "Type",
+      "EquipStatus",
+      "Model",
+      "LOBCapability",
+      "Serial",
+      "MAC",
+      "AddedDate",
+      "icon"
+  ],
+  "heading": "Device Connectivity"
+}

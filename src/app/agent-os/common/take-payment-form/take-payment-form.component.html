@@ -1,0 +1,217 @@
+<!-- <i class="fa fa-close close-icon" (click)="close()"></i>
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+    <mat-step  [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Amount And Data</ng-template>
+            <mat-card class="a">
+                Agent payment fees $5.00
+            </mat-card>
+            <mat-card class="mt-2">
+                <h5>Account Information</h5>
+                <hr>
+                <div class="tp-flex">
+                    <div>
+                        <b>Account #</b>
+                        <p>842222222</p>
+                    </div>
+                    <div class="ml-3">
+                        <b>Customer Name</b>
+                        <p>John Evans</p>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card class="mt-2">
+                <h5>Payment Date</h5>
+                <hr>
+                <div>
+                    <input type="radio" id="pnow" name="paytype" value="paynow">&nbsp;
+                    <label for="paytype" style="font-size:13px;">Pay Now</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="fdate" name="paytype" value="fdate">&nbsp;
+                    <label for="fdate" style="font-size:13px;">Future Date</label><br>
+                </div>
+            </mat-card>
+            <mat-card class="mt-2">
+                <h5>Payment Amount</h5>
+                <hr>
+                <div></div>
+                <div>
+                    <div class="tp-flex">
+                        <input type="radio" id="pnow" name="paytype" value="paynow">&nbsp;
+                        <label for="paytype" style="font-size:13px;">$100</label><br>
+                    </div>
+                    <div>
+                        <p>Last Statement</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="tp-flex">
+                        <input type="radio" id="pnow" name="paytype" value="paynow">&nbsp;
+                        <label for="paytype" style="font-size:13px;">$175.33</label><br>
+                    </div>
+                    <div>
+                        <p>Amount Due</p>
+                    </div>
+                </div>
+                <div>
+                    <div class=tp-flex>
+                        <input type="radio">&nbsp;
+                        <label for="paytype" style="font-size:13px;">$0.00</label><br>
+                    </div>
+                    <div>
+                        <p>Deliquent Amount</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="tp-flex">
+                        <p>Other Amt</p>
+                    </div>
+                    <div>
+                        <input class="form-control w-25" type="number">&nbsp;
+                    </div>
+                </div>
+            </mat-card>
+            <div class="tp-flex-space mt-2">
+                <ng-container>
+                    <button class="btn-step1" matStepperNext mat-raised-button color="primary">Next</button>
+                </ng-container>
+                <ng-container>
+                    <button class="btn-step1" mat-button matStepperPrevious mat-raised-button
+                        color="primary">Back</button>
+                </ng-container>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Payment</ng-template>
+            <mat-card>
+                Agent payment fees $5.00
+            </mat-card>
+            <mat-card class="mt-2">
+                <h5>Account Information</h5>
+                <hr>
+                <div class="tp-flex-space">
+                    <div>
+                        <b>Account #</b>
+                        <p>842222222</p>
+                    </div>
+                    <div class="ml-5">
+                        <b>Customer Name</b>
+                        <p>John Evans</p>
+                    </div>
+                    <div class="ml-5">
+                        <b>Amount To Pay</b>
+                        <p>$340</p>
+                    </div>
+                    <div class="ml-5">
+                        <b>Payment Date</b>
+                        <p>05/18/2022</p>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card class="mt-2">
+                <h5>Payment</h5>
+                <hr>
+                <div>
+                    <div class="tp-flex">
+                        <input type="radio" id="credit" name="paytype" value="HTML">&nbsp;
+                        <label for="credit" style="font-size:13px;">Credit/Debit Card</label><br>
+                    </div>
+                    <div class="tp-flex">
+                        <input type="radio" id="eft" name="paytype" value="CSS">&nbsp;
+                        <label for="eft" style="font-size:13px;">Electronic Fund Transfer (EFT)</label><br>
+                    </div>
+                </div>
+                <div class="tp-flex-around" style="margin-left:-6% ;">
+                    <div>
+                        <label for="cnumber">Card Number</label><br>
+                        <input class="form-control " type="number" id="cnumber" name="cnumber" required>
+                    </div>
+                    <div >
+                        <label for="edate">Expiration Date</label><br>
+                        <input class="form-control " type="date" id="edate" name="edate" style="height: 35px; width:100%"
+                            required>
+                    </div>
+                    <div >
+                        <label for="cvv">Card Number</label><br>
+                        <input class="form-control " type="number" id="cvv" name="cvv" size="3">
+                    </div>
+                </div>
+                <div class="tp-flex-around mt-4" style="margin-left:-10% ;">
+                    <div>
+                        <label for="name">Name On Card</label><br>
+                        <input class="form-control " type="text" id="name" name="name">
+                    </div>
+                    <div>
+                        <label for="zip">ZIP/Postal Code</label><br>
+                        <input class="form-control " type="text" id="zip" name="zip">
+                    </div><br>
+                </div>
+            </mat-card>
+            <div class="tp-flex-space mt-2">
+                <ng-container>
+                    <button class="btn-step2" mat-button matStepperNext mat-raised-button color="primary"
+                        disabled>Next</button>
+                    <button class="btn-step2 back-btn" mat-button matStepperPrevious mat-raised-button
+                        color="primary">Back</button>
+                </ng-container>
+                <ng-container>
+                    <button class="btn-step2" mat-button (click)="stepper.reset()" mat-raised-button
+                        color="primary">Cancel</button>
+                </ng-container>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Confirmation</ng-template>
+        <mat-card>
+            <h5>Take a Payment</h5>
+            <hr>
+            <mat-card style="border-top:3px solid green ;" >
+                <h6><i class="fas fa-check-circle" style="color: green; "></i>&nbsp; &nbsp;
+                    Payment was successful</h6>
+            </mat-card>
+            <mat-card class="mt-2 " style="border-top:3px solid green ;">               
+                    <h6><i class="fas fa-check-circle" style="color: green;"></i>&nbsp; &nbsp;
+                        Agent Fee applied</h6>                
+            </mat-card>
+        </mat-card>
+        <mat-card class="mt-2">
+            <h5>Account Information</h5>
+            <hr>           
+                <div class="tp-flex-space">
+                    <div>
+                        <b>Account #</b>
+                        <p>842222222</p>
+                    </div>
+                    <div class="ml-5">
+                        <b>Customer Name</b>
+                        <p>John Evans</p>
+                    </div>
+                    <div class="ml-5">
+                        <b>Amount To Pay</b>
+                        <p>$340</p>
+                    </div>
+                    <div class="ml-5">
+                        <b>Payment Date</b>
+                        <p>05/18/2022</p>
+                    </div>
+                </div>            
+        </mat-card>
+        <mat-card class="mt-2">
+            <div class="tp-flex">
+                <div>
+                    <b>Account #</b>
+                    <p>0113360</p>
+                </div>
+                <div class="ml-3">
+                    <b>0113360</b>
+                    <p>*7392</p>
+                </div>
+            </div>
+        </mat-card>
+        <button mat-button class="w-100 mt-2" (click)="stepper.reset()" mat-raised-button color="primary">Close</button>
+    </mat-step>
+</mat-horizontal-stepper> -->

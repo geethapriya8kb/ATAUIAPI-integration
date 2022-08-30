@@ -1,0 +1,12 @@
+<i class="fa fa-close close-icon float-end" (click)="close()"></i>
+<h5 class="fw-bold">Included Taxes, Fees and Other Charges</h5>
+<h6 class="small fw-light" >Sales taxes and regulatory fees attributable to the service are included in the monthly recurring charge. Applicable taxes on equipment sales are billed seperately.</h6>
+<mat-card class="bg-grey" >
+    <table *ngFor="let item of data.learnMore | keyvalue:returnZero" >
+        <tr class="small">
+            <td class="float-start fw-light">{{item.key}}</td>
+            <td class="float-end fw-light">{{item.value.value}}</td>
+        </tr>     
+    </table>
+</mat-card>
+<button class="mt-2 float-end rounded-pill" (click)="close()" mat-raised-button color="primary">Close</button>

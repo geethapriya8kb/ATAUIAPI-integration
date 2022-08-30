@@ -1,0 +1,61 @@
+<ng-container *ngIf="data.orientation == 'vertical'">
+  <div class="row" *ngFor="let item of data.content | keyvalue: returnZero">
+    <div class="p-10">
+      <div class="row p-2" *ngIf="item.key">
+        <div class="col section-title px-0">
+          <span class="ps-4">{{item.key}}</span>
+        </div>
+      </div>
+
+      <div class="px-2">
+        <div class="row data-item py-1" *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
+          <div class="col col-md-5 pt-1 px-0" [ngClass]="{'text-right': data.labelAlignment === 'right'}">
+            <b>{{valItem.key}}:</b>
+          </div>
+          <div class="col col-md-7 ps-1" *ngIf="valItem && valItem.value" [ngSwitch]="valItem.value.type">
+            <label *ngSwitchCase="'label'" class="pt-1">{{valItem.value.value}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="data.orientation === 'horizontal'">
+  <div class="row w-100 mx-0">
+    <div class="col" *ngFor="let item of data.content | keyvalue: returnZero">
+      <div class="row p-2">
+        <div class="col section-title px-0">
+          <span class="ps-4" *ngIf="cardName !== 'location'">{{item.key}}</span>
+        </div>
+      </div>
+
+      <div class="px-2">
+        <div class="row data-item py-1" *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
+          <div class="col col-md-5 pt-1 px-0" [ngClass]="{'text-right': data.labelAlignment === 'right'}">
+            <b>{{valItem.key}}:</b>
+          </div>
+          <div class="col col-md-7 ps-1" *ngIf="valItem && valItem.value" [ngSwitch]="valItem.value.type">
+            <label *ngSwitchCase="'label'" class="pt-1">{{valItem.value.value}}</label>
+
+            <select *ngSwitchCase="'select'" [disabled]="valItem.value.disabled" class="form-select">
+              <option *ngFor="let option of valItem.value.options" [value]="option">{{option}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<button mat-button class="menu-button me-2 mt-3" [matMenuTriggerFor]="menu"
+  *ngIf="cardName !== 'location' && cardName !== 'etd-workTicket'">
+  Tasks
+  <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_drop_down</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="click($event, item.dialog, item.width)" *ngFor="let item of data.tasks">
+    {{ item.label }}
+  </button>
+</mat-menu>

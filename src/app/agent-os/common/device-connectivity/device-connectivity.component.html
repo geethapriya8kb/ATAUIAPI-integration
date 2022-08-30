@@ -1,0 +1,83 @@
+<mat-tab-group class="symptoms">
+    <mat-tab label="Provisioning">
+        <mat-table [dataSource]="dataSourceProvision" class="mat-elevation-z8" matSort (matSortChange)="onSortData($event)">
+            <ng-container *ngFor="let column of columns; let i = index" matColumnDef="{{ column.field }}">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="p-1">{{ column.field }} </mat-header-cell>
+                <mat-cell *matCellDef="let row" class="me-2 p-1">
+                    <div [ngSwitch]="row[column.field]">
+                        <span class="fa fa-question icon-color-grey AgentOsActiveIconFont" *ngSwitchCase="'no'"></span>
+                        <span class="fas fa-check icon-color-green AgentOsActiveIconFont" *ngSwitchCase="'yes'"></span>
+                        <span class="active-green" *ngSwitchCase="'Active'">{{ row[column.field] }}</span>
+                        <span class="wip-red" *ngSwitchCase="'WIP - Transit'">{{ row[column.field] }}</span>
+                    </div>
+                    <span *ngIf="row[column.field] != 'Active' && row[column.field] != 'WIP - Transit' && row[column.field] != 'no' && row[column.field] != 'yes'">
+                        {{ row[column.field] }} <mat-icon svgIcon="aos-copy-blue" *ngIf="column.field==='MAC'"></mat-icon>
+                    </span>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumnsProvision"> </mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumnsProvision;"> </mat-row>
+            <!-- Group header -->
+            <ng-container matColumnDef="groupHeader">
+                <mat-cell colspan="999" *matCellDef="let group" class="group">
+                    <mat-icon *ngIf="group.expanded">expand_less</mat-icon>
+                    <mat-icon *ngIf="!group.expanded">expand_more</mat-icon>
+                    <strong >{{group[groupByColumns[group.level-1]]}} ({{group.totalCounts}})</strong>
+                </mat-cell>
+            </ng-container>
+            <mat-row *matRowDef="let row; columns: ['groupHeader']; when: isGroup;" (click)="groupHeaderClick(row)"> </mat-row>
+        </mat-table>
+        <div *ngIf="dataSourceProvision.data.length === 0">
+            <p class="no-records">No Devices found</p>
+        </div>
+    </mat-tab>
+    <!-- Equipment Table -->
+    <mat-tab label="Equipment">
+        <div>
+            <button class="equipment-images">
+                <mat-icon svgIcon="aos-tv-gray"></mat-icon>
+            </button>
+            <button class="equipment-images">
+                <mat-icon svgIcon="aos-globe-gray"></mat-icon>
+            </button>
+            <button class="equipment-images">
+                <mat-icon svgIcon="aos-signal-strngth-gray"></mat-icon>
+            </button>
+            <button class="equipment-images">
+                <mat-icon svgIcon="aos-telephone-gray"></mat-icon>
+            </button>
+            <button class="add-remove">ADD / REMOVE / EXCHANGE</button>
+            <div>
+                <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                        <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div  *ngIf="column == 'icon' && !expanded">
+                                <button mat-mini-fab color="primary" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+                                    <mat-icon>{{ expandedElement !==element ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+                                </button>
+                            </div>
+                            <ng-container *ngIf="column != 'LOBCapability' ">{{element[column]}} </ng-container>
+                            <div [ngSwitch]="element[column]">
+                                <mat-icon svgIcon="aos-globe" class="globe-icon" *ngSwitchCase="'globeicon'"></mat-icon>
+                                <mat-icon svgIcon="aos-tv" class="tv-icon" *ngSwitchCase="'tvicon'"></mat-icon>
+                                <mat-icon svgIcon="aos-telephone" class="voice-icon" *ngSwitchCase="'voiceIcon'"> </mat-icon>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="expandedDetail">
+                        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length +1">
+                            <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"></div>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"></tr>
+                    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+                </table>
+                <div *ngIf="dataSource.data.length === 0">
+                    <p class="no-records">No Devices found</p>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

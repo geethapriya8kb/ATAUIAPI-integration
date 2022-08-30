@@ -1,0 +1,94 @@
+@import "../../../assets/styles/colors.scss";
+
+.agent-os {
+  .mat-toolbar {
+    background-color: #005a84 !important;
+  }
+
+  .mat-expansion-panel {
+    box-shadow: none !important;
+  }
+}
+
+.text-center {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.course-expansion-panel-header,
+.course-expansion-panel-header:hover {
+  background-color: $expansion-panel-color  !important;
+  padding: 0.6rem !important;
+  font-size: 1.1rem !important;
+
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-title:hover {
+    color: white !important;
+  }
+}
+
+.mat-card-content {
+  text-align: center;
+}
+
+.mat-card-title,
+.mat-card-header {
+  text-align: center;
+}
+
+.fa-icon-billing {
+  color: #009e8c;
+}
+
+.fa-icon-call-reason,
+.fa-icon-repair {
+  color: #96004d !important;
+}
+
+.fa-icon-ordering {
+  color: #fb8c00;
+}
+
+.full-background-gradient {
+  background-image: linear-gradient(#e0e0e0, #616161);
+  min-height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 100%;
+  display: block;
+  overflow-y: auto;
+}
+
+.mat-expansion-panel,
+.mat-expansion-panel-content {
+  background: transparent !important;
+}
+
+.card-text {
+  font-family: Roboto, sans-serif !important;
+  color: black;
+  overflow-wrap: break-word;
+  font-size: 0.875rem !important;
+  line-height: 16px !important;
+  font-weight: 700 !important;
+  padding: 1.6rem 0;
+  display: inline-block;
+  word-wrap: break-word !important;
+  text-align: center;
+}
+
+.icon-button {
+  max-height: 200px;
+  width: 258px;
+  height: 150px;
+}
+
+.mb-10 {
+  margin-bottom: 10%;
+}
+
+.mat-raised-button {
+  white-space: normal !important;
+}

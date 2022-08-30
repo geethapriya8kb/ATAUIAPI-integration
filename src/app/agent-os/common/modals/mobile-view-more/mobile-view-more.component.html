@@ -1,0 +1,46 @@
+<i class="fa fa-close close-icon float-end" (click)="close()"></i>
+<h4 class="fw-bold">Mobile Statement Details</h4>
+<div class="row bg-grey fw-bold ">
+<table>
+ <tr >
+  <td class="text-start ps-2">{{date}}</td>
+  <td class="text-end p-2"><i class="fa fa-check rounded-circle bg-green p-1 color-white"></i></td>
+ </tr>
+</table>
+</div>
+<ng-container *ngFor="let item of data?.viewMore | keyvalue: returnZero">
+ 
+  <div class="row bg-grey ps-2 px-2 fw-bold mt-2">
+    <table>
+      <tr>
+         <td class="text-start">{{item.key}}</td>
+        <td class="text-end">{{ item.value.total }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <ng-container *ngFor="let i of item.value | keyvalue: returnZero">
+    <div class="row">
+      <div *ngIf="i.key!=='total'" class="col-sm-9">{{ i.key }}</div>
+      <div class="col-sm-2 text-end">{{ i.value.price }}</div>
+      <button *ngIf="i.key!=='total'"
+        (click)="i.value.flag=!i.value.flag"
+        class="col-sm-1 border-0 bg-white"
+      >
+        <i *ngIf="i.value.flag ===true" class="fa-solid fa-angle-up"></i>
+        <i *ngIf="i.value.flag !==true" class="fa-solid fa-angle-down"></i>
+      </button>
+      <div>{{ i.value.contact }}</div>
+    </div>
+    <ng-container *ngIf="i.value.flag === true">
+      <span *ngFor="let data of i.value.Details | keyvalue: returnZero">
+        <table>
+          <tr>
+            <td class="float-start">{{ data.key }}</td>
+            <td class="float-end">{{ data.value.value }}</td>
+          </tr>
+        </table>
+      </span>
+    </ng-container>
+  </ng-container>
+</ng-container>

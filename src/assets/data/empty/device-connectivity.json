@@ -1,0 +1,14 @@
+{
+  "deviceConnectivityTable": [],
+  "deviceConnectivityColumns": [
+    "Type",
+    "EquipStatus",
+    "Model",
+    "LOBCapability",
+    "Serial",
+    "MAC",
+    "AddedDate",
+    "icon"
+  ],
+  "heading": "Device Connectivity"
+}

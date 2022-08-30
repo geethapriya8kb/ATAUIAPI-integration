@@ -1,0 +1,99 @@
+.card-title {
+  background-color: #005a84;
+  color: white;
+}
+.email-text {
+  background-color: #d8dde6;
+  border: 1px solid #9ba9bd;
+  cursor: not-allowed;
+}
+.contact-text {
+  background-color: #9ba9bd;
+  cursor: not-allowed;
+}
+.table-header {
+  background-color: #005a84;
+  text-align: left;
+  color: white;
+}
+tr.example-detail-row {
+  height: 0;
+}
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #efefef;
+}
+.example-element-row td {
+  border-bottom-width: 0;
+}
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+.row-detail {
+  display: inline-block;
+  margin: 0 10px;
+}
+.innerColWrap {
+  margin-bottom: 5px;
+}
+.block-title {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+.row-element {
+  width: 20%;
+  padding: 5px;
+}
+.bg-green {
+  background-color: rgb(0, 128, 0);
+}
+.color-blue {
+  color: #057bc6;
+}
+.blue-barTS {
+  max-height: 30px;
+  width: 100%;
+  background: rgb(0, 90, 132);
+  padding: 0px 0px 1px;
+}
+.f-12 {
+  font-size: 16px;
+  box-sizing: border-box;
+  line-height: 1.35;
+  color: white;
+  margin-left: 5px;
+  padding-top: 2px;
+}
+.bg-grey {
+  background-color: #b6b6b6;
+}
+.font-content {
+  font-size: 12px;
+}
+.cust-address {
+  .cust-loc-tab {
+    color: #63738a;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 0 1rem !important;
+    width: 100%;
+    height: 36px;
+
+    &.active {
+      background-color: lightgray;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      color: #0073d1;
+    }
+  }
+
+  textarea {
+    height: 110px !important;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

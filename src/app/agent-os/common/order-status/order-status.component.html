@@ -1,0 +1,69 @@
+<mat-card>
+    <div>
+        <span class="section-title">{{data.heading}}</span>
+    </div>
+    <div class="row p-0 m-0">
+        <div class="col-md-5">
+            <div>
+                <label class="mat-select-label">{{data.statusLabel}}</label>
+            </div>
+            <mat-form-field>
+                <mat-select [(ngModel)]="selectedStatus" (selectionChange)="statusChange($event)">
+                    <mat-option *ngFor="let item of status" [value]="item">{{ item }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-5">
+            <div>
+                <label class="mat-select-label">{{data.typeLabel}}</label>
+            </div>
+            <mat-form-field>
+                <mat-select [(ngModel)]="selectedType" (selectionChange)="typeChange($event)">
+                    <mat-option *ngFor="let item of type" [value]="item">{{ item }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+            <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+                <td mat-cell *matCellDef="let element">
+                    <div *ngIf="column == 'icon' && !expanded">
+                        <button mat-mini-fab color="primary" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+                            <mat-icon>{{ expandedElement !==element ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+                        </button>
+                    </div>
+                    {{element[column]}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length +1">
+                    <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div>
+                            <div class="row-detail" *ngFor="let item of element.expand | keyvalue">
+                                <p class="blockTitle">{{item.key}}</p>
+                                <p class="blockContent">{{item.value}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+        <div *ngIf="dataSource.data.length === 0">
+            <p class="no-records">No Information to display</p>
+        </div>
+    </div>
+    <button mat-button class="menu-button" [matMenuTriggerFor]="menu">
+        Tasks
+        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let item of task">
+            {{ item.label }}
+        </button>
+    </mat-menu>
+</mat-card>

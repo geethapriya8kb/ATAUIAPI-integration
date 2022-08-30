@@ -1,0 +1,19 @@
+<div class="sticky-note p-4">
+    <div class="row">
+        <div class="col text-end">
+            <mat-icon (click)="close()">close</mat-icon>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ul>
+                <li *ngFor="let accountNumber of accountNumbers">
+                    <span>8245100030092203</span> <button mat-icon-button class="ml-3"
+                        (click)="copyData(accountNumber)">
+                        <mat-icon>content_copy</mat-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

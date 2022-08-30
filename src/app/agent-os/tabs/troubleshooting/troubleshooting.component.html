@@ -1,0 +1,208 @@
+<div class="row w-100 mb-5">
+    <div class="m-2 p-2 ts-acount">
+        <span> <strong> Troubleshooting:2.27.2</strong></span>
+        <span class="m-5"> <strong>Account Number: {{eventAlertsData.accountNo}}</strong></span>
+    </div>
+    <div class="col col-md-3 mt-4">
+        <div class="blue-bar">
+            <p class="f-12">Symptoms</p>
+        </div>
+        <mat-card >          
+            <mat-card-content >
+                <mat-tab-group [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)" class="symptoms">
+                    <mat-tab  >
+                        <ng-template mat-tab-label> <mat-icon svgIcon="aos-tv" class="tv-icon"></mat-icon>Video </ng-template>
+                        <ng-container *ngFor="let item of symptomsData.content | keyvalue">
+                            <ng-container *ngIf="item.key=='Video'">
+                                <ng-container *ngFor="let subitem of item.value | keyvalue">
+                                    <mat-expansion-panel class="mt-1 bg-grey"  *ngFor="let nestitem of subitem.value | keyvalue">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                <h5 class="f-12"><strong>{{nestitem.key}}</strong></h5>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <div *ngFor="let valItem of nestitem.value | keyvalue" class="symptom-list">
+                                            <p *ngIf="valItem.key != 'subitems'" (click)="demo2BtnClick(demo2tab, valItem.key, item.key, $event)"
+                                            (mouseover)="demo2BtnClick(demo2tab, valItem.key, item.key,$event)">{{valItem.key}}</p>
+                                        </div>
+                                    </mat-expansion-panel>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label> <mat-icon svgIcon="aos-internet" class="globe-icon"></mat-icon>Internet </ng-template>
+                        <ng-container *ngFor="let item of symptomsData.content | keyvalue">
+                            <ng-container *ngIf="item.key=='Internet'">
+                                <ng-container *ngFor="let subitem of item.value | keyvalue">
+                                    <mat-expansion-panel class="mt-1 bg-grey"  *ngFor="let nestitem of subitem.value | keyvalue">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                <h5 class="f-12"><strong>{{nestitem.key}}</strong></h5>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <div *ngFor="let valItem of nestitem.value | keyvalue" class="symptom-list">
+                                            <p *ngIf="valItem.key != 'subitems'" (click)="demo2BtnClick(demo2tab, valItem.key, item.key, $event)"
+                                            (mouseover)="demo2BtnClick(demo2tab, valItem.key, item.key,$event)">{{valItem.key}}</p>
+                                        </div>
+                                    </mat-expansion-panel>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label> <mat-icon svgIcon="aos-telephone" class="voice-icon"></mat-icon>Voice </ng-template>
+                        <ng-container *ngFor="let item of symptomsData.content | keyvalue">
+                            <ng-container *ngIf="item.key=='Voice'">
+                                <ng-container *ngFor="let subitem of item.value | keyvalue">
+                                    <mat-expansion-panel class="mt-1 bg-grey"  *ngFor="let nestitem of subitem.value | keyvalue">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title >
+                                                <h5 class="f-12"><strong>{{nestitem.key}}</strong></h5>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <div *ngFor="let valItem of nestitem.value | keyvalue" class="symptom-list">
+                                            <p *ngIf="valItem.key != 'subitems'" (click)="demo2BtnClick(demo2tab, valItem.key, item.key, $event)"
+                                            (mouseover)="demo2BtnClick(demo2tab, valItem.key, item.key,$event)">{{valItem.key}}</p>
+                                        </div>
+                                    </mat-expansion-panel>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col col-md-9 mt-1">
+        <mat-tab-group #demo2tab class="troubleshooting symptoms">
+            <mat-tab label="Troubleshooting Home">
+                <mat-card>
+                    <mat-tab-group class="alerts">
+                        <mat-tab label="Active Alerts">
+                            <mat-card>
+                                <div *ngFor="let item of eventAlertsData.content  ">
+                                    <div class="row" [ngClass]="{'border-red': item.color==='red', 'border-blue': item.color==='blue', 'border-yellow': item.color==='yellow' }">
+                                        <div class="col-md-1">
+                                            <mat-icon [ngClass]="{'icon-red': item.color==='red', 'info-icon': item.color==='blue', 'globe-icon': item.color==='yellow' }"> {{item.icon}}</mat-icon>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="event-text-highlight f-12">{{item.Event}}</span>
+                                            <strong class="f-12">{{item.desc}}</strong>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <mat-icon>{{item.icon1}}</mat-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p *ngIf="eventAlertsData.accountNo==='No Account Selected'"><strong>No Alert found</strong></p>
+                            </mat-card>
+                        </mat-tab>
+                        <mat-tab label="Event History">
+                            <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8" matSort>
+                                <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column}}</th>
+                                    <td mat-cell *matCellDef="let element" (click)="openEventDetails()" class="event-list">
+                                        {{element[column]}}
+                                    </td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                                <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"></tr>
+                            </table>
+                            <div *ngIf="dataSource.data.length === 0">
+                                <p class="no-records">No Tickets found</p>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Hit History">
+                                <div class="col-md-3 m-2">
+                                    <label><strong>Details</strong></label>
+                                    <input type="search"  #input class="form-control search-input" placeholder="Search"
+                                        aria-label="Search"/>
+                                </div>
+                            <table mat-table #sBSort="matSort" [dataSource]="dataSourceHit" multiTemplateDataRows class="mat-elevation-z8" matSort>
+                                <ng-container matColumnDef="{{column}}" *ngFor="let column of HitcolumnsToDisplay">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="HitcolumnsToDisplay"></tr>
+                                <tr mat-row *matRowDef="let element; columns: HitcolumnsToDisplay;" class="example-element-row"></tr>
+                            </table>
+                            <div *ngIf="dataSourceHit.data.length === 0">
+                                <p class="no-records">No Tickets found</p>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Troubleshooting History">
+                            <table mat-table [dataSource]="dataSourceTs" multiTemplateDataRows class="mat-elevation-z8" matSort>
+                                <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplayTs">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column}}</th>
+                                    <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="columnsToDisplayTs"></tr>
+                                <tr mat-row *matRowDef="let element; columns: columnsToDisplayTs;" class="example-element-row"></tr>
+                            </table>
+                            <div *ngIf="dataSourceTs.data.length === 0">
+                                <p class="no-records">No Tickets found</p>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card>
+            </mat-tab>
+            <mat-tab label="{{TabName}} Troubleshooting" *ngIf="videohome">
+                <ng-container *ngFor="let item of issuesData | keyvalue:returnZero">
+                    <div *ngIf="item.key.includes(symptomName)">
+                        <div class="blue-bar">
+                            <p class="f-12">{{item.key}}</p>
+                        </div>
+                        <ng-container *ngIf="item.key.includes(symptomName)">
+                            <ng-container *ngFor="let subitem of item.value | keyvalue:returnZero">
+                                <mat-expansion-panel *ngFor="let nestitem of subitem.value | keyvalue:returnZero; let i = index">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h5 class="f-12">
+                                                <span class="m-1 index-box-green"><strong>{{i+1}}</strong></span>
+                                                <span class="m-1">
+                                                    <i class="fa-solid fa-tv icon"></i>
+                                                </span>
+                                                <span class="m-1"><strong>{{nestitem?.key.split(':')[0]}}</strong></span>
+                                                <span class="issue-id"><strong>{{nestitem?.key.split(':')[1]}}</strong></span>
+                                            </h5>
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <div *ngFor="let valItem of nestitem.value | keyvalue:returnZero">
+                                        <p *ngIf="valItem.key != 'radio' && valItem.key != 'button';else other_content " class="expand">{{valItem.key}}</p>
+                                        <ng-template #other_content>
+                                            <div [ngSwitch]="valItem.key">
+                                                <div *ngSwitchCase="'radio'">
+                                                    <div *ngFor="let option of valItem.value">
+                                                        <label for="{{option.name}}" class="expand">
+                                                            {{option.name}}
+                                                            <input id="{{option.name}}" [value]="option.name" type="radio" name="options" [(ngModel)]="radioSelected" />
+                                                        </label>
+                                                    </div>
+                                                    {{radioSelected}}
+                                                </div>
+                                                <div *ngSwitchCase="'button'">
+                                                    <div *ngFor="let option of valItem.value" class="mt-3 ms-5">
+                                                        <div  class="mt-1">
+                                                            <button mat-raised-button color="primary" class="ml-65" (click) ="callAction(option.action)">{{option.name}}</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                </mat-expansion-panel>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </ng-container>
+            </mat-tab>
+        </mat-tab-group>
+        <div class="blue-bar mt-5">
+            <p class="f-12">Devices</p>
+        </div>
+        <mat-card>
+            <app-device-connectivity> </app-device-connectivity>
+        </mat-card>
+    </div>
+</div>

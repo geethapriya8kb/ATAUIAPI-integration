@@ -1,0 +1,56 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "a": {
+      "Contact": {
+        "value": "",
+        "type": "label"
+      },
+      "Phone 1": {
+        "value": "",
+        "type": "label"
+      },
+      "Phone 2": {
+        "value": "",
+        "type": "label"
+      },
+      "Acct": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "b": {
+      "Node": {
+        "value": "",
+        "type": "label"
+      },
+      "City/State": {
+        "value": "",
+        "type": "label"
+      },
+      "Region": {
+        "value": "",
+        "type": "label"
+      },
+      "Mgmt Area": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "c": {
+      "Reason": {
+        "value": "",
+        "type": "label"
+      },
+      "Avail Same Day": {
+        "value": "",
+        "type": "label"
+      },
+      "SLA Call Time": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null
+}

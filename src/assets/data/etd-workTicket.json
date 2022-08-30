@@ -1,0 +1,22 @@
+{
+    "orientation": "horizontal",
+    "content": {
+      "a": {
+        "Contact": "PETER BARKER",
+        "Phone 1": "(314) 555-5555",
+        "Phone 2": "",
+        "Acct": "8012587497545488"
+      },
+      "b": {
+        "Node": "SP039A",
+        "City/State": "SAINT PETERS, MO",
+        "Region": "",
+        "Mgmt Area":""
+      },
+      "c": {
+        "Reason": "Must Do: No dial tone with no phone alternative/No dial tone all phones",
+        "Avail Same Day": "Yes",
+        "SLA Call Time": "7/11/22 9:30 AM"
+      }
+    }
+  }

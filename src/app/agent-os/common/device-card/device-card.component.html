@@ -1,0 +1,41 @@
+<ng-container>
+    <mat-card class="mt-2 p-0">
+        <table class="device-card-header" *ngFor="let item of data.icons | keyvalue">
+            <tr *ngIf=" item.key==type" [ngClass]="{ 'bg-red' : (!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))}">
+                <ng-container *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
+                    <td>
+                        <span *ngIf="(accountSearched || menuName==='Device Management')"><img class="w-30" src="{{ valItem.value }}"></span>
+                        <span class="pt-2" *ngIf="(!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))">
+                            <span  *ngIf=" item.key=='Video'">
+                                <mat-icon class="color-white" svgIcon="aos-tv-antenna"></mat-icon>
+                            </span>
+                            <span *ngIf=" item.key=='Internet'">
+                                <mat-icon class="color-white" svgIcon="aos-internet"></mat-icon>
+                            </span>
+                            <span *ngIf=" item.key=='Voice'">
+                                <mat-icon class="color-white" svgIcon="aos-telephone"></mat-icon>
+                            </span>
+                        </span>
+                        
+                    </td>
+                    <td><span [ngClass]="{ 'color-white' :(!accountSearched && (menuName==='Dashboard' || menuName==='Billing' )) }"><strong>{{item.key}}</strong></span></td>
+                    <td *ngIf="(!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))" class="pt-2 text-end color-white">
+                        <mat-icon svgIcon="aos-exclamation-hexagon"></mat-icon>
+                    </td>
+                </ng-container>
+            </tr>
+        </table>
+        <div class="device-card-data">
+            <table class="w-100">
+                <ng-container *ngFor="let item of data.content | keyvalue: returnZero">
+                    <ng-container *ngIf=" item.key==type">
+                        <tr *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
+                            <td *ngIf="accountSearched"> {{ valItem.key }}:</td>
+                            <td class="text-center" [ngClass]="{ 'device-text' : (!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))  }"> {{ valItem.value }}</td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </table>
+        </div>
+    </mat-card>
+</ng-container>

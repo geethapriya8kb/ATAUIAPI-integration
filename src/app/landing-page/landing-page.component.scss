@@ -1,0 +1,72 @@
+@import '../../assets/styles/colors.scss';
+
+.app-bg {
+    background: linear-gradient(180deg, rgba(22, 22, 22, .3) 0, rgba(22, 22, 22, .7) 75%, #161616), url("../../assets/bg-masthead.cb25ef39.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    min-height: 100%;
+    min-height: 100vh;
+    margin-bottom: 0;
+    font-size: 12px;
+    overflow: hidden !important;
+    vertical-align: middle;
+}
+
+::ng-deep {
+
+    .mat-card {
+        opacity: 0.9;
+        overflow-y: auto;
+        overflow-x: hidden !important;
+    }
+
+//     .mat-card-content {
+//         text-align: center;
+//     }
+
+//     .mat-card-title,
+//     .mat-card-header {
+//         text-align: center;
+//     }
+
+//     .mat-card-header-text {
+//         margin-left: 0 !important;
+//         margin-right: 0 !important;
+//     }
+}
+
+.titlePage {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #616161;
+    font-size: 20px;
+}
+
+.fa-user-graduate {
+    color: $gold-color;
+   
+}
+
+.app-button {
+    background-color: #005a84;
+    color: #fff;
+    box-shadow: 0 .1875rem .1875rem 0 rgba(0, 0, 0, .1) !important;
+    padding: 10px 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    border: 0;
+    width: 100%;
+    border-radius: 2px;
+    line-height: 2em;
+}
+.app-link{
+    color: #005a84;
+    font-weight: 600;
+}
+

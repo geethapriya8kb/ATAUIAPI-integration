@@ -1,0 +1,34 @@
+{
+  "heading": "",
+  "channel": [
+    {
+      "type": "",
+      "Video": "",
+      "Internet": "",
+      "Voice": ""
+    },
+
+    {
+      "type": "",
+      "Video": "",
+      "Internet": "",
+      "Voice": ""
+    }
+  ],
+  "serviceDetails": [
+    {
+      "Subscribed": "",
+      "Speed": "",
+      "200 Mbps": "",
+      "Mbps": ""
+    },
+
+    {
+      "Subscribed": "",
+      "Speed": "",
+      "200 Mbps": "",
+      "Mbps": ""
+    }
+  ],
+  "modem": [{ "Modem MAC": "" }]
+}

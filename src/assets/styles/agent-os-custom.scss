@@ -1,0 +1,114 @@
+.agent-os-main {
+    font-family: "Spectrum Sans", -apple-system, system-ui, BlinkMacSystemFont,
+        "Sefoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    .border-left-blue {
+        border-left: 5px solid rgb(56, 181, 243);
+    }
+
+    font-size: 12px !important;
+
+    input:disabled {
+        border: 1px solid #9ba9bd;
+        cursor: not-allowed;
+        background-color: #d8dde6;
+    }
+
+    .mat-toolbar.mat-primary {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 64;
+        z-index: 1000;
+
+        .mat-tab-label {
+            color: white;
+            min-width: 100px !important;
+            height: 64px !important;
+        }
+
+        .mat-tab-label-content {
+            font-weight: normal !important;
+            font-family: "Spectrum Sans", -apple-system, system-ui, BlinkMacSystemFont, "Sefoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .mat-tab-label-active>.mat-tab-label-content {
+            font-weight: 600 !important;
+        }
+
+        .mat-tab-group.mat-primary .mat-ink-bar,
+        .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+            background-color: white !important;
+        }
+    }
+
+    .mat-expansion-panel {
+        .mat-expansion-panel-header {
+            padding: 8px 16px !important;
+        }
+
+        .mat-expansion-panel-content {
+            padding: 0 !important;
+
+            .mat-expansion-panel-body {
+                // padding: 0 !important;
+            }
+        }
+    }
+
+    .main-container {
+        height: 100vh;
+        overflow-y: auto;
+        background-color: #f5f5f5 !important;
+        margin-left: 1rem !important;
+    }
+
+    .mat-drawer-side {
+        &.mat-drawer-opened {
+            max-width: 490px !important;
+            padding: 8px !important;
+        }
+
+        .mat-tab-label {
+            padding-left: 8px !important;
+            padding-right: 8px !important;
+            min-width: 70px !important;
+        }
+    }
+
+    .sidebar {
+        .mat-tab-label-active {
+            .mat-tab-label-content {
+                color: #0077bc !important;
+            }
+        }
+
+        .side-nav {
+            background-color: #f5f5f5 !important;
+
+            .white-div .mat-tab-label {
+                opacity: 1 !important;
+                padding: 12px !important;
+                min-width: 145px !important;
+            }
+
+            .relevent-knowledge {
+                .mat-tab-label {
+                    opacity: 1 !important;
+                    padding: 12px !important;
+                    min-width: 120px !important;
+                }
+
+                .mat-tab-body-content {
+                    padding: 1rem;
+                    min-height: 400px;
+                }
+            }
+        }
+
+        .mat-expansion-indicator::after {
+            height: 7px;
+            width: 7px;
+            color: #0073d1;
+        }
+    }
+}
