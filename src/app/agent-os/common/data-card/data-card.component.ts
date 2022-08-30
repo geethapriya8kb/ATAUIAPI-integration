@@ -1,6 +1,7 @@
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { GroupService } from '../../service-demo/group.service';
 import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
 import { SharedService } from '../../services/shared.service';
@@ -21,7 +22,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
 
   constructor(
     private searchService: SearchService,
-    private cardDataService: CardDataService,
+    private groupservice:GroupService,
     private matDialog: MatDialog
   ) { }
 
@@ -41,12 +42,11 @@ export class DataCardComponent implements OnInit, AfterViewInit {
 
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/${this.cardName}`;
+   // const path = `${accountNumber}/${this.cardName}`;
 
-    this.cardDataService.getCardDatafromService(path).subscribe({
+    this.groupservice.getdatafromAPI(accountNumber,this.cardName).subscribe({
       next: (resp) => {
-        this.data = resp;
-       
+        this.data= JSON.parse(resp.content);
       },
       error: (err) => console.log(err),
     });

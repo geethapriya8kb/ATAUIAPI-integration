@@ -58,7 +58,7 @@ export class OrderStatusComponent implements OnInit {
   }
 
   getCardData(accountNumber) {
-    if (!accountNumber || accountNumber === '') accountNumber = 0;
+    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     // const path = `${accountNumber}/order-status`;
     this.groupservice.getdatafromAPI(accountNumber,'order-status').subscribe(
       (resp) => {

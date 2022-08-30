@@ -43,7 +43,7 @@ export class ServiceStatusComponent implements OnInit {
   }
 
   getCardData(accountNumber) {
-    if (!accountNumber || accountNumber === '') accountNumber = 0;
+    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
 
     this.groupservice.getdatafromAPI(accountNumber,'service-status').subscribe(
       (resp) => {
