@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
+import { EtdResponse } from './etd.response';
+import { EtdService } from './etd.service';
 
 @Component({
   selector: 'app-etd',
@@ -10,17 +11,18 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./etd.component.scss']
 })
 export class EtdComponent implements OnInit {
-  data: any = {};
+
+  data: EtdResponse;
   datatest: any = {};
-  
-  dataSource = new MatTableDataSource<any>();
-  columnsToDisplay = [];
+
+  dataSource = new MatTableDataSource<Array<string>>();
+  columnsToDisplay:Array<string> = [];
   tableDatatest: any = [];
-  hisdataSource = new MatTableDataSource<any>();
-  hiscolumnsToDisplay = [];
+  hisdataSource = new MatTableDataSource<Array<string>>();
+  hiscolumnsToDisplay:Array<string> = [];
   histableDatatest: any = [];
-  myticketdataSource = new MatTableDataSource<any>();
-  ticketcolumnsToDisplay = [];
+  myticketdataSource = new MatTableDataSource<Array<string>>();
+  ticketcolumnsToDisplay:Array<string> = [];
   accountVal: unknown;
   etdvalue = new UntypedFormGroup({
     startdate: new UntypedFormControl(),
@@ -29,10 +31,11 @@ export class EtdComponent implements OnInit {
     reasons: new UntypedFormControl(),
     mgmtarea: new UntypedFormControl(),
     status: new UntypedFormControl(),
-    form1:new UntypedFormControl()
+    form1: new UntypedFormControl()
   })
 
-  constructor(private cardDataService: CardDataService, private searchService: SearchService) { }
+  constructor(private searchService: SearchService, private etdservice: EtdService
+  ) { }
 
   ngOnInit(): void {
     this.etddata();
@@ -53,15 +56,13 @@ export class EtdComponent implements OnInit {
 
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/etd-account`;
-
-    this.cardDataService.getCardDatafromService(path).subscribe({
+   let cardName='etd-account'
+   this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
-        this.data = resp;
-       
+        debugger;
+        this.data = JSON.parse(resp.content);
       },
-      error: (err) => console.error(err),
+      error: (err) => console.log(err),
       complete: () => {
         console.log(this.data);
         console.log('done loading data');
