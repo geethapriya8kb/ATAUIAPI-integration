@@ -72,22 +72,22 @@
     {
       "label": "Edit Customer",
       "dialog": "EditCustomerDialogComponent",
-      "width": "60"
+      "width": "60%"
     },
     {
       "label": "Edit Account Access",
       "dialog": "EditAccountDialogComponent",
-      "width": "60"
+      "width": "60%"
     },
     {
       "label": "Contact Preferences",
       "dialog": "ContactPreferencesComponent",
-      "width": "60"
+      "width": "60%"
     },
     {
       "label": "CIMT",
       "dialog": "",
-      "width": "60"
+      "width": "60%"
     }
   ]
 }

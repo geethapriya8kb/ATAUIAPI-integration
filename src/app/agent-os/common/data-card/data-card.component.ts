@@ -53,7 +53,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     });
   }
 
-  public click(event: MouseEvent | KeyboardEvent, dialogValue: any, width: string): void {
+  public click(event: MouseEvent | KeyboardEvent,dialogValue: any,width:any): void {
 
     const el: HTMLButtonElement = event.currentTarget as HTMLButtonElement;
     let dialogComponent: ComponentType<any> = this.getComponent(dialogValue);

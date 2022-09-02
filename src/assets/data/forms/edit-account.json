@@ -1,23 +1,30 @@
 {
     "info":{
-        "Account No":"89888765877098",
-        "First Name":"John",
-        "Last Name":"Smith",
-        "SSN/Tax Id":"****1638"
-   
+        "Account No":{
+          "value":"898887658",
+          "type":"label"
     },
-    "input":[{
-        "label":"*Security Code",
-        "type":"text",
-        "controlName":"securityCode"
+    "First Name":{
+        "value":"John",
+        "type":"label"
     },
-    {
-        "label":"*Security Code",
-        "type":"text",
-        "controlName":"srityCode"
-    }
-   
-],
+    "Last Name":{
+        "value":"Smith",
+        "type":"label"
+    },
+    "SSN/Tax Id":{
+        "value":"****1638",
+        "type":"label"
+    }      
+    },
+    "input":[
+        {
+            "fieldName": "SecurityCode",
+            "fieldType": "text",
+            "required": null,
+            "placeHolder":"7613"
+        }
+    ],
 "futureInfo":{
     "Account #":"8998787686",
     "Customer No":"John Smith"
