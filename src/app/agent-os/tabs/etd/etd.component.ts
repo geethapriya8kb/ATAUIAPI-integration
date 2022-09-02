@@ -13,7 +13,6 @@ import { EtdService } from './etd.service';
 export class EtdComponent implements OnInit {
 
   data: EtdResponse;
-  datatest: any = {};
 
   dataSource = new MatTableDataSource<Array<string>>();
   columnsToDisplay:Array<string> = [];
@@ -59,7 +58,6 @@ export class EtdComponent implements OnInit {
    let cardName='etd-account'
    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
-        debugger;
         this.data = JSON.parse(resp.content);
       },
       error: (err) => console.log(err),

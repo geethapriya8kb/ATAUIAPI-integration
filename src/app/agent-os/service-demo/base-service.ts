@@ -22,7 +22,7 @@ export class BaseService {
     url: Endpoints,
     pathParams?: PathParam[]
   ): string {
-    let endpoint: string = "https://localhost:44364/"
+    let endpoint: string = "https://localhost:7195/"
 
     let urlPath = url.toString();
     if (pathParams && pathParams.length) {
