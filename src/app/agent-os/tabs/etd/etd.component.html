@@ -129,7 +129,7 @@
             <mat-card class="mt-2">
                 <mat-tab-group mat-align-tabs="start">
                     <mat-tab label="Details">
-                        <div class="row mx-0 my-1" *ngIf="data.etd && data.etd.length">
+                        <div class="row mx-0 my-1" *ngIf="data?.etd && data?.etd.length">
                             <div class="col" *ngFor="let etdlist of data.etd">
                                 <mat-card class="card-edit" *ngFor="let etd of etdlist">
                                     <ng-container *ngIf="etd.header">
