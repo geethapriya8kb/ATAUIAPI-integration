@@ -69,6 +69,7 @@ import { StickyNoteComponent } from './overlays/sticky-note/sticky-note.componen
 import { MobileLearnMoreComponent } from './common/modals/mobile-learn-more/mobile-learn-more.component';
 import { MobileViewMoreComponent } from './common/modals/mobile-view-more/mobile-view-more.component';
 import { EventDetailsComponent } from './modals/event-details/event-details.component';
+import { EditAccountComponent } from './common/modals/edit-account/edit-account.component';
 
 
 
@@ -107,7 +108,8 @@ import { EventDetailsComponent } from './modals/event-details/event-details.comp
     StickyNoteComponent,
     MobileLearnMoreComponent,
     MobileViewMoreComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    EditAccountComponent
 
   ],
   imports: [

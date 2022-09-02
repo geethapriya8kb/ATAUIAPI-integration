@@ -11,9 +11,7 @@ describe('EditAccountComponent', () => {
       declarations: [ EditAccountComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(EditAccountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

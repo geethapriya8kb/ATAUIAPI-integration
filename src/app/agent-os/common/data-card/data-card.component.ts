@@ -6,6 +6,7 @@ import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
 import { SharedService } from '../../services/shared.service';
 import { DynamicformComponent } from '../dynamicform/dynamicform.component';
+import { EditAccountComponent } from '../modals/edit-account/edit-account.component';
 import { EditCustomerComponent } from '../modals/edit-customer/edit-customer.component';
 import { ManageWalletComponent } from '../modals/manage-wallet/manage-wallet.component';
 import { TakePaymentFormComponent } from '../take-payment-form/take-payment-form.component';
@@ -71,6 +72,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
       case 'ManageWalletComponent': return ManageWalletComponent;
       case 'TakePaymentFormComponent': return TakePaymentFormComponent;
       case 'EditCustomerDialogComponent': return EditCustomerComponent;
+      case 'EditAccountDialogComponent': return EditAccountComponent;
 
     }
     return null;
