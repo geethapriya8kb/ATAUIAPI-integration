@@ -18,13 +18,13 @@ export class EtdComponent implements OnInit {
   columnsToDisplay:Array<string> = [];
   tableDatatest: Array<TicketInformation>=[];
   myticketTabTableDatatest: Array<Mytickettab>=new Array<Mytickettab>();
-  hisdataSource = new MatTableDataSource<string>();
-  hiscolumnsToDisplay:string[] = [];
+  hisDataSource = new MatTableDataSource<string>();
+  hisColumnsToDisplay:string[] = [];
   histableDatatest: Array<string> = new Array<string>();
-  myticketdataSource = new MatTableDataSource<Mytickettab>();
-  ticketcolumnsToDisplay:Array<string> = [];
+  myTicketDataSource = new MatTableDataSource<Mytickettab>();
+  ticketColumnsToDisplay:Array<string> = [];
   accountVal: unknown;
-  etdvalue = new UntypedFormGroup({
+  etdValue = new UntypedFormGroup({
     startdate: new UntypedFormControl(),
     enddate: new UntypedFormControl(),
     custtype: new UntypedFormControl(),
@@ -38,7 +38,7 @@ export class EtdComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.etddata();
+    this.etdData();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
   }
@@ -71,11 +71,11 @@ export class EtdComponent implements OnInit {
         this.columnsToDisplay = this.data.etdcol;
 
         this.histableDatatest = this.data.historytab;
-        this.hisdataSource.data = this.histableDatatest;
-        this.hiscolumnsToDisplay = this.data.historycol;
+        this.hisDataSource.data = this.histableDatatest;
+        this.hisColumnsToDisplay = this.data.historycol;
         this.myticketTabTableDatatest.push(this.data.mytickettab);
-        this.myticketdataSource.data =  this.myticketTabTableDatatest ;
-        this.ticketcolumnsToDisplay = this.data.myticketcol;
+        this.myTicketDataSource.data =  this.myticketTabTableDatatest ;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
 
       }
     });
@@ -85,7 +85,7 @@ export class EtdComponent implements OnInit {
     return 0;
   }
 
-  etddata() {
-    console.log(this.etdvalue.value);
+  etdData() {
+    console.log(this.etdValue.value);
   }
 }
