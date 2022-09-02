@@ -12,17 +12,17 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 export class OrderingComponent implements OnInit {
   panelOpenState = false;
   data: any = {};
-  datatest: any = {};
+  dataTest: any = {};
   
   dataSource = new MatTableDataSource<any>();
   expansionDataSource = new MatTableDataSource<any>();
   columnsToDisplay = [];
-  expcolumnsToDisplay = [];
-  tableDatatest: any = [];
-  exptableDatatest: any = [];
+  expColumnsToDisplay = [];
+  tableDataTest: any = [];
+  expTableDataTest: any = [];
   isOrderMove = false;
   accountVal: unknown;
-  ordervalue = new UntypedFormGroup({
+  orderValue = new UntypedFormGroup({
     firstname: new UntypedFormControl(),
     lastname: new UntypedFormControl(),
     primaryPhone: new UntypedFormControl(),
@@ -69,15 +69,15 @@ export class OrderingComponent implements OnInit {
       complete: () => {
         console.log(this.data);
         console.log('done loading data');
-        this.tableDatatest = this.data.content;
-        console.log(this.tableDatatest);
-        this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.ordercol;
+        this.tableDataTest = this.data.content;
+        console.log(this.tableDataTest);
+        this.dataSource.data = this.tableDataTest;
+        this.columnsToDisplay = this.data.orderCol;
 
-        this.exptableDatatest = this.data.expansioncontent;
-        console.log(this.tableDatatest);
-        this.expansionDataSource.data = this.exptableDatatest;
-        this.expcolumnsToDisplay = this.data.expansioncol;
+        this.expTableDataTest = this.data.expansionContent;
+        console.log(this.tableDataTest);
+        this.expansionDataSource.data = this.expTableDataTest;
+        this.expColumnsToDisplay = this.data.expansionCol;
       },
     });
   }
@@ -86,6 +86,6 @@ export class OrderingComponent implements OnInit {
     return 0;
   }
   orderdata() {
-    console.log(this.ordervalue.value);
+    console.log(this.orderValue.value);
   }
 }
