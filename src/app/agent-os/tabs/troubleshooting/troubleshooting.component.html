@@ -120,12 +120,12 @@
                                         aria-label="Search"/>
                                 </div>
                             <table mat-table #sBSort="matSort" [dataSource]="dataSourceHit" multiTemplateDataRows class="mat-elevation-z8" matSort>
-                                <ng-container matColumnDef="{{column}}" *ngFor="let column of HitcolumnsToDisplay">
+                                <ng-container matColumnDef="{{column}}" *ngFor="let column of hitColumnsToDisplay">
                                     <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column}}</th>
                                     <td mat-cell *matCellDef="let element">{{element[column]}}</td>
                                 </ng-container>
-                                <tr mat-header-row *matHeaderRowDef="HitcolumnsToDisplay"></tr>
-                                <tr mat-row *matRowDef="let element; columns: HitcolumnsToDisplay;" class="example-element-row"></tr>
+                                <tr mat-header-row *matHeaderRowDef="hitColumnsToDisplay"></tr>
+                                <tr mat-row *matRowDef="let element; columns: hitColumnsToDisplay;" class="example-element-row"></tr>
                             </table>
                             <div *ngIf="dataSourceHit.data.length === 0">
                                 <p class="no-records">No Tickets found</p>
@@ -147,7 +147,7 @@
                     </mat-tab-group>
                 </mat-card>
             </mat-tab>
-            <mat-tab label="{{TabName}} Troubleshooting" *ngIf="videohome">
+            <mat-tab label="{{dynamicTabName}} Troubleshooting" *ngIf="videoHome">
                 <ng-container *ngFor="let item of issuesData | keyvalue:returnZero">
                     <div *ngIf="item.key.includes(symptomName)">
                         <div class="blue-bar">
