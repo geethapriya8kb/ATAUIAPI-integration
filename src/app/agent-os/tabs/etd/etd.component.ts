@@ -16,28 +16,28 @@ export class EtdComponent implements OnInit {
 
   dataSource = new MatTableDataSource<Array<string>>();
   columnsToDisplay:Array<string> = [];
-  tableDatatest: any = [];
-  hisdataSource = new MatTableDataSource<Array<string>>();
-  hiscolumnsToDisplay:Array<string> = [];
-  histableDatatest: any = [];
-  myticketdataSource = new MatTableDataSource<Array<string>>();
-  ticketcolumnsToDisplay:Array<string> = [];
+  tableDataTest: any = [];
+  hisDataSource = new MatTableDataSource<Array<string>>();
+  hisColumnsToDisplay:Array<string> = [];
+  hisTableDataTest: any = [];
+  myTicketDataSource = new MatTableDataSource<Array<string>>();
+  ticketColumnsToDisplay:Array<string> = [];
   accountVal: unknown;
-  etdvalue = new UntypedFormGroup({
-    startdate: new UntypedFormControl(),
-    enddate: new UntypedFormControl(),
-    custtype: new UntypedFormControl(),
+  etdValue = new UntypedFormGroup({
+    startDate: new UntypedFormControl(),
+    endDate: new UntypedFormControl(),
+    custType: new UntypedFormControl(),
     reasons: new UntypedFormControl(),
-    mgmtarea: new UntypedFormControl(),
+    managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
     form1: new UntypedFormControl()
   })
 
-  constructor(private searchService: SearchService, private etdservice: EtdService
+  constructor(private searchService: SearchService, private etdService: EtdService
   ) { }
 
   ngOnInit(): void {
-    this.etddata();
+    this.etdData();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
   }
@@ -56,7 +56,7 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
    let cardName='etd-account'
-   this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+   this.etdService.getdatafromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
         this.data = JSON.parse(resp.content);
       },
@@ -64,20 +64,20 @@ export class EtdComponent implements OnInit {
       complete: () => {
         console.log(this.data);
         console.log('done loading data');
-        this.tableDatatest = this.data.content;
-        console.log(this.tableDatatest);
-        this.dataSource.data = this.tableDatatest;
+        this.tableDataTest = this.data.content;
+        console.log(this.tableDataTest);
+        this.dataSource.data = this.tableDataTest;
         this.columnsToDisplay = this.data.etdcol;
 
-        this.histableDatatest = this.data.historytab;
-        console.log(this.tableDatatest);
-        this.hisdataSource.data = this.histableDatatest;
-        this.hiscolumnsToDisplay = this.data.historycol;
+        this.hisTableDataTest = this.data.historytab;
+        console.log(this.tableDataTest);
+        this.hisDataSource.data = this.hisTableDataTest;
+        this.hisColumnsToDisplay = this.data.historycol;
 
-        this.tableDatatest = this.data.mytickettab;
-        console.log(this.tableDatatest);
-        this.myticketdataSource.data = this.tableDatatest;
-        this.ticketcolumnsToDisplay = this.data.myticketcol;
+        this.tableDataTest = this.data.mytickettab;
+        console.log(this.tableDataTest);
+        this.myTicketDataSource.data = this.tableDataTest;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
 
       }
     });
@@ -87,7 +87,7 @@ export class EtdComponent implements OnInit {
     return 0;
   }
 
-  etddata() {
-    console.log(this.etdvalue.value);
+  etdData() {
+    console.log(this.etdValue.value);
   }
 }
