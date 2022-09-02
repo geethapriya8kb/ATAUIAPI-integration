@@ -17,13 +17,13 @@ import { EventDetailsComponent } from '../../modals/event-details/event-details.
 export class TroubleshootingComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
   columnsToDisplay = [];
-  tableDatatest: any = [];
+  data: any = {};
+
   eventAlertsData: any = {};
   @ViewChild(MatSort)
   sort!: MatSort;
   @ViewChild('sBSort') sBSort: MatSort;
-  data: any = {};
-
+ 
   dataSourceHit = new MatTableDataSource<any>();
   HitcolumnsToDisplay = [];
   hitdata: any = {};
@@ -112,8 +112,7 @@ export class TroubleshootingComponent implements OnInit {
       next: (resp) => (this.data = resp),
       error: (err) => console.error(err),
       complete: () => {
-        this.tableDatatest = this.data.eventHistoryTable;
-        this.dataSource.data = this.tableDatatest;
+        this.dataSource.data = this.data.eventHistoryTable;
         this.columnsToDisplay = this.data.eventHistoryColumns;
       },
     });
@@ -135,7 +134,6 @@ export class TroubleshootingComponent implements OnInit {
   getValuetoTShistoryTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const path = `${accountNumber}/troubleshooting-history`;
-    // const dataFileName = `assets/data/troubleshooting-history.json`;
     this.troubleshootingService.getCardDatafromService(path).subscribe({
       next: (resp) => (this.tsHistoryData = resp),
       error: (err) => console.error(err),
@@ -161,7 +159,6 @@ export class TroubleshootingComponent implements OnInit {
   getvideoIssuesData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const path = `${accountNumber}/ts-issues`;
-   // const dataFileName = `assets/data/ts-issues.json`;
     this.troubleshootingService.getCardDatafromService(path).subscribe({
       next: (resp: any) => {
         this.videoIssuesData = resp.video;
