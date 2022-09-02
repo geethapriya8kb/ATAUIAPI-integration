@@ -26,15 +26,8 @@ export class BillingCardWidgetComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.searchService.sharedValue$.subscribe((val) => {
-      this.accountVal = val;
-      if (this.accountVal) {
-        this.getBillingCardWidgetData(this.accountVal);
-      } else {
-        this.getBillingCardWidgetData('');
-      }
-    });
-    console.log(this.cardName);
+    const accountNumber = this.searchService.getAccountNumber();
+    this.getBillingCardWidgetData(accountNumber);
 
     this.sharedService.sharedEvent.subscribe((event: any) => {
       if (event && event.type === 'sidebar-toggle') {
@@ -43,13 +36,11 @@ export class BillingCardWidgetComponent implements OnInit {
     });
   }
   ngAfterViewInit() {
+   
     this.searchService.sharedValue$.subscribe((val) => {
-      this.accountVal = val;
-      if (this.accountVal) {
-        this.getBillingCardWidgetData(this.accountVal);
-      } else {
-        this.getBillingCardWidgetData('');
-      }
+      const accountNumber = val ? String(val) : '';
+
+      this.getBillingCardWidgetData(accountNumber);
     });
   }
 

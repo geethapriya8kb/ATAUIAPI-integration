@@ -8,6 +8,7 @@ import { SharedService } from '../../services/shared.service';
 import { DynamicformComponent } from '../dynamicform/dynamicform.component';
 import { EditAccountComponent } from '../modals/edit-account/edit-account.component';
 import { EditCustomerComponent } from '../modals/edit-customer/edit-customer.component';
+import { FuturePaymentComponent } from '../modals/future-payment/future-payment.component';
 import { ManageWalletComponent } from '../modals/manage-wallet/manage-wallet.component';
 import { TakePaymentFormComponent } from '../take-payment-form/take-payment-form.component';
 
@@ -73,7 +74,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
       case 'TakePaymentFormComponent': return TakePaymentFormComponent;
       case 'EditCustomerDialogComponent': return EditCustomerComponent;
       case 'EditAccountDialogComponent': return EditAccountComponent;
-
+      case 'ManageFuturePaymentComponent': return FuturePaymentComponent;
     }
     return null;
   }
