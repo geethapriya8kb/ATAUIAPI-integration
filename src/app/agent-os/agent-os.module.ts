@@ -70,6 +70,7 @@ import { MobileLearnMoreComponent } from './common/modals/mobile-learn-more/mobi
 import { MobileViewMoreComponent } from './common/modals/mobile-view-more/mobile-view-more.component';
 import { EventDetailsComponent } from './modals/event-details/event-details.component';
 import { EditAccountComponent } from './common/modals/edit-account/edit-account.component';
+import { FuturePaymentComponent } from './common/modals/future-payment/future-payment.component';
 
 
 
@@ -109,8 +110,8 @@ import { EditAccountComponent } from './common/modals/edit-account/edit-account.
     MobileLearnMoreComponent,
     MobileViewMoreComponent,
     EventDetailsComponent,
-    EditAccountComponent
-
+    EditAccountComponent,
+    FuturePaymentComponent
   ],
   imports: [
     CommonModule,
