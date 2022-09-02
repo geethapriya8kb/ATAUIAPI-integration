@@ -25,11 +25,11 @@ export class EtdComponent implements OnInit {
   ticketColumnsToDisplay:Array<string> = [];
   accountVal: unknown;
   etdValue = new UntypedFormGroup({
-    startdate: new UntypedFormControl(),
-    enddate: new UntypedFormControl(),
-    custtype: new UntypedFormControl(),
+    startDate: new UntypedFormControl(),
+    endDate: new UntypedFormControl(),
+    custType: new UntypedFormControl(),
     reasons: new UntypedFormControl(),
-    mgmtarea: new UntypedFormControl(),
+    managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
     form1: new UntypedFormControl()
   })
