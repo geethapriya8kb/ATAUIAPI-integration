@@ -1,6 +1,6 @@
 export class EtdResponse
 {
-      content:Array<string>; 
+      content:Array<TicketInformation>; 
       etdcol :Array<string>
       historytab : Array<string> 
       historycol : Array<string> 
@@ -8,7 +8,19 @@ export class EtdResponse
       myticketcol: Array<string>
       mytickettab:Mytickettab
 }
-export interface Mytickettab {
+export class Mytickettab {
+}
+
+export class  TicketInformation {
+    Ticket: string;
+    ['SLA Call Time']: string;
+    Account: string;
+    City: string;
+    Node: string;
+    Reason: string;
+    Status: string;
+    Owner: string;
+    ['Cust Type']: string;
 }
 
 export class Info {
