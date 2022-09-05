@@ -30,7 +30,7 @@ export class MobileComponent implements OnInit {
   mobileDataSource = new MatTableDataSource<string>();
   mobileColumnsToDisplay: string[] = [];
   mobileDatatest: Array<string> = new Array<string>();
-  historyDataSource = new MatTableDataSource<any>();
+  historyDataSource = new MatTableDataSource<string>();
   historyColumnsToDisplay: string[] = [];
   historyDataTest: Array<string> = new Array<string>();
   accountVal: unknown;
@@ -69,7 +69,7 @@ export class MobileComponent implements OnInit {
       (resp) => {
         this.data = JSON.parse(resp.content);
       },
-      (err: any) => console.error(err),
+      (err) => console.error(err),
       () => {
         this.dataTest = this.data.mobileDeviceTable;
         this.dataSource.data = this.dataTest;
@@ -101,7 +101,6 @@ export class MobileComponent implements OnInit {
     switch(msg) {
       case 'view': return MobileViewMoreComponent;
       case 'learn': return MobileLearnMoreComponent;  
-
     }
     return null;
   }
