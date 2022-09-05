@@ -9,48 +9,49 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CardDataService } from 'src/app/agent-os/services/card-data.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-export interface Owner {
-  id: string;
-  name: string;
-  dateOfBirth: Date;
-  address: string;
-}
+import { SearchService } from '../../services/search.service';
 @Component({
   selector: 'app-ppv',
   templateUrl: './ppv.component.html',
   styleUrls: ['./ppv.component.scss'],
 })
 export class PpvComponent implements OnInit, AfterViewInit {
-  public displayedColumns = [
-    'name',
-    'dateOfBirth',
-    'address',
-    'details',
-    'update',
-    'delete',
-  ];
-  public dataSource = new MatTableDataSource<Owner>();
-  @ViewChild(MatSort) sort: MatSort;
+  dataSource = new MatTableDataSource<any>();
+  columnsToDisplay = [];
+  data: any = {};
+  @ViewChild(MatSort)
+  sort!: MatSort;
   constructor(
     private cardDataService: CardDataService,
     public dialogRef: MatDialogRef<PpvComponent>,
-    @Inject(MAT_DIALOG_DATA) public popUpData: any
+    @Inject(MAT_DIALOG_DATA) public popUpData: any,
+    private searchService: SearchService
   ) {}
 
   ngOnInit() {
-    this.getAllOwners();
+    const accountNumber = this.searchService.getAccountNumber();
+    this.getValuetoTable(accountNumber);
   }
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-  }
-  public getAllOwners = () => {
-    this.cardDataService.getCardData('api/owner').subscribe((res) => {
-      this.dataSource.data = res as Owner[];
+    this.searchService.sharedValue$.subscribe((val: any) => {
+      const accountNumber = val ? String(val) : '';
+
+      this.getValuetoTable(accountNumber);
     });
-  };
-  public redirectToDetails = (id: string) => {};
-  public redirectToUpdate = (id: string) => {};
-  public redirectToDelete = (id: string) => {};
+  }
+  getValuetoTable(accountNumber) {
+    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    const path = `${accountNumber}/ts-event-history`;
+    this.cardDataService.getCardDatafromService(path).subscribe({
+      next: (resp) => (this.data = resp),
+      error: (err) => console.error(err),
+      complete: () => {
+        this.dataSource.data = this.data.eventHistoryTable;
+        this.columnsToDisplay = this.data.eventHistoryColumns;
+      },
+    });
+  }
+
   public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   };
