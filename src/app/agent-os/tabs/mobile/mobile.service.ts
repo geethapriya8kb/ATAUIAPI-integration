@@ -16,7 +16,7 @@ export class MobileService extends BaseService {
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromAPI(id:number,identifier:string): Observable<MobileRoot> {
+  getDataFromAPI(id:number,identifier:string): Observable<MobileRoot> {
     const endpoint = Endpoints.getmobile ;
     const val: QueryParam[] =
       [{ key: "id", value: id.toString()},

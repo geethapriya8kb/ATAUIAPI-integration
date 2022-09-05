@@ -64,36 +64,28 @@ export class MobileComponent implements OnInit {
   
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
     const cardName = `mobile-existingcust`;
-
-    this.mobileService.getdatafromAPI(accountNumber, cardName).subscribe(
+    this.mobileService.getDataFromAPI(accountNumber, cardName).subscribe(
       (resp) => {
         this.data = JSON.parse(resp.content);
-             
       },
       (err: any) => console.error(err),
       () => {
         this.dataTest = this.data.mobileDeviceTable;
-        console.log(this.dataTest);
         this.dataSource.data = this.dataTest;
         this.columnsToDisplay=this.data.orderStatusColumns;
 
         this.mobileDatatest = this.data.mobileOrderTable;
-        console.log(this.mobileDatatest);
         this.mobileDataSource.data = this.mobileDatatest;
         this.mobileColumnsToDisplay=this.data.mobileOrderColumns;
 
         this.historyDataTest = this.data.mobileHistory;
-        console.log(this.historyDataTest);
         this.historyDataSource.data = this.historyDataTest;
         this.historyColumnsToDisplay=this.data.mobileHistoryColumns;
       }
     );
   }
-  public click(event: MouseEvent | KeyboardEvent, dialogValue: any, width: string,height:string,date:string): void {
-console.log(date);
-
+  public click(event: MouseEvent | KeyboardEvent, dialogValue: string, width: string,height:string,date:string): void {
     const el: HTMLButtonElement = event.currentTarget as HTMLButtonElement;
     let dialogComponent: ComponentType<any>=this.getComponent(dialogValue);
     const dialogConfig = new MatDialogConfig();
@@ -105,7 +97,7 @@ console.log(date);
       console.log(`Dialog sent: ${value}`);
     });
   }
-  getComponent(msg:any):any{
+  getComponent(msg:string):any{
     switch(msg) {
       case 'view': return MobileViewMoreComponent;
       case 'learn': return MobileLearnMoreComponent;  
