@@ -2,7 +2,7 @@
 <h4 class="fw-bold">Manage Wallet</h4>
 <hr>
 <div class="row">
-    <div class="col-md-3" *ngFor="let i of data?.info  | keyvalue">
+    <div class="col-md-4" *ngFor="let i of data?.info  | keyvalue">
         <p>{{i.key}}</p>
         <p class="fw-bold text-dark">{{i.value}}</p>
     </div>
@@ -12,8 +12,8 @@
 
 <div class="row">
     <ng-container *ngFor="let i of data?.radio  | keyvalue">
-        <div class="col-md-4">
-            <div class="ms-3" *ngFor="let val of i.value | keyvalue">
+        <div class="col-md-5">
+            <div class="mb-3" *ngFor="let val of i.value | keyvalue">
                 <input class="mt-1" type="radio" [value]="val.value" [(ngModel)]="radioSelected" id="{{val.value}}">
                 <label class="ms-2">{{val.value}}</label>
             </div>
@@ -21,44 +21,22 @@
     </ng-container>
 </div>
 
-<ng-container *ngIf="data.rows && data.rows.length">
-    <div class="row col-md-12" *ngFor="let row of data.rows; let rowIndex = index;">
+<ng-container *ngIf="data?.rows && data?.rows.length">
+    <form [formGroup]="form">
+    <div class="row col-md-12" *ngFor="let row of data?.rows; let rowIndex = index;">
         <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
             <div class="mb-3">
                 <label for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label">{{column.label}}</label>
                 <input [type]="column.type" class="form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
-                    placeholder="">
+                    placeholder="" formControlName="{{column.controlName}}">
             </div>
         </div>
     </div>
+</form>
 </ng-container>
-<!-- 
-<div class="row mt-4 me-5">
-    <ng-container *ngFor="let i of data?.input  | keyvalue">
-        <div class="col-md-6">
-            <div *ngFor="let val of i.value | keyvalue">
-                <div *ngIf="val.key === 'label'">
-                    <label>{{val.value}}</label>
-                    <input class="form-control" type="text">
-                </div>
-
-                <div *ngIf="val.key === 'right'">
-                    <div class="row">
-                        <div class="col-md-6" *ngFor="let right of val.value | keyvalue">
-                            <ng-container *ngFor="let r of right.value | keyvalue">
-                                <label>{{r.value}}</label>
-                                <input class="form-control" type="text">
-                            </ng-container>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-container>
-</div>-->
 <div class="row text-center mt-3">
     <div class="col-md-6">
-        <button class="rounded-pill w-100" mat-raised-button color="primary">Save</button>
+        <button class="rounded-pill w-100" (click)="submit()" mat-raised-button color="primary">Save</button>
     </div>
     <div class="col-md-6">
         <button class="rounded-pill w-100" mat-raised-button color="primary">Cancel</button>

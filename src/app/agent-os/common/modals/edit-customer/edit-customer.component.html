@@ -8,7 +8,7 @@
         <h5 class="fw-bold float-end">Acct: 8429763145879641</h5>
     </div>
     <div class="row">
-        <ng-container *ngFor="let item of data.info | keyvalue:returnZero">
+        <ng-container *ngFor="let item of data?.info | keyvalue:returnZero">
             <div *ngIf="item.key!='* PPV Limit'" class="col-md-6 ms-5"><span
                     class="fw-bold">{{item.key}}:</span>{{item.value}}</div>
             <div class="col-md-5" *ngIf="item.key==='* PPV Limit'">
@@ -23,6 +23,7 @@
 </div>
 <h5 class="fw-bold">Contact Information</h5>
 <ng-container *ngIf="data.contactRows && data.contactRows.length">
+    <form [formGroup]="form">
     <div class="row col-md-12" *ngFor="let row of data.contactRows; let rowIndex = index;">
         <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
             <div class="row mt-1" >
@@ -31,14 +32,16 @@
             </div>
             <div class="col-md-8">
                 <input [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
-                    placeholder="{{column.placeholder}}">
+                    placeholder="{{column.placeholder}}" formControlName="{{column.controlName}}">
                 </div>
             </div>
         </div>
     </div>
+</form>
 </ng-container>
 <h5 class="fw-bold mt-4">Address Information</h5>
 <ng-container *ngIf="data.addressRows && data.addressRows.length">
+    <form [formGroup]="form">
     <div class="row col-md-12" *ngFor="let row of data.addressRows; let rowIndex = index;">
         <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
             <div class="row mt-1" >
@@ -47,15 +50,16 @@
             </div>
             <div class="col-md-8">
                 <input [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
-                    placeholder="{{column.placeholder}}">
+                    placeholder="{{column.placeholder}}" formControlName="{{column.controlName}}">
                 </div>
             </div>
         </div>
     </div>
+</form>
 </ng-container>
 <div class="row mt-3">
     <div class="col-md-1">
-        <button class="rounded-pill " mat-raised-button color="primary">Update</button>
+        <button class="rounded-pill " mat-raised-button color="primary" (click)="submit()">Update</button>
     </div>
     <div class="col-md-10">
         <button  class="rounded-pill " mat-raised-button color="primary">Reset</button>

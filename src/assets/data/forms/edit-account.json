@@ -22,12 +22,20 @@
             "fieldName": "SecurityCode",
             "fieldType": "text",
             "required": null,
+            "controlName":"code",
             "placeHolder":"7613"
         }
     ],
 "futureInfo":{
-    "Account #":"8998787686",
-    "Customer No":"John Smith"
+    "Account #":{
+        "value":"8998787686",
+        "type":"text"
+    },
+    "Customer No":{
+        "value":"John Smith",
+        "type":"text" 
+    }
+   
 },
 "futureInput":{
     "":"radio",

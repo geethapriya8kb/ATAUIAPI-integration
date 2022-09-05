@@ -13,9 +13,7 @@ import { CardDataService } from 'src/app/agent-os/services/card-data.service';
 export class EditAccountComponent implements OnInit {
   data: any;
   // formFields: FormField[] = [];
-  form = new FormGroup({
-    SecurityCode:new FormControl()
-  });
+  form = new FormGroup({});
   constructor(private cardDataService:CardDataService, public dialogRef: MatDialogRef<EditAccountComponent>,
     @Inject(MAT_DIALOG_DATA) public popUpData: any,
     private httpClient: HttpClient,) { }
@@ -40,8 +38,10 @@ export class EditAccountComponent implements OnInit {
     const dataFileName = `assets/data/forms/edit-account.json`;
     this.cardDataService.getCardData(dataFileName).subscribe(
       (resp) => {
-        this.data = resp;
-        console.log(this.data);        
+       for(const field of resp.input){
+        this.form.addControl(field.controlName,new FormControl())
+       }   
+       this.data=resp;
       },
       (err) => console.error(err),
       () => {

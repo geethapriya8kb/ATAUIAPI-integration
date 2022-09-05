@@ -3,14 +3,16 @@
     "Account #": "86574839375833",
     "Customer Name": "Thomas Late-Smith"
   },
-  "rows": [
+  "rows": [    
     {
       "columns": [
         {
           "label": "Payment Method Nickname(Optional)",
           "type": "text",
           "class": "col col-md-6",
-          "required": false
+          "required": false,
+          "controlName":"name"
+          
         }
       ]
     },
@@ -20,19 +22,40 @@
           "label": "Card Number",
           "type": "text",
           "class": "col col-md-6",
-          "required": false
+          "required": false,
+          "controlName":"cardNumber"
         },
         {
           "label": "Expiration Date",
-          "type": "text",
+          "type": "date",
           "class": "col col-md-3",
-          "required": false
+          "required": false,
+          "controlName":"expDate"
         },
         {
           "label": "CVV",
           "type": "text",
           "class": "col col-md-3",
-          "required": false
+          "required": false,
+          "controlName":"cvv"
+        }
+      ]
+    },
+    {
+      "columns":[
+        {
+          "label": "Name On Card",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false,
+          "controlName":"cardName"
+        },
+        {
+          "label":"ZIP/Postal Code",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false,
+          "controlName":"zip"
         }
       ]
     }
