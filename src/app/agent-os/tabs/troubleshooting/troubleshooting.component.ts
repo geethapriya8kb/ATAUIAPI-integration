@@ -25,8 +25,8 @@ export class TroubleshootingComponent implements OnInit {
   @ViewChild('sBSort') sBSort: MatSort;
  
   dataSourceHit = new MatTableDataSource<any>();
-  HitcolumnsToDisplay = [];
-  hitdata: any = {};
+  hitColumnsToDisplay = [];
+  hitData: any = {};
 
   dataSourceTs = new MatTableDataSource<any>();
   columnsToDisplayTs = [];
@@ -37,9 +37,9 @@ export class TroubleshootingComponent implements OnInit {
 
   videoIssuesData: any = {};
   internetIssuesData: any = {};
-  videohome: boolean = false;
+  videoHome: boolean = false;
   symptomName: any;
-  TabName: any;
+  dynamicTabName: any;
   issuesData: any = {};
 
   isMousehover: Number = 0;
@@ -122,11 +122,11 @@ export class TroubleshootingComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const path = `${accountNumber}/hit-history`;
     this.troubleshootingService.getCardDatafromService(path).subscribe({
-      next: (resp) => (this.hitdata = resp),
+      next: (resp) => (this.hitData = resp),
       error: (err) => console.error(err),
       complete: () => {
-        this.dataSourceHit.data = this.hitdata.hithistory;
-        this.HitcolumnsToDisplay = this.hitdata.hitHistoryColumn;
+        this.dataSourceHit.data = this.hitData.hithistory;
+        this.hitColumnsToDisplay = this.hitData.hitHistoryColumn;
       },
     });
   }
@@ -176,26 +176,26 @@ export class TroubleshootingComponent implements OnInit {
     console.log(e);
   }
 
-  public demo2BtnClick(tabGroup: MatTabGroup, symptomName, TabName, event) {
+  public demo2BtnClick(tabGroup: MatTabGroup, symptomName, dynamicTabName, event) {
     if (event.type === 'click' || this.isMousehover == 0) {
       console.log(event.type === 'mouseover');
-      console.log(TabName, symptomName);
-      if (TabName === 'Video') {
-        this.TabName = TabName;
+      console.log(dynamicTabName, symptomName);
+      if (dynamicTabName === 'Video') {
+        this.dynamicTabName = dynamicTabName;
         this.symptomName = symptomName;
         this.issuesData = this.videoIssuesData[0].content;
 
-        this.videohome = Object.keys(this.videoIssuesData[0].content).some(
+        this.videoHome = Object.keys(this.videoIssuesData[0].content).some(
           (key) => key.includes(symptomName)
         );
         this.goToNextTabIndex(tabGroup);
       }
-      if (TabName === 'Internet') {
-        this.TabName = TabName;
+      if (dynamicTabName === 'Internet') {
+        this.dynamicTabName = dynamicTabName;
         this.symptomName = symptomName;
         this.issuesData = this.internetIssuesData[0].content;
 
-        this.videohome = Object.keys(this.issuesData).some((key) =>
+        this.videoHome = Object.keys(this.issuesData).some((key) =>
           key.includes(symptomName)
         );
         this.goToNextTabIndex(tabGroup);

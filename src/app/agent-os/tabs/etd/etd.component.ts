@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { SearchService } from '../../services/search.service';
-import { EtdResponse } from './etd.response';
+import { EtdResponse, Mytickettab, TicketInformation } from './etd.response';
 import { EtdService } from './etd.service';
 
 @Component({
@@ -14,21 +14,22 @@ export class EtdComponent implements OnInit {
 
   data: EtdResponse;
 
-  dataSource = new MatTableDataSource<Array<string>>();
+  dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay:Array<string> = [];
-  tableDatatest: any = [];
-  hisdataSource = new MatTableDataSource<Array<string>>();
-  hiscolumnsToDisplay:Array<string> = [];
-  histableDatatest: any = [];
-  myticketdataSource = new MatTableDataSource<Array<string>>();
-  ticketcolumnsToDisplay:Array<string> = [];
+  tableDatatest: Array<TicketInformation>=[];
+  myticketTabTableDatatest: Array<Mytickettab>=new Array<Mytickettab>();
+  hisDataSource = new MatTableDataSource<string>();
+  hisColumnsToDisplay:string[] = [];
+  histableDatatest: Array<string> = new Array<string>();
+  myTicketDataSource = new MatTableDataSource<Mytickettab>();
+  ticketColumnsToDisplay:Array<string> = [];
   accountVal: unknown;
-  etdvalue = new UntypedFormGroup({
-    startdate: new UntypedFormControl(),
-    enddate: new UntypedFormControl(),
-    custtype: new UntypedFormControl(),
+  etdValue = new UntypedFormGroup({
+    startDate: new UntypedFormControl(),
+    endDate: new UntypedFormControl(),
+    custType: new UntypedFormControl(),
     reasons: new UntypedFormControl(),
-    mgmtarea: new UntypedFormControl(),
+    managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
     form1: new UntypedFormControl()
   })
@@ -37,7 +38,7 @@ export class EtdComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.etddata();
+    this.etdData();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
   }
@@ -70,14 +71,11 @@ export class EtdComponent implements OnInit {
         this.columnsToDisplay = this.data.etdcol;
 
         this.histableDatatest = this.data.historytab;
-        console.log(this.tableDatatest);
-        this.hisdataSource.data = this.histableDatatest;
-        this.hiscolumnsToDisplay = this.data.historycol;
-
-        this.tableDatatest = this.data.mytickettab;
-        console.log(this.tableDatatest);
-        this.myticketdataSource.data = this.tableDatatest;
-        this.ticketcolumnsToDisplay = this.data.myticketcol;
+        this.hisDataSource.data = this.histableDatatest;
+        this.hisColumnsToDisplay = this.data.historycol;
+        this.myticketTabTableDatatest.push(this.data.mytickettab);
+        this.myTicketDataSource.data =  this.myticketTabTableDatatest ;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
 
       }
     });
@@ -87,7 +85,7 @@ export class EtdComponent implements OnInit {
     return 0;
   }
 
-  etddata() {
-    console.log(this.etdvalue.value);
+  etdData() {
+    console.log(this.etdValue.value);
   }
 }
