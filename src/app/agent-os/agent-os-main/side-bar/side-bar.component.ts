@@ -9,6 +9,8 @@ import { StickyNoteComponent } from '../../overlays/sticky-note/sticky-note.comp
 import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
 import { SharedService } from '../../services/shared.service';
+import { ActionData, ArticleData, CoPilotUpdateData, HelpfulData, LinkData } from './side-bar.response';
+import { SideBarService } from './side-bar.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -16,11 +18,11 @@ import { SharedService } from '../../services/shared.service';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-  helpfuldata: any = {};
-  linkdata: any = {};
-  actiondata: any = {};
-  copilotUpdateData: any = {};
-  articlesdata: any = {};
+  helpfuldata:HelpfulData;
+  linkdata:LinkData;
+  actiondata:ActionData;
+  copilotUpdateData:CoPilotUpdateData;
+  articlesdata:ArticleData;
   searchflag = true;
 
   overlayRef: OverlayRef;
@@ -38,7 +40,8 @@ export class SideBarComponent implements OnInit {
     private domSanitizer: DomSanitizer,
     private searchService: SearchService,
     private sharedService: SharedService,
-    private overlay: Overlay) {
+    private overlay: Overlay,
+    private sidebarservice:SideBarService) {
 
     this.matIconRegistry
       .addSvgIcon('aos-copy', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/images/agent-os/copy.svg'))
@@ -119,12 +122,9 @@ export class SideBarComponent implements OnInit {
 
   getHelpfulLinks(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    const cardName = `helpful-link`;
 
-    const path = `${accountNumber}/helpful-link`;
-
-    this.searchflag = accountNumber && accountNumber !== 'empty';
-
-    this.cardDataService.getCardDatafromService(path).subscribe({
+    this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => this.helpfuldata = resp,
       error: (err) => console.log(err)
     });
@@ -132,10 +132,9 @@ export class SideBarComponent implements OnInit {
 
   getCopilotUpdateData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    const  cardName= `copilot-updates`;
 
-    const path = `${accountNumber}/copilot-updates`;
-
-    this.cardDataService.getCardDatafromService(path).subscribe({
+    this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => this.copilotUpdateData = resp,
       error: (err) => console.error(err)
     });
@@ -143,10 +142,8 @@ export class SideBarComponent implements OnInit {
 
   getCopilotLinkData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/copilot-link`;
-
-    this.cardDataService.getCardDatafromService(path).subscribe({
+    const  cardName= `copilot-link`;
+    this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => this.linkdata = resp,
       error: (err) => console.error(err)
     });
@@ -154,10 +151,8 @@ export class SideBarComponent implements OnInit {
 
   getInterActionData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/interaction-data`;
-
-    this.cardDataService.getCardDatafromService(path).subscribe({
+    const  cardName= `interaction-data`;
+    this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => this.actiondata = resp,
       error: (err) => console.error(err)
     });
@@ -165,17 +160,15 @@ export class SideBarComponent implements OnInit {
 
   getArticles(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/recommended-articles`;
-
-    this.cardDataService.getCardDatafromService(path).subscribe({
+    const  cardName= `recommended-articles`;
+    this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => this.articlesdata = resp,
       error: (err) => console.error(err),
     });
   }
 
   clearData() {
-    this.searchService.sharedValue$.next('')// setting using subject & works in ngAfterViewInit   
+    this.searchService.sharedValue$.next(''); 
     this.searchService.setAccountNumber('');
   }
 

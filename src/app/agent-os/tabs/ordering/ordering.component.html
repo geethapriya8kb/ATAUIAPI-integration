@@ -1,7 +1,7 @@
 <mat-card class="orderbody" *ngIf="isOrderMove;else other_content">
     <p class="order-font">Serviceability</p>
     <div class="row">
-            <mat-card *ngFor="let i of data.icons" class="col-md-4">
+            <mat-card *ngFor="let i of data?.icons" class="col-md-4">
                 <img src="{{i.path}}" height="30" width="30">
                 <b class="m-l-3">{{i.channel}}</b>
                 <span style="float:right">{{i.amount}}</span>
@@ -218,7 +218,7 @@
                                 <th scope="col w-30">Price</th>
                             </tr>
                         </thead>
-                        <tbody class="lable-edit" *ngFor="let i of data.ordercontent">
+                        <tbody class="lable-edit" *ngFor="let i of data?.ordercontent">
                             <tr class="text-center">
                                 <th class="text-center;">
                                     <i class="{{i.sym}}"></i>
