@@ -71,6 +71,7 @@ import { MobileViewMoreComponent } from './common/modals/mobile-view-more/mobile
 import { EventDetailsComponent } from './modals/event-details/event-details.component';
 import { EditAccountComponent } from './common/modals/edit-account/edit-account.component';
 import { FuturePaymentComponent } from './common/modals/future-payment/future-payment.component';
+import { PpvComponent } from './common/ppv/ppv.component';
 
 
 
@@ -111,7 +112,8 @@ import { FuturePaymentComponent } from './common/modals/future-payment/future-pa
     MobileViewMoreComponent,
     EventDetailsComponent,
     EditAccountComponent,
-    FuturePaymentComponent
+    FuturePaymentComponent,
+    PpvComponent
   ],
   imports: [
     CommonModule,

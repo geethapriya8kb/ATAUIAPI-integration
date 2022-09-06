@@ -8,10 +8,11 @@ export class EtdResponse
       myticketcol: Array<string>
       mytickettab:Mytickettab
 }
+
 export class Mytickettab {
 }
 
-export class  TicketInformation {
+export class TicketInformation {
     Ticket: string;
     ['SLA Call Time']: string;
     Account: string;

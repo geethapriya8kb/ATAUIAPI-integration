@@ -10,6 +10,7 @@ import { EditAccountComponent } from '../modals/edit-account/edit-account.compon
 import { EditCustomerComponent } from '../modals/edit-customer/edit-customer.component';
 import { FuturePaymentComponent } from '../modals/future-payment/future-payment.component';
 import { ManageWalletComponent } from '../modals/manage-wallet/manage-wallet.component';
+import { PpvComponent } from '../ppv/ppv.component';
 import { TakePaymentFormComponent } from '../take-payment-form/take-payment-form.component';
 
 @Component({
@@ -75,6 +76,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
       case 'EditCustomerDialogComponent': return EditCustomerComponent;
       case 'EditAccountDialogComponent': return EditAccountComponent;
       case 'ManageFuturePaymentComponent': return FuturePaymentComponent;
+      case 'PPVtableComponent': return PpvComponent;
     }
     return null;
   }

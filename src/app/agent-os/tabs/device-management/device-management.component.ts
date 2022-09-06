@@ -17,7 +17,6 @@ export class DeviceManagementComponent implements OnInit {
   data: any = {};
   showData=false;
   ngOnInit(): void {  
-    // this.getValuetoTable();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
   }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { CardDataService } from '../../services/card-data.service';
 import { mobileDevices } from '../../interfaces/mobileDevices';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { SearchService } from '../../services/search.service';
@@ -8,6 +7,8 @@ import { ComponentType } from '@angular/cdk/portal';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MobileLearnMoreComponent } from '../../common/modals/mobile-learn-more/mobile-learn-more.component';
 import { MobileViewMoreComponent } from '../../common/modals/mobile-view-more/mobile-view-more.component';
+import { MobileService } from './mobile.service';
+import { MobileResponse } from './mobile.response';
 @Component({
   selector: 'app-mobile',
   templateUrl: './mobile.component.html',
@@ -21,33 +22,27 @@ import { MobileViewMoreComponent } from '../../common/modals/mobile-view-more/mo
   ],
 })
 export class MobileComponent implements OnInit {
-  data: any = {};
-  
-  dataSource = new MatTableDataSource<any>();
-  columnsToDisplay = [];
+  data: MobileResponse;
+  dataSource = new MatTableDataSource<string>();
+  columnsToDisplay: string[] = [];
   expandedElement!: mobileDevices | null;
-  dataTest: any;
-  mobileDataSource = new MatTableDataSource<any>();
-  mobileColumnsToDisplay = [];
-  mobileDatatest: any;
-  historyDataSource = new MatTableDataSource<any>();
-  historyColumnsToDisplay = [];
-  historyDatatest: any;
+  dataTest: Array<string> = new Array<string>();;
+  mobileDataSource = new MatTableDataSource<string>();
+  mobileColumnsToDisplay: string[] = [];
+  mobileDatatest: Array<string> = new Array<string>();
+  historyDataSource = new MatTableDataSource<string>();
+  historyColumnsToDisplay: string[] = [];
+  historyDataTest: Array<string> = new Array<string>();
   accountVal: unknown;
   activeIndex=0;
-  matDa:any;
 
 
-  constructor(private cardDataService:CardDataService,private searchService:SearchService
+  constructor(private mobileService:MobileService,private searchService:SearchService
     ,private matDialog: MatDialog) { }
 
   ngOnInit(): void {
-    // this.getCard();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber); 
-    console.log(this.matDa);
-     
-    
   }
 
   applyFilter(event: Event) {
@@ -69,36 +64,28 @@ export class MobileComponent implements OnInit {
   
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/mobile-existingcust`;
-
-    this.cardDataService.getCardDatafromService(path).subscribe(
-      (resp: any) => {
-        this.data = resp;        
-       
+    const cardName = `mobile-existingcust`;
+    this.mobileService.getDataFromAPI(accountNumber, cardName).subscribe(
+      (resp) => {
+        this.data = JSON.parse(resp.content);
       },
-      (err: any) => console.error(err),
+      (err) => console.error(err),
       () => {
         this.dataTest = this.data.mobileDeviceTable;
-        console.log(this.dataTest);
         this.dataSource.data = this.dataTest;
         this.columnsToDisplay=this.data.orderStatusColumns;
 
         this.mobileDatatest = this.data.mobileOrderTable;
-        console.log(this.mobileDatatest);
         this.mobileDataSource.data = this.mobileDatatest;
         this.mobileColumnsToDisplay=this.data.mobileOrderColumns;
 
-        this.historyDatatest = this.data.mobileHistory;
-        console.log(this.historyDatatest);
-        this.historyDataSource.data = this.historyDatatest;
+        this.historyDataTest = this.data.mobileHistory;
+        this.historyDataSource.data = this.historyDataTest;
         this.historyColumnsToDisplay=this.data.mobileHistoryColumns;
       }
     );
   }
-  public click(event: MouseEvent | KeyboardEvent, dialogValue: any, width: string,height:string,date:string): void {
-console.log(date);
-
+  public click(event: MouseEvent | KeyboardEvent, dialogValue: string, width: string,height:string,date:string): void {
     const el: HTMLButtonElement = event.currentTarget as HTMLButtonElement;
     let dialogComponent: ComponentType<any>=this.getComponent(dialogValue);
     const dialogConfig = new MatDialogConfig();
@@ -110,11 +97,10 @@ console.log(date);
       console.log(`Dialog sent: ${value}`);
     });
   }
-  getComponent(msg:any):any{
+  getComponent(msg:string):any{
     switch(msg) {
       case 'view': return MobileViewMoreComponent;
       case 'learn': return MobileLearnMoreComponent;  
-
     }
     return null;
   }
