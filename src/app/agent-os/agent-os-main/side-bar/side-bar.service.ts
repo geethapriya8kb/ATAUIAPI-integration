@@ -5,18 +5,17 @@ import { Endpoints } from '../../entities/enums/Endpoints';
 import { BaseService } from '../../service-demo/base-service';
 import { QueryParam } from '../../service-demo/QueryParam';
 import { SettingsService } from '../../service-demo/settings.service';
-import { OrderingRoot } from './ordering.response';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderingService extends BaseService {
+export class SideBarService extends BaseService {
   constructor(
     http: HttpClient,
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getDataFromAPI(id:number,identifier:string): Observable<OrderingRoot> {
+  getDataFromAPI(id:number,identifier:string): Observable<any> {
     const endpoint = Endpoints.getorder ;
     const val: QueryParam[] =
       [{ key: "id", value: id.toString()},
