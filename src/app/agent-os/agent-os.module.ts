@@ -72,6 +72,7 @@ import { EventDetailsComponent } from './modals/event-details/event-details.comp
 import { EditAccountComponent } from './common/modals/edit-account/edit-account.component';
 import { FuturePaymentComponent } from './common/modals/future-payment/future-payment.component';
 import { PpvComponent } from './common/ppv/ppv.component';
+import { ContactPreferenceComponent } from './common/modals/contact-preference/contact-preference.component';
 
 
 
@@ -113,7 +114,8 @@ import { PpvComponent } from './common/ppv/ppv.component';
     EventDetailsComponent,
     EditAccountComponent,
     FuturePaymentComponent,
-    PpvComponent
+    PpvComponent,
+    ContactPreferenceComponent
   ],
   imports: [
     CommonModule,

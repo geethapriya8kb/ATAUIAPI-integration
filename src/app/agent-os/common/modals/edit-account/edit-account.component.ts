@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -15,8 +14,7 @@ export class EditAccountComponent implements OnInit {
   // formFields: FormField[] = [];
   form = new FormGroup({});
   constructor(private cardDataService:CardDataService, public dialogRef: MatDialogRef<EditAccountComponent>,
-    @Inject(MAT_DIALOG_DATA) public popUpData: any,
-    private httpClient: HttpClient,) { }
+    @Inject(MAT_DIALOG_DATA) public popUpData: any) { }
 
   ngOnInit(): void {
     this. getFormData();
