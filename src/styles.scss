@@ -131,3 +131,15 @@ table {
   background-color: $agent-os-secondary-color  !important;
 }
 .mat-tab-body-content { overflow: hidden!important}
+
+.blue-bar p {
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+  font-weight: 500;
+}
+
+.f-12 {
+  font-size: 12px;
+  box-sizing: border-box;
+  line-height: 1.35;
+}

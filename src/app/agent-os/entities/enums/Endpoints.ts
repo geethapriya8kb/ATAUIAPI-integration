@@ -1,7 +1,8 @@
 export enum Endpoints {
   getbillingwidget = 'search',
   getetdaccount='search',
-  getmobile='search'
+  getmobile='search',
+  getorder='search',
 }
 
 // export enum Endpoints {
