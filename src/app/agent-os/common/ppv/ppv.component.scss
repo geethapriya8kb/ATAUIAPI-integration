@@ -9,3 +9,14 @@ th.mat-header-cell {
     text-align: left;
     max-width: 300px;
 }
+.skill-list{
+    display : flex;
+    justify-content: between;
+}
+
+.blue-bar {
+    max-height: 30px;
+    background: rgb(0, 90, 132);
+    padding: 0px 0px 1px;
+  }
+ 
