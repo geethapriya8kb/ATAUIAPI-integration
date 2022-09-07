@@ -21,7 +21,7 @@ export class EditCustomerComponent implements OnInit {
     const dataFileName = `assets/data/forms/edit-customer.json`;
     this.cardDataService.getCardData(dataFileName).subscribe(
       (resp) => {
-        for(const field of resp.addressRows){
+        for(const field of resp.contactRows){
           for(const fields of field.columns){
             this.form.addControl(
               fields.controlName,

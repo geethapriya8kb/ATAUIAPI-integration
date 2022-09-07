@@ -94,7 +94,7 @@
                     <div>
                         <span *ngIf="!searchflag"> No recommended articles are available.</span>
                         <ul *ngIf="searchflag">
-                            <ng-container *ngFor="let item of articlesdata.content | keyvalue">
+                            <ng-container *ngFor="let item of articlesdata?.content | keyvalue">
                                 <li *ngFor="let valItem of item.value | keyvalue">
                                     <a href="{{ valItem.value }}" target="_blank">
                                         <p>{{valItem.key}}</p>
@@ -107,9 +107,9 @@
                 <mat-tab label="CoPilot Links" class="p-5">
                     <ng-container *ngIf="!searchflag">No recommended articles are available.</ng-container>
                     <ng-container *ngIf="searchflag">
-                        <h6 *ngFor="let item of linkdata.content | keyvalue">{{item.key}}</h6>
+                        <h6 *ngFor="let item of linkdata?.content | keyvalue">{{item.key}}</h6>
                         <ul>
-                            <ng-container *ngFor="let item of linkdata.content | keyvalue">
+                            <ng-container *ngFor="let item of linkdata?.content | keyvalue">
                                 <li *ngFor="let valItem of item.value | keyvalue">
                                     <a href="{{ valItem.value }}" target="_blank">
                                         <p>{{valItem.key}}</p>
@@ -122,7 +122,7 @@
                 <mat-tab label="Helpful Hints">
                     <span *ngIf="!searchflag"> No templates to display</span>
                     <ng-container *ngIf="searchflag">
-                        <mat-expansion-panel *ngFor="let item of helpfuldata.content | keyvalue">
+                        <mat-expansion-panel *ngFor="let item of helpfuldata?.content | keyvalue">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     <div class="pl-2">
@@ -161,7 +161,7 @@
                     </ng-template>
                     <span *ngIf="!searchflag"> No updates are available.</span>
                     <ng-container *ngIf="searchflag">
-                        <div *ngFor="let date of copilotUpdateData.content | keyvalue">
+                        <div *ngFor="let date of copilotUpdateData?.content | keyvalue">
                             <h6 class="dateTitle">{{date.key}}</h6>
                             <ng-container *ngFor="let item of date | keyvalue">
                                 <ul>
@@ -224,7 +224,7 @@
                     <mat-tab label="Interactions">
                         <span *ngIf="!searchflag"> No updates are available.</span>
                         <ng-container *ngIf="searchflag">
-                            <mat-expansion-panel *ngFor="let item of actiondata.content">
+                            <mat-expansion-panel *ngFor="let item of actiondata?.content">
                                 <mat-expansion-panel-header>
                                     <mat-panel-title>
                                         <i class="{{item.icon}}" style="font-size:20px;"></i>

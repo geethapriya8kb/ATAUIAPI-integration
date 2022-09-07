@@ -6,6 +6,7 @@ import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
 import { SharedService } from '../../services/shared.service';
 import { DynamicformComponent } from '../dynamicform/dynamicform.component';
+import { ContactPreferenceComponent } from '../modals/contact-preference/contact-preference.component';
 import { EditAccountComponent } from '../modals/edit-account/edit-account.component';
 import { EditCustomerComponent } from '../modals/edit-customer/edit-customer.component';
 import { FuturePaymentComponent } from '../modals/future-payment/future-payment.component';
@@ -61,7 +62,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     let dialogComponent: ComponentType<any> = this.getComponent(dialogValue);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = { name: 'Take Payment' };
-    dialogConfig.width = width;
+   dialogConfig.maxWidth = width;
     dialogConfig.height = '100%';
     let dialogRef = this.matDialog.open(dialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((value) => {
@@ -77,6 +78,8 @@ export class DataCardComponent implements OnInit, AfterViewInit {
       case 'EditAccountDialogComponent': return EditAccountComponent;
       case 'ManageFuturePaymentComponent': return FuturePaymentComponent;
       case 'PPVtableComponent': return PpvComponent;
+      case 'ContactPreferencesComponent': return ContactPreferenceComponent;
+
     }
     return null;
   }

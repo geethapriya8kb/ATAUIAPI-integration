@@ -1,0 +1,76 @@
+{
+    "content": {
+        "account": {
+            "Salutation:": {
+                "value": "Mr",
+                "type": "label"
+            },
+            "Customer Name:": {
+                "value": "John Smith",
+                "type": "label"
+            },
+            "Acct Type::": {
+                "value": "RESIDENTIAL",
+                "type": "label"
+            },
+            "Authorized Users": {
+                "value": "Jessica Smith",
+                "type": "select",
+                "options": [
+                    "Jessica Smith"
+                ]
+            },
+            "Responsible Party:": {
+                "value": "",
+                "type": "label"
+            },
+            "Security Code:": {
+                "value": "1111",
+                "type": "label"
+            },
+            "Seasonal Begin Date:": {
+                "value": "",
+                "type": "label"
+            },
+            "Seasonal End Date:": {
+                "value": "",
+                "type": "label"
+            }
+        },
+        "details": {
+            "Status:": {
+                "value": "Active",
+                "type": "label"
+            },
+            "Disconnect Type:": {
+                "value": "",
+                "type": "label"
+            },
+            "Classification:": {
+                "value": "DEFAULT",
+                "type": "label"
+            },
+            "Bulk": {
+                "value": "No",
+                "type": "label"
+            },
+            "Paperless:":{
+                "value":"NO",
+                "type":"label;"
+            },
+            "Connection Date:":{
+                "value":"03/22/2013",
+                "type":"label"
+            },
+            "Auto Pay:":{
+                "value":"NO",
+                "type":"label;"
+            },
+            "Online Customer Portal:":{
+                "value":"Not Registered",
+                "type":"label"
+            }
+
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CardDataService } from '../../services/card-data.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { CourseListService } from '../../services/course-list.service';
 import { SearchService } from '../../services/search.service';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { OrderingResponse } from './ordering.response';
+import { OrderingService } from './ordering.service';
 @Component({
   selector: 'app-ordering',
   templateUrl: './ordering.component.html',
@@ -11,15 +12,14 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 })
 export class OrderingComponent implements OnInit {
   panelOpenState = false;
-  data: any = {};
-  dataTest: any = {};
-  
-  dataSource = new MatTableDataSource<any>();
-  expansionDataSource = new MatTableDataSource<any>();
-  columnsToDisplay = [];
-  expColumnsToDisplay = [];
-  tableDataTest: any = [];
-  expTableDataTest: any = [];
+  data: OrderingResponse;
+  dataTest: Array<string> = new Array<string>();
+  dataSource = new MatTableDataSource<string>();
+  expansionDataSource = new MatTableDataSource<string>();
+  columnsToDisplay: string[] = [];
+  expColumnsToDisplay : string[] = [];
+  tableDataTest: Array<string> = new Array<string>();
+  expTableDataTest: Array<string> = new Array<string>();
   isOrderMove = false;
   accountVal: unknown;
   orderValue = new UntypedFormGroup({
@@ -29,19 +29,19 @@ export class OrderingComponent implements OnInit {
     alternatePhone: new UntypedFormControl(),
   })
   constructor(
-    private device: CardDataService,
     private courseListService: CourseListService,
-    private searchService:SearchService
+    private searchService:SearchService,
+    private orderService:OrderingService
   ) {}
 
   ngOnInit(): void {
-    // this.getContent();
     const label = this.courseListService.getHeader();
     if (label === 'Move/Transfer') {
       this.isOrderMove = true;
     }
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);  
+
   }
 
   ngAfterViewInit() {
@@ -57,27 +57,20 @@ export class OrderingComponent implements OnInit {
   
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/order-move`;
-
-    this.device.getCardDatafromService(path).subscribe({
+    const cardName = `order-move`;
+    this. orderService.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
-        this.data = resp;
-        //
+        this.data = JSON.parse(resp.content);
       },
       error: (err) => console.error(err),
       complete: () => {
         console.log(this.data);
-        console.log('done loading data');
         this.tableDataTest = this.data.content;
-        console.log(this.tableDataTest);
         this.dataSource.data = this.tableDataTest;
-        this.columnsToDisplay = this.data.orderCol;
-
-        this.expTableDataTest = this.data.expansionContent;
-        console.log(this.tableDataTest);
+        this.columnsToDisplay = this.data.ordercol;
+        this.expTableDataTest = this.data.expansioncontent;
         this.expansionDataSource.data = this.expTableDataTest;
-        this.expColumnsToDisplay = this.data.expansionCol;
+        this.expColumnsToDisplay = this.data.expansioncol;
       },
     });
   }
