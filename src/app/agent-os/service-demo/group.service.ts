@@ -11,21 +11,16 @@ import { QueryParam } from './QueryParam';
   providedIn: 'root',
 })
 export class GroupService extends BaseService {
-  constructor(
-    http: HttpClient,
-    settingsService: SettingsService) {
+  constructor(http: HttpClient, settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromAPI(id:number,identifier:string): Observable<any> {
-    const endpoint = Endpoints.getbillingwidget ;
-    const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      console.log(val);
-      console.log(endpoint);
-      
-      
-    return this.doGet(endpoint,[],val);
+  getdatafromAPI(id: number, identifier: string): Observable<any> {
+    const endpoint = Endpoints.getbillingwidget;
+    const val: QueryParam[] = [
+      { key: 'id', value: id.toString() },
+      { key: 'identifier', value: identifier.toString() },
+    ];
 
+    return this.doGet(endpoint, [], val);
   }
 }
