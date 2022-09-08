@@ -9,19 +9,16 @@
 </div>
 <h4 class="fw-bold">Add New Payment Method</h4>
 <hr>
-
 <div class="row">
     <ng-container *ngFor="let i of data?.radio  | keyvalue">
-        <div class="col-md-5">
-            <div class="mb-3" *ngFor="let val of i.value | keyvalue">
-                <input class="mt-1" type="radio" [value]="val.value" [(ngModel)]="radioSelected" id="{{val.value}}">
-                <label class="ms-2">{{val.value}}</label>
-            </div>
+        <div class="col-md-6">          
+               <input class="mt-1" type="radio" [value]="i.value.value" [(ngModel)]="radioSelected"  id="{{i.value.value}}">
+                <label class="ms-2">{{i.key}}</label>                             
         </div>
-    </ng-container>
+    </ng-container>   
 </div>
-
-<ng-container *ngIf="data?.rows && data?.rows.length">
+<ng-container *ngIf="radioSelected==='credit'">
+<ng-container *ngIf="data?.rows && data?.rows.length ">
     <form [formGroup]="form">
     <div class="row col-md-12" *ngFor="let row of data?.rows; let rowIndex = index;">
         <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
@@ -34,11 +31,27 @@
     </div>
 </form>
 </ng-container>
+</ng-container>
+<ng-container *ngIf="radioSelected==='eft'">
+    <ng-container *ngIf="data?.eftRows && data?.eftRows.length ">
+        <form [formGroup]="eftForm">
+        <div class="row col-md-12" *ngFor="let row of data?.eftRows; let rowIndex = index;">
+            <div *ngFor="let column of row.column; let colIndex = index;" class="{{column.class}}">
+                <div class="mb-3">
+                    <label for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label">{{column.label}}</label>
+                    <input [type]="column.type" class="form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
+                        placeholder="" formControlName="{{column.controlName}}">
+                </div>
+            </div>
+        </div>
+    </form>
+    </ng-container>
+</ng-container>
 <div class="row text-center mt-3">
     <div class="col-md-6">
-        <button class="rounded-pill w-100" (click)="submit()" mat-raised-button color="primary">Save</button>
+        <button class="rounded-pill w-100" (click)="openDialog()" mat-raised-button color="primary">Save</button>
     </div>
     <div class="col-md-6">
-        <button class="rounded-pill w-100" mat-raised-button color="primary">Cancel</button>
+        <button class="rounded-pill w-100" (click)="close()" mat-raised-button color="primary">Cancel</button>
     </div>
 </div> 

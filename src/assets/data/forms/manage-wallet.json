@@ -60,13 +60,57 @@
       ]
     }
   ],
-  "radio": [
+  "radio": {
+    "Credit/Debit Card":{      
+      "value":"credit"
+    },
+    "Electronic Fund Transfer (EFT)":{     
+      "value":"eft"
+    }
+  },
+  "eftRows":[
     {
-      "label": "Credit/Debit Card"
+      "column":[
+        {
+          "label": "Payment Method Nickname (Optional)",
+          "type": "text",
+          "class": "col col-md-7",
+          "required": false,
+          "controlName":"eftName"
+        }
+      ]
     },
     {
-      "label": "Electronic Fund Transfer (EFT)"
+      "column":[
+        {
+          "label": "Routing Number",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false,
+          "controlName":"routing"
+        },
+        {
+          "label": "Account Number",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false,
+          "controlName":"accNumber"
+        }
+
+      ]
+    },
+    {
+      "column":[
+        {
+          "label": "Name on Account",
+          "type": "text",
+          "class": "col col-md-6",
+          "required": false,
+          "controlName":"accName"
+        }
+      ]
     }
+
   ]
    
 }

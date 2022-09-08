@@ -24,9 +24,9 @@
         "type": "label"
       },
       "Authorized Users": {
-        "value": "Sunil Radhakrishnan",
+        "value": "William Brown",
         "type": "select",
-        "options": ["Sunil Radhakrishnan"]
+        "options": ["William Brown"]
       },
       "Seasonal Begin Date": {
         "value": "12-23-2021",

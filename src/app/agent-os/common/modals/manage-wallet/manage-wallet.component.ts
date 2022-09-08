@@ -1,7 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { CardDataService } from '../../../services/card-data.service';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MobileViewMoreComponent } from '../mobile-view-more/mobile-view-more.component';
+import { SuccessManageWalletComponent } from '../success-manage-wallet/success-manage-wallet.component';
 @Component({
   selector: 'app-manage-wallet',
   templateUrl: './manage-wallet.component.html',
@@ -10,9 +12,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ManageWalletComponent implements OnInit {
   data: any;
   form = new FormGroup({});
-
+  eftForm = new FormGroup({});
+  radioSelected='credit';
   constructor( private cardDataService:CardDataService, public dialogRef: MatDialogRef<ManageWalletComponent>,
-    @Inject(MAT_DIALOG_DATA) public popUpData: any) { }
+    @Inject(MAT_DIALOG_DATA) public popUpData: any,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getFormData()
@@ -29,6 +32,14 @@ export class ManageWalletComponent implements OnInit {
           );
           }
         }
+        for (let formField of formFields.eftRows) {
+          for(let field of formField.column ){
+          this.eftForm.addControl(
+            field.controlName,
+            new FormControl('')
+          );
+          }
+        }
         this.data = formFields;           
       },
       (err) => console.error(err),
@@ -39,9 +50,21 @@ export class ManageWalletComponent implements OnInit {
   returnZero() {
     return 0;
   }
-  submit(){
-    console.log(this.form.value);    
-  }
+ 
+    openDialog(): void {
+      this.dialogRef.close();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = { label:this.data.eftRows ,accounttype:this.form.value };
+   dialogConfig.width ='60%';
+    dialogConfig.height = '75%';
+    let dialogRef = this.dialog.open(SuccessManageWalletComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe((value) => {
+      console.log(`Dialog sent: ${value}`);
+    });
+      
+    }
+
+  
   close() {
     this.dialogRef.close("Thanks for using me!");
   }

@@ -62,7 +62,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     let dialogComponent: ComponentType<any> = this.getComponent(dialogValue);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = { name: 'Take Payment' };
-   dialogConfig.maxWidth = width;
+   dialogConfig.maxWidth ='100%';
     dialogConfig.height = '100%';
     let dialogRef = this.matDialog.open(dialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((value) => {

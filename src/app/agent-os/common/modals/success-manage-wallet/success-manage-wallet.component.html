@@ -1,0 +1,28 @@
+<i class="fa fa-close close-icon float-end" (click)="close()"></i>
+<h4>Manage Wallet</h4>
+<hr>
+<mat-card class="border-green">
+       <div class="d-flex">
+              <i class="fa-solid fa-circle-check bg-green mt-1 p-1"></i>
+              <p class="mt-1">Payment Method Saved.</p>
+       </div>
+</mat-card>
+<h4>Details</h4>
+<hr>
+<mat-card class="bg-grey">
+      <div class="row">
+              <div class="col-sm-4">
+                     <b>Name</b>
+                     <p>{{data.name}}</p>
+              </div>
+              <div class="col-sm-4">
+                     <b>Exp. Date</b>
+                     <p>{{data.expDate}}</p>
+              </div>
+              <div class="col-sm-4">
+                     <b>Card Number</b>
+                     <p>{{data.cardNumber}}</p>
+              </div>
+      </div>
+      
+</mat-card>
