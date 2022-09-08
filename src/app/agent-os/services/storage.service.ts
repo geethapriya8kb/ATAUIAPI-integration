@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export class StorageService {
   private billingWidgetEmpty: any;
   private billingWidgetAccount: any;
+
+  public helpfulEmpty: any;
+  public helpfulAccount: any;
+  
   constructor() {}
 
   public setBillingWidgetEmpty(billingEmpty: any): void {
@@ -21,5 +25,20 @@ export class StorageService {
 
   public getBillingWidgetAccount(): any {
     return this.billingWidgetAccount;
+  }
+
+  public sethelpfulEmpty(helpfulEmpty: any): void {
+    this.helpfulEmpty = helpfulEmpty;
+  }
+
+  public gethelpfulEmpty(): any {
+    return this.helpfulEmpty;
+  }
+  public sethelpfulAccount(helpfulAccount: any): void {
+    this.helpfulAccount = helpfulAccount;
+  }
+
+  public gethelpfulAccount(): any {
+    return this.helpfulAccount;
   }
 }
