@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class StorageService {
-  private billingWidget: any;
+  private billingWidgetEmpty: any;
   constructor() {}
 
-  public setBillingWidget(billingWidget: any): void {
-    this.billingWidget = billingWidget;
+  public setBillingWidgetEmpty(billingWidgetEmpty: any): void {
+    this.billingWidgetEmpty = billingWidgetEmpty;
   }
 
-  public getBillingWidget(): any {
-    return this.billingWidget;
+  public getBillingWidgetEmpty(): any {
+    return this.billingWidgetEmpty;
   }
 }
