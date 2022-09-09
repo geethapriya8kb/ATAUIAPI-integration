@@ -8,6 +8,11 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SearchService } from '../../services/search.service';
 import { EventDetailsComponent } from '../../modals/event-details/event-details.component';
+import { TroubleShootingService } from './troubleshooting.service';
+import { EventAlertsData } from './alert.response';
+import { EventHistory, EventHistoryTable } from './eventHistory.response';
+import { HistoryResponse } from './hitHistory.response';
+import { HistoryTable } from './history.response';
 
 @Component({
   selector: 'app-troubleshooting',
@@ -15,21 +20,22 @@ import { EventDetailsComponent } from '../../modals/event-details/event-details.
   styleUrls: ['./troubleshooting.component.scss'],
 })
 export class TroubleshootingComponent implements OnInit {
-  dataSource = new MatTableDataSource<any>();
-  columnsToDisplay = [];
-  data: any = {};
+  dataSource = new MatTableDataSource<EventHistoryTable>();
+  columnsToDisplay: Array<string>;
+  data: EventHistory;
 
-  eventAlertsData: any = {};
+  //eventAlertsData: Array<EventAlertsData>;
+  eventAlertsData: EventAlertsData;
   @ViewChild(MatSort)
   sort!: MatSort;
   @ViewChild('sBSort') sBSort: MatSort;
- 
-  dataSourceHit = new MatTableDataSource<any>();
-  hitColumnsToDisplay = [];
-  hitData: any = {};
 
-  dataSourceTs = new MatTableDataSource<any>();
-  columnsToDisplayTs = [];
+  dataSourceHit = new MatTableDataSource<any>();
+  hitColumnsToDisplay:Array<string>;
+  hitData: HistoryResponse;
+
+  dataSourceTs = new MatTableDataSource<HistoryTable>();
+  columnsToDisplayTs :Array<string>;
   tsHistoryData: any = {};
 
   symptomsData: any = {};
@@ -50,7 +56,8 @@ export class TroubleshootingComponent implements OnInit {
     private matDialog: MatDialog,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private troubleShootService:TroubleShootingService
   ) {
     this.dataSourceTs.data = [];
     const icons = {
@@ -96,33 +103,40 @@ export class TroubleshootingComponent implements OnInit {
     });
   }
 
+
+
   getAlertsData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/troubleshooting-alerts`;
-    this.troubleshootingService.getCardDatafromService(path).subscribe({
-      next: (resp) => (this.eventAlertsData = resp),
-      error: (err) => console.error(err),
+    let cardName="troubleshooting-alerts"
+    this.troubleShootService.getdatafromAlertResponseAPI(accountNumber, cardName).subscribe({
+      next: (resp) => {
+        this.eventAlertsData = JSON.parse(resp.content);
+      },
+      error: (err) => console.log(err),
+      complete: () => {  }
     });
   }
 
   getValuetoTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/ts-event-history`;
-    this.troubleshootingService.getCardDatafromService(path).subscribe({
-      next: (resp) => (this.data = resp),
-      error: (err) => console.error(err),
+    let cardName="ts-event-history"
+    this.troubleShootService.getdatafromEventHistoryAPI(accountNumber, cardName).subscribe({
+      next: (resp) => {
+        this.data  = JSON.parse(resp.content);
+      },
+      error: (err) => console.log(err),
       complete: () => {
         this.dataSource.data = this.data.eventHistoryTable;
         this.columnsToDisplay = this.data.eventHistoryColumns;
-      },
+       }
     });
   }
 
-  getValuetoHitTable(accountNumber) {
+   getValuetoHitTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/hit-history`;
-    this.troubleshootingService.getCardDatafromService(path).subscribe({
-      next: (resp) => (this.hitData = resp),
+    let cardName="hit-history"
+    this.troubleShootService.getdatafromHitHistoryAPI(accountNumber,cardName).subscribe({
+      next: (resp) => (this.hitData =  JSON.parse(resp.content)),
       error: (err) => console.error(err),
       complete: () => {
         this.dataSourceHit.data = this.hitData.hithistory;
@@ -133,9 +147,9 @@ export class TroubleshootingComponent implements OnInit {
 
   getValuetoTShistoryTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/troubleshooting-history`;
-    this.troubleshootingService.getCardDatafromService(path).subscribe({
-      next: (resp) => (this.tsHistoryData = resp),
+       let cardName="troubleshooting-history"
+     this.troubleShootService.getdatafromHistoryAPI(accountNumber,cardName).subscribe({
+      next: (resp) => (this.tsHistoryData = JSON.parse(resp.content)),
       error: (err) => console.error(err),
       complete: () => {
         this.dataSourceTs.data = this.tsHistoryData.eventHistoryTable;
