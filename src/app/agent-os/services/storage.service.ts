@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class StorageService {
-  private billingWidgetEmpty: any;
-  private billingWidgetAccount: any;
+  public billingWidgetEmpty: any;
+  public billingWidgetAccount: any;
 
   public helpfulEmpty: any;
   public helpfulAccount: any;

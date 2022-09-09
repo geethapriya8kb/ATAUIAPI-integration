@@ -27,8 +27,9 @@ export class BillingCardWidgetComponent implements OnInit {
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
-    const billingWidgetEmpty = this.storeService.getBillingWidgetEmpty();
-    const billingWidgetAccount = this.storeService.getBillingWidgetAccount();
+    const billingWidgetEmpty = this.storeService.billingWidgetEmpty;
+    // const billingWidgetAccount = this.storeService.getBillingWidgetAccount();
+    const billingWidgetAccount = this.storeService.billingWidgetAccount;
     if (billingWidgetEmpty || billingWidgetAccount) {
       if (accountNumber === 'empty') {
         this.data = billingWidgetEmpty;
@@ -60,9 +61,11 @@ export class BillingCardWidgetComponent implements OnInit {
         this.billingwidget = resp.content;
         this.data = JSON.parse(this.billingwidget);
         if (accountNumber === 'empty') {
-          this.storeService.setBillingWidgetEmpty(this.data);
+          this.storeService.billingWidgetEmpty = this.data;
+          // this.storeService.setBillingWidgetEmpty(this.data);
         } else {
-          this.storeService.setBillingWidgetAccount(this.data);
+          this.storeService.billingWidgetAccount = this.data;
+          // this.storeService.setBillingWidgetAccount(this.data);
         }
       },
     });
