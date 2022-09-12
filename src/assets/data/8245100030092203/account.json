@@ -8,11 +8,11 @@
         "type": "label"
       },
       "Customer Name": {
-        "value": "Sunil Radhakrishnan",
+        "value": "DAVID CREEK",
         "type": "label"
       },
       "Solo Account ID": {
-        "value": "123476576",
+        "value": "435368",
         "type": "label"
       },
       "National Account": {
@@ -24,9 +24,9 @@
         "type": "label"
       },
       "Authorized Users": {
-        "value": "Sunil Radhakrishnan",
+        "value": "William Brown",
         "type": "select",
-        "options": ["Sunil Radhakrishnan"]
+        "options": ["William Brown"]
       },
       "Seasonal Begin Date": {
         "value": "12-23-2021",
