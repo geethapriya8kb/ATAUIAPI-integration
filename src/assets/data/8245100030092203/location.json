@@ -7,7 +7,7 @@
         "type": "label"
       },
       "PRIN": {
-        "value": "7800",
+        "value": "3000",
         "type": "label"
       },
       "Agent": {
@@ -15,21 +15,21 @@
         "type": "label"
       },
       "Rate/Center": {
-        "value": "LADUE",
+        "value": "ROCHESTER",
         "type": "label"
       },
       "Comments": {
-        "value": "comments",
+        "value": "",
         "type": "label"
       }
     },
     "second": {
       "Address": {
-        "value": "123 Main St Saint Louis, MO 63141-5791",
+        "value": "187 Cornell St ROCHESTER, MN 55904-5401",
         "type": "label"
       },
       "Location Id": {
-        "value": "63141555110000",
+        "value": "55904540100112",
         "type": "label"
       },
       "Location Type": {
@@ -43,15 +43,15 @@
         "type": "label"
       },
       "Headend": {
-        "value": "OT",
+        "value": "RR - St Rochester",
         "type": "label"
       },
       "Node": {
-        "value": "",
+        "value": "3RE15A",
         "type": "label"
       },
       "Hub": {
-        "value": "",
+        "value": "RO",
         "type": "label"
       }
     }

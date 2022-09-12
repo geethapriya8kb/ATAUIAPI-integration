@@ -3,7 +3,20 @@
     "General Information": {
       "How to Customize Spectrum Service": "#",
       "My account": "#",
-      "Contract Buyout Information": "#"
+      "Contract Buyout Information": "#",
+      "Manage Service Appointments Online": "#",
+      "How to Reset Your Password": "#",
+      "Spectrum Store Locations": "#",
+      "Protecting Your Account": "#",
+      "Welcome Page and User Guide": "#",
+      "Billing Inquiries": "#",
+      "Making Payments": "#",
+      "My Spectrum App": "#",
+      "Terms and Conditions": "#",
+      "Payment Processing Fee": "#",
+      "Connecting Your New Devices": "#",
+      "Payment Confirmation": "#",
+      "Managing Auto Pay": "#"
     },
     "Self Installation": {
       "How to Customize Spectrum Service": "#",
@@ -14,22 +27,58 @@
     "Spectrum Internet": {
       "subitems": {
         "Apps": {
-          "How to Customize Spectrum Service": "#",
-          "Spectrum TV Self-Installation Help": "#",
-          "Spectrum Internet Self-Installation Help": "#",
-          "How to Self-Install Spectrum Service": "#"
+          "Spectrum TV App": "#",
+          "TV Channel Apps": "#",
+          "Spectrum TV App on Roku and Roku WiFi Connection": "#"
         },
         "Email": {
-          "How to Customize Spectrum Service": "#",
-          "Spectrum TV Self-Installation Help": "#",
-          "Spectrum Internet Self-Installation Help": "#",
-          "How to Self-Install Spectrum Service": "#"
+          "Spectrum Email (Mobile Settings)": "#",
+          "Email Setup": "#",
+          "How to Use Spectrum Email": "#"
         },
         "Internet Equipment": {
-          "How to Customize Spectrum Service": "#",
-          "Spectrum TV Self-Installation Help": "#",
+          "Sagemcom Router User Guide": "#",
+          "Restarting Your Cable Modem and Router": "#",
+          "Restarting Your Spectrum Internet Modem/Router": "#",
+          "About Approved Modems": "#",
+          "Restarting Your Spectrum Voice Modem": "#",
+          "Restarting Your Spectrum Internet Modem": "#"
+        },
+        "Networking/Wireless/Wifi": {
           "Spectrum Internet Self-Installation Help": "#",
-          "How to Self-Install Spectrum Service": "#"
+          "In-Home WiFi Advanced Features: Sagemcom and Netgear": "#",
+          "In-Home WiFi: Router Features": "#",
+          "In-Home WiFi: Connecting Wireless Devices": "#",
+          "WiFi: Windows and Macintosh WiFi Connection": "#",
+          "WiFi: Finding Your WiFi Network Name and Password": "#",
+          "WiFi: What is In-Home WiFi and Self-Install": "#",
+          "Spectrum WiFi: Finding Your WiFi Name and Password": "#",
+          "Connecting Your New Devices": "#",
+          "In-Home WiFi: Gaming System Connection": "#",
+          "In-Home WiFi Connection: Tablets": "#",
+          "Blu-Ray Player WiFi Connection": "#",
+          "Netgear 3800 Spectrum Firmware Update": "#",
+          "Wireless Printer In-Home WiFi Connection": "#",
+          "In-Home WiFi: Connection Issues": "#",
+          "Streaming Media Player In-Home WiFi Connection": "#",
+          "Troubleshooting WiFi Routers": "#",
+          "Spectrum WiFi: Overview and Setup": "#",
+          "Legacy Modem/Router Combo": "#"
+        },
+        "Security Suite": {
+          "Security Suite Installation (Windows)": "#",
+          "How to Install Security Suite": "#",
+          "Security Suite Firewall: Macintosh": "#",
+          "Security Suite Diagnostic Tool": "#",
+          "Security Suite Uninstall": "#",
+          "Security Suite AntiBot Scanner (Windows only)": "#"
+        },
+        "Troubleshooting": {
+          "Spectrum Internet Support": "#",
+          "Repairing Your IP Address": "#",
+          "Speed Test and Slow Speeds": "#",
+          "GoToAssist (Direct Connection)": "#",
+          "How to Manage Proxy Settings": "#"
         }
       }
     },
@@ -37,25 +86,68 @@
       "Missing Channels Troubleshooting": "#",
       "SARA Guide for Scientific Atlanta": "#",
       "Spectrum TV Self-Installation Help": "#",
-      "iGuide for Arris, Motorola and Pace": "#"
+      "iGuide for Arris, Motorola and Pace": "#",
+      "Spectrum TV Channel Lineup": "#",
+      "Resetting Your Digital Receiver (Cable Box)": "#",
+      "NHL Center Ice": "#",
+      "Spectrum TV App on Roku": "#",
+      "How to Connect TV Equipment": "#",
+      "Freeing Storage Space on Your DVR": "#",
+      "Remote DVR Manager": "#",
+      "Programming Your Remote": "#",
+      "Troubleshooting Spectrum on Demand": "#",
+      "TV Frozen or Tiling on Screen": "#",
+      "Passport Guide: Cisco and Scientific Atlanta": "#",
+      "Interactice Programming Guide/Menu - Moxi": "#",
+      "Setting Parental Controls": "#",
+      "Caller ID on TV": "#",
+      "Instant Upgrade": "#",
+      "Spectrum TV™ Support": "#",
+      "NFL Redzone": "#",
+      "MLB Extra Innings": "#",
+      "Pay-Per-View": "#",
+      "Spectrum Guide Settings & Support": "#",
+      "Spectrum Guide Features": "#"
     },
     "Spectrum Voice": {
       "California Lifeline Information": "#",
       "subitems": {
-        "Apps": {
-          "How to Customize Spectrum Service": "#",
-          "Spectrum TV Self-Installation Help": "#"
+        "Calling Plan Information": {
+          "Spectrum Voice International": "#",
+          "Spectrum Business Voice International": "#",
+          "How to Make International Calls": "#"
         },
-        "Email": {
-          "How to Customize Spectrum Service": "#",
-          "Spectrum TV Self-Installation Help": "#"
+        "Reference Information": {
+          "Blocking Telemarketers and Robo-Callers": "#",
+          "Spectrum Voice Service Features": "#",
+          "Battery Backup": "#",
+          "Spectrum Enhanced Voice Features": "#"
+        },
+        "Security Issues": {
+          "Caller ID Spoofing": "#"
+        },
+        "Voice Equipment": {
+          "Restarting Your Spectrum Voice and Internet Modem": "#"
+        },
+        "Voice Online Manager": {
+          "Voice Online Manager": "#"
         }
       }
     },
     "Home Security": {
-      "California Lifeline Information": "#",
-      "Instructions Verification - Update Required": "#",
-      "Spectrum Home Security Alert - Request": "#"
+      "Spectrum Home Security Alert - Account Instructions Verification - Update Required": "#",
+      "Spectrum Home Security Alert - Request for Test Mode on Fire/Gase Zones": "#",
+      "Spectrum Home Security Alert - Account Codeword Update Required": "#",
+      "Spectrum Home Security Alert - Internet Connection Offline": "#",
+      "Spectrum Home Security Alert - Alarm Permit Ordinance - Update Required": "#",
+      "Spectrum Home Security Alert - Sensor Zone Names Require Update": "#",
+      "Spectrum Home Security Alert - Emergency Contacts - Update Required": "#",
+      "Spectrum Home Security Alert - The Emergency Response Center was unable to reach you.": "#",
+      "Spectrum Home Security Alert - System Trouble Condition": "#",
+      "Spectrum Home Security Alert - Backup Communication System Offline": "#",
+      "Spectrum Home Security Alert - Touchscreen in Test Mode": "#",
+      "Spectrum Home Security Alert - Thermostat Inoperative": "#",
+      "Spectrum Home Security Alert - Low Touchscreen Battery": "#"
     }
   }
 }
