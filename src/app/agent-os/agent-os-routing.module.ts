@@ -14,6 +14,7 @@ import { TroubleshootingComponent } from './tabs/troubleshooting/troubleshooting
 import { MobileComponent } from './tabs/mobile/mobile.component';
 import { ToolsComponent } from './tabs/tools/tools.component';
 import { EtdWorkTicketComponent } from './common/etd-work-ticket/etd-work-ticket.component';
+import { VerifyAuthentiacteComponent } from './common/verify-authentiacte/verify-authentiacte.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
                     { path: 'mobile', component: MobileComponent },
                     { path: 'tools', component: ToolsComponent },
                     { path: 'etd/work-ticket', component: EtdWorkTicketComponent },
+                    { path: 'verify', component: VerifyAuthentiacteComponent },
                     { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' }
                 ]
             },
