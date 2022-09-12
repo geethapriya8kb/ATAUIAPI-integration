@@ -73,6 +73,7 @@ import { EditAccountComponent } from './common/modals/edit-account/edit-account.
 import { FuturePaymentComponent } from './common/modals/future-payment/future-payment.component';
 import { PpvComponent } from './common/ppv/ppv.component';
 import { ContactPreferenceComponent } from './common/modals/contact-preference/contact-preference.component';
+import { VerifyAuthentiacteComponent } from './common/verify-authentiacte/verify-authentiacte.component';
 
 
 
@@ -115,7 +116,8 @@ import { ContactPreferenceComponent } from './common/modals/contact-preference/c
     EditAccountComponent,
     FuturePaymentComponent,
     PpvComponent,
-    ContactPreferenceComponent
+    ContactPreferenceComponent,
+    VerifyAuthentiacteComponent
   ],
   imports: [
     CommonModule,
