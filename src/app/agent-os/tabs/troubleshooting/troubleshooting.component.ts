@@ -11,8 +11,10 @@ import { EventDetailsComponent } from '../../modals/event-details/event-details.
 import { TroubleShootingService } from './troubleshooting.service';
 import { EventAlertsData } from './alert.response';
 import { EventHistory, EventHistoryTable } from './eventHistory.response';
-import { HistoryResponse } from './hitHistory.response';
-import { HistoryTable } from './history.response';
+import { HitHistoryResponse, History } from './hitHistory.response';
+import { HistoryTable,HistoryResponse } from './history.response';
+import { Symptoms } from './symptoms.response';
+import { Internet, Video } from './tsissues.response';
 
 @Component({
   selector: 'app-troubleshooting',
@@ -30,19 +32,19 @@ export class TroubleshootingComponent implements OnInit {
   sort!: MatSort;
   @ViewChild('sBSort') sBSort: MatSort;
 
-  dataSourceHit = new MatTableDataSource<any>();
+  dataSourceHit = new MatTableDataSource<History>();
   hitColumnsToDisplay:Array<string>;
-  hitData: HistoryResponse;
+  hitData: HitHistoryResponse;
 
   dataSourceTs = new MatTableDataSource<HistoryTable>();
   columnsToDisplayTs :Array<string>;
-  tsHistoryData: any = {};
+  tsHistoryData: HistoryResponse;
 
-  symptomsData: any = {};
+  symptomsData: Symptoms;
   active = 0;
 
-  videoIssuesData: any = {};
-  internetIssuesData: any = {};
+  videoIssuesData: Array<Video>;
+  internetIssuesData: Array<Internet>;
   videoHome: boolean = false;
   symptomName: any;
   dynamicTabName: any;
@@ -160,10 +162,10 @@ export class TroubleshootingComponent implements OnInit {
 
   getSymptomsData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/symptoms`;
-    this.troubleshootingService.getCardDatafromService(path).subscribe({
-      next: (resp: any) => (this.symptomsData = resp),
-      error: (err: any) => console.error(err),
+    let cardName="symptoms"
+    this.troubleShootService.getDataFromSymptomsAPI(accountNumber,cardName).subscribe({
+      next: (resp) => (this.symptomsData = JSON.parse(resp.content)),
+      error: (err) => console.error(err),
       complete: () => {
         console.log(this.symptomsData);
       },
@@ -172,11 +174,13 @@ export class TroubleshootingComponent implements OnInit {
 
   getvideoIssuesData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    const path = `${accountNumber}/ts-issues`;
-    this.troubleshootingService.getCardDatafromService(path).subscribe({
+    let cardName="ts-issues"
+   
+    this.troubleShootService.getDataFromTsIssuesAPI(accountNumber,cardName).subscribe({
       next: (resp: any) => {
-        this.videoIssuesData = resp.video;
-        this.internetIssuesData = resp.internet;
+        let content= JSON.parse(resp.content)
+        this.videoIssuesData = content.video;
+        this.internetIssuesData = content.internet;
       },
       error: (err: any) => console.error(err),
       complete: () => {

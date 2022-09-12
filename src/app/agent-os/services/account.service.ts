@@ -24,4 +24,8 @@ getinstalldata(url: any){
 getsidebardata(url: any){
 return this.http.get(url);
 }
+
+getverifydata(url: any){
+  return this.http.get(url);
+  }
 }

@@ -9,6 +9,7 @@ import { AlertRoot } from './alert.response';
 import { EventHistoryRoot } from './eventHistory.response';
 import { HistoryRoot } from './history.response';
 import { HitHistoryRoot } from './hitHistory.response';
+import { SymptomsRoot } from './symptoms.response';
 
 @Injectable({
   providedIn: 'root',
@@ -51,8 +52,30 @@ export class TroubleShootingService extends BaseService {
       
     return this.doGet(endpoint,[],val);
   }
-  
+
   getdatafromHistoryAPI(id:number,identifier:string): Observable<HistoryRoot> {
+    const endpoint = Endpoints.getetdaccount ;
+    const val: QueryParam[] =
+      [{ key: "id", value: id.toString()},
+      { key: "identifier", value: identifier.toString()}];
+      console.log(val);
+      console.log(endpoint);
+      
+    return this.doGet(endpoint,[],val);
+  }
+
+  getDataFromSymptomsAPI(id:number,identifier:string): Observable<SymptomsRoot> {
+    const endpoint = Endpoints.getetdaccount ;
+    const val: QueryParam[] =
+      [{ key: "id", value: id.toString()},
+      { key: "identifier", value: identifier.toString()}];
+      console.log(val);
+      console.log(endpoint);
+      
+    return this.doGet(endpoint,[],val);
+  }
+
+  getDataFromTsIssuesAPI(id:number,identifier:string): Observable<SymptomsRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
       [{ key: "id", value: id.toString()},
