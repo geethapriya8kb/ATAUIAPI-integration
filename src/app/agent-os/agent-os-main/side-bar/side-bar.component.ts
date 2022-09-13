@@ -18,6 +18,7 @@ import {
 } from './side-bar.response';
 import { SideBarService } from './side-bar.service';
 import { StorageService } from '../../services/storage.service';
+import { VerifyAuthentiacteComponent } from '../../common/verify-authentiacte/verify-authentiacte.component';
 
 @Component({
   selector: 'app-side-bar',
@@ -150,6 +151,18 @@ export class SideBarComponent implements OnInit {
     const componentRef = this.overlayRef.attach(componentPortal);
 
     componentRef.instance.closeSticky.subscribe(() => this.overlayRef.detach());
+  }
+
+  openVerifyDialog(){
+    const dialogConfig = {
+      width: '100%',
+      height: '100%',
+    };
+
+    const dialogRef = this.matDialog.open(VerifyAuthentiacteComponent,dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   getHelpfulLinks(accountNumber) {

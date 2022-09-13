@@ -8,7 +8,7 @@ import { SettingsService } from '../../service-demo/settings.service';
 import { AlertRoot } from './alert.response';
 import { EventHistoryRoot } from './eventHistory.response';
 import { HistoryRoot } from './history.response';
-import { HitHistoryRoot } from './hitHistory.response';
+import { HitHistoryRoot } from './hithistory.response';
 import { SymptomsRoot } from './symptoms.response';
 
 @Injectable({
@@ -27,10 +27,9 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      
-    return this.doGet(endpoint,[],val);
-
+      return this.doGet(endpoint,[],val);
   }
+
   getdatafromEventHistoryAPI(id:number,identifier:string): Observable<EventHistoryRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
@@ -38,8 +37,7 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      
-    return this.doGet(endpoint,[],val);
+      return this.doGet(endpoint,[],val);
   }
 
   getdatafromHitHistoryAPI(id:number,identifier:string): Observable<HitHistoryRoot> {
@@ -49,8 +47,7 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      
-    return this.doGet(endpoint,[],val);
+      return this.doGet(endpoint,[],val);
   }
 
   getdatafromHistoryAPI(id:number,identifier:string): Observable<HistoryRoot> {
@@ -60,8 +57,7 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      
-    return this.doGet(endpoint,[],val);
+      return this.doGet(endpoint,[],val);
   }
 
   getDataFromSymptomsAPI(id:number,identifier:string): Observable<SymptomsRoot> {

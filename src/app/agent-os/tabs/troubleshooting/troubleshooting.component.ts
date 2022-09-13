@@ -11,7 +11,7 @@ import { EventDetailsComponent } from '../../modals/event-details/event-details.
 import { TroubleShootingService } from './troubleshooting.service';
 import { EventAlertsData } from './alert.response';
 import { EventHistory, EventHistoryTable } from './eventHistory.response';
-import { HitHistoryResponse, History } from './hitHistory.response';
+import { HitHistoryResponse, History } from './hithistory.response';
 import { HistoryTable,HistoryResponse } from './history.response';
 import { Symptoms } from './symptoms.response';
 import { Internet, Video } from './tsissues.response';
@@ -25,23 +25,20 @@ export class TroubleshootingComponent implements OnInit {
   dataSource = new MatTableDataSource<EventHistoryTable>();
   columnsToDisplay: Array<string>;
   data: EventHistory;
-
-  //eventAlertsData: Array<EventAlertsData>;
   eventAlertsData: EventAlertsData;
   @ViewChild(MatSort)
   sort!: MatSort;
   @ViewChild('sBSort') sBSort: MatSort;
-
-  dataSourceHit = new MatTableDataSource<History>();
+  dataSourceHit = new MatTableDataSource<any>();
   hitColumnsToDisplay:Array<string>;
-  hitData: HitHistoryResponse;
+  hitData: HistoryResponse;
+  columnsToDisplayTs :Array<string>;
+  active = 0;
 
   dataSourceTs = new MatTableDataSource<HistoryTable>();
-  columnsToDisplayTs :Array<string>;
   tsHistoryData: HistoryResponse;
 
   symptomsData: Symptoms;
-  active = 0;
 
   videoIssuesData: Array<Video>;
   internetIssuesData: Array<Internet>;
