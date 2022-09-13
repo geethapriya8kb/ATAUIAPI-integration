@@ -1,0 +1,60 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8345",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1200",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "FENTON",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "comments",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "789 North St ADDYSTON, OH 45001-0185",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "90066613500041",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "OT",
+        "type": "label"
+      },
+      "Node": {
+        "value": "",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null
+}

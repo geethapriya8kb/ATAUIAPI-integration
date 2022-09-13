@@ -1,0 +1,177 @@
+{
+    "content": [
+        {
+            "Ticket": "11177548",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "002044872555",
+            "City": "BUNNELL, FL",
+            "Node": "",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "C"
+        },
+        {
+            "Ticket": "11177521",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "12345628454",
+            "City": "BEVERLY BEACH, FL",
+            "Node": "",
+            "Reason": "Go Back: Work Not Completed",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "R"
+        },
+        {
+            "Ticket": "11177856",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "20547851544",
+            "City": "HENDERSON, NC",
+            "Node": "HZ098",
+            "Reason": "Go Back: Customer Missed Appointment",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "R"
+        },
+        {
+            "Ticket": "11177952",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8012587497545488",
+            "City": "SAINT PETERS, MO",
+            "Node": "SP039A",
+            "Reason": "Must Do: No dial tone with no phone alternative/No dial tone all phones",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "C"
+        },
+        {
+            "Ticket": "11177941",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8035454787741269",
+            "City": "BURBANK, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Quota Not Available within the SLA",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "C"
+        },
+        {
+            "Ticket": "11177547",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565985974",
+            "City": "LA, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "R"
+        }
+    ],
+    "etdcol": [
+        "Ticket",
+        "SLA Call Time",
+        "Account",
+        "City/State",
+        "Node",
+        "Reason",
+        "Status",
+        "Owner",
+        "Cust Type"
+    ],
+    "historytab": [
+        {
+            "Modified On": "1/21/20 2:31 PM",
+            "Modified By": "P453257",
+            "Action": "UpdatETicketClick",
+            "Contact Results": "",
+            "Comments": ""
+        },
+        {
+            "Modified On": "1/21/20 2:50 PM",
+            "Modified By": "P453257",
+            "Action": "UpdatETicketClick",
+            "Contact Results": "",
+            "Comments": ""
+        }
+    ],
+    "historycol": [
+        "Modified On",
+        "Modified By",
+        "Action",
+        "Contact Results",
+        "Comments"
+    ],
+    "etd": [
+        [
+            {
+                "info": {
+                    "Contact": "STEVE BOGERS",
+                    "Phone 1": "(314)555-5555",
+                    "Phone 2": "",
+                    "Node": "",
+                    "City/Status": "BUNNELL, FL",
+                    "Region": "Florida",
+                    "Mgmt": "",
+                    "SLA Call Time": "9/9/22 9:30 AM"
+                },
+                "header": {
+                    "Acct:": "002044872555 (C)"
+                }
+            }
+        ],
+        [
+            {
+                "info": {
+                    "Reason": "Must Do: Hazardous/Safety",
+                    "Job": "222355458",
+                    "Arrival Window": "",
+                    "Owner": "",
+                    "Customer SLA refused": ""
+                },
+                "header": {
+                    "Customer Contact made": ""
+                }
+            },
+            {
+                "header": {
+                    "Customer SLA Comments": ""
+                }
+            },
+            {
+                "header": {
+                    "Out Of Compliance:": ""
+                },
+                "info": {
+                    "OOC Reason": ""
+                }
+            }
+        ],
+        [
+            {
+                "header": {
+                    "Customer Care Comments:": ""
+                },
+                "info": {
+                    "COMMERCIAL": "NO CALL FROM DIALER"
+                }
+            },
+            {
+                "header": {
+                    "Field Ops Comments": ""
+                }
+            }
+        ]
+    ],
+    "myticketcol": [
+        "Ticket",
+        "SLA Call Time",
+        "Account",
+        "City/State",
+        "Node",
+        "Reason",
+        "Status",
+        "Owner",
+        "Cust Type"
+    ],
+    "mytickettab": {}
+}

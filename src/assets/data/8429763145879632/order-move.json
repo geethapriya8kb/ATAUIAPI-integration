@@ -1,0 +1,101 @@
+{
+    "icons": [
+        {
+            "path": "../../assets/images/tv-blue.png",
+            "amount":"$0.00",
+            "channel":"video"
+        },
+        {
+            "path": "../../assets/images/computer-gold.png",
+            "amount":"$0.00",
+            "channel":"Internet"
+        },
+        {
+            "path": "../../assets/images/phone-purple.png",
+            "amount":"$0.00",
+            "channel":"Voice"
+        }
+    ],
+    "content": [
+        {
+            "Order Number": "1200040847221019",
+            "Order Status": "Pending",
+            "Order Date": "09-06-2022",
+            "Order Type": "NewConnect",
+            "Scheduled Date": "09-14-2022",
+            "Completion Date": "",
+            "Sales Agent ID": "00085",
+            "Sales Agent Name": "Dev User"
+        }
+    ],
+    "ordercol": [
+        "Order Number",
+        "Order Status",
+        "Order Date",
+        "Order Type",
+        "Scheduled Date",
+        "Completion Date",
+        "Sales Agent ID",
+        "Sales Agent Name"
+    ],
+    "expansioncontent":[
+        {
+            "Quantity":"1",
+            "Service":"Spectrum TV Select",
+            "Amount":"$44.90"
+        },
+        {
+            "Quantity":"1",
+            "Service":"Spectrum TV Select",
+            "Amount":"$44.90"
+        },
+        {
+            "Quantity":"1",
+            "Service":"Spectrum TV Select",
+            "Amount":"$44.90"
+        }
+    ],
+    "expansioncol":[
+        "Quantity",
+        "Service",
+        "Amount"
+    ],
+    "ordercontent":[
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        }
+    ]
+}
