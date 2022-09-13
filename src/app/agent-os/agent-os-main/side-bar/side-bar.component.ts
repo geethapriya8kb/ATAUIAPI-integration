@@ -155,8 +155,8 @@ export class SideBarComponent implements OnInit {
 
   openVerifyDialog(){
     const dialogConfig = {
-      width: '100%',
-      height: '100%',
+      minWidth: '95%',
+      height: '90%',
     };
 
     const dialogRef = this.matDialog.open(VerifyAuthentiacteComponent,dialogConfig);

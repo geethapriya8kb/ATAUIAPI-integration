@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../services/account.service';
 
 @Component({
-  selector: 'app-verify-authentiacte',
-  templateUrl: './verify-authentiacte.component.html',
-  styleUrls: ['./verify-authentiacte.component.scss']
+  selector: 'app-aging-amount',
+  templateUrl: './aging-amount.component.html',
+  styleUrls: ['./aging-amount.component.scss']
 })
-export class VerifyAuthentiacteComponent implements OnInit {
+export class AgingAmountComponent implements OnInit {
   data: any = {};
   constructor(private accountserv:AccountService) { }
 
   ngOnInit(): void {
-    this.verifydata()
+    this.agingdata();
   }
 
-  verifydata(){
-    const dataFileName = `assets/data/8245100030092203/verify-authenticate.json`;
+  agingdata(){
+    const dataFileName = `assets/data/8245100030092203/aging.json`;
     this.accountserv.getverifydata(dataFileName).subscribe(
       (resp) => {
         this.data= resp
@@ -29,5 +29,4 @@ export class VerifyAuthentiacteComponent implements OnInit {
   returnZero() {
     return 0;
   }
-  }
-
+}

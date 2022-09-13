@@ -109,3 +109,8 @@
 .empty-msg {
     font-size: 0.875rem;
 }
+
+.full-width-dialog .mat-dialog-container {
+    max-width: 100vw !important;
+    height: '100%',
+  }
