@@ -2,46 +2,24 @@
   "orderStatusTable": [
     {
       "position": "1",
-      "Order": "8234123412341234",
-      "OrderType": "Product",
-      "Status": "Open",
-      "Reason": "Inbound",
-      "SalesID": "12345",
+      "Order": "1234123412341234",
+      "OrderType": "NewConnect",
+      "Status": "Closed",
+      "Reason": "INBOUND",
+      "SalesID": "44142",
       "expand": {
         "Job #": "123456",
         "Job Description": "NC TRIPLE",
-        "Job Comments": "TESTING",
-        "Job Class": "INSVHD",
-        "Resolution": "Not Available",
-        "Resolution Date and Time": "Not Available",
+        "Job Comments": "TESTINg",
+        "Job Class": "INSHSD",
+        "Resolution": "NOT AVAILABLE",
+        "Resolution Date and Time": "NOT AVAILABLE",
         "Job Type": "New Connect Or Install",
-        "Scheduled": "2019-08-22 02:00 PM - 03:00 PM",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
         "Duration": "145 minutes",
         "Job Status": "Open",
         "Tech ID": "0000",
         "Created On": "2019-08-22"
-      }
-    },
-    {
-      "position": "2",
-      "Order": "888888888888",
-      "OrderType": "Product",
-      "Status": "Open",
-      "Reason": "NA",
-      "SalesID": "3421",
-      "expand": {
-        "Job #": "7891011",
-        "Job Description": "NC TEST",
-        "Job Comments": "Completed",
-        "Job Class": "ANSVHD",
-        "Resolution": "Not Available",
-        "Resolution Date and Time": "Not Available",
-        "Job Type": "New Connect",
-        "Scheduled": "2019-08-22 03:00 PM - 04:00 PM",
-        "Duration": "120 minutes",
-        "Job Status": "Close",
-        "Tech ID": "1111",
-        "Created On": "2019-08-19"
       }
     }
   ],
@@ -54,9 +32,19 @@
     "icon"
   ],
   "statusLabel": "Order Status",
-  "status": ["ALL", "OPEN", "COMPLETED", "CANCELLED"],
+  "status": [
+    "ALL",
+    "OPEN",
+    "COMPLETED",
+    "CANCELLED"
+  ],
   "typeLabel": "Order Types",
-  "type": ["ALL", "PRODUCT", "SPECIAL REQUEST", "TROUBLE CALL"],
+  "type": [
+    "ALL",
+    "PRODUCT",
+    "SPECIAL REQUEST",
+    "TROUBLE CALL"
+  ],
   "heading": "Orders",
   "tasks": [
     {

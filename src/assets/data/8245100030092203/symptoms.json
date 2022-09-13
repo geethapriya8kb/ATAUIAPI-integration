@@ -2,74 +2,84 @@
     "content": {
         "Internet": {
             "subitems": {
+                "Community Solutions": {
+                    "SCS Cannot Connect Troubleshooting": "#",
+                    "SCS Email Troubleshooting": "#",
+                    "SCS Managed vs Non Managed Wifi": "#"
+                },
                 "Connectivity": {
-                    "Cannot Connect Troubleshooting": "#",
+                    "Cannot Connect": "#",
                     "Intermittency": "#",
-                    "Slow Internet Speeds": "#"
+                    "Slow Speeds": "#",
+                    "WiFi Coveraged": "#"
                 },
                 "Customer Self Install Trees": {
-                    "Self Install ": "#",
-                    "NextGen Self Install ": "#"
+                    "Self-Install": "#",
+                    "Standardized Customer Self-Install Pilot Tree": "#"
                 },
                 "Internet Services": {
-                    "DVR Troubleshooting": "#",
-                    "Charter Security Suite": "#",
-                    "My Spectrum Mobile App": "#",
+                    "Advanced In-Home WiFi Features": "#",
+                    "Email": "#",
+                    "My Spectrum App": "#",
+                    "Security Suite / McAfee": "#",
                     "Spectrum TV App": "#",
-                    "Spectrum.net / Email Troubleshooting": "#",
-                    "TV On The Go / Mobile Apps": "#"
+                    "Spectrum.net": "#",
+                    "TV On The Go": "#",
+                    "WiFi Credential Management": "#",
+                    "WiFi Hot Spot": "#",
+                    "cDVR": "#"
                 },
                 "Pilot Trees": {
                     "Automation Test Tree": "#",
                     "Converged Connectivity": "#",
                     "Converged Internet Features": "#",
                     "DOJ Internet": "#",
-                    "Security Suite / McFee": "#",
-                    "Spectrum Home Security": "#",
-                    "Slow Internet Speeds SCP": "#",
-                    "Spectrum NET Troubleshooting": "#"
-                },
-                "SCS Managed Wifi": {
-                    "Internet Connetivity": "#"
-                },
-                "Wifi Password Request or Chg": {
-                    "Wifi Password Request/Change": "#"
+                    "DOJ NextGen Activation": "#",
+                    "DOJ NextGen Internet": "#",
+                    "FTTP L-CHTR Install Activation": "#",
+                    "FTTP L-CHTR TC & Device Swap": "#",
+                    "FTTP L-TWC NON-BOT Install Activation": "#",
+                    "FTTP L-TWC NON-BOT TC & Device Swap": "#",
+                    "Spectrum PODs": "#"
                 }
             }
         },
         "Voice": {
             "subitems": {
-                "Cannot Make or Recieve calls": {
-                    "Cannot Make International Phone Calls": "#",
-                    "Cannot Make Local or Long Distance Phone Calls": "#",
-                    "Cannot Receive Any Phone Calls": "#",
-                    "Cannot Receive Collect Phone Calls": "#"
-                },
                 "Customer Self Install Trees": {
-                    "Self Install ": "#"
+                    "Standardized Customer Self-Install Pilot Tree": "#"
                 },
-                "Degraded Service": {
-                    "Cannot Hear Caller On the Phone": "#",
-                    "Crosstalk on the Phone": "#",
-                    "Echo on the Phone": "#",
-                    "One-Way Audio on the Phone": "#",
-                    "Phone is Dropping Calls": "#",
-                    "Slow Dial Tone on the Phone": "#",
-                    "Static or Interference on the Phone": "#"
+                "Pilot Trees": {
+                    "Automation Test Tree": "#",
+                    "DOJ NextGen Activation": "#",
+                    "DOJ NextGen Voice": "#",
+                    "DOJ Voice": "#",
+                    "MAC Tier 3 Only - BYOD": "#",
+                    "MAC Tier 3 Only - Lost Stolen Device": "#",
+                    "MAC Tier 3 Only - MDN - Line Move Requests": "#",
+                    "hAC Tier 3 Only - Past Due Port": "#",
+                    "MAC Tier 3 Only - Unable to Connect to Network": "#"
                 },
-                "Dial Tone Issues": {
-                    "Intermittent Dial Tone ": "#",
-                    "No Dial Tone ": "#"
-                },
-                "Features and Voicemail": {
-                    "Phone Features": "#"
-                },
-                "Pilot Tress- Test Team Only!": {
-                    "Automation Test Tree ": "#",
+                "Pilot Trees- Test Team Only!": {
                     "Mobile - Audio Issues": "#",
+                    "Mobile - Balance or Charge Inquiry": "#",
+                    "Mobile - Bill Cycle Dates Inquiry": "#",
+                    "Mobile - Billing Dispute": "#",
+                    "Mobile - Can't Text / Call": "#",
+                    "Mobile - Data Not Working": "#",
+                    "Mobile - Data Transfer": "#",
+                    "Mobile - Payment Issue": "#",
                     "Mobile - RMA Team": "#",
                     "Mobile - RMA Tier 1": "#",
-                    "Telephone Toll Free Troubleshooting - TWC/BHN": "#"
+                    "Mobile - Trade-Ins": "#",
+                    "Mobile - Voicemail": "#",
+                    "Mobile - WiFi": "#"
+                },
+                "Service Issues": {
+                    "Cannot Make/Receive Calls": "#",
+                    "Degraded Service": "#",
+                    "No Dial Tone": "#",
+                    "Phone Features": "#"
                 }
             }
         },
@@ -78,8 +88,16 @@
                 "Audio": {
                     "Audio Issue": "#"
                 },
+                "Community Solutions": {
+                    "SCS - DTA": "#",
+                    "SCS - Missing Channels - No Signal - Black Screen": "#",
+                    "SCS - QAM": "#",
+                    "SCS - Remote Control Issues": "#",
+                    "SCS - Spectrum Guide": "#"
+                },
                 "Customer Self Install Trees": {
-                    "Self Install ": "#"
+                    "Self Install ": "#",
+                    "Standardized Customer Self-Install Pilot Tree": "#"
                 },
                 "Equipment": {
                     "CableCard Issue ": "#",
@@ -88,10 +106,8 @@
                     "Remote Control Problem": "#"
                 },
                 "Feature": {
-                    "CIDTV": "#",
+                    "Accessibility": "#",
                     "Guide Issue/ Guide Errors ": "#",
-                    "Guide Settings": "#",
-                    "Equipment Issues ": "#",
                     "VOD/PPV Issues": "#"
                 },
                 "Picture": {
@@ -101,13 +117,26 @@
                     "Picture Quality": "#"
                 },
                 "Pilot Trees": {
-                    "Converged Remote Control Issues": "#",
-                    "DOJ - LCHTR - Limited Mode/Spectrum Tv Unavailable Error": "#",
-                    "DOJ - LCHTR - Retrieving Channel Information (RCI) Activate Your Service Error": "#",
-                    "DOJ DAV All Biller DYWTU All Channels Agents": "#",
-                    "DOJ DAV All Biller DYWTU Gold Keys Agents": "#",
-                    "DOJ DAV All Biller DYWTU SCAgents": "#",
-                    "DOJ DAV LCHTR CSG Limited Mode": "#"
+                    "Beth's Test Tree": "#",
+                    "Billing Tree - Balance Transfer": "#",
+                    "Billing Tree - ETD Troubleshooting": "#",
+                    "Billing Tree - Missing/Misapplied Payments": "#",
+                    "DOJ -- LCHTR -- Limited Mode/Spectrum TV Unavailable Error": "#",
+                    "DOJ -- LCHTR -- Basic TiVo Troubleshooting": "#",
+                    "DOJ -- LCHTR -- Retrieving Channel Information (RCI)/Activate Your Service Error": "#",
+                    "DOJ DAV All Biller DYWTU Single Channel": "#",
+                    "DOJ DAV All Biller DYWTU/Gold Keys All Channels": "#",
+                    "DOJ DAV LCHTR CSG Limited Mode": "#",
+                    "DOJ DAV LCHTR CSG Retrieving Channel": "#",
+                    "DOJ DAV Tivo CableCard": "#",
+                    "Small Test Tree": "#",
+                    "Test SCI Tree": "#"
+                },
+                "Pilot Trees - Test Team Only!": {
+                    "Automation Test Tree": "#",
+                    "OCS PPV-VOD Option 1": "#",
+                    "OCS PPV-VOD Option 2": "#",
+                    "OSC Researching VOD Streams and Errors": "#"
                 }
             }
         }

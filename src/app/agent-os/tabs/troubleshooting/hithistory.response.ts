@@ -1,4 +1,4 @@
-export class HistoryResponse {
+export class HitHistoryResponse {
     hithistory:       History[];
     provisionhistory: History[];
     hitHistoryColumn: string[];
