@@ -64,7 +64,6 @@ export class EditCustomerComponent implements OnInit {
   submit(){
     console.log(this.form.value);   
     const accountDetails = this.storeService.accountDetails;
-    accountDetails.content.Account['Customer Name'].value=this.form.controls['authUser'].value
     accountDetails.content.Account['Authorized Users'].value=this.form.controls['authUser'].value
    // this.storeService.customer = this.data;
   
