@@ -1,0 +1,60 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8345",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "2100",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "SHELDON",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "comments",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "92 EL DORADO DR.SHELDON, MO 64784-3768",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "57491111111124",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "OT",
+        "type": "label"
+      },
+      "Node": {
+        "value": "",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null
+}

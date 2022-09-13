@@ -1,0 +1,17 @@
+{
+  "heading": "Service Status",
+  "channel": [
+    {
+      "type": "Event Board",
+      "Video": "yes",
+      "Internet": "yes",
+      "Voice": "yes"
+    },
+    {
+      "type": "Device Status",
+      "Video": "yes",
+      "Internet": "no",
+      "Voice": "no"
+    }
+  ]
+}

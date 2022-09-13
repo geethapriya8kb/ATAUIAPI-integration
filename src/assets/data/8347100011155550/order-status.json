@@ -1,0 +1,95 @@
+{
+  "orderStatusTable": [
+    {
+      "position": "1",
+      "Order": "1000790905011031",
+      "OrderType": "TroubleCall",
+      "Status": "Open",
+      "Reason": "RESIFIBER, VODNTWORKING",
+      "SalesID": "0000",
+      "expand": {
+        "Job #": "814861",
+        "Job Description": "Residential trouble call",
+        "Job Comments": "TECH WALK AROUND BACK",
+        "Job Class": "RTROUBLECALL",
+        "Resolution": "001",
+        "Resolution Date and Time": "2022-09-09 16:25",
+        "Job Type": "TROUBLECALL",
+        "Scheduled": "2022-9-10 02:00 PM - 04:00 PM",
+        "Duration": "80 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2020-07-10"
+      }
+    },
+    {
+      "position": "2",
+      "Order": "1200036414211011",
+      "OrderType": "Product",
+      "Status": "Cancelled",
+      "Reason": "NONPAYDISC",
+      "SalesID": "44142",
+      "expand": {
+        "Job #": "000000",
+        "Job Description": "NC HSD",
+        "Job Comments": "N/A",
+        "Job Class": "INSHSD",
+        "Resolution": "001",
+        "Resolution Date and Time": "2022-09-09 16:25",
+        "Job Type": "New Connect Or Install",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
+        "Duration": "145 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2019-02-22"
+      }
+    },
+    {
+      "position": "3",
+      "Order": "1200033479071018",
+      "OrderType": "Product",
+      "Status": "Completed",
+      "Reason": "ONLINE",
+      "SalesID": "44142",
+      "expand": {
+        "Job #": "000000",
+        "Job Description": "NC HSD",
+        "Job Comments": "N/A",
+        "Job Class": "INSHSD",
+        "Resolution": "001",
+        "Resolution Date and Time": "2022-09-09 16:25",
+        "Job Type": "New Connect Or Install",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
+        "Duration": "145 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2019-02-22"
+      }
+    }
+  ],
+  "orderStatusColumns": [
+    "Order",
+    "OrderType",
+    "Status",
+    "Reason",
+    "SalesID",
+    "icon"
+  ],
+  "statusLabel": "Order Status",
+  "status": ["ALL", "OPEN", "COMPLETED", "CANCELLED"],
+  "typeLabel": "Order Types",
+  "type": ["ALL", "PRODUCT", "SPECIAL REQUEST", "TROUBLE CALL"],
+  "heading": "Orders",
+  "tasks": [
+    {
+      "label": "Unified Case Management",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "View Shipping Details",
+      "dialog": "EditAccountDialogComponent",
+      "width": "60"
+    }
+  ]
+}
