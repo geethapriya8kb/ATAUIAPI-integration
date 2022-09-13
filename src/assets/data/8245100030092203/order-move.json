@@ -1,17 +1,17 @@
 {
     "icons": [
         {
-            "path": "../../assets/images/tv-blue.png",
+            "path": "../../assets/images/blue-check.png",
             "amount":"$85.79",
             "channel":"video"
         },
         {
-            "path": "../../assets/images/computer-gold.png",
+            "path": "../../assets/images/orange-computer.png",
             "amount":"$85.79",
             "channel":"Internet"
         },
         {
-            "path": "../../assets/images/phone-purple.png",
+            "path": "../../assets/images/purple-receiver.png",
             "amount":"$85.79",
             "channel":"Voice"
         }

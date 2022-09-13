@@ -1,3 +1,4 @@
+<ng-container *ngIf="accNum=='8245100030092203'">   
 <div class="row">
     <div class="col col-md-6 mt-2">
         <ng-container *ngFor="let item of data?.customer">
@@ -230,21 +231,29 @@
         </div>
     </mat-card>
 </div>
+</ng-container>
 
 
 <!-- mobile page for eligible and ineligible customers -->
-<!-- <div class="text-center">
-    <mat-card class="m-2" style="background-color:white;">
-       
-        <i class="fa-solid fa-circle-check fs-1" style="color:green ;"></i>
-        <p class="fw-bold fs-6">This customer is eligible for mobile</p>
-        <ng-conntainer *ngFor="let item of data.eligibility | keyvalue:returnZero">
-            <p> {{item.key}}</p>
-            <mat-card class="mx-0" style="background-color:grey ;">
+<ng-container *ngIf="accNum=='8347100011155550'|| accNum=='8347100011133330'">
+<div class="justify-content-center d-flex text-center ">
+    <mat-card class="m-2 w-50" >       
+        <i *ngIf="accNum=='8347100011155550'" class="fa-solid fa-circle-check fs-1 color-green" ></i>
+        <i *ngIf="accNum=='8347100011133330'"  class="fa-solid fa-circle-xmark fs-1 color-red" ></i>
+        <p class="fw-bold fs-6">This customer is <span *ngIf="accNum=='8347100011155550'">eligible</span>  <span *ngIf="accNum=='8347100011133330'">ineligible</span>  for mobile</p>
+        <ng-conntainer *ngFor="let item of data.content | keyvalue:returnZero">
+            <h6 class="fw-light"> {{item.key}}</h6>
+            <div class="justify-content-center d-flex">
+            <mat-card class="w-75 bg-white-smoke ">
                 <div *ngFor="let i of item.value| keyvalue:returnZero">
-                    <p style="text-align:start ;"> <span><i class="fa-solid fa-check fs-6" style="color:green ;"></i></span>{{i.key}}</p>
+                    <p class="mx-0 text-start"  > <span><i *ngIf="i.key!='HSD Active or Pending Connect' || accNum!='8347100011133330' "  class="fa-solid fa-check fs-6 color-green" ></i><i *ngIf="i.key=='HSD Active or Pending Connect' && accNum=='8347100011133330' " class="fa-solid fa-xmark fs-6 color-red p-1"></i></span>{{i.key}}</p>
                 </div>
             </mat-card>
+        </div>
         </ng-conntainer>
+        <button class="mt-2 rounded-pill" mat-raised-button color="primary" >Shop</button>
+       
     </mat-card>
-</div> -->
+    
+</div>
+</ng-container>

@@ -1,5 +1,5 @@
 <mat-card class="orderbody" *ngIf="isOrderMove;else other_content">
-    <p class="order-font">Serviceability</p>
+    <h6 class="fw-bold">Serviceability</h6>
     <div class="row">
             <mat-card *ngFor="let i of data?.icons" class="col-md-4">
                 <img src="{{i.path}}" height="30" width="30">
@@ -7,8 +7,8 @@
                 <span style="float:right">{{i.amount}}</span>
             </mat-card>
     </div>
-    <p>Asterisk (*) Denotes Pending Service</p>
-
+    <p>Asterisk (*) Denotes Pending Service</p><hr>
+    <h6 class="fw-bold">Order History</h6>
     <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4 w-100" matSort>
         <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
             <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold table-bgcolor">
@@ -19,27 +19,27 @@
         </tr>
         <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
         </tr>
-    </table>
+    </table><hr>
     <br>
     <div class="row">
         <div class="col-md-3">
-            <h5>Active offer (s)</h5>
+            <h6 class="fw-bold">Active offer(s)</h6>
         </div>
         <div class="col-md-2">
-            <a href="">DISCONNECT</a>
+            <i>DISCONNECT</i>
         </div>
         <div class="col-md-2">
-            <a href="">TRANSFER</a>
+            <i >TRANSFER</i>
         </div>
         <div class="col-md-2">
-            <a>NEW CONNECT</a>
+            <i>NEW CONNECT</i>
         </div>
         <div class="col-md-1">
-            <a>RESTART</a>
+            <i>RESTART</i>
         </div>
         <div class="col-md-2">
-            <a href="">CHANGE OF SERVICE</a><br><br>
-            <a href="">SEASONAL SUSPEND</a>
+            <i >CHANGE OF SERVICE</i><br><br>
+            <i>SEASONAL SUSPEND</i>
         </div>
     </div><br><br>
     <mat-accordion>

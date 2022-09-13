@@ -26,7 +26,8 @@ export class MobileComponent implements OnInit {
   dataSource = new MatTableDataSource<string>();
   columnsToDisplay: string[] = [];
   expandedElement!: mobileDevices | null;
-  dataTest: Array<string> = new Array<string>();;
+  dataTest: Array<string> = new Array<string>();accNum: any;
+;
   mobileDataSource = new MatTableDataSource<string>();
   mobileColumnsToDisplay: string[] = [];
   mobileDatatest: Array<string> = new Array<string>();
@@ -64,6 +65,7 @@ export class MobileComponent implements OnInit {
   
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    this.accNum=accountNumber
     const cardName = `mobile-existingcust`;
     this.mobileService.getDataFromAPI(accountNumber, cardName).subscribe(
       (resp) => {
