@@ -16,7 +16,7 @@
                 <span class="px-1">Recently Viewed</span>
             </button>
 
-            <button mat-stroked-button  color="secondary" class="btn-rounded" [disabled]="!searchflag"
+            <button mat-stroked-button color="secondary" class="btn-rounded" [disabled]="!searchflag"
                 (click)="clearData()">
                 <mat-icon class="mat-custom-icon px-1" svgIcon="aos-close"></mat-icon>
                 <span class="px-1">Clear</span>
@@ -43,7 +43,7 @@
                                 <div class="col-md-5 ms-4">John Smith
                                     <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
                                 </div>
-                                <button class="col-md-5 btn-verify"><span>Verify & Authenticate</span></button>
+                                <button class="col-md-5 btn-verify" (click)="openVerifyDialog()"><span>Verify & Authenticate</span></button>
                             </div>
                         </div>
                         <p class="m-0 p-0 ms-4">Local Time: 10:34 AM EST</p>
@@ -76,9 +76,7 @@
             </mat-tab-group>
         </p>
     </div>
-
-    <br />
-
+    <br/>
     <div>
         <mat-expansion-panel class="p-0 relevent-knowledge">
             <mat-expansion-panel-header>
@@ -96,7 +94,7 @@
                         <ul *ngIf="searchflag">
                             <ng-container *ngFor="let item of articlesdata?.content | keyvalue">
                                 <li *ngFor="let valItem of item.value | keyvalue">
-                                    <a href="{{ valItem.value }}" target="_blank">
+                                    <a href="{{valItem.value}}" target="_blank">
                                         <p>{{valItem.key}}</p>
                                     </a>
                                 </li>
@@ -181,7 +179,7 @@
         </mat-expansion-panel>
     </div>
     <br />
-    <div >
+    <div>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
                 <span class="side-bar-section-header">Resolution, Notes & Interaction</span>
