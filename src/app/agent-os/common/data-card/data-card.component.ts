@@ -1,12 +1,9 @@
-import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
+import { ComponentType } from '@angular/cdk/portal';
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GroupService } from '../../service-demo/group.service';
-import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
-import { SharedService } from '../../services/shared.service';
 import { StorageService } from '../../services/storage.service';
-import { DynamicformComponent } from '../dynamicform/dynamicform.component';
 import { ContactPreferenceComponent } from '../modals/contact-preference/contact-preference.component';
 import { EditAccountComponent } from '../modals/edit-account/edit-account.component';
 import { EditCustomerComponent } from '../modals/edit-customer/edit-customer.component';
@@ -38,10 +35,14 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     const location = this.storeService.location;
     const accountDetails = this.storeService.accountDetails;
     const billingDetails = this.storeService.billingDetails;
-    const billingVertical = this.storeService.billingVertical;
-    const billingHistory = this.storeService.billingHistory;
 
-    if (location && accountDetails && billingDetails) {
+    if (
+      location &&
+      accountDetails &&
+      billingDetails &&
+      this.cardName != 'billing-billing' &&
+      this.cardName != 'billing-history'
+    ) {
       switch (this.cardName) {
         case 'location':
           return (this.data = location);
@@ -49,10 +50,6 @@ export class DataCardComponent implements OnInit, AfterViewInit {
           return (this.data = accountDetails);
         case 'billing':
           return (this.data = billingDetails);
-        case 'billing-billing':
-          return (this.data = billingVertical);
-        case 'billing-history':
-          return (this.data = billingHistory);
       }
     } else {
       this.getCardData(accountNumber);
@@ -73,20 +70,16 @@ export class DataCardComponent implements OnInit, AfterViewInit {
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         if (accountNumber != 'empty') {
-        switch (this.cardName) {
-          case 'location':
-            return (this.storeService.location = this.data);
-          case 'account':
-            return (this.storeService.accountDetails = this.data);
-          case 'billing':
-            return (this.storeService.billingDetails = this.data);
-          case 'billing-billing':
-            return (this.storeService.billingVertical = this.data);
-          case 'billing-history':
-            return (this.storeService.billingHistory = this.data);
+          switch (this.cardName) {
+            case 'location':
+              return (this.storeService.location = this.data);
+            case 'account':
+              return (this.storeService.accountDetails = this.data);
+            case 'billing':
+              return (this.storeService.billingDetails = this.data);
+          }
+          return null;
         }
-        return null;
-      }
       },
       error: (err) => console.log(err),
     });

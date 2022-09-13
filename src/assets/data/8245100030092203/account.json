@@ -27,7 +27,8 @@
         "value": "Jessica Creek",
         "type": "select",
         "options": [
-          "Jessica Creek"
+          "Jessica Creek",
+          "William Brown"
         ]
       },
       "Responsible Party": {
