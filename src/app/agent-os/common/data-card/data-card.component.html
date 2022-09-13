@@ -40,7 +40,8 @@
             <label *ngSwitchCase="'label'" class="pt-1">{{valItem.value.value}}</label>
 
             <select *ngSwitchCase="'select'" [disabled]="valItem.value.disabled" class="form-select">
-              <option *ngFor="let option of valItem.value.options" [value]="option">{{option}}</option>
+              <option *ngFor="let option of valItem.value.options" [value]="valItem.value.value">{{valItem.value.value}}
+              </option>
             </select>
           </div>
         </div>
@@ -56,6 +57,6 @@
 
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="click($event,item.dialog,item.width)" *ngFor="let item of data.tasks">
-    {{ item.label }} 
+    {{ item.label }}
   </button>
 </mat-menu>
