@@ -63,9 +63,12 @@ export class EditCustomerComponent implements OnInit {
   }
   submit() {
     console.log(this.form.value);
-    const accountDetails = this.storeService.accountDetails;
-    accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
+    
+    this.storeService.accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
     this.storeService.customer.contactRows[0].columns[1].value = this.form.controls['authUser'].value;
+
+    this.storeService.location.content.second.Address.value = this.form.controls['address1'].value;
+    this.storeService.customer.contactRows[3].columns[0].value = this.form.controls['address1'].value;
   }
   close() {
     this.dialogRef.close('Thanks for using me!');
