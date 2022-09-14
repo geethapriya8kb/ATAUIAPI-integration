@@ -3,6 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GroupService } from '../../service-demo/group.service';
 import { SearchService } from '../../services/search.service';
+import { StorageService } from '../../services/storage.service';
 @Component({
   selector: 'app-service-status',
   templateUrl: './service-status.component.html',
@@ -18,7 +19,8 @@ export class ServiceStatusComponent implements OnInit {
     private groupservice:GroupService,
     private searchService: SearchService,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) {
+    private domSanitizer: DomSanitizer,
+    private storeService:StorageService) {
 
       this.matIconRegistry
       .addSvgIcon('aos-copy-blue', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/images/agent-os/copy-blue.svg'))
@@ -27,7 +29,12 @@ export class ServiceStatusComponent implements OnInit {
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
-    this.getCardData(accountNumber);
+    const serviceStatusAccount = this.storeService.serviceStatusAccount;
+    if (serviceStatusAccount) {
+        this.data = serviceStatusAccount;
+    } else {
+      this.getCardData(accountNumber);
+    }
 
   }
 
@@ -47,7 +54,8 @@ export class ServiceStatusComponent implements OnInit {
 
     this.groupservice.getdatafromAPI(accountNumber,'service-status').subscribe(
       (resp) => {
-        this.data= JSON.parse(resp.content)
+        this.data= JSON.parse(resp.content);
+        this.storeService.serviceStatusAccount = this.data;
       },
       (err) => console.error(err),
       () => {
