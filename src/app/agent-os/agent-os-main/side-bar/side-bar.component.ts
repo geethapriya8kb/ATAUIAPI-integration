@@ -32,7 +32,7 @@ export class SideBarComponent implements OnInit {
   copilotUpdateData: CoPilotUpdateData;
   articlesdata: ArticleData;
   searchflag = true;
-
+  time=new Date();
   overlayRef: OverlayRef;
 
   custInfo = {
@@ -41,6 +41,7 @@ export class SideBarComponent implements OnInit {
     'Service Address': '123 MAIN ST, SAINT LOUIS,63141-5791',
     'Phone Number': '(314) 555-0101',
   };
+  sysTime: string;
 
   constructor(
     private matDialog: MatDialog,
@@ -89,6 +90,7 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
+    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });          
   }
 
   ngAfterViewInit() {
