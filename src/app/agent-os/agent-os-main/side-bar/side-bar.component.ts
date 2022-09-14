@@ -173,7 +173,7 @@ export class SideBarComponent implements OnInit {
 
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
-        this.helpfuldata = resp;
+        this.helpfuldata = JSON.parse(resp.content);
           this.storeService.sethelpfulAccount(this.helpfuldata);
       },
       error: (err) => console.log(err),
@@ -193,7 +193,7 @@ export class SideBarComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `copilot-link`;
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
-      next: (resp) => (this.linkdata = resp),
+      next: (resp) => {this.linkdata = JSON.parse(resp.content)},
       error: (err) => console.error(err),
     });
   }
@@ -211,7 +211,9 @@ export class SideBarComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `recommended-articles`;
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
-      next: (resp) => (this.articlesdata = resp),
+      next: (resp) => {
+        this.articlesdata = JSON.parse(resp.content);
+    },
       error: (err) => console.error(err),
     });
   }
