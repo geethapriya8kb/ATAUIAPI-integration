@@ -17,7 +17,7 @@
     },
     "": {
       "Amount Due": {
-        "value": "$138.83  09/23",
+        "value": "$138.83  09/23/2022",
         "type": "label"
       },
       "Current Balance": {
@@ -29,17 +29,17 @@
         "type": "label"
       },
       "Last Paid": {
-        "value": "$138.83  08/09",
+        "value": "$138.83  08/14/2022",
         "type": "label"
       }
     },
     " ": {
       "PPV Limit": {
-        "value": "$0.00",
+        "value": "$150.00",
         "type": "label"
       },
       "PPV Usage": {
-        "value": "$150.00",
+        "value": "$0.00",
         "type": "label"
       }
     },

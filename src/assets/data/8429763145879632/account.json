@@ -4,7 +4,7 @@
   "content": {
     "Account": {
       "Salutation": {
-        "value": "MRS",
+        "value": "MR",
         "type": "label"
       },
       "Customer Name": {
