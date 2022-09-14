@@ -63,14 +63,26 @@ export class EditCustomerComponent implements OnInit {
   }
   submit() {
     console.log(this.form.value);
-    
-    this.storeService.accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
-    this.storeService.customer.contactRows[0].columns[1].value = this.form.controls['authUser'].value;
 
-    this.storeService.location.content.second.Address.value = this.form.controls['address1'].value;
+    this.storeService.accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
+    this.storeService.customer.contactRows[0].columns[1].value =  this.form.controls['authUser'].value;
+
+    this.storeService.location.content.second.Address.value =
+      this.form.controls['address1'].value +
+      '  ' + this.form.controls['address2'].value +
+      '  ' + this.form.controls['city'].value +
+      '  ' + this.form.controls['state'].value +
+      '  ' + this.form.controls['zip'].value;
+
     this.storeService.customer.contactRows[3].columns[0].value = this.form.controls['address1'].value;
+    this.storeService.customer.contactRows[4].columns[0].value = this.form.controls['address2'].value;
+    this.storeService.customer.contactRows[5].columns[0].value = this.form.controls['city'].value;
+    this.storeService.customer.contactRows[6].columns[0].value = this.form.controls['state'].value;
+    this.storeService.customer.contactRows[7].columns[0].value = this.form.controls['zip'].value;
+
+    this.dialogRef.close('Updated Successfully');
   }
   close() {
-    this.dialogRef.close('Thanks for using me!');
+    this.dialogRef.close('close');
   }
 }
