@@ -1,14 +1,24 @@
 {
- 
   "content": {
     "Video": {
-      "S TV SELECT": "$49.99",
-      "S BASIC": "$0.00",
-      "S EXPAND": "$0.00",
-      "S VOD": "$0.00",
-      "S BRDCSTSVC": "$21.00",
-      "Hd Receiver": "$9.99",
-      "Interact Srv": "$0.00"
+      "S Digi Tier1":"$0.00",
+      "S HBO": "$0.00",
+      "S Showtime": "$0.00",
+      "Sslvrtiertrk": "$20.00",
+      "S Digi Tier2": "$0.00",
+      "S Starzencor": "$0.00",
+      "S Starz": "$0.00",
+      "S TMC": "$0.00",
+      "S Gldtiertrk": "$20.00",
+      "Interact Srv": "$0.00",
+      "S Secconnect": "$1.00",
+      "Sdvrreceiver": "$6.50",
+      "S Basic": "$16.54",
+      "S Expand": "$28.45",
+      "S Brdcstsvc": "$11.99",
+      "S Cinemax": "$9.99",
+      "S Vod": "$0.00",
+      "S Dvrsvcsngl": "$4.99"
     },
     "Internet": {
       "S Hsi Plus": "$0.00",
@@ -26,9 +36,8 @@
       "Steldirlstng": "$0.00"
     }
   },
-  
   "icons": {
-    "Video":{
+    "Video": {
       "path": "../../assets/images/blue-check.png"
     },
     "Internet": {
@@ -40,42 +49,44 @@
   },
   "eventHistoryTable": [
     {
-    "LOB":"../../assets/images/tv-blue.png",
-    "Type":"No Service were found for this account",
-    "Service Status":"",
-    "Device Status":"",
-    "Signal/Details":"",
-    "Model":"",
-    "MAC":"",
-    "Serial No":"",
-    "Description":"",
-    "visible":"false",
-    "Actions":""
+      "LOB": "../../assets/images/tv-blue.png",
+      "Type": "No Service were found for this account",
+      "Service Status": "",
+      "Device Status": "",
+      "Signal/Details": "",
+      "Model": "",
+      "MAC": "",
+      "Serial No": "",
+      "Description": "",
+      "visible": "false",
+      "Actions": ""
     },
-    {"LOB":"../../assets/images/computer-gold.png",
-      "Type":"No Service were found for this account",
-      "Service Status":"",
-      "Device Status":"",
-      "Signal/Details":"",
-      "Model":"",
-      "MAC":"",
-      "Serial No":"",
-      "Description":"",
-      "visible":"false",
-      "Actions":""
-      },
-      {"LOB":"../../assets/images/phone-purple.png",
-        "Type":"No Service were found for this account",
-        "Service Status":"",
-        "Device Status":"",
-        "Signal/Details":"",
-        "Model":"",
-        "MAC":"",
-        "Serial No":"",
-        "Description":"",
-        "visible":"false",
-        "Actions":""
-        }
+    {
+      "LOB": "../../assets/images/computer-gold.png",
+      "Type": "No Service were found for this account",
+      "Service Status": "",
+      "Device Status": "",
+      "Signal/Details": "",
+      "Model": "",
+      "MAC": "",
+      "Serial No": "",
+      "Description": "",
+      "visible": "false",
+      "Actions": ""
+    },
+    {
+      "LOB": "../../assets/images/phone-purple.png",
+      "Type": "No Service were found for this account",
+      "Service Status": "",
+      "Device Status": "",
+      "Signal/Details": "",
+      "Model": "",
+      "MAC": "",
+      "Serial No": "",
+      "Description": "",
+      "visible": "false",
+      "Actions": ""
+    }
   ],
   "eventHistoryColumns": [
     "LOB",

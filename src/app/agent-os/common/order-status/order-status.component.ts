@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { OrderStatus } from '../../interfaces/OrderStatus';
 import { SearchService } from '../../services/search.service';
 import { GroupService } from '../../service-demo/group.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-order-status',
@@ -33,12 +34,23 @@ export class OrderStatusComponent implements OnInit {
   accountVal: unknown;
   constructor(
     private searchService: SearchService,
-    private groupservice:GroupService
+    private groupservice:GroupService,
+    private storeService:StorageService
   ) {}
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
-    this.getCardData(accountNumber);
+    const orderStatusAccount = this.storeService.orderStatusAccount;
+    if (orderStatusAccount) {
+        this.data = orderStatusAccount;
+        this.dataSource.data = this.data.orderStatusTable;
+        this.columnsToDisplay = this.data.orderStatusColumns;
+        this.status = this.data.status;
+        this.type = this.data.type;
+        this.task = this.data.tasks;
+    } else {
+      this.getCardData(accountNumber);
+    }
   }
   statusChange(event: any): void {
     //console.log(this.selectedStatus);
@@ -61,7 +73,8 @@ export class OrderStatusComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.groupservice.getdatafromAPI(accountNumber,'order-status').subscribe(
       (resp) => {
-        this.data= JSON.parse(resp.content)
+        this.data= JSON.parse(resp.content);
+        this.storeService.orderStatusAccount = this.data;
       },
       (err) => console.error(err),
       () => {

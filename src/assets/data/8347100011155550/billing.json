@@ -6,7 +6,7 @@
         "value": "$138.83",
         "type": "label"
       },
-      "Date": {
+      "Due Date": {
         "value": "09/23/2022",
         "type": "label"
       },
@@ -14,7 +14,7 @@
         "value": "$138.83",
         "type": "label"
       },
-      "Date": {
+      "Last Paid Date": {
         "value": "08/09/2022",
         "type": "label"
       },

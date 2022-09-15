@@ -17,7 +17,7 @@
     },
     "": {
       "Amount Due": {
-        "value": "$202.40 09/23",
+        "value": "$202.40 09/23/2022",
         "type": "label"
       },
       "Current Balance": {
@@ -29,7 +29,7 @@
         "type": "label"
       },
       "Last Paid": {
-        "value": "$202.40 08/12",
+        "value": "$202.40 08/14/2022",
         "type": "label"
       }
     },

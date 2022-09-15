@@ -11,7 +11,8 @@ export class StorageService {
   public billingDetails: any;
   public billingVertical: any;
   public billingHistory: any;
-
+  public orderStatusAccount:any;
+  public serviceStatusAccount:any;
   public customer:any;
 
   constructor() {}

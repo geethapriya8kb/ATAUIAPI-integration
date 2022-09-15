@@ -19,7 +19,7 @@
         "type": "label"
       },
       "Comments": {
-        "value": "comments",
+        "value": "",
         "type": "label"
       }
     },
@@ -43,7 +43,7 @@
         "type": "label"
       },
       "Headend": {
-        "value": "OT",
+        "value": "4A - Fenton",
         "type": "label"
       },
       "Node": {
