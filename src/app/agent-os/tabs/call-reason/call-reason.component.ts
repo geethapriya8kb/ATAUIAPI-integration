@@ -40,6 +40,7 @@ export class CallReasonComponent implements OnInit {
   accountNoFlag: any = {};
   tabName: any;
   troubleData: any;
+  accNum: any;
 
   constructor(
     private device: CardDataService,
@@ -115,6 +116,7 @@ export class CallReasonComponent implements OnInit {
 
   getCallData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    this.accNum=accountNumber
     const path = `${accountNumber}/call-reason`;
      if(accountNumber==='empty'){
       this.accountNoFlag=false

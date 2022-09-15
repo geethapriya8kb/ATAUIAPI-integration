@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -25,7 +25,7 @@ import { VerifyAuthentiacteComponent } from '../../common/verify-authentiacte/ve
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss'],
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, DoCheck {
   helpfuldata: HelpfulData;
   linkdata: LinkData;
   actiondata: ActionData;
@@ -86,11 +86,17 @@ export class SideBarComponent implements OnInit {
         )
       );
   }
+  
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
-    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });          
+    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });   
+    
+           
+  }
+  ngDoCheck(): void {
+    console.log(this.storeService.accountDetails);
   }
 
   ngAfterViewInit() {
