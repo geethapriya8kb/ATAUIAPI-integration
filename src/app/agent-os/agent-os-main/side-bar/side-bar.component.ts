@@ -110,14 +110,8 @@ export class SideBarComponent implements OnInit, DoCheck {
     if (!accountNumber) {
       accountNumber = '';
     }
-
-    const helpfulAccount = this.storeService.gethelpfulAccount();
-    if (helpfulAccount) {
-        this.helpfuldata = helpfulAccount;
-    } else {
-      this.getHelpfulLinks(accountNumber);
-    }
-
+   
+    this.getHelpfulLinks(accountNumber);
     this.getCopilotLinkData(accountNumber);
     this.getCopilotUpdateData(accountNumber);
     this.getArticles(accountNumber);
@@ -176,11 +170,9 @@ export class SideBarComponent implements OnInit, DoCheck {
   getHelpfulLinks(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `helpful-link`;
-
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
         this.helpfuldata = JSON.parse(resp.content);
-          this.storeService.sethelpfulAccount(this.helpfuldata);
       },
       error: (err) => console.log(err),
     });

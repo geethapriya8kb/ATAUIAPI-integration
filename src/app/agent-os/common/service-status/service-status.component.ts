@@ -32,6 +32,13 @@ export class ServiceStatusComponent implements OnInit {
     const serviceStatusAccount = this.storeService.serviceStatusAccount;
     if (serviceStatusAccount) {
         this.data = serviceStatusAccount;
+        this.data.channel.forEach((element: {}) => {
+          this.types = Object.keys(element);
+        });
+        this.data.serviceDetails.forEach((element: {}) => {
+          this.service = Object.keys(element);
+          this.service.splice(this.service.indexOf('Mbps'), 1)
+        });
     } else {
       this.getCardData(accountNumber);
     }
