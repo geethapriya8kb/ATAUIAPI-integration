@@ -11,10 +11,10 @@ import { EventDetailsComponent } from '../../modals/event-details/event-details.
 import { TroubleShootingService } from './troubleshooting.service';
 import { EventAlertsData } from './alert.response';
 import { EventHistory, EventHistoryTable } from './eventHistory.response';
-import { HitHistoryResponse, History } from './hithistory.response';
 import { HistoryTable,HistoryResponse } from './history.response';
 import { Symptoms } from './symptoms.response';
 import { Internet, Video } from './tsissues.response';
+import { HitHistoryResponse,History } from './hithistory.response';
 
 @Component({
   selector: 'app-troubleshooting',
@@ -25,26 +25,30 @@ export class TroubleshootingComponent implements OnInit {
   dataSource = new MatTableDataSource<EventHistoryTable>();
   columnsToDisplay: Array<string>;
   data: EventHistory;
+
+  //eventAlertsData: Array<EventAlertsData>;
   eventAlertsData: EventAlertsData;
   @ViewChild(MatSort)
   sort!: MatSort;
   @ViewChild('sBSort') sBSort: MatSort;
-  dataSourceHit = new MatTableDataSource<any>();
+
+  dataSourceHit = new MatTableDataSource<History>();
   hitColumnsToDisplay:Array<string>;
-  hitData: HistoryResponse;
-  columnsToDisplayTs :Array<string>;
-  active = 0;
+  hitData: HitHistoryResponse;
 
   dataSourceTs = new MatTableDataSource<HistoryTable>();
+  columnsToDisplayTs :Array<string>;
   tsHistoryData: HistoryResponse;
 
   symptomsData: Symptoms;
+  active = 0;
 
   videoIssuesData: Array<Video>;
   internetIssuesData: Array<Internet>;
   videoHome: boolean = false;
-  symptomName: any;
-  dynamicTabName: any;
+  symptomName: string;
+  dynamicTabName: string;
+  // Same issuesData use for  videoIssuesData and internetIssuesData
   issuesData: any = {};
 
   isMousehover: Number = 0;
@@ -172,14 +176,13 @@ export class TroubleshootingComponent implements OnInit {
   getvideoIssuesData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName="ts-issues"
-   
     this.troubleShootService.getDataFromTsIssuesAPI(accountNumber,cardName).subscribe({
-      next: (resp: any) => {
+      next: (resp) => {
         let content= JSON.parse(resp.content)
         this.videoIssuesData = content.video;
         this.internetIssuesData = content.internet;
       },
-      error: (err: any) => console.error(err),
+      error: (err) => console.error(err),
       complete: () => {
         console.log(this.videoIssuesData);
         console.log(this.internetIssuesData);

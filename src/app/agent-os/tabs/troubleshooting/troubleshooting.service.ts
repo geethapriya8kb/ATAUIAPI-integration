@@ -10,6 +10,7 @@ import { EventHistoryRoot } from './eventHistory.response';
 import { HistoryRoot } from './history.response';
 import { HitHistoryRoot } from './hithistory.response';
 import { SymptomsRoot } from './symptoms.response';
+import { TsIssuesRoot } from './tsissues.response';
 
 @Injectable({
   providedIn: 'root',
@@ -27,9 +28,10 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      return this.doGet(endpoint,[],val);
-  }
+      
+    return this.doGet(endpoint,[],val);
 
+  }
   getdatafromEventHistoryAPI(id:number,identifier:string): Observable<EventHistoryRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
@@ -37,7 +39,8 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      return this.doGet(endpoint,[],val);
+      
+    return this.doGet(endpoint,[],val);
   }
 
   getdatafromHitHistoryAPI(id:number,identifier:string): Observable<HitHistoryRoot> {
@@ -47,7 +50,8 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      return this.doGet(endpoint,[],val);
+      
+    return this.doGet(endpoint,[],val);
   }
 
   getdatafromHistoryAPI(id:number,identifier:string): Observable<HistoryRoot> {
@@ -57,7 +61,8 @@ export class TroubleShootingService extends BaseService {
       { key: "identifier", value: identifier.toString()}];
       console.log(val);
       console.log(endpoint);
-      return this.doGet(endpoint,[],val);
+      
+    return this.doGet(endpoint,[],val);
   }
 
   getDataFromSymptomsAPI(id:number,identifier:string): Observable<SymptomsRoot> {
@@ -71,7 +76,7 @@ export class TroubleShootingService extends BaseService {
     return this.doGet(endpoint,[],val);
   }
 
-  getDataFromTsIssuesAPI(id:number,identifier:string): Observable<SymptomsRoot> {
+  getDataFromTsIssuesAPI(id:number,identifier:string): Observable<TsIssuesRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
       [{ key: "id", value: id.toString()},
@@ -81,5 +86,7 @@ export class TroubleShootingService extends BaseService {
       
     return this.doGet(endpoint,[],val);
   }
+
+  
 
 }
