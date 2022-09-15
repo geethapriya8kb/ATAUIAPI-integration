@@ -6,23 +6,19 @@ import { StorageService } from '../../services/storage.service';
   styleUrls: ['./customer-location.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class CustomerLocationComponent implements OnInit,DoCheck {
+export class CustomerLocationComponent implements OnInit {
 
   activeIndex = 0;
-  location:any = {};
+ 
 
-  constructor(private storeService:StorageService) { }
+  constructor(public storeService:StorageService) { }
   
   
 
-  ngOnInit(): void {    
-    this.location=this.storeService.location;
-    console.log(this.location); 
+  ngOnInit(): void {   
+    
   } 
-  ngDoCheck(): void {
-    this.location=this.storeService.location;
-    console.log(this.location); 
-  }
+  
  
  
 }

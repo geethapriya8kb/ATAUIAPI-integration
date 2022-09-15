@@ -1,3 +1,4 @@
+
 <div class="side-nav agent-os-main">
     <div class="white-div">
         <div class="mt-1">
@@ -40,7 +41,7 @@
                     <ng-container *ngIf="searchflag">
                         <div class="mt-1 font-edit">
                             <div class="row">
-                                <div class="col-md-5 ms-4">DAVID CREEK
+                                <div class="col-md-5 ms-4">{{storeService?.accountDetails?.content.Account['Customer Name'].value}}
                                     <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
                                 </div>
                                 <button class="col-md-5 btn-verify" (click)="openVerifyDialog()"><span>Verify & Authenticate</span></button>

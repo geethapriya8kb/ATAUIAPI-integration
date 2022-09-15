@@ -25,7 +25,7 @@ import { VerifyAuthentiacteComponent } from '../../common/verify-authentiacte/ve
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss'],
 })
-export class SideBarComponent implements OnInit, DoCheck {
+export class SideBarComponent implements OnInit {
   helpfuldata: HelpfulData;
   linkdata: LinkData;
   actiondata: ActionData;
@@ -42,6 +42,7 @@ export class SideBarComponent implements OnInit, DoCheck {
     'Phone Number': '(314) 555-0101',
   };
   sysTime: string;
+  
 
   constructor(
     private matDialog: MatDialog,
@@ -52,7 +53,7 @@ export class SideBarComponent implements OnInit, DoCheck {
     private sharedService: SharedService,
     private overlay: Overlay,
     private sidebarservice: SideBarService,
-    private storeService: StorageService
+    public storeService: StorageService
   ) {
     this.matIconRegistry
       .addSvgIcon(
@@ -95,10 +96,7 @@ export class SideBarComponent implements OnInit, DoCheck {
     
            
   }
-  ngDoCheck(): void {
-    console.log(this.storeService.accountDetails);
-  }
-
+  
   ngAfterViewInit() {
     this.searchService.sharedValue$.subscribe((val) => {
       let accountNumber: string = val ? String(val) : '';
