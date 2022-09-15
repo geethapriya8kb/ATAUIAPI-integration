@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -25,7 +25,7 @@ import { VerifyAuthentiacteComponent } from '../../common/verify-authentiacte/ve
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss'],
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, DoCheck {
   helpfuldata: HelpfulData;
   linkdata: LinkData;
   actiondata: ActionData;
@@ -86,11 +86,17 @@ export class SideBarComponent implements OnInit {
         )
       );
   }
+  
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
-    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });          
+    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });   
+    
+           
+  }
+  ngDoCheck(): void {
+    console.log(this.storeService.accountDetails);
   }
 
   ngAfterViewInit() {
@@ -104,14 +110,8 @@ export class SideBarComponent implements OnInit {
     if (!accountNumber) {
       accountNumber = '';
     }
-
-    const helpfulAccount = this.storeService.gethelpfulAccount();
-    if (helpfulAccount) {
-        this.helpfuldata = helpfulAccount;
-    } else {
-      this.getHelpfulLinks(accountNumber);
-    }
-
+   
+    this.getHelpfulLinks(accountNumber);
     this.getCopilotLinkData(accountNumber);
     this.getCopilotUpdateData(accountNumber);
     this.getArticles(accountNumber);
@@ -170,11 +170,9 @@ export class SideBarComponent implements OnInit {
   getHelpfulLinks(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `helpful-link`;
-
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
-        this.helpfuldata = resp;
-          this.storeService.sethelpfulAccount(this.helpfuldata);
+        this.helpfuldata = JSON.parse(resp.content);
       },
       error: (err) => console.log(err),
     });
@@ -193,7 +191,7 @@ export class SideBarComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `copilot-link`;
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
-      next: (resp) => (this.linkdata = resp),
+      next: (resp) => {this.linkdata = JSON.parse(resp.content)},
       error: (err) => console.error(err),
     });
   }
@@ -211,7 +209,9 @@ export class SideBarComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `recommended-articles`;
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
-      next: (resp) => (this.articlesdata = resp),
+      next: (resp) => {
+        this.articlesdata = JSON.parse(resp.content);
+    },
       error: (err) => console.error(err),
     });
   }

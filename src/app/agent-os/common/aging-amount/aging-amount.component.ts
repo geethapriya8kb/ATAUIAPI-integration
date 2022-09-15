@@ -7,7 +7,7 @@ import { AccountService } from '../../services/account.service';
   styleUrls: ['./aging-amount.component.scss']
 })
 export class AgingAmountComponent implements OnInit {
-  data: any = {};
+  data: any;
   constructor(private accountserv:AccountService) { }
 
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class AgingAmountComponent implements OnInit {
     const dataFileName = `assets/data/8245100030092203/aging.json`;
     this.accountserv.getverifydata(dataFileName).subscribe(
       (resp) => {
-        this.data= resp
+        this.data= resp;
       },
       (err) => console.error(err),
       () => {

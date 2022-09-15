@@ -1,11 +1,11 @@
-<h5 class="text-center"><b>{{data.title}}</b></h5>
+<h5 class="text-center"><b>{{data?.title}}</b></h5>
 <div class="col-md-12" >
     <div class="row" >
-        <div class="col-md-6" *ngFor="let i of data.content[0] | keyvalue : returnZero">
+        <div class="col-md-6" *ngFor="let i of data?.content[0] | keyvalue : returnZero">
             <b class="text-center">{{i.key}}</b><br>
             <div class="row">
-            <div class="col-md-4" *ngFor="let j of i.value | keyvalue : returnZero">
-                <div *ngFor="let z of j.value| keyvalue : returnZero">
+            <div class="col-md-4" *ngFor="let j of i?.value | keyvalue : returnZero">
+                <div *ngFor="let z of j?.value| keyvalue : returnZero">
                     <b>{{z.key}}</b><br>
                     {{z.value}}
                 </div>
