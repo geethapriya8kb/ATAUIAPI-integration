@@ -1,0 +1,60 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8345",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "7800",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "LADUE",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "56 Morwood Ln Saint Louis, MO 63141-7621",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "63141762110001",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "SDVOLIVETTE - Sdv Olivette",
+        "type": "label"
+      },
+      "Node": {
+        "value": "OT084C",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "OL",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null
+}
