@@ -89,37 +89,26 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
-    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });   
-   
+    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });  
     this.custInfo = {
       'Account Number': '8429763145879632',
       'Biller': 'CHTR.CSG',
       'Service Address': this.storeService.location?.content?.second.Address.value,
-      'Phone Number': '(314) 555-0101',
+      'Phone Number': this.storeService?.location?.contact.phone.value1,
     
     }; 
-    console.log(this.custInfo);
-    
-    
-          
+    console.log(this.custInfo);      
   }
   
   ngAfterViewInit() {
+ 
     this.searchService.sharedValue$.subscribe((val) => {
-      let accountNumber: string = val ? String(val) : '';
+      const accountNumber = val ? String(val) : '';
       this.loadData(accountNumber);
     });
-    this.custInfo = {
-      'Account Number': '8429763145879632',
-      'Biller': 'CHTR.CSG',
-      'Service Address': this.storeService.location?.content?.second.Address.value,
-      'Phone Number': '(314) 555-0101',
-    
-    }; 
-    console.log(this.custInfo);
   }
 
-  private loadData(accountNumber: string): void {
+   loadData(accountNumber: string): void {
     if (!accountNumber) {
       accountNumber = '';
     }
@@ -237,4 +226,5 @@ export class SideBarComponent implements OnInit {
   returnZero() {
     return 0;
   }
+ 
 }
