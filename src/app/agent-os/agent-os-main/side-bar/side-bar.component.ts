@@ -35,11 +35,7 @@ export class SideBarComponent implements OnInit {
   time=new Date();
   overlayRef: OverlayRef;
 
-  custInfo = {
-    'Account Number': '8429763145879632',
-    Biller: 'CHTR.CSG',
-    'Service Address': '123 MAIN ST, SAINT LOUIS,63141-5791',
-    'Phone Number': '(314) 555-0101',
+  custInfo = {   
   };
   sysTime: string;
   
@@ -86,6 +82,7 @@ export class SideBarComponent implements OnInit {
           'assets/images/agent-os/close-mark.svg'
         )
       );
+     
   }
   
 
@@ -93,8 +90,18 @@ export class SideBarComponent implements OnInit {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
     this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });   
+   
+    this.custInfo = {
+      'Account Number': '8429763145879632',
+      'Biller': 'CHTR.CSG',
+      'Service Address': this.storeService.location?.content?.second.Address.value,
+      'Phone Number': '(314) 555-0101',
     
-           
+    }; 
+    console.log(this.custInfo);
+    
+    
+          
   }
   
   ngAfterViewInit() {
@@ -102,6 +109,14 @@ export class SideBarComponent implements OnInit {
       let accountNumber: string = val ? String(val) : '';
       this.loadData(accountNumber);
     });
+    this.custInfo = {
+      'Account Number': '8429763145879632',
+      'Biller': 'CHTR.CSG',
+      'Service Address': this.storeService.location?.content?.second.Address.value,
+      'Phone Number': '(314) 555-0101',
+    
+    }; 
+    console.log(this.custInfo);
   }
 
   private loadData(accountNumber: string): void {
