@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/internal/Subject';
 })
 export class SearchService {
 
-  private defaultValue = 'empty';
+  private defaultValue = '';
 
   private accountNumber: string = this.defaultValue;
   private locationId: string = this.defaultValue;
@@ -16,7 +16,6 @@ export class SearchService {
   constructor() { }
 
   public setAccountNumber(acctNumber: string): void {
-
     if (!acctNumber || acctNumber.trim() == '') {
       acctNumber = this.defaultValue;
     }

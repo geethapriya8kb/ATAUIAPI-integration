@@ -31,7 +31,7 @@ export class SideBarComponent implements OnInit {
   actiondata: ActionData;
   copilotUpdateData: CoPilotUpdateData;
   articlesdata: ArticleData;
-  searchflag = true;
+  searchflag:boolean;
   time=new Date();
   overlayRef: OverlayRef;
 
@@ -91,7 +91,7 @@ export class SideBarComponent implements OnInit {
     this.loadData(accountNumber);
     this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });  
     this.custInfo = {
-      'Account Number': '8429763145879632',
+      'Account Number': this.searchService.getAccountNumber(),
       'Biller': 'CHTR.CSG',
       'Service Address': this.storeService.location?.content?.second.Address.value,
       'Phone Number': this.storeService?.location?.contact.phone.value1,
@@ -111,8 +111,7 @@ export class SideBarComponent implements OnInit {
    loadData(accountNumber: string): void {
     if (!accountNumber) {
       accountNumber = '';
-    }
-   
+    }   
     this.getHelpfulLinks(accountNumber);
     this.getCopilotLinkData(accountNumber);
     this.getCopilotUpdateData(accountNumber);
@@ -172,6 +171,11 @@ export class SideBarComponent implements OnInit {
   getHelpfulLinks(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `helpful-link`;
+    if(accountNumber!='empty'){
+      this.searchflag=true
+    }else{
+      this.searchflag=false
+    }
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
         this.helpfuldata = JSON.parse(resp.content);
