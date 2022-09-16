@@ -9,9 +9,12 @@ import { StorageService } from '../../services/storage.service';
 export class CustomerLocationComponent implements OnInit {
 
   activeIndex = 0;
+  test: any;
  
 
-  constructor(public storeService:StorageService) { }
+  constructor(public storeService:StorageService) {
+    this.test=storeService.location
+   }
   
   
 
