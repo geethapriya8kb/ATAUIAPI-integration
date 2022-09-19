@@ -45,7 +45,7 @@ export class SideBarComponent implements OnInit {
     private cardDataService: CardDataService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private searchService: SearchService,
+    public searchService: SearchService,
     private sharedService: SharedService,
     private overlay: Overlay,
     private sidebarservice: SideBarService,

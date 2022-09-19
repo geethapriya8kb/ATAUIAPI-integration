@@ -29,8 +29,8 @@
             <table class="w-100">
                 <ng-container *ngFor="let item of data.content | keyvalue: returnZero">
                     <ng-container *ngIf=" item.key==type">
-                        <tr *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
-                            <td *ngIf="accountSearched"> {{ valItem.key }}:</td>
+                        <tr *ngFor="let valItem of $any(item).value | keyvalue: returnZero">                           
+                            <td  *ngIf="accountSearched"> {{ valItem.key }}:</td>
                             <td class="text-center" [ngClass]="{ 'device-text' : (!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))  }"> {{ valItem.value }}</td>
                         </tr>
                     </ng-container>

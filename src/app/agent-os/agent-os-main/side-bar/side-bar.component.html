@@ -49,14 +49,44 @@
                         </div>
                         <p class="m-0 p-0 ms-4 color-grey-dark fw-bold" >Local Time: {{sysTime}} EST</p>
                         <mat-card class="mt-2 bg-smoke">
-                            <div class="row mr-1 mt-0 p-0">
-                                <div *ngFor="let info of custInfo | keyvalue: returnZero">
+                            <div class="row">
+                                <!-- <div *ngFor="let info of custInfo | keyvalue: returnZero">
                                     <div class="col-md-6">
                                     <h6 class="text-secondary mb-0 mt-0">{{info.key}}</h6>
                                     <div>{{info.value}}
                                         <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
                                     </div>
                                 </div>
+                                </div> -->
+                                <div class="col-md-6">
+                                    <h6 class="text-secondary mb-0 mt-0">Account Number</h6>
+                                    <div class="d-flex">
+                                        <h6>{{searchService.getAccountNumber()}}</h6>
+                                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-secondary mb-0 mt-0">Biller</h6>
+                                    <div class="d-flex">
+                                        <h6>CHTR.CSG</h6>
+                                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-secondary mb-0 mt-0">Service Address</h6>
+                                    <div class="d-flex">
+                                        <h6>{{storeService?.location?.content.second.Address.value}}</h6>
+                                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-secondary mb-0 mt-0">Phone Number</h6>
+                                    <div class="d-flex">
+                                        <h6>{{storeService?.location?.contact.phone.value1}}</h6>
+                                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                                    </div>
                                 </div>
                             </div>
                         </mat-card>
