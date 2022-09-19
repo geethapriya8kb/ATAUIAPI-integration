@@ -39,8 +39,7 @@ export class SearchDialogComponent implements OnInit {
     }
   }
 
-  findAccount() {
-    console.log(this.searchAccountForm.value.accountNumber);
+  findAccount() {   
     this.searchService.sharedValue$.next(this.searchAccountForm.value.accountNumber)// setting using subject & works in ngAfterViewInit   
     this.searchService.setAccountNumber(this.searchAccountForm.value.accountNumber);// setting using service & works in ngOnInit
 
