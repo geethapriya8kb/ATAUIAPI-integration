@@ -31,15 +31,11 @@ export class SideBarComponent implements OnInit {
   actiondata: ActionData;
   copilotUpdateData: CoPilotUpdateData;
   articlesdata: ArticleData;
-  searchflag = true;
+  searchflag:boolean;
   time=new Date();
   overlayRef: OverlayRef;
 
-  custInfo = {
-    'Account Number': '8429763145879632',
-    Biller: 'CHTR.CSG',
-    'Service Address': '123 MAIN ST, SAINT LOUIS,63141-5791',
-    'Phone Number': '(314) 555-0101',
+  custInfo = {   
   };
   sysTime: string;
   
@@ -86,29 +82,36 @@ export class SideBarComponent implements OnInit {
           'assets/images/agent-os/close-mark.svg'
         )
       );
+     
   }
   
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
-    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });   
+    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });  
+    this.custInfo = {
+      'Account Number': this.searchService.getAccountNumber(),
+      'Biller': 'CHTR.CSG',
+      'Service Address': this.storeService.location?.content?.second.Address.value,
+      'Phone Number': this.storeService?.location?.contact.phone.value1,
     
-           
+    }; 
+    console.log(this.custInfo);      
   }
   
   ngAfterViewInit() {
+ 
     this.searchService.sharedValue$.subscribe((val) => {
-      let accountNumber: string = val ? String(val) : '';
+      const accountNumber = val ? String(val) : '';
       this.loadData(accountNumber);
     });
   }
 
-  private loadData(accountNumber: string): void {
+   loadData(accountNumber: string): void {
     if (!accountNumber) {
       accountNumber = '';
-    }
-   
+    }   
     this.getHelpfulLinks(accountNumber);
     this.getCopilotLinkData(accountNumber);
     this.getCopilotUpdateData(accountNumber);
@@ -168,6 +171,11 @@ export class SideBarComponent implements OnInit {
   getHelpfulLinks(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `helpful-link`;
+    if(accountNumber!='empty'){
+      this.searchflag=true
+    }else{
+      this.searchflag=false
+    }
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
         this.helpfuldata = JSON.parse(resp.content);
@@ -222,4 +230,5 @@ export class SideBarComponent implements OnInit {
   returnZero() {
     return 0;
   }
+ 
 }

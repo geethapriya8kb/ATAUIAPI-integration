@@ -1,0 +1,38 @@
+{
+    "orientation": "horizontal",
+    "content": {
+        "Billing History": {}
+    },
+    "tasks": [
+        {
+            "label": "View Statement PDFs",
+            "dialog": "View Statement PDFs",
+            "width": "60"
+        },
+        {
+            "label": "View Statement",
+            "dialog": "View Statement",
+            "width": "60"
+        },
+        {
+            "label": "View 6-Month Ledger",
+            "dialog": "",
+            "width": "60"
+        },
+        {
+            "label": "Estimated Bill",
+            "dialog": "",
+            "width": "60"
+        },
+        {
+            "label": "View Adjustment History",
+            "dialog": "",
+            "width": "60"
+        },
+        {
+            "label": "Credit Calculator",
+            "dialog": "",
+            "width": "60"
+        }
+    ]
+}

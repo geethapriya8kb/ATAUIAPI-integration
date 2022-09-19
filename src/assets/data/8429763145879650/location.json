@@ -7,7 +7,7 @@
         "type": "label"
       },
       "PRIN": {
-        "value": "3000",
+        "value": "7800",
         "type": "label"
       },
       "Agent": {
@@ -15,7 +15,7 @@
         "type": "label"
       },
       "Rate/Center": {
-        "value": "ROCHESTER",
+        "value": "LADUE",
         "type": "label"
       },
       "Comments": {
@@ -25,11 +25,11 @@
     },
     "second": {
       "Address": {
-        "value": "187 Cornell St ROCHESTER, MN 55904-5401",
+        "value": "56 Morwood Ln Saint Louis, MO 63141-7621",
         "type": "label"
       },
       "Location Id": {
-        "value": "55904540100112",
+        "value": "63141762110001",
         "type": "label"
       },
       "Location Type": {
@@ -43,15 +43,15 @@
         "type": "label"
       },
       "Headend": {
-        "value": "RR - St Rochester",
+        "value": "SDVOLIVETTE - Sdv Olivette",
         "type": "label"
       },
       "Node": {
-        "value": "3RE15A",
+        "value": "OT084C",
         "type": "label"
       },
       "Hub": {
-        "value": "RO",
+        "value": "OL",
         "type": "label"
       }
     }
