@@ -8,6 +8,10 @@ import { AccountService } from '../../services/account.service';
 })
 export class VerifyAuthentiacteComponent implements OnInit {
   data: any = {};
+  typeList:any[]=[];
+  verifyList:any[]=[];
+  selectedCallType = '';
+  flag!: boolean;
   constructor(private accountserv:AccountService) { }
 
   ngOnInit(): void {
@@ -23,8 +27,26 @@ export class VerifyAuthentiacteComponent implements OnInit {
       (err) => console.error(err),
       () => {
         console.log(this.data);
+        this.data.type.forEach((type) => {
+          console.log(type);
+          this.typeList.push(type);
+          this.flag = true;
+        });
       }
     );
+  }
+
+  onSelectType(item) {
+    console.log(item);
+    this.verifyList = item.details;
+    this.verifyList = this.typeList.find((cntry: any) => cntry.VerifyType == item.target.value).details;
+    console.log(this.verifyList);
+    
+  }
+
+  onSelectVerify(verify){
+    console.log(verify);
+    
   }
   returnZero() {
     return 0;

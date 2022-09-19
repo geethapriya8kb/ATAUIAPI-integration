@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
 import { EtdResponse, Mytickettab, TicketInformation } from './etd.response';
 import { EtdService } from './etd.service';
@@ -13,7 +14,7 @@ import { EtdService } from './etd.service';
 export class EtdComponent implements OnInit {
 
   data: EtdResponse;
-
+etddata:any;
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay:Array<string> = [];
   tableDatatest: Array<TicketInformation>=[];
@@ -34,11 +35,12 @@ export class EtdComponent implements OnInit {
     form1: new UntypedFormControl()
   })
 
-  constructor(private searchService: SearchService, private etdservice: EtdService
+  constructor(private searchService: SearchService, private etdservice: EtdService,private accountServ:AccountService
   ) { }
 
   ngOnInit(): void {
     this.etdData();
+    this.etdDropData();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
   }
@@ -80,6 +82,20 @@ export class EtdComponent implements OnInit {
       }
     });
   }
+
+  etdDropData(){
+    const dataFileName = `assets/data/etd-table.json`;
+    this.accountServ.getverifydata(dataFileName).subscribe(
+      (resp) => {
+        this.etddata= resp
+      },
+      (err) => console.error(err),
+      () => {
+        console.log(this.etddata);
+      }
+    );
+  }
+  
 
   returnZero() {
     return 0;

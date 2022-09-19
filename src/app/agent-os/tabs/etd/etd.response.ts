@@ -7,6 +7,7 @@ export class EtdResponse
       etd :Array<Array<ETD>> 
       myticketcol: Array<string>
       mytickettab:Mytickettab
+      CustType:Array<string>
 }
 
 export class Mytickettab {

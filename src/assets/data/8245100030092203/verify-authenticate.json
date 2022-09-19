@@ -1,10 +1,32 @@
 {
     "title": "Verify Caller",
-    "content":{
+    "content": {
         "Account Number": "8245100005043",
-        "Name":"Creek David",
-        "Telephone":"",
-        "Address":"187 Cornell Street",
-        "Authroized User":"greek"
-    }
+        "Name": "Creek David",
+        "Telephone": "",
+        "Address": "187 Cornell Street",
+        "Authroized User": "greek"
+    },
+    "type": [
+        {
+            "VerifyType": "Text Message",
+            "details": [
+                "***- ***- 0101",
+                "***- ***- 1111"
+            ]
+        },
+        {
+            "VerifyType": "Phone",
+            "details": [
+                "***- ***- 0101",
+                "***- ***- 1111"
+            ]
+        },
+        {
+            "VerifyType": "Email",
+            "details": [
+                "j****s@test.com"
+            ]
+        }
+    ]
 }
