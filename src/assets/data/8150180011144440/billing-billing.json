@@ -1,0 +1,125 @@
+{
+  "orientation": "vertical",
+  "content": {
+    "Billing": {
+      "Last Statement Monthly Rate": {
+        "value": "$176.99",
+        "type": "label"
+      },
+      "Taxes and Fees": {
+        "value": "",
+        "type": "label"
+      },
+      "Last Statement Total Rate": {
+        "value": "$187.59",
+        "type": "label"
+      }
+    },
+    "": {
+      "Amount Due": {
+        "value": "$187.59",
+        "type": "label"
+      },
+      "Current Balance": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Pending Payment": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Last Paid": {
+        "value": "$187.59",
+        "type": "label"
+      }
+    },
+    " ": {
+      "PPV Limit": {
+        "value": "$150.00",
+        "type": "label"
+      },
+      "PPV Usage": {
+        "value": "$0.00",
+        "type": "label"
+      }
+    },
+    "  ": {
+      "P2P": {
+        "value": "",
+        "type": "label"
+      },
+      "Future Payments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "   ": {
+      "Late Fee": {
+        "value": "",
+        "type": "label"
+      },
+      "Delinquent Days": {
+        "value": "0",
+        "type": "label"
+      },
+      "Delinquent Amount": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Cycle Day": {
+        "value": "1",
+        "type": "label"
+      },
+      "Soft Disco Date": {
+        "value": "N/A",
+        "type": "label"
+      },
+      "Hard Disco Date": {
+        "value": "N/A",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "Take a Payment",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Manage Autopay",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Manage Wallet",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Manage Future Payment",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "PPV",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Edit Customer",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "Promise To Pay",
+      "dialog": "",
+      "width": "60"
+    },
+    {
+      "label": "Credit Calculator",
+      "dialog": "",
+      "width": "60"
+    }
+  ]
+}

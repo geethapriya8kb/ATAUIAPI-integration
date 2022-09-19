@@ -19,39 +19,28 @@
                                 <label for="custType" class="fw-bold small mb-2">Cust Type:</label>
                                 <select name="cust-type" id="custType" class="form-select form-select-sm"
                                     formControlName="custType">
-                                    <option value="All" selected>ALL</option>
-                                    <option value="Commercial">Commercial</option>
-                                    <option value="Residential">Residential</option>
+                                    <option value="{{i.value}}" *ngFor="let i of etddata?.custType | keyvalue">{{i.value}}</option>
                                 </select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
                                 <label for="reasons" class="fw-bold small mb-2">Reasons:</label>
                                 <select name="reasons" id="reasons" class="form-select form-select-sm"
                                     formControlName="reasons">
-                                    <option value="All" selected>ALL</option>
-                                    <option value="Home security product/Offline">Home security product/Offline</option>
-                                    <option value="Medical issue">Medical issue</option>
-                                    <option value="Coax TC">Coax TC</option>
+                                    <option value="{{i.value}}" *ngFor="let i of etddata?.reasons | keyvalue">{{i.value}}</option>
                                 </select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
                                 <label for="managmentArea" class="fw-bold small mb-2">Mgmt Area:</label>
                                 <select name="mgmt-area" id="managmentArea" class="form-select form-select-sm"
-                                    formControlName="managmentArea">
-                                    <option value="All">ALL</option>
-                                    <option value="Brooklyn / Queens (TWC)">Brooklyn / Queens (TWC)</option>
-                                    <option value="Central Texas (TWC)">Central Texas (TWC)</option>
-                                    <option value="Hawaii (TWC)">Hawaii (TWC)</option>
+                                    formControlName="managmentArea" multiple>
+                                    <option value="{{i.value}}" *ngFor="let i of etddata?.area | keyvalue">{{i.value}}</option>
                                 </select>
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="status" class="fw-bold small mb-2">Status:</label>
                                 <select name="status" id="status" class="form-select form-select-sm"
                                     formControlName="status">
-                                    <option value="OPEN">OPEN</option>
-                                    <option value="CLOSED">CLOSED</option>
-                                    <option value="IN-PROGRESS">IN-PROGRESS</option>
-                                    <option value="OUTAGE<">OUTAGE</option>
+                                    <option value="{{i.value}}" *ngFor="let i of etddata?.status | keyvalue">{{i.value}}</option>
                                 </select>
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 text-end">

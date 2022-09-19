@@ -1,0 +1,53 @@
+{
+    "custType": [
+        "ALL",
+        "COMMERCIAL",
+        "RESIDENTAL"
+    ],
+    "reasons": [
+        "Charter caused interruption - all services out (not applicable in declared outage)",
+        "Coax TC",
+        "Customer Missed Appointment",
+        "Drop Bury (SRO)",
+        "Fiber TC",
+        "Hazardous/Safety Situation",
+        "Home Security Product/Offline",
+        "Home Security Product/Thermostat Issue",
+        "Medical Emergency",
+        "No Data Connectivity All Computers",
+        "No Dial Tone All Phones (SB ONLY)",
+        "No dial tone with no phone alternative/No dial tone all phones",
+        "No Picture >=1 TVs Hospitality Customer",
+        "Quota Not Available within the SLA",
+        "Retention Save",
+        "TC Quota Not Available within the SLA(4 hours)",
+        "Technician Missed Appointment",
+        "Trouble call cancelation or rescheduled but not initiated by customer",
+        "Work Not Completed"
+    ],
+    "area": [
+        "Brooklyn / Queens (TWC)",
+        "Central NY (Charter)",
+        "Central NY (TWC)",
+        "Central States (Charter)",
+        "Central Texas (Charter)",
+        "Central Texas (TWC)",
+        "East Central Florida (BHN)",
+        "East Florida (BHN)",
+        "Eastern NC (Charter)",
+        "Eastern NC (TWC)",
+        "Eastern NY (Charter)",
+        "Eastern NY (TWC)",
+        "Greenville SC / Georgia (Charter)",
+        "Hawaii (TWC)",
+        "Kansas City / Lincoln (Charter)",
+        "Kansas City / Lincoln (TWC)",
+        "Kentucky (TWC)"
+    ],
+    "status":[
+        "OPEN",
+        "CLOSED",
+        "IN-PROGRESS",
+        "OUTAGE"
+    ]
+}
