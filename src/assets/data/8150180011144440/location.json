@@ -1,0 +1,60 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8150",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1800",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "NWYRCYZN14",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "13 WINDOM AVESTATEN ISLAND, NY 10305-4719",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "10302191410020",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "S1",
+        "type": "label"
+      },
+      "Node": {
+        "value": "",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null
+}
