@@ -41,20 +41,22 @@
                     <ng-container *ngIf="searchflag">
                         <div class="mt-1 font-edit">
                             <div class="row">
-                                <div class="col-md-5 ms-4">{{storeService?.accountDetails?.content.Account['Customer Name'].value}}
+                                <div class="col-md-5 ms-4 fw-bold fs-6">{{storeService?.accountDetails?.content.Account['Customer Name'].value}}
                                     <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
                                 </div>
                                 <button class="col-md-5 btn-verify" (click)="openVerifyDialog()"><span>Verify & Authenticate</span></button>
                             </div>
                         </div>
-                        <p class="m-0 p-0 ms-4">Local Time: {{sysTime}} EST</p>
-                        <mat-card *ngIf="custInfo" class="mt-2" style="background-color: whitesmoke;">
-                            <div class="flex-style mr-1 mt-0 p-0">
+                        <p class="m-0 p-0 ms-4 color-grey-dark fw-bold" >Local Time: {{sysTime}} EST</p>
+                        <mat-card class="mt-2 bg-smoke">
+                            <div class="row mr-1 mt-0 p-0">
                                 <div *ngFor="let info of custInfo | keyvalue: returnZero">
+                                    <div class="col-md-6">
                                     <h6 class="text-secondary mb-0 mt-0">{{info.key}}</h6>
                                     <div>{{info.value}}
                                         <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         </mat-card>
@@ -223,7 +225,7 @@
                     <mat-tab label="Interactions">
                         <span *ngIf="!searchflag"> No updates are available.</span>
                         <ng-container *ngIf="searchflag">
-                            <!-- <mat-expansion-panel *ngFor="let item of actiondata?.content">
+                            <mat-expansion-panel *ngFor="let item of actiondata?.content">
                                 <mat-expansion-panel-header>
                                     <mat-panel-title>
                                         <i class="{{item.icon}}" style="font-size:20px;"></i>
@@ -238,7 +240,7 @@
                                         <span class="panel-time">{{item.time}}</span>
                                     </mat-panel-description>
                                 </mat-expansion-panel-header>
-                            </mat-expansion-panel> -->
+                            </mat-expansion-panel>
                         </ng-container>
                     </mat-tab>
                 </mat-tab-group>
