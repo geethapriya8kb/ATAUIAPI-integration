@@ -220,8 +220,12 @@
 
             <div>
                 <mat-tab-group>
-                    Resolution & Notetaking
-                    <mat-tab label="Resolution & Notetaking">
+                   
+                    <mat-tab >
+                        <ng-template mat-tab-label>
+                            Resolution &<br />
+                            Notetaking
+                        </ng-template>
                         <ng-container *ngIf="!searchflag">No Updates to Display</ng-container>
                         <ng-container *ngIf="searchflag">
                             <br />
@@ -249,10 +253,17 @@
                             </div>
                         </ng-container>
                     </mat-tab>
-                    <mat-tab label="Historic Notes">
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Historic<br />
+                            Notes
+                        </ng-template>
                         No items to display
                     </mat-tab>
-                    <mat-tab label="Interactions">
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            Interactions<br />
+                        </ng-template>
                         <span *ngIf="!searchflag"> No updates are available.</span>
                         <ng-container *ngIf="searchflag">
                             <mat-expansion-panel *ngFor="let item of actiondata?.content">
