@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="custType" class="fw-bold medium mb-2">Cust Type:</label>
-                                <mat-select formControlName="custType" multiple  class="form-select form-select-sm">
+                                <mat-select formControlName="custType" multiple  class="form-select form-select-sm" placeholder="Mode">
                                     <mat-option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
                                       {{i.value}}
                                     </mat-option>
@@ -26,7 +26,7 @@
                             <div class="col-md-3 col-sm-3 p-1">
                                 <label for="reasons" class="fw-bold medium mb-2">Reasons:</label>
                                 <mat-select formControlName="reasons" multiple  class="form-select form-select-sm">
-                                    <mat-option *ngFor="let i of etddata?.reasons | keyvalue" [value]="i.value">
+                                    <mat-option *ngFor="let i of etddata?.reasons | keyvalue" [value]="i.value" selected>
                                       {{i.value}}
                                     </mat-option>
                                 </mat-select>
@@ -70,7 +70,7 @@
                                     aria-label="Search" formControlName="form1" >
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
-                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs">Reset</button>
+                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs" (click)="reset()">Reset</button>
                             </div>
                         </div>
                     </div>

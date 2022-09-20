@@ -10,11 +10,18 @@
     padding: 3px 3px 3px 10px;
     margin: 0px 10px 10px 10px;
 }
-.btn{
-    color: aliceblue;
-    background-color: green;
-    padding: 10px 15px;
-    height: 40px;
-    border-radius: 5px;
-    border:white solid 1px;
+
+.f-sty-width{
+    height: 30px;
+    width: 60%;
+}
+
+.f-sty-width-80{
+    height: 30px;
+    width: 80%;
+}
+
+.f-sty-width-25{
+    height: 30px;
+    width: 25%;
 }
