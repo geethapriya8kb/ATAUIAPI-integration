@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/internal/Subject';
 })
 export class SearchService {
 
-  private defaultValue = '';
+  private defaultValue = 'empty';
 
   private accountNumber: string = this.defaultValue;
   private locationId: string = this.defaultValue;

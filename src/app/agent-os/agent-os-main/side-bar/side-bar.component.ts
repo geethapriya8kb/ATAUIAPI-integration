@@ -224,8 +224,8 @@ export class SideBarComponent implements OnInit {
   }
 
   clearData() {
-    this.searchService.sharedValue$.next('');
-    this.searchService.setAccountNumber('');
+    this.searchService.sharedValue$.next('empty');
+    this.searchService.setAccountNumber('empty');
   }
 
   returnZero() {

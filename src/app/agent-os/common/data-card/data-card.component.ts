@@ -31,12 +31,12 @@ export class DataCardComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
-
     const location = this.storeService.location;
     const accountDetails = this.storeService.accountDetails;
     const billingDetails = this.storeService.billingDetails;
 
     if (
+      accountNumber !='empty' &&
       location &&
       accountDetails &&
       billingDetails &&
