@@ -1,7 +1,10 @@
 {
  
   "content": {
-    "Video": {
+    "Video": {  
+      "subscription":{
+        "value":true
+      },    
       "S Digi Tier1": "$0.00",
       "S HBO": "$0.00",
       "S Showtime": "$0.00",
@@ -22,20 +25,14 @@
       "S Dvrsvcsngl": "$4.99"
     },
     "Internet": {
+      "subscription":{
+        "value":true
+      },  
       "S Hsi Plus": "$0.00",
       "S Hsi Modem": "$0.00",
       "S Hsibase": "$44.99"
     },
-    "Voice": {
-      "S Telphnline": "$6.66",
-      "S Telephone": "$0.00",
-      "Stelunldintr": "$2.08",
-      "Steunldinta": "$0.00",
-      "S Tel 18Feat": "$0.00",
-      "Stelmtalease": "$1.25",
-      "Stelnoblkint": "$0.00",
-      "Steldirlstng": "$0.00"
-    }
+    "Voice": [ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
   },
   
   "icons": {
