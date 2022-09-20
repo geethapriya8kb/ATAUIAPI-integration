@@ -24,7 +24,7 @@
           "label": "Primary Phone:",
           "type": "text",
           "class": "col col-md-6",
-          "value": "(402) 243-1267",
+          "value": "(314) 555-0101",
           "controlName": "phone",
           "required": false
         },
