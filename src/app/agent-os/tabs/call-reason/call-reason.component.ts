@@ -10,6 +10,8 @@ import { SearchService } from '../../services/search.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CourseListService } from '../../services/course-list.service';
+import { CallReasonService } from './call-reason.services';
+import { CallReasonResponse, CallReasonRoot, PaymentHistoryTable } from './call-reason.response';
 
 @Component({
   selector: 'app-call-reason',
@@ -27,10 +29,10 @@ export class CallReasonComponent implements OnInit {
 
   responsiveOptions: any;
   dataSource = new MatTableDataSource<any>();
-  columnsToDisplay = [];
+  columnsToDisplay: Array<string>;
   expandedElement!: PaymentHistory | null;
-  tableDatatest: any;
-  data: any = {};
+  tableDatatest: Array<PaymentHistoryTable>;
+  data: CallReasonResponse;
   
   products!: StatementHistory[];
   rowData: boolean = true;
@@ -49,7 +51,8 @@ export class CallReasonComponent implements OnInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private courseListService:CourseListService,
-    private cardDataService:CardDataService ) {
+    private cardDataService: CardDataService,
+    private callReasonService: CallReasonService) {
 
     this.responsiveOptions = [
       {
@@ -117,36 +120,33 @@ export class CallReasonComponent implements OnInit {
   getCallData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.accNum=accountNumber
-    const path = `${accountNumber}/call-reason`;
+    let  cardName ='call-reason';
      if(accountNumber==='empty'){
       this.accountNoFlag=false
      }else{
       this.accountNoFlag=true
-     }
-    this.device.getCardDatafromService(path).subscribe({
-      next: (resp: any) => {
-        this.data = resp;
+    }
+
+    this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({
+      next: (resp: CallReasonRoot) => {
+        this.data = JSON.parse(resp.content);
        
       },
-      error: (err: any) => console.error(err),
+      error: (err: any) =>{
+         console.error(err)
+      },
       complete: () => {
         this.tableDatatest = this.data.paymentHistoryTable;
         console.log(this.tableDatatest);
         this.dataSource.data = this.tableDatatest;
         this.columnsToDisplay = this.data.PaymentHistoryColumns;
+        if (this.data && this.data.statementHistory) {
+          this.products = this.data.statementHistory;
+        }
+        console.log(this.products);
       }
     });
 
-    this.device
-      .getCardDatafromService(path)
-      .subscribe({
-        next: (resp) => {
-          if (resp && resp.statementHistory) {
-            this.products = resp.statementHistory;
-          }
-          console.log(this.products);
-        }
-      });
   }
 
   showRowData() {
