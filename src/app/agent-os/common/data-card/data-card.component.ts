@@ -29,14 +29,16 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     private storeService: StorageService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): any {
     const accountNumber = this.searchService.getAccountNumber();
 
     const location = this.storeService.location;
+    console.log(location)
     const accountDetails = this.storeService.accountDetails;
+    console.log(accountDetails)
     const billingDetails = this.storeService.billingDetails;
 
-    if (
+    if ( accountNumber !='empty' &&
       location &&
       accountDetails &&
       billingDetails &&
@@ -45,7 +47,8 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     ) {
       switch (this.cardName) {
         case 'location':
-          return (this.data = location);
+          return (this.storeService.location.subscribe((val: any) => {this.data = val})
+          );
         case 'account':
           return (this.data = accountDetails);
         case 'billing':
@@ -72,7 +75,8 @@ export class DataCardComponent implements OnInit, AfterViewInit {
         if (accountNumber != 'empty') {
           switch (this.cardName) {
             case 'location':
-              return (this.storeService.location = this.data);
+              this.storeService.location.next(this.data)
+              return;
             case 'account':
               return (this.storeService.accountDetails = this.data);
             case 'billing':
@@ -80,6 +84,13 @@ export class DataCardComponent implements OnInit, AfterViewInit {
           }
           return null;
         }
+        else
+          if(accountNumber === 'empty' &&  this.cardName==='location')
+          {
+            this.storeService.locationEmpty = this.data
+            console.log(this.storeService.locationEmpty);
+          }
+        
       },
       error: (err) => console.log(err),
     });

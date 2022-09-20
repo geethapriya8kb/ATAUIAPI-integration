@@ -71,7 +71,7 @@
                     <span *ngIf="!searchflag" class="empty-msg">No Account Found </span>
                     <ng-container *ngIf="searchflag">
                         <mat-label class="empty-msg">
-                            {{storeService?.location?.content.second.Address.value}}<br />
+                            {{locationVal?.content.second.Address.value}}<br />
                             Local Time:{{sysTime}} EST
                         </mat-label>
                     </ng-container>

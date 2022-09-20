@@ -24,7 +24,7 @@
                         </div>
                         <div class="col col-md-9 px-0">
                             <textarea title="address" class="form-control small" name="address" id="address"
-                                rows="4" value="{{storeService?.location?.content.second.Address.value}}"> </textarea>
+                                rows="4" value="{{info?.content.second.Address.value}}"> </textarea>
                         </div>
                     </div>
                     <span class="fst-italic">* Addresses are the same</span>
@@ -35,14 +35,14 @@
                             <i class="fas fa-envelope mr-1 grey-icon"></i>
                         </span>
                         <input type="email" class="form-control" placeholder="" aria-label="Username"
-                            aria-describedby="basic-addon1" value="{{storeService?.location?.contact.email.value}}" >
+                            aria-describedby="basic-addon1" value="{{info?.contact.email.value}}" >
                     </div>
                     <div class="input-group mb-1">
                         <span class="input-group-text" id="basic-addon1">
                             <i class="fas fa-phone mr-1 grey-icon"></i>
                         </span>
                         <label class="form-label">
-                            {{storeService?.location?.contact.phone.value1}}<span class="mb-1"> <i class="fa fa-star grey-icon"></i> </span>
+                            {{info?.contact.phone.value1}}<span class="mb-1"> <i class="fa fa-star grey-icon"></i> </span>
                         </label>
                     </div>
                     <div class="input-group mb-1">
@@ -51,7 +51,7 @@
                         </span>
                        
                         <input type="text" class="form-control" placeholder="(111) 111-1111" aria-label="Username"
-                            aria-describedby="basic-addon1" value="{{storeService?.location?.contact.phone.value2}}" >
+                            aria-describedby="basic-addon1" value="{{info?.contact.phone.value2}}" >
                     </div>
                     <div class="row py-1 fs-6 mx-0 d-flex">
                         <div class="col col-md-12 p-0 paperless-billing fw-bold">

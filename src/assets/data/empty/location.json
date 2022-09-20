@@ -56,5 +56,14 @@
       }
     }
   },
-  "tasks": null
+  "tasks": null,
+  "contact":{
+    "email":{
+      "value":""
+    },
+    "phone":{
+      "value1":"",
+      "value2":""
+    }
+  }
 }
