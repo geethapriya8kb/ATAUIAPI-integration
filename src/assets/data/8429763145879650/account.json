@@ -8,7 +8,7 @@
         "type": "label"
       },
       "Customer Name": {
-        "value": "John Smith",//
+        "value": "John Smith",
         "type": "label"
       },
       "Solo Account ID": {
