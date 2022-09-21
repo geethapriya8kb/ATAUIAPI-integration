@@ -1,0 +1,31 @@
+{
+    "content": {
+        "Video": {  
+          "subscription":true, 
+          "data":["No Video Service"]
+        },
+        "Internet": {
+          "subscription":true,
+          "data":["No Internet Service"]
+        },
+        "Voice":{
+          "subscription":true,
+          "data":["No Voice Service"]
+        } 
+      },
+      
+      "icons": {
+        "Video":{
+          "subscription":true,
+          "path": "../../assets/images/blue-check.png"
+        },
+        "Internet": {
+          "subscription":true,
+          "path": "../../assets/images/orange-computer.png"
+        },
+        "Voice": {
+          "subscription":true,
+          "path": "../../assets/images/purple-receiver.png"
+        }
+      }
+}
