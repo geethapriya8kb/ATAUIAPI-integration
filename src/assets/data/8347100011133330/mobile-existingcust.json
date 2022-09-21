@@ -1,6 +1,7 @@
-{
+{   
+    "custType":"ineligible",
     "content":{
-        "Eligibility Requirements":{
+        "Eligibility Requirements":{                        
             "Account is In- Footprint":{
                 "type":"text"
             },

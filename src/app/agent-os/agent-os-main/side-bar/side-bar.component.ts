@@ -52,39 +52,22 @@ export class SideBarComponent implements OnInit {
     private overlay: Overlay,
     private sidebarservice: SideBarService,
     public storeService: StorageService
-  ) {
-    this.matIconRegistry
-      .addSvgIcon(
-        'aos-copy',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          'assets/images/agent-os/copy.svg'
-        )
-      )
-      .addSvgIcon(
-        'aos-last-results',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          'assets/images/agent-os/last-results.svg'
-        )
-      )
-      .addSvgIcon(
-        'aos-recently-viewed',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          'assets/images/agent-os/recently-viewed.svg'
-        )
-      )
-      .addSvgIcon(
-        'aos-search',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          'assets/images/agent-os/search-mark.svg'
-        )
-      )
-      .addSvgIcon(
-        'aos-close',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(
-          'assets/images/agent-os/close-mark.svg'
-        )
-      );
-         
+  ) {  
+      
+      var svgIcons = {
+        'aos-copy': 'assets/images/agent-os/copy.svg',
+        'aos-last-results':'assets/images/agent-os/last-results.svg',
+        'aos-recently-viewed':'assets/images/agent-os/recently-viewed.svg',
+        'aos-search': 'assets/images/agent-os/search-mark.svg',
+        'aos-close': 'assets/images/agent-os/close-mark.svg',
+        'aos-info':'assets/images/agent-os/info-circle.svg',
+        'aos-copy-dark':'assets/images/agent-os/copy-dark.svg'
+      };
+      for (const iconName of Object.keys(svgIcons)) {          
+        const iconPath = svgIcons[iconName];  
+        this.matIconRegistry
+          .addSvgIcon(iconName, this.domSanitizer.bypassSecurityTrustResourceUrl(iconPath));
+      }
   }
   
 
