@@ -14,6 +14,7 @@ export class EditCustomerComponent implements OnInit {
   data: any;
   form = new FormGroup({});
   accountNumber: string;
+  temp: any;
   constructor(
     private cardDataService: CardDataService,
     public dialogRef: MatDialogRef<EditCustomerComponent>,
@@ -67,21 +68,25 @@ export class EditCustomerComponent implements OnInit {
     this.storeService.accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
     this.storeService.customer.contactRows[0].columns[1].value =  this.form.controls['authUser'].value;
 
-    this.storeService.location.contact.phone.value1 = this.form.controls['phone'].value;
     this.storeService.customer.contactRows[0].columns[0].value =  this.form.controls['phone'].value;
-
-    this.storeService.location.contact.phone.value2 = this.form.controls['phone2'].value;
     this.storeService.customer.contactRows[1].columns[0].value =  this.form.controls['phone2'].value;
-
-    this.storeService.location.contact.email.value = this.form.controls['email'].value;
     this.storeService.customer.contactRows[2].columns[0].value =  this.form.controls['email'].value;
 
-    this.storeService.location.content.second.Address.value =
-             this.form.controls['address1'].value +
-      '  ' + this.form.controls['address2'].value +
-      '  ' + this.form.controls['city'].value +
-      '  ' + this.form.controls['state'].value +
-      '  ' + this.form.controls['zip'].value;
+    this.storeService.location.subscribe((val: any) => {
+       console.log(val);
+        val.contact.email.value = this.form.controls['email'].value;
+        val.contact.phone.value2 = this.form.controls['phone2'].value;
+        val.contact.phone.value1 = this.form.controls['phone'].value;
+        val.content.second.Address.value =
+                  this.form.controls['address1'].value +
+          '  ' +  this.form.controls['address2'].value +
+          '  ' +  this.form.controls['city'].value +
+          '  ' +  this.form.controls['state'].value +
+          '  ' +  this.form.controls['zip'].value;
+          this.temp=val;
+      }); 
+     
+    this.storeService.location.next(this.temp)
 
     this.storeService.customer.contactRows[3].columns[0].value = this.form.controls['address1'].value;
     this.storeService.customer.contactRows[4].columns[0].value = this.form.controls['address2'].value;

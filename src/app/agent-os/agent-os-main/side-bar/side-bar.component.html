@@ -77,14 +77,14 @@
                                 <div class="col-md-6">
                                     <h6 class="text-secondary mb-0 mt-0">Service Address</h6>
                                     <div class="d-flex">
-                                        <h6>{{storeService?.location?.content.second.Address.value}}</h6>
+                                        <h6> {{locationVal?.content.second.Address.value}}</h6>
                                         <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <h6 class="text-secondary mb-0 mt-0">Phone Number</h6>
                                     <div class="d-flex">
-                                        <h6>{{storeService?.location?.contact.phone.value1}}</h6>
+                                        <h6>{{locationVal?.contact.phone.value1}}</h6>
                                         <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                     <span *ngIf="!searchflag" class="empty-msg">No Account Found </span>
                     <ng-container *ngIf="searchflag">
                         <mat-label class="empty-msg">
-                            {{storeService?.location?.content.second.Address.value}}<br />
+                            {{locationVal?.content.second.Address.value}}<br />
                             Local Time:{{sysTime}} EST
                         </mat-label>
                     </ng-container>

@@ -19,6 +19,7 @@ import {
 import { SideBarService } from './side-bar.service';
 import { StorageService } from '../../services/storage.service';
 import { VerifyAuthentiacteComponent } from '../../common/verify-authentiacte/verify-authentiacte.component';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-side-bar',
@@ -38,6 +39,7 @@ export class SideBarComponent implements OnInit {
   custInfo = {   
   };
   sysTime: string;
+  locationVal: any;
   
 
   constructor(
@@ -82,21 +84,25 @@ export class SideBarComponent implements OnInit {
           'assets/images/agent-os/close-mark.svg'
         )
       );
-     
+         
   }
   
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
     this.loadData(accountNumber);
-    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true });  
-    this.custInfo = {
-      'Account Number': this.searchService.getAccountNumber(),
-      'Biller': 'CHTR.CSG',
-      'Service Address': this.storeService.location?.content?.second.Address.value,
-      'Phone Number': this.storeService?.location?.contact.phone.value1,
-    
-    }; 
+    this.sysTime=this.time.toLocaleString('en-US',{ timeStyle:'short', hour12: true }); 
+    this.storeService.location.subscribe((val: any) => {
+      this.locationVal=val;
+      this.custInfo = {
+        'Account Number': this.searchService.getAccountNumber(),
+        'Biller': 'CHTR.CSG',
+        'Service Address': val.content?.second.Address.value,
+        'Phone Number': val.contact.phone.value1,
+      
+      }; 
+    }); 
+   
     console.log(this.custInfo);      
   }
   
@@ -226,6 +232,7 @@ export class SideBarComponent implements OnInit {
   clearData() {
     this.searchService.sharedValue$.next('empty');
     this.searchService.setAccountNumber('empty');
+    this.storeService.location.next( this.storeService.locationEmpty);
   }
 
   returnZero() {
