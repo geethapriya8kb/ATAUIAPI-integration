@@ -12,7 +12,7 @@ import { EtdService } from './etd.service';
   styleUrls: ['./etd.component.scss']
 })
 export class EtdComponent implements OnInit {
-
+flag:boolean=false;
   data: EtdResponse;
 etddata:any;
   dataSource = new MatTableDataSource<TicketInformation>();
@@ -107,5 +107,9 @@ etddata:any;
 
   reset(){
     this.etdValue.reset();
+  }
+
+  expand(){
+    this.flag=!this.flag;
   }
 }
