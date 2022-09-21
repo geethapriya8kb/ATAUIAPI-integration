@@ -104,4 +104,8 @@ etddata:any;
   etdData() {
     console.log(this.etdValue.value);
   }
+
+  reset(){
+    this.etdValue.reset();
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'app-etd-work-ticket',
@@ -12,13 +13,26 @@ export class EtdWorkTicketComponent implements OnInit {
     accountNumber: new UntypedFormControl(),
     locationId:new UntypedFormControl()
   })
-  constructor() { }
-
+  constructor(private accountServ:AccountService) { }
+  etddata:any;
   ngOnInit(): void {
+    this.etdDropData();
   }
 
   findAccount() {
     console.log(this.accountId.value);
   }
   
+  etdDropData(){
+    const dataFileName = `assets/data/etd-table.json`;
+    this.accountServ.getverifydata(dataFileName).subscribe(
+      (resp) => {
+        this.etddata= resp
+      },
+      (err) => console.error(err),
+      () => {
+        console.log(this.etddata);
+      }
+    );
+  }
 }

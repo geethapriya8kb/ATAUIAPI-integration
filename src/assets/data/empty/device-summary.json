@@ -1,9 +1,17 @@
-{
- 
+{ 
   "content": {
-    "Video": [ "No Video Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"],
-    "Internet": [ "No Internet Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"],
-    "Voice": [ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
+     "Video":{
+      "subscription":false,
+      "data":[ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
+     },  
+    "Internet":{
+      "subscription":false,
+      "data":[ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
+     },
+    "Voice":{
+      "subscription":false,
+      "data":[ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
+     }
   },
   
   "icons": {

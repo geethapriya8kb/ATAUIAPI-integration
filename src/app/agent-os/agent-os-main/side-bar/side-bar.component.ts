@@ -47,7 +47,7 @@ export class SideBarComponent implements OnInit {
     private cardDataService: CardDataService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private searchService: SearchService,
+    public searchService: SearchService,
     private sharedService: SharedService,
     private overlay: Overlay,
     private sidebarservice: SideBarService,
@@ -232,7 +232,10 @@ export class SideBarComponent implements OnInit {
   clearData() {
     this.searchService.sharedValue$.next('empty');
     this.searchService.setAccountNumber('empty');
+<<<<<<< HEAD
     this.storeService.location.next( this.storeService.locationEmpty);
+=======
+>>>>>>> a27327bee154ee23db2a002da6db3290ae0d29d2
   }
 
   returnZero() {

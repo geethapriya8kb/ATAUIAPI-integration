@@ -49,5 +49,29 @@
         "CLOSED",
         "IN-PROGRESS",
         "OUTAGE"
+    ],
+    "attempt":[
+        "Yes",
+        "No",
+        "Msg Left"
+    ],
+    "hour":[
+        "1","2","3","4","5","6","7","8","9","10","11","12"
+    ],
+    "time":[
+        "AM","PM"
+    ],
+    "ooc":[
+        "Customer Error (Only Charter Errors for Must do/Go Back)",
+        "Declared outage",
+        "Must Do/Go Back",
+        "Invalid account #",
+        "Invalid contact #",
+        "Misrouted",
+        "Same Day Quota Available",
+        "Serviceability Request",
+        "TC Canceled",
+        "Ticket Not Submitted Same Day"
+
     ]
 }

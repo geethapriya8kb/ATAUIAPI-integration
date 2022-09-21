@@ -6,42 +6,46 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="row mx-0 ">
                             <div class="col-md-1 col-sm-1 p-1 w-10">
-                                <label for="startDate" class="fw-bold small mb-2">Start:</label>
+                                <label for="startDate" class="fw-bold medium mb-2">Start:</label>
                                 <input type="date" class="form-control form-control-sm " id="startDate"
                                     formControlName="startDate">
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
-                                <label for="endDate" class="fw-bold small mb-2">End:</label>
+                                <label for="endDate" class="fw-bold medium mb-2">End:</label>
                                 <input type="date" class="form-control form-control-sm" id="endDate"
                                     formControlName="endDate">
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
-                                <label for="custType" class="fw-bold small mb-2">Cust Type:</label>
-                                <select name="cust-type" id="custType" class="form-select form-select-sm"
-                                    formControlName="custType">
-                                    <option value="{{i.value}}" *ngFor="let i of etddata?.custType | keyvalue">{{i.value}}</option>
-                                </select>
+                                <label for="custType" class="fw-bold medium mb-2">Cust Type:</label>
+                                <mat-select formControlName="custType" multiple  class="form-select form-select-sm" placeholder="Mode">
+                                    <mat-option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
+                                      {{i.value}}
+                                    </mat-option>
+                                </mat-select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
-                                <label for="reasons" class="fw-bold small mb-2">Reasons:</label>
-                                <select name="reasons" id="reasons" class="form-select form-select-sm"
-                                    formControlName="reasons">
-                                    <option value="{{i.value}}" *ngFor="let i of etddata?.reasons | keyvalue">{{i.value}}</option>
-                                </select>
+                                <label for="reasons" class="fw-bold medium mb-2">Reasons:</label>
+                                <mat-select formControlName="reasons" multiple  class="form-select form-select-sm">
+                                    <mat-option *ngFor="let i of etddata?.reasons | keyvalue" [value]="i.value" selected>
+                                      {{i.value}}
+                                    </mat-option>
+                                </mat-select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
-                                <label for="managmentArea" class="fw-bold small mb-2">Mgmt Area:</label>
-                                <select name="mgmt-area" id="managmentArea" class="form-select form-select-sm"
-                                    formControlName="managmentArea" multiple>
-                                    <option value="{{i.value}}" *ngFor="let i of etddata?.area | keyvalue">{{i.value}}</option>
-                                </select>
+                                <label for="managmentArea" class="fw-bold medium mb-2">Mgmt Area:</label>
+                                <mat-select formControlName="managmentArea" multiple  class="form-select form-select-sm">
+                                    <mat-option *ngFor="let i of etddata?.area | keyvalue" [value]="i.value">
+                                      {{i.value}}
+                                    </mat-option>
+                                </mat-select>
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
-                                <label for="status" class="fw-bold small mb-2">Status:</label>
-                                <select name="status" id="status" class="form-select form-select-sm"
-                                    formControlName="status">
-                                    <option value="{{i.value}}" *ngFor="let i of etddata?.status | keyvalue">{{i.value}}</option>
-                                </select>
+                                <label for="status" class="fw-bold medium mb-2">Status:</label>
+                                <mat-select formControlName="status" multiple  class="form-select form-select-sm">
+                                    <mat-option *ngFor="let i of etddata?.status | keyvalue" [value]="i.value">
+                                      {{i.value}}
+                                    </mat-option>
+                                </mat-select>
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 text-end">
                                 <button type="submit" mat-raised-button color="success" class="p-0  mat-button-xs "
@@ -66,7 +70,7 @@
                                     aria-label="Search" formControlName="form1" >
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
-                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs">Reset</button>
+                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs" (click)="reset()">Reset</button>
                             </div>
                         </div>
                     </div>

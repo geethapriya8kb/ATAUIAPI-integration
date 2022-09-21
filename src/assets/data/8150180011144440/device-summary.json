@@ -2,6 +2,8 @@
  
   "content": {
     "Video": {
+      "subscription":true,
+      "data":{
       "S TV SELECT":"$79.99",
       "S BASIC":"$0.00",
       "S EXPAND":"$0.00",
@@ -9,24 +11,33 @@
       "S BRDCSTSVC":"$21.00",
       "Hd Receiver":"$9.99",
       "Interact Srv":"$0.00"
+      }
     },
     "Internet": {
+      "subscription":true,
+      "data":{
       "S HSIBASE":"$65.99",
       "S Hsi Modem":"$0.00",
       "S Secconnect":"$0.00"
+      }
     },
-    "Voice": {     
+    "Voice": {
+      "subscription":false,
+      "data":[ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]     
     }
   },
   
   "icons": {
     "Video":{
+      "subscription":true,
       "path": "../../assets/images/blue-check.png"
     },
     "Internet": {
+      "subscription":true,
       "path": "../../assets/images/orange-computer.png"
     },
     "Voice": {
+      "subscription":false,
       "path": "../../assets/images/purple-receiver.png"
     }
   },

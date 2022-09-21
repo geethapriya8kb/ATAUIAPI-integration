@@ -56,5 +56,14 @@
       }
     }
   },
-  "tasks": null
+  "tasks": null,
+  "contact":{
+    "email":{
+      "value":"ata-mvines@charter.com"
+    },
+    "phone":{
+      "value1":"(212) 545-1212",
+      "value2":"(111) 111-1111"
+    }
+  }
 }

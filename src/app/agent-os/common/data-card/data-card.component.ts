@@ -31,7 +31,6 @@ export class DataCardComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): any {
     const accountNumber = this.searchService.getAccountNumber();
-
     const location = this.storeService.location;
     console.log(location)
     const accountDetails = this.storeService.accountDetails;

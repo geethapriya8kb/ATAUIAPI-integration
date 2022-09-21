@@ -1,11 +1,11 @@
 <ng-container>
     <mat-card class="mt-2 p-0">
         <table class="device-card-header" *ngFor="let item of data.icons | keyvalue">
-            <tr *ngIf=" item.key==type" [ngClass]="{ 'bg-red' : (!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))}">
-                <ng-container *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
+            <tr *ngIf=" item.key==type" [ngClass]="{ 'bg-red' :!item.value.subscription}">
+                <!-- <ng-container *ngFor="let valItem of $any(item).value"> -->
                     <td>
-                        <span *ngIf="(accountSearched || menuName==='Device Management')"><img class="w-30" src="{{ valItem.value }}"></span>
-                        <span class="pt-2" *ngIf="(!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))">
+                        <span *ngIf="item.value.subscription"><img class="w-30" src="{{ item.value.path }}"></span>
+                        <span class="pt-2" *ngIf="!item.value.subscription">
                             <span  *ngIf=" item.key=='Video'">
                                 <mat-icon class="color-white" svgIcon="aos-tv-antenna"></mat-icon>
                             </span>
@@ -18,21 +18,28 @@
                         </span>
                         
                     </td>
-                    <td><span [ngClass]="{ 'color-white' :(!accountSearched && (menuName==='Dashboard' || menuName==='Billing' )) }"><strong>{{item.key}}</strong></span></td>
-                    <td *ngIf="(!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))" class="pt-2 text-end color-white">
+                    <td><span [ngClass]="{ 'color-white' :!item.value.subscription }"><strong>{{item.key}}</strong></span></td>
+                    <td *ngIf="!item.value.subscription" class="pt-2 text-end color-white">
                         <mat-icon svgIcon="aos-exclamation-hexagon"></mat-icon>
                     </td>
-                </ng-container>
+                <!-- </ng-container> -->
             </tr>
         </table>
         <div class="device-card-data">
             <table class="w-100">
-                <ng-container *ngFor="let item of data.content | keyvalue: returnZero">
+                <ng-container *ngFor="let item of data.content | keyvalue: returnZero">                   
                     <ng-container *ngIf=" item.key==type">
-                        <tr *ngFor="let valItem of $any(item).value | keyvalue: returnZero">
-                            <td *ngIf="accountSearched"> {{ valItem.key }}:</td>
-                            <td class="text-center" [ngClass]="{ 'device-text' : (!accountSearched && (menuName==='Dashboard' || menuName==='Billing' ))  }"> {{ valItem.value }}</td>
+                        <ng-container *ngIf="$any(item).value.subscription;else next">                           
+                        <tr *ngFor="let valItem of $any(item).value.data | keyvalue: returnZero">                                             
+                            <td  *ngIf="accountSearched"> {{ valItem.key }}:</td>
+                            <td class="text-center"> {{ valItem.value }}</td>
                         </tr>
+                    </ng-container>
+                    <ng-template #next>
+                        <tr *ngFor="let valItem of $any(item).value.data | keyvalue: returnZero">                                            
+                           <td class="text-center" [ngClass]="{ 'device-text' : !item.value.subscription}"> {{ valItem.value }}</td>
+                        </tr>
+                    </ng-template>
                     </ng-container>
                 </ng-container>
             </table>
