@@ -232,7 +232,7 @@ export class SideBarComponent implements OnInit {
   clearData() {
     this.searchService.sharedValue$.next('empty');
     this.searchService.setAccountNumber('empty');
-    this.storeService.location.next( this.storeService.locationEmpty);
+    this.storeService.location.next(this.storeService.locationEmpty);
   }
 
   returnZero() {
