@@ -115,39 +115,679 @@
   ],
   "mobileStatement": {
     "current cycle": {
-      "Data": "$120.00",
-      "Services & Devices": "$36.00",
-      "Total": "$156",
-      "Payment": "",
-      "Balance": ""
+      "Data":{
+        "value":"$120.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Services & Devices": {
+        "value":"$36.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Total":{
+        "value":"$156.00"
+      },
+      "Payment":{
+        "value":""
+      },
+      "Balance": {
+        "value":""
+      }
     },
     "05-24-2022": {
-      "Data": "$120.00",
-      "Services & Devices": "$36.00",
-      "Total": "$156",
-      "Payment": "",
-      "Balance": ""
+      "Data":{
+        "value":"$120.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Services & Devices": {
+        "value":"$80.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Total":{
+        "value":"$200.00"
+      },
+      "Payment":{
+        "value":"$200.00"
+      },
+      "Balance": {
+        "value":"$0.00"
+      }
     },
     "04-24-2022": {
-      "Data": "$120.00",
-      "Services & Devices": "$36.00",
-      "Total": "$156",
-      "Payment": "",
-      "Balance": ""
+      "Data":{
+        "value":"$180.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Services & Devices": {
+        "value":"$70.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Total":{
+        "value":"$250.00"
+      },
+      "Payment":{
+        "value":"$250"
+      },
+      "Balance": {
+        "value":"$0.00"
+      }
     },
     "03-24-2022": {
-      "Data": "$120.00",
-      "Services & Devices": "$36.00",
-      "Total": "$156",
-      "Payment": "",
-      "Balance": ""
+      "Data":{
+        "value":"$160.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Services & Devices": {
+        "value":"$55.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Total":{
+        "value":"$215.00"
+      },
+      "Payment":{
+        "value":"$215.00"
+      },
+      "Balance": {
+        "value":"$0.00"
+      }
     },
     "02-24-2022": {
-      "Data": "$120.00",
-      "Services & Devices": "$36.00",
-      "Total": "$156",
-      "Payment": "",
-      "Balance": ""
+      "Data":{
+        "value":"$190.00",
+        "viewDetails": {         
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited": {
+                "value": "$60.00",
+                "type": "label"
+              },
+              "Bundle Discount": {
+                "value": "($20.00)",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Services & Devices": {
+        "value":"$25.00",
+        "viewDetails": {          
+          "John": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2987",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Dave": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2476",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          },
+          "Andrew": {
+            "flag": "false",
+            "price": "$40.00",
+            "contact": "(234) 456-2345",
+            "Details": {
+              "Unlimited talk and Text": {
+                "value": "Included",
+                "type": "label"
+              },
+              "International Services": {
+                "value": "$0.00",
+                "type": "label"
+              },
+              "Device Payment Plan": {
+                "value": "$6.00",
+                "type": "label"
+              },
+              "Protection Plan": {
+                "value": "$6.00",
+                "type": "label"
+              }
+            }
+          }
+        }
+      },
+      "Total":{
+        "value":"$215.00"
+      },
+      "Payment":{
+        "value":"$215.00"
+      },
+      "Balance": {
+        "value":"$0.00"
+      }
     }
   },
   "learnMore": {
