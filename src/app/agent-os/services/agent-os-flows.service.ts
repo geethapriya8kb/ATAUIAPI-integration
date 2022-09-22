@@ -25,16 +25,20 @@ export class AgentOsFlowsService {
               route: 'payments',
               accountList: [
                 {
-                  account: 'Standard Payment-8429763145879641',
+                  type:'Standard Payment',
+                  account: '8429763145879641',
                 },
                 {
-                  account: 'Service Interrupted-8314713395279210',
+                  type:'Service Interrupted',
+                  account: '8314713395279210',
                 },
                 {
-                  account: 'Payment Due Recently-8314713395279300',
+                  type:'Payment Due Recently',
+                  account: '8314713395279300',
                 },
                 {
-                  account: 'Payment Past Due-8314713395279315',
+                  type:'Payment Past Due',
+                  account: '8314713395279315',
                 },
               ],
             },
@@ -225,16 +229,20 @@ export class AgentOsFlowsService {
 
               accountList: [
                 {
-                  account: ' One Click Credit: 8345780121551174',
+                  type:'One Click Credit',
+                  account: '8345780121551174',
                 },
                 {
-                  account: 'First Bill: 8345780013860741',
+                  type:'First Bill:',
+                  account: '8345780013860741',
                 },
                 {
-                  account: ' Bill Increase: 8245123940306051',
+                  type:'Bill Increase:',
+                  account: '8245123940306051',
                 },
                 {
-                  account: 'Take Payment Failure: 8245100990063956',
+                  type:'Take Payment Failure:',
+                  account: '8245100990063956',
                 },
               ],
             },
@@ -371,10 +379,12 @@ export class AgentOsFlowsService {
               route: 'SMB-nodialtone',
               accountList: [
                 {
+                  type:'',
                   account: '8260161584576990',
                 },
                 {
-                  account: 'singleline: 357648901',
+                  type:'singleline:',
+                  account: '357648901',
                 },
               ],
             },

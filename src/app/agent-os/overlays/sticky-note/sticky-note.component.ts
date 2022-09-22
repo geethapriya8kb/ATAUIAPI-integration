@@ -26,12 +26,16 @@ export class StickyNoteComponent implements OnInit {
     this.currentCourse = label ? label : '';
     this.flowList = this.flowService.getFlowInfo(this.currentCourse);
     let courseType = this.courseListService.getHeader();
-    let index = this.flowList.groups[0].options.indexOf(
-      this.flowList.groups[0].options.find(
-        (item: { name: string }) => item.name === courseType
-      )
-    );
-    this.accountNumbers = this.flowList.groups[0].options[index].accountList;
+    if (this.currentCourse === 'call-reason') {
+      this.accountNumbers = this.flowList.groups[1].options[0].accountList;
+    } else {
+      let index = this.flowList.groups[0].options.indexOf(
+        this.flowList.groups[0].options.find(
+          (item: { name: string }) => item.name === courseType
+        )
+      );
+      this.accountNumbers = this.flowList.groups[0].options[index].accountList;
+    }
   }
 
   copyData(accountNumber: string) {
