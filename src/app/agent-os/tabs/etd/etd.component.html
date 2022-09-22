@@ -17,33 +17,35 @@
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="custType" class="fw-bold medium mb-2">Cust Type:</label>
-                                <mat-select formControlName="custType" multiple  class="form-select form-select-sm" placeholder="Mode">
+                                <mat-select formControlName="custType" multiple class="form-select form-select-sm"
+                                    placeholder="Mode">
                                     <mat-option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
-                                      {{i.value}}
+                                        {{i.value}}
                                     </mat-option>
                                 </mat-select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
                                 <label for="reasons" class="fw-bold medium mb-2">Reasons:</label>
-                                <mat-select formControlName="reasons" multiple  class="form-select form-select-sm">
-                                    <mat-option *ngFor="let i of etddata?.reasons | keyvalue" [value]="i.value" selected>
-                                      {{i.value}}
+                                <mat-select formControlName="reasons" multiple class="form-select form-select-sm">
+                                    <mat-option *ngFor="let i of etddata?.reasons | keyvalue" [value]="i.value"
+                                        selected>
+                                        {{i.value}}
                                     </mat-option>
                                 </mat-select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
                                 <label for="managmentArea" class="fw-bold medium mb-2">Mgmt Area:</label>
-                                <mat-select formControlName="managmentArea" multiple  class="form-select form-select-sm">
+                                <mat-select formControlName="managmentArea" multiple class="form-select form-select-sm">
                                     <mat-option *ngFor="let i of etddata?.area | keyvalue" [value]="i.value">
-                                      {{i.value}}
+                                        {{i.value}}
                                     </mat-option>
                                 </mat-select>
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="status" class="fw-bold medium mb-2">Status:</label>
-                                <mat-select formControlName="status" multiple  class="form-select form-select-sm">
+                                <mat-select formControlName="status" multiple class="form-select form-select-sm">
                                     <mat-option *ngFor="let i of etddata?.status | keyvalue" [value]="i.value">
-                                      {{i.value}}
+                                        {{i.value}}
                                     </mat-option>
                                 </mat-select>
                             </div>
@@ -67,10 +69,11 @@
                             </div>
                             <div class="col-md-2 col-sm-2">
                                 <input class="form-outline" type="search" id="form1" class="form-control"
-                                    aria-label="Search" formControlName="form1" >
+                                    aria-label="Search" formControlName="form1">
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
-                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs" (click)="reset()">Reset</button>
+                                <button type="button" mat-raised-button color="secondary" class="mat-button-xs"
+                                    (click)="reset()">Reset</button>
                             </div>
                         </div>
                     </div>
@@ -91,13 +94,23 @@
                     <p class="no-records">No Ticket found</p>
                 </div>
             </mat-card>
-            <mat-card class="card mt-4">
+            <mat-card class="card border-0 mt-4">
+                <div>
+                    <p>Total Tickets: 6</p>
+                    <p style="background-color: #e1e1e1;">
+                        <button class="btn btn-sm btn-cl" (click)="expand()">
+                            <span>
+                                <em class="fas pb-5" [ngClass]="{ 'fa-caret-down': flag, 'fa-caret-up': !flag }"></em>
+                            </span>
+                        </button>
+                    </p>
+                </div>
                 <div>
                     <div class="row">
                         <div class="col-md-3"><strong>Ticket:</strong>11177548 (Escalated 1)
                             <br> <strong>Status:</strong>Open
                         </div>
-                        <div class="col-md-4 text-center">
+                        <div class="col-md-4 text-end">
                             <strong>Video</strong>
                             <strong class="ms-4">HSI</strong>
                             <strong class="ms-4">Phone</strong>
@@ -106,25 +119,25 @@
                             <i class="fa fa-check-square me-4" aria-hidden="true"></i>
                             <i class="fa fa-check-square ms-4" aria-hidden="true"></i>
                         </div>
-                        <div class="col-md-5"> 
+                        <div class="col-md-5 text-end">
                             <div class="row">
-                                <div class="col-md-2"> <i class="fa">&#xf021;</i>&nbsp;</div>
-                                <div class="col-md-5"> <button type="button" mat-raised-button color="success" class="me-1 mat-button-sm">
-                                    Assign to Me
-                                </button></div>
-                                <div class="col-md-5">
-                                    <button type="button" mat-raised-button color="success" class="mat-button-sm"
-                                    routerLink="work-ticket">
-                                    Work Ticket
-                                </button>
+                                <div class="col-md-9 col-sm-9 offset-3 p-0">
+                                    <i class="fa pe-1">&#xf021;</i>
+                                    <button type="button" mat-raised-button color="success" class="me-1 mat-button-xs">
+                                        Assign to Me
+                                    </button>
+                                    <button type="button" mat-raised-button color="success" class="mat-button-xs"
+                                        routerLink="work-ticket">
+                                        Work Ticket
+                                    </button>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                 </div>
             </mat-card>
 
-            <mat-card class="mt-2">
+            <mat-card class="mt-2" *ngIf="flag">
                 <mat-tab-group mat-align-tabs="start">
                     <mat-tab label="Details">
                         <div class="row mx-0 my-1" *ngIf="data?.etd && data?.etd.length">

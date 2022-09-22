@@ -63,5 +63,13 @@
 }
 
 ::ng-deep .mat-pseudo-checkbox-checked{
-    background-color: black;
+    background-color: #1063bc;
+}
+
+.btn-cl{
+    background-color: rgba(103, 98, 98, 0.473);
+    margin-left:48%; 
+    max-height:20px; 
+    min-width: 8%;
+    border: 1px black solid;
 }

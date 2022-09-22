@@ -1,5 +1,5 @@
 <ng-container>
-    <mat-card class="mt-2 p-0">
+    <mat-card style="min-height:30px ;" class="mt-2 p-0">
         <table class="device-card-header" *ngFor="let item of data.icons | keyvalue">
             <tr *ngIf=" item.key==type" [ngClass]="{ 'bg-red' :!item.value.subscription}">
                 <!-- <ng-container *ngFor="let valItem of $any(item).value"> -->

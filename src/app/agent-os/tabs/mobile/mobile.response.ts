@@ -12,6 +12,8 @@ export class MobileResponse
       mobileStatement:string
       learnMore:string
       viewMore:string
+      content:string
+      custType:string
       ['Services & Devices*']: string
 }
 
