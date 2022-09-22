@@ -8,8 +8,8 @@
         <div class="col">
             <ul>
                 <li *ngFor="let accountNumber of accountNumbers">
-                    <span>8245100030092203</span> <button mat-icon-button class="ml-3"
-                        (click)="copyData(accountNumber)">
+                    <span>{{accountNumber.account}}</span> <button mat-icon-button class="ml-3"
+                        (click)="copyData(accountNumber.account)">
                         <mat-icon>content_copy</mat-icon>
                     </button>
                 </li>

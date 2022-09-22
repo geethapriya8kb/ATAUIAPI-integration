@@ -1,20 +1,37 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AgentOsFlowsService } from '../../services/agent-os-flows.service';
+import { CourseListService } from '../../services/course-list.service';
 
 @Component({
   selector: 'app-sticky-note',
   templateUrl: './sticky-note.component.html',
-  styleUrls: ['./sticky-note.component.scss']
+  styleUrls: ['./sticky-note.component.scss'],
 })
 export class StickyNoteComponent implements OnInit {
-
-  accountNumbers = ['8245100030092203'];
+  currentCourse = '';
+  flowList: any = null;
+  accountNumbers: any[];
 
   @Output() closeSticky = new EventEmitter<void>();
 
-  constructor(private snackbar: MatSnackBar) { }
+  constructor(
+    private snackbar: MatSnackBar,
+    private courseListService: CourseListService,
+    private flowService: AgentOsFlowsService
+  ) {}
 
   ngOnInit(): void {
+    const label = this.courseListService.getData();
+    this.currentCourse = label ? label : '';
+    this.flowList = this.flowService.getFlowInfo(this.currentCourse);
+    let courseType = this.courseListService.getHeader();
+    let index = this.flowList.groups[0].options.indexOf(
+      this.flowList.groups[0].options.find(
+        (item: { name: string }) => item.name === courseType
+      )
+    );
+    this.accountNumbers = this.flowList.groups[0].options[index].accountList;
   }
 
   copyData(accountNumber: string) {

@@ -41,48 +41,40 @@
                     <ng-container *ngIf="searchflag">
                         <div class="mt-1 font-edit">
                             <div class="row">
-                                <div class="col-md-5 ms-4 fw-bold fs-6">{{storeService?.accountDetails?.content.Account['Customer Name'].value}}
-                                    <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
+                                <div class="col-md-5 ms-2 fw-bold fs-6">{{storeService?.accountDetails?.content.Account['Customer Name'].value}}
+                                    <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
                                 </div>
                                 <button class="col-md-5 btn-verify" (click)="openVerifyDialog()"><span>Verify & Authenticate</span></button>
                             </div>
                         </div>
-                        <p class="m-0 p-0 ms-4 color-grey-dark fw-bold" >Local Time: {{sysTime}} EST</p>
+                        <p class="m-0 p-0 ms-2 color-grey-dark fw-bold" >Local Time: {{sysTime}} EST</p>
                         <mat-card class="mt-2 bg-smoke">
-                            <div class="row">
-                                <!-- <div *ngFor="let info of custInfo | keyvalue: returnZero">
-                                    <div class="col-md-6">
-                                    <h6 class="text-secondary mb-0 mt-0">{{info.key}}</h6>
-                                    <div>{{info.value}}
-                                        <mat-icon svgIcon="aos-copy" class="px-1"></mat-icon>
-                                    </div>
-                                </div>
-                                </div> -->
+                            <div class="row">                                
                                 <div class="col-md-6">
-                                    <h6 class="text-secondary mb-0 mt-0">Account Number</h6>
+                                    <h6 class="fw-bold  mb-0 mt-0">Account Number</h6>
                                     <div class="d-flex">
                                         <h6>{{searchService.getAccountNumber()}}</h6>
                                         <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h6 class="text-secondary mb-0 mt-0">Biller</h6>
+                                    <h6 class="fw-bold  mb-0 mt-0">Biller</h6>
                                     <div class="d-flex">
                                         <h6>CHTR.CSG</h6>
-                                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                                        <mat-icon svgIcon="aos-info" class="px-1" color="primary"></mat-icon>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h6 class="text-secondary mb-0 mt-0">Service Address</h6>
+                                    <h6 class="fw-bold  mb-0 mt-0">Service Address</h6>
                                     <div class="d-flex">
-                                        <h6> {{locationVal?.content.second.Address.value}}</h6>
-                                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                                        <p style="font-size: 14px;font-weight:300"> {{locationVal?.content.second.Address.value}}</p>
+                                        <mat-icon svgIcon="aos-copy-dark" class="px-1" color="primary"></mat-icon>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h6 class="text-secondary mb-0 mt-0">Phone Number</h6>
+                                    <h6 class="fw-bold  mb-0 mt-0">Phone Number</h6>
                                     <div class="d-flex">
                                         <h6>{{locationVal?.contact.phone.value1}}</h6>
                                         <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>

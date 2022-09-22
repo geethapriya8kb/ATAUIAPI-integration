@@ -72,7 +72,7 @@ export class EditCustomerComponent implements OnInit {
     this.storeService.customer.contactRows[1].columns[0].value =  this.form.controls['phone2'].value;
     this.storeService.customer.contactRows[2].columns[0].value =  this.form.controls['email'].value;
 
-    this.storeService.location.subscribe((val: any) => {
+  let sub=this.storeService.location.subscribe((val: any) => {
        console.log(val);
         val.contact.email.value = this.form.controls['email'].value;
         val.contact.phone.value2 = this.form.controls['phone2'].value;
@@ -85,7 +85,7 @@ export class EditCustomerComponent implements OnInit {
           '  ' +  this.form.controls['zip'].value;
           this.temp=val;
       }); 
-     
+    sub.unsubscribe();
     this.storeService.location.next(this.temp)
 
     this.storeService.customer.contactRows[3].columns[0].value = this.form.controls['address1'].value;
