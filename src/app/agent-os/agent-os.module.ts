@@ -77,6 +77,8 @@ import { VerifyAuthentiacteComponent } from './common/verify-authentiacte/verify
 import { SuccessManageWalletComponent } from './common/modals/success-manage-wallet/success-manage-wallet.component';
 import { AgingAmountComponent } from './common/aging-amount/aging-amount.component';
 
+import { SearchFilterPipe } from '../pipes/filter.pipe';
+
 
 
 @NgModule({
@@ -121,7 +123,8 @@ import { AgingAmountComponent } from './common/aging-amount/aging-amount.compone
     ContactPreferenceComponent,
     VerifyAuthentiacteComponent,
     SuccessManageWalletComponent,
-    AgingAmountComponent
+    AgingAmountComponent,
+    SearchFilterPipe 
   ],
   imports: [
     CommonModule,

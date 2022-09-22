@@ -17,8 +17,7 @@
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="custType" class="fw-bold medium mb-2">Cust Type:</label>
-                                <mat-select formControlName="custType" multiple class="form-select form-select-sm"
-                                    placeholder="Mode">
+                                <mat-select formControlName="custType" multiple class="form-select form-select-sm">
                                     <mat-option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
                                         {{i.value}}
                                     </mat-option>
@@ -62,14 +61,14 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="row mt-4 ml-3">
                             <div class="col-md-1 col-sm-1">
-                                <input class="ms-2" type="radio" id="account" value="account" name="sel">Account &nbsp;
+                                <input class="ms-2" type="radio" id="account" value="account" name="sel" checked="checked">Account &nbsp;
                             </div>
                             <div class="col-md-1 col-sm-1">
                                 <input type="radio" id="ticket" value="ticket" name="sel">Ticket
                             </div>
                             <div class="col-md-2 col-sm-2">
-                                <input class="form-outline" type="search" id="form1" class="form-control"
-                                    aria-label="Search" formControlName="form1">
+                                <input class="form-outline" type="search" id="search" class="form-control"
+                                    aria-label="Search" formControlName="search" placeholder="Search" [(ngModel)]="query">
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
                                 <button type="button" mat-raised-button color="secondary" class="mat-button-xs"
@@ -78,9 +77,10 @@
                         </div>
                     </div>
                 </form>
-                <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4"
+                
+                <!-- <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4"
                     matSort>
-                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay | searchFilter: query">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
                             {{column}}</th>
                         <td mat-cell *matCellDef="let element">{{element[column]}}</td>
@@ -89,14 +89,34 @@
                     </tr>
                     <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
                     </tr>
-                </table>
+                </table> -->
+                <table class="table table-hover table-borderless table-sm mt-4">
+                    <thead class="text-center tab-bg-color">
+                      <tr>
+                        <th scope="col">Ticket</th>
+                        <th scope="col">SLA Call Time</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Node</th>
+                        <th scope="col">Reason</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Cust Type</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let user of data.content | keyvalue| searchFilter:query" class="table table-bordered">
+                      <tr>
+                        <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 <div *ngIf="dataSource.data.length === 0">
                     <p class="no-records">No Ticket found</p>
                 </div>
             </mat-card>
             <mat-card class="card border-0 mt-4">
                 <div>
-                    <p>Total Tickets: 6</p>
+                    <p>Total Tickets:{{dataSource.data.length}}</p>
                     <p style="background-color: #e1e1e1;">
                         <button class="btn btn-sm btn-cl" (click)="expand()">
                             <span>

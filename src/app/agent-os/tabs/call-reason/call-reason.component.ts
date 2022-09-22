@@ -12,6 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CourseListService } from '../../services/course-list.service';
 import { CallReasonService } from './call-reason.services';
 import { CallReasonResponse, CallReasonRoot, PaymentHistoryTable } from './call-reason.response';
+import { CallReasonTroubleResponse } from './call-reason-trouble.response';
 
 @Component({
   selector: 'app-call-reason',
@@ -28,21 +29,21 @@ import { CallReasonResponse, CallReasonRoot, PaymentHistoryTable } from './call-
 export class CallReasonComponent implements OnInit {
 
   responsiveOptions: any;
-  dataSource = new MatTableDataSource<any>();
+  dataSource = new MatTableDataSource<PaymentHistoryTable>();
   columnsToDisplay: Array<string>;
   expandedElement!: PaymentHistory | null;
   tableDatatest: Array<PaymentHistoryTable>;
   data: CallReasonResponse;
-  
+
   products!: StatementHistory[];
   rowData: boolean = true;
   accountVal: unknown;
-  courseName: any;
-  selfInstallFlag="order";
-  accountNoFlag: any = {};
-  tabName: any;
-  troubleData: any;
-  accNum: any;
+  courseName: string | null;
+  selfInstallFlag = "order";
+  accountNoFlag: boolean;
+  tabName: string | null;
+  troubleData: CallReasonTroubleResponse;
+  accNum: string | null;
 
   constructor(
     private device: CardDataService,
@@ -50,7 +51,7 @@ export class CallReasonComponent implements OnInit {
     private searchService: SearchService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private courseListService:CourseListService,
+    private courseListService: CourseListService,
     private cardDataService: CardDataService,
     private callReasonService: CallReasonService) {
 
@@ -70,16 +71,16 @@ export class CallReasonComponent implements OnInit {
         numVisible: 1,
         numScroll: 1
       }
-    ];  
+    ];
 
     var svgIcons = {
       'aos-note': 'assets/images/agent-os/note.svg',
-      'aos-missing-tv':'assets/images/agent-os/missing-tv-channel.svg',
-      'aos-modem':'assets/images/agent-os/modem.svg',
-      'aos-no-service':'assets/images/agent-os/no-service.svg',
-      'aos-self-install':'assets/images/agent-os/self-install.svg',
-      'aos-truck':'assets/images/agent-os/truck.svg',
-      'aos-unknown':'assets/images/agent-os/unknown-call.svg'
+      'aos-missing-tv': 'assets/images/agent-os/missing-tv-channel.svg',
+      'aos-modem': 'assets/images/agent-os/modem.svg',
+      'aos-no-service': 'assets/images/agent-os/no-service.svg',
+      'aos-self-install': 'assets/images/agent-os/self-install.svg',
+      'aos-truck': 'assets/images/agent-os/truck.svg',
+      'aos-unknown': 'assets/images/agent-os/unknown-call.svg'
     };
 
     for (const iconName of Object.keys(svgIcons)) {
@@ -91,19 +92,19 @@ export class CallReasonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const label = this.courseListService.getHeader();    
-      console.log(label);
-      this.courseName=label; 
-      
-      const tab=this.courseListService.getCourselist();
-      this.tabName=tab;
-      console.log(this.tabName);
-      
-      
-    
+    const label = this.courseListService.getHeader();
+    console.log(label);
+    this.courseName = label;
+
+    const tab = this.courseListService.getCourselist();
+    this.tabName = tab;
+    console.log(this.tabName);
+
+
+
     const accountNumber = this.searchService.getAccountNumber();
     this.getCallData(accountNumber);
-    this. getTroubleData();
+    this.getTroubleData(accountNumber);
   }
 
   ngAfterViewInit() {
@@ -119,21 +120,21 @@ export class CallReasonComponent implements OnInit {
 
   getCallData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    this.accNum=accountNumber
-    let  cardName ='call-reason';
-     if(accountNumber==='empty'){
-      this.accountNoFlag=false
-     }else{
-      this.accountNoFlag=true
+    this.accNum = accountNumber
+    let cardName = 'call-reason';
+    if (accountNumber === 'empty') {
+      this.accountNoFlag = false
+    } else {
+      this.accountNoFlag = true
     }
 
     this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({
       next: (resp: CallReasonRoot) => {
         this.data = JSON.parse(resp.content);
-       
+
       },
-      error: (err: any) =>{
-         console.error(err)
+      error: (err: any) => {
+        console.error(err)
       },
       complete: () => {
         this.tableDatatest = this.data.paymentHistoryTable;
@@ -152,19 +153,23 @@ export class CallReasonComponent implements OnInit {
   showRowData() {
     this.rowData = !this.rowData
   }
-  getTroubleData() {
-    const dataFileName = `assets/data/8245100030092203/callreason-troubleshoot.json`;
-    this.cardDataService.getCardData(dataFileName).subscribe(
-      (resp) => {
-        this.troubleData = resp;
-        console.log(this.troubleData);        
-      },
-      (err) => console.error(err),
-      () => {
-        
-      }
-    );
+
+  getTroubleData(accountNumber) {
+    if (accountNumber !== 'empty') {
+      let cardName = "callreason-troubleshoot"
+
+      this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({
+        next: (resp: CallReasonRoot) => {
+          this.troubleData = JSON.parse(resp.content);
+        },
+        error: (err: any) => {
+          console.error(err)
+        },
+        complete: () => { }
+      });
+    }
   }
+
   openDialog() {
     const dialogConfig = {
       data: { name: "some name" },

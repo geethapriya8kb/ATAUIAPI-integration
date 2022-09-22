@@ -25,6 +25,8 @@ etddata:any;
   myTicketDataSource = new MatTableDataSource<Mytickettab>();
   ticketColumnsToDisplay:Array<string> = [];
   accountVal: unknown;
+  public searchFilter: any = '';
+  query:any;
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl(),
     endDate: new UntypedFormControl(),
@@ -32,7 +34,7 @@ etddata:any;
     reasons: new UntypedFormControl(),
     managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
-    form1: new UntypedFormControl()
+    search: new UntypedFormControl()
   })
 
   constructor(private searchService: SearchService, private etdservice: EtdService,private accountServ:AccountService
