@@ -23,6 +23,20 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-file-invoice-dollar']],
               color: 'fa-icon-call-reason',
               route: 'payments',
+              accountList: [
+                {
+                  account: 'Standard Payment-8429763145879641',
+                },
+                {
+                  account: 'Service Interrupted-8314713395279210',
+                },
+                {
+                  account: 'Payment Due Recently-8314713395279300',
+                },
+                {
+                  account: 'Payment Past Due-8314713395279315',
+                },
+              ],
             },
           ],
         },
@@ -169,24 +183,60 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-hand-holding-usd']],
               color: 'fa-icon-billing',
               route: 'take-payment',
+              accountList: [
+                {
+                  account: '8314713395279010',
+                },
+                {
+                  account: '8429763145879640',
+                },
+              ],
             },
             {
               name: 'General Billing',
               icons: [['fas fa-3x fa-calculator']],
               color: 'fa-icon-billing',
               route: 'general-billing',
+              accountList: [
+                {
+                  account: '8429763145879650',
+                },
+              ],
             },
             {
               name: 'Credit Calculator',
               icons: [['fas fa-3x fa-credit-card']],
               color: 'fa-icon-billing',
               route: 'credit-calc',
+              accountList: [
+                {
+                  account: '8429763145879660',
+                },
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'Call Reason',
               icons: [['fas fa-3x fa-phone-volume']],
               color: 'fa-icon-billing',
               route: 'call-reason',
+
+              accountList: [
+                {
+                  account: ' One Click Credit: 8345780121551174',
+                },
+                {
+                  account: 'First Bill: 8345780013860741',
+                },
+                {
+                  account: ' Bill Increase: 8245123940306051',
+                },
+                {
+                  account: 'Take Payment Failure: 8245100990063956',
+                },
+              ],
             },
           ],
         },
@@ -280,18 +330,33 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-image']],
               color: 'fa-icon-call-reason',
               route: 'picture-quality',
+              accountList: [
+                {
+                  account: '8347100011177770',
+                },
+              ],
             },
             {
               name: 'Audio Issues',
               icons: [['fas fa-3x fa-volume-up']],
               color: 'fa-icon-call-reason',
               route: 'audio-issues',
+              accountList: [
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'All LOB Out',
               icons: [['fas fa-3x fa-power-off']],
               color: 'fa-icon-call-reason',
               route: 'all-lob-out',
+              accountList: [
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'Work Management / Reschedule',
@@ -304,6 +369,14 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-phone-slash']],
               color: 'fa-icon-call-reason',
               route: 'SMB-nodialtone',
+              accountList: [
+                {
+                  account: '8260161584576990',
+                },
+                {
+                  account: 'singleline: 357648901',
+                },
+              ],
             },
             {
               name: 'Call Reason',

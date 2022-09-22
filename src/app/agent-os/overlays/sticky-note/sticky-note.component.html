@@ -9,7 +9,7 @@
             <ul>
                 <li *ngFor="let accountNumber of accountNumbers">
                     <span>{{accountNumber.account}}</span> <button mat-icon-button class="ml-3"
-                        (click)="copyData(accountNumber)">
+                        (click)="copyData(accountNumber.account)">
                         <mat-icon>content_copy</mat-icon>
                     </button>
                 </li>
