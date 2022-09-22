@@ -3,27 +3,26 @@
 <div class="row bg-grey fw-bold ">
 <table>
  <tr >
-  <td class="text-start ps-2">{{date}}</td>
+  <td class="text-start ps-2">{{mobileData.key}}</td>
   <td class="text-end p-2"><i class="fa fa-check rounded-circle bg-green p-1 color-white"></i></td>
  </tr>
 </table>
 </div>
-<ng-container *ngFor="let item of data?.viewMore | keyvalue: returnZero">
- 
-  <div class="row bg-grey ps-2 px-2 fw-bold mt-2">
+<ng-container *ngFor="let item of mobileData.value | keyvalue: returnZero"> 
+  <div [ngClass]="{'bg-grey':(item.key==='Data'|| item.key==='Services & Devices')}" class="row ps-2 px-2 fw-bold mt-2">
     <table>
       <tr>
          <td class="text-start">{{item.key}}</td>
-        <td class="text-end">{{ item.value.total }}</td>
+        <td  [ngClass]="{'color-green':item.key==='Balance'}" class="text-end">{{ item.value.value }}</td>
       </tr>
     </table>
   </div>
 
-  <ng-container *ngFor="let i of item.value | keyvalue: returnZero">
+  <ng-container *ngFor="let i of item.value.viewDetails| keyvalue: returnZero">
     <div class="row">
-      <div *ngIf="i.key!=='total'" class="col-sm-9">{{ i.key }}</div>
+      <div class="col-sm-9">{{ i.key }}</div>
       <div class="col-sm-2 text-end">{{ i.value.price }}</div>
-      <button *ngIf="i.key!=='total'"
+      <button 
         (click)="i.value.flag=!i.value.flag"
         class="col-sm-1 border-0 bg-white"
       >
@@ -44,3 +43,6 @@
     </ng-container>
   </ng-container>
 </ng-container>
+<button class="mt-2 rounded-pill float-end" mat-raised-button color="primary" (click)="close()">Close</button>
+
+

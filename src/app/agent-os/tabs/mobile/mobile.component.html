@@ -183,12 +183,12 @@
                                     <td>{{item.key}}</td>
                                     <td><i class="fa fa-check rounded-circle bg-green p-1 color-white"></i></td>
                                 </tr>
-                                <tr class="small" *ngFor="let i of item.value | keyvalue:returnZero">
-                                    <td>{{i.key}}</td>
-                                    <td>{{i.value}}</td>
+                                <tr class="small" [ngClass]="{'bg-light-grey':(i.key==='Data'|| i.key==='Services & Devices')}" *ngFor="let i of item.value | keyvalue:returnZero">
+                                    <td >{{i.key}}</td>
+                                    <td [ngClass]="{'color-green':i.key==='Balance'}" >{{i.value.value}}</td>
                                 </tr>                               
-                                <button  (click)="click($event,'view','30%','100%',item.key)" class="color-blue btn btn-link text-decoration-none"><h6 class="small fw-bold">View Details</h6></button><br />
-                                <p>
+                                <button  (click)="click($event,'view','30%','100%',item)" class="color-blue btn btn-link text-decoration-none"><h6 class="small fw-bold">View Details</h6></button><br />
+                                <p class="fw-normal small">
                                     *Taxes, fees & other charges are included in monthly recurring charges.
                                     <span>
                                         <button  (click)="click($event,'learn','40%','50%')" class="color-blue btn btn-link text-decoration-none"><h6 class="small fw-light">Learn More</h6></button>
