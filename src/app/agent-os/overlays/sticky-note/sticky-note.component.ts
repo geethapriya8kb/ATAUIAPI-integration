@@ -27,7 +27,13 @@ export class StickyNoteComponent implements OnInit {
     this.flowList = this.flowService.getFlowInfo(this.currentCourse);
     let courseType = this.courseListService.getHeader();
     if (this.currentCourse === 'call-reason') {
-      this.accountNumbers = this.flowList.groups[1].options[0].accountList;
+      for (let i = 0; i < this.flowList.groups.length; i++) {
+        this.flowList.groups[i]?.options.forEach((element) => {
+          if (element.name === courseType) {
+            this.accountNumbers = element.accountList;
+          }
+        });
+      }
     } else {
       let index = this.flowList.groups[0].options.indexOf(
         this.flowList.groups[0].options.find(
