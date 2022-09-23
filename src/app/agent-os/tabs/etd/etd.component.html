@@ -61,14 +61,16 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="row mt-4 ml-3">
                             <div class="col-md-1 col-sm-1">
-                                <input class="ms-2" type="radio" id="account" value="account" name="sel" checked="checked">Account &nbsp;
+                                <input class="ms-2" type="radio" id="account" value="account" name="sel"
+                                    checked="checked">Account &nbsp;
                             </div>
                             <div class="col-md-1 col-sm-1">
                                 <input type="radio" id="ticket" value="ticket" name="sel">Ticket
                             </div>
                             <div class="col-md-2 col-sm-2">
                                 <input class="form-outline" type="search" id="search" class="form-control"
-                                    aria-label="Search" formControlName="search" placeholder="Search" [(ngModel)]="query">
+                                    aria-label="Search" formControlName="search" placeholder="Search"
+                                    [(ngModel)]="query">
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
                                 <button type="button" mat-raised-button color="secondary" class="mat-button-xs"
@@ -77,7 +79,7 @@
                         </div>
                     </div>
                 </form>
-                
+
                 <!-- <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4"
                     matSort>
                     <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay | searchFilter: query">
@@ -92,34 +94,36 @@
                 </table> -->
                 <table class="table table-hover table-borderless table-sm mt-4">
                     <thead class="text-center tab-bg-color">
-                      <tr>
-                        <th scope="col">Ticket</th>
-                        <th scope="col">SLA Call Time</th>
-                        <th scope="col">Account</th>
-                        <th scope="col">City</th>
-                        <th scope="col">Node</th>
-                        <th scope="col">Reason</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Owner</th>
-                        <th scope="col">Cust Type</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">Ticket</th>
+                            <th scope="col">SLA Call Time</th>
+                            <th scope="col">Account</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Node</th>
+                            <th scope="col">Reason</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Owner</th>
+                            <th scope="col">Cust Type</th>
+                        </tr>
                     </thead>
-                   
+                    <ng-container *ngIf="!filterAlert.length">
                     <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
-                      <tr>
-                        <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
-                      </tr>
+                        <tr>
+                            <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
+                        </tr>
                     </tbody>
-                
+                </ng-container>
                     <ng-container *ngIf="filterAlert.length">
-                        {{filterAlert.length}}
-                        <tbody *ngFor="let user of filterAlert?.content| keyvalue" class="table table-bordered">
+                        <tbody  class="table table-bordered">
                             <tr>
-                              <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
+                                <!-- <ng-container *ngFor="let item of filterAlert">
+                                    <td *ngFor="let i of item| keyvalue:returnZero"> {{i.value}}</td>
+                                </ng-container> -->
+                                <td *ngFor="let item of filterAlert[0]| keyvalue:returnZero"> {{item.value}}</td>
                             </tr>
-                          </tbody>
+                        </tbody>
                     </ng-container>
-                  </table>
+                </table>
                 <div *ngIf="dataSource.data.length === 0">
                     <p class="no-records">No Ticket found</p>
                 </div>

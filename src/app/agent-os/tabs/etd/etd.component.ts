@@ -65,13 +65,12 @@ export class EtdComponent implements OnInit {
   filter() {
     this.filterAlert = [];
     const searchTicket = this.etdValue.value;
-    console.log(searchTicket);
     let test: Array<TicketInformation> = [];
     if (searchTicket) {
       for (let i = 0; i < this.tempdata.content?.length; i++) {
         this.etdValue.controls['status'].value.forEach((element) => {
           if (
-            String(this.tempdata.content[i].Status) === element &&
+            String(this.tempdata.content[i].Status) === element ||
             String(this.tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search)
           ) {
             let temp = this.tempdata.content[i];
@@ -81,7 +80,6 @@ export class EtdComponent implements OnInit {
       }
     }
     this.filterAlert = test;
-    console.log(this.filterAlert);//filtered data gets here
   }
 
   getCardData(accountNumber) {
