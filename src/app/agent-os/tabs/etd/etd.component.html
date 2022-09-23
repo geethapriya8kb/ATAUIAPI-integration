@@ -104,11 +104,21 @@
                         <th scope="col">Cust Type</th>
                       </tr>
                     </thead>
-                    <tbody *ngFor="let user of data?.content| keyvalue| searchFilter:query" class="table table-bordered">
+                   
+                    <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
                       <tr>
                         <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
                       </tr>
                     </tbody>
+                
+                    <ng-container *ngIf="filterAlert.length">
+                        {{filterAlert.length}}
+                        <tbody *ngFor="let user of filterAlert?.content| keyvalue" class="table table-bordered">
+                            <tr>
+                              <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
+                            </tr>
+                          </tbody>
+                    </ng-container>
                   </table>
                 <div *ngIf="dataSource.data.length === 0">
                     <p class="no-records">No Ticket found</p>

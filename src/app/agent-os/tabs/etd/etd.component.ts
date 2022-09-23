@@ -37,7 +37,7 @@ export class EtdComponent implements OnInit {
     status: new UntypedFormControl(),
     search: new UntypedFormControl(),
   });
-
+  tempdata: any;
   constructor(
     private searchService: SearchService,
     private etdservice: EtdService,
@@ -63,27 +63,25 @@ export class EtdComponent implements OnInit {
   }
 
   filter() {
+    this.filterAlert = [];
     const searchTicket = this.etdValue.value;
     console.log(searchTicket);
-    let tempdata=this.data;
+    let test: Array<TicketInformation> = [];
     if (searchTicket) {
-      for (let i = 0; i < tempdata.content?.length; i++) {
-        console.log(tempdata.content[i].Ticket);
-        console.log(searchTicket.search);
-        console.log(String(tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search));
+      for (let i = 0; i < this.tempdata.content?.length; i++) {
         this.etdValue.controls['status'].value.forEach((element) => {
-          if (String(tempdata.content[i].Status) === element &&
-          String(tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search) ) {
-            let temp = tempdata.content[i];
-            this.filterAlert.push(temp);
-         
+          if (
+            String(this.tempdata.content[i].Status) === element &&
+            String(this.tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search)
+          ) {
+            let temp = this.tempdata.content[i];
+            test.push(temp);
           }
         });
       }
-     
     }
-    console.log(this.filterAlert);
-    this.data = this.filterAlert;
+    this.filterAlert = test;
+    console.log(this.filterAlert);//filtered data gets here
   }
 
   getCardData(accountNumber) {
@@ -92,6 +90,7 @@ export class EtdComponent implements OnInit {
     this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
         this.data = JSON.parse(resp.content);
+        this.tempdata = this.data;
       },
       error: (err) => console.log(err),
       complete: () => {
@@ -117,7 +116,7 @@ export class EtdComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-       // console.log(this.etddata);
+        // console.log(this.etddata);
       }
     );
   }
@@ -127,7 +126,7 @@ export class EtdComponent implements OnInit {
   }
 
   etdData() {
-   // console.log(this.etdValue.value);
+    // console.log(this.etdValue.value);
   }
 
   reset() {
