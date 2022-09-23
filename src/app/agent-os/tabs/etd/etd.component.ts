@@ -13,7 +13,7 @@ import { EtdService } from './etd.service';
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
-  data: EtdResponse;
+  data: any;
   etddata: any;
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
@@ -61,87 +61,103 @@ export class EtdComponent implements OnInit {
 
   filter() {
     const searchTicket = this.etdValue.value;
-    console.log(searchTicket);
+    console.log(this.etdValue.controls['status'].value);
     if (searchTicket) {
       for (let i = 0; i < this.data.content.length; i++) {
-        console.log(this.data);
-        console.log(this.data.content[i].Ticket);
-        console.log(this.data.content[i].Ticket.toLowerCase().includes(searchTicket));
-      
-        if (String(this.data.content[i].Ticket).toLowerCase().includes(searchTicket)) {
-          let temp = this.data.content[i];
-          this.filterAlert.push(temp)
-          console.log(this.filterAlert);
-        }
+        // console.log(this.data.content.);
+        // console.log(this.data.content[i].Ticket)
 
-
-        // if(this.data.content[i].Ticket==searchTicket){
-
-        // }
-
+        let abc = this.etdValue.controls['status'].value.toString();
+        console.log(this.etdValue.controls['status'].value[0]);
+        this.etdValue.controls['status'].value.forEach(element => {
+          if (String(this.data.content[i].Status) === element )
+          {
+            let temp = this.data.content[i];
+            this.filterAlert.push(temp)
+            console.log(this.filterAlert);
+          }
+          
       }
+
+      );
+      this.data=this.filterAlert;
+
+          // if (
+          //   String(this.data.content[i].Ticket).toLowerCase().includes(searchTicket.search) &&
+          //   String(this.data.content[i].Account).toLowerCase().includes(searchTicket.search)) {
+          //   let temp = this.data.content[i];
+          //   this.filterAlert.push(temp)
+          //   console.log(this.filterAlert);
+          // }
+
+
+          // if(this.data.content[i].Ticket==searchTicket){
+
+          // }
+
+        }
     }
 
 
-    // const reas=this.etdValue.controls['reasons'].value
-    // console.log(reas);
+      // const reas=this.etdValue.controls['reasons'].value
+      // console.log(reas);
 
+    }
+
+    getCardData(accountNumber) {
+      if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+      let cardName = 'etd-account'
+      this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+        next: (resp) => {
+          this.data = JSON.parse(resp.content);
+        },
+        error: (err) => console.log(err),
+        complete: () => {
+          console.log(this.data);
+          console.log('done loading data');
+          this.tableDatatest = this.data.content;
+          console.log(this.tableDatatest);
+          this.dataSource.data = this.tableDatatest;
+          this.columnsToDisplay = this.data.etdcol;
+
+          this.histableDatatest = this.data.historytab;
+          this.hisDataSource.data = this.histableDatatest;
+          this.hisColumnsToDisplay = this.data.historycol;
+          this.myticketTabTableDatatest.push(this.data.mytickettab);
+          this.myTicketDataSource.data = this.myticketTabTableDatatest;
+          this.ticketColumnsToDisplay = this.data.myticketcol;
+
+        }
+      });
+    }
+
+    etdDropData() {
+      const dataFileName = `assets/data/etd-table.json`;
+      this.accountServ.getverifydata(dataFileName).subscribe(
+        (resp) => {
+          this.etddata = resp
+        },
+        (err) => console.error(err),
+        () => {
+          console.log(this.etddata);
+        }
+      );
+    }
+
+
+    returnZero() {
+      return 0;
+    }
+
+    etdData() {
+      console.log(this.etdValue.value);
+    }
+
+    reset() {
+      this.etdValue.reset();
+    }
+
+    expand() {
+      this.flag = !this.flag;
+    }
   }
-
-  getCardData(accountNumber) {
-    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    let cardName = 'etd-account'
-    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
-      next: (resp) => {
-        this.data = JSON.parse(resp.content);
-      },
-      error: (err) => console.log(err),
-      complete: () => {
-        console.log(this.data);
-        console.log('done loading data');
-        this.tableDatatest = this.data.content;
-        console.log(this.tableDatatest);
-        this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.etdcol;
-
-        this.histableDatatest = this.data.historytab;
-        this.hisDataSource.data = this.histableDatatest;
-        this.hisColumnsToDisplay = this.data.historycol;
-        this.myticketTabTableDatatest.push(this.data.mytickettab);
-        this.myTicketDataSource.data = this.myticketTabTableDatatest;
-        this.ticketColumnsToDisplay = this.data.myticketcol;
-
-      }
-    });
-  }
-
-  etdDropData() {
-    const dataFileName = `assets/data/etd-table.json`;
-    this.accountServ.getverifydata(dataFileName).subscribe(
-      (resp) => {
-        this.etddata = resp
-      },
-      (err) => console.error(err),
-      () => {
-        console.log(this.etddata);
-      }
-    );
-  }
-
-
-  returnZero() {
-    return 0;
-  }
-
-  etdData() {
-    console.log(this.etdValue.value);
-  }
-
-  reset() {
-    this.etdValue.reset();
-  }
-
-  expand() {
-    this.flag = !this.flag;
-  }
-}
