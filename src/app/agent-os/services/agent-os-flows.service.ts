@@ -52,24 +52,44 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-plug']],
               color: 'fa-icon-call-reason',
               route: 'self-install',
+              accountList: [
+                {
+                  type:'',
+                  account: '8347100015617690',
+                },]
             },
             {
               name: 'Cannot Connect',
               icons: [['fas fa-handshake-slash fa-3x']],
               color: 'fa-icon-call-reason',
               route: 'cannot-connect',
+              accountList: [
+                {
+                  type:'',
+                  account: '8245100030092200',
+                },]
             },
             {
               name: 'Missing Channels',
               icons: [['fas fa-3x fa-film']],
               color: 'fa-icon-call-reason',
               route: 'missing-channels',
+              accountList: [
+                {
+                  type:'',
+                  account: '8245100030050010',
+                },]
             },
             {
               name: 'No Service',
               icons: [['fas fa-3x fa-power-off']],
               color: 'fa-icon-call-reason',
               route: 'no-service',
+              accountList: [
+                {
+                  type:'',
+                  account: '8245100030051210',
+                },]
             },
           ],
         },
@@ -284,12 +304,28 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-film']],
               color: 'fa-icon-call-reason',
               route: 'missing-channels',
+              accountList: [
+                {
+                  type:'CSG',
+                  account: '8347100011144440',
+                },
+              ]
             },
             {
               name: 'Self Installation',
               icons: [['fas fa-3x fa-wand-magic-sparkles']],
               color: 'fa-icon-call-reason',
               route: 'self-installation',
+              accountList: [
+                {
+                  type:'ICOMS',
+                  account: '210052777',
+                },
+                {
+                  type:'CSG',
+                  account: '8347100011133330',
+                },
+              ]
             },
             {
               name: 'Remote Control Issues',

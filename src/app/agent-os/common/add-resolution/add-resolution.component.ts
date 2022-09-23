@@ -32,7 +32,6 @@ export class AddResolutionComponent implements OnInit {
       (err) => console.error(err),
       () => {
         this.resolutionData.CallType.forEach((calltype) => {
-          console.log(calltype);
           this.callTypeList.push(calltype);
           this.flag = true;
         });
@@ -52,6 +51,6 @@ export class AddResolutionComponent implements OnInit {
     this.resolutionList = cause.Resolution;
   }
   onSelectResolution(resolutionItem) {
-    console.log(resolutionItem);
+    //console.log(resolutionItem);
   }
 }

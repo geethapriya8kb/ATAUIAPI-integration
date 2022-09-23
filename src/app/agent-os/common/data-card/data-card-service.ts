@@ -22,7 +22,7 @@ export class DataCardService extends BaseService {
     const val: QueryParam[] =
       [{ key: "id", value: id.toString()},
       { key: "identifier", value: identifier.toString()}];
-      console.log(val);
+      
       console.log(endpoint);
       
       

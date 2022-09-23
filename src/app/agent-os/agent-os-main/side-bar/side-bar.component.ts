@@ -85,8 +85,6 @@ export class SideBarComponent implements OnInit {
       
       }; 
     }); 
-   
-    console.log(this.custInfo);      
   }
   
   ngAfterViewInit() {
@@ -120,7 +118,7 @@ export class SideBarComponent implements OnInit {
     let dialogRef = this.matDialog.open(SearchDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((value) => {
-      console.log(`Dialog sent: ${value}`);
+      // console.log(`Dialog sent: ${value}`);
 
       this.sharedService.sendData({
         type: 'search-dialog-close',
@@ -153,7 +151,7 @@ export class SideBarComponent implements OnInit {
 
     const dialogRef = this.matDialog.open(VerifyAuthentiacteComponent,dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+     
     });
   }
 

@@ -73,7 +73,7 @@ export class EditCustomerComponent implements OnInit {
     this.storeService.customer.contactRows[2].columns[0].value =  this.form.controls['email'].value;
 
   let sub=this.storeService.location.subscribe((val: any) => {
-       console.log(val);
+       
         val.contact.email.value = this.form.controls['email'].value;
         val.contact.phone.value2 = this.form.controls['phone2'].value;
         val.contact.phone.value1 = this.form.controls['phone'].value;

@@ -7,7 +7,18 @@
             "City": "BUNNELL, FL",
             "Node": "",
             "Reason": "Must Do: Hazardous/Safety Situation",
-            "Status": "OPEN",
+            "Status": "OUTAGE",
+            "Owner": "",
+            "Cust Type": "C"
+        },
+        {
+            "Ticket": "11177548",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "002044872555",
+            "City": "BUNNELL, FL",
+            "Node": "",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C"
         },
