@@ -168,7 +168,7 @@ export class TroubleshootingComponent implements OnInit {
       next: (resp) => (this.symptomsData = JSON.parse(resp.content)),
       error: (err) => console.error(err),
       complete: () => {
-        console.log(this.symptomsData);
+       
       },
     });
   }
@@ -184,20 +184,17 @@ export class TroubleshootingComponent implements OnInit {
       },
       error: (err) => console.error(err),
       complete: () => {
-        console.log(this.videoIssuesData);
-        console.log(this.internetIssuesData);
+       
       },
     });
   }
 
   onTabChange(e: any) {
-    console.log(e);
+ 
   }
 
   public demo2BtnClick(tabGroup: MatTabGroup, symptomName, dynamicTabName, event) {
     if (event.type === 'click' || this.isMousehover == 0) {
-      console.log(event.type === 'mouseover');
-      console.log(dynamicTabName, symptomName);
       if (dynamicTabName === 'Video') {
         this.dynamicTabName = dynamicTabName;
         this.symptomName = symptomName;
@@ -232,7 +229,7 @@ export class TroubleshootingComponent implements OnInit {
   }
 
   radioFun() {
-    console.log(this.radioSelected);
+   //this.radioSelected
   }
 
   returnZero() {
@@ -249,11 +246,11 @@ export class TroubleshootingComponent implements OnInit {
   }
 
   override() {
-    console.log('override automation');
+    let type='override automation';
   }
 
   rerun() {
-    console.log('rerun automation');
+    let type='rerun automation';
   }
   openEventDetails() {
     const dialogConfig = {
@@ -266,7 +263,7 @@ export class TroubleshootingComponent implements OnInit {
 
     let dialogRef = this.matDialog.open(EventDetailsComponent, dialogConfig);
     dialogRef.afterClosed().subscribe((value) => {
-      console.log(`Dialog sent: ${value}`);
+   
     });
   }
 }

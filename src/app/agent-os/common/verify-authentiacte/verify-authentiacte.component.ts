@@ -37,15 +37,11 @@ export class VerifyAuthentiacteComponent implements OnInit {
   }
 
   onSelectType(item) {
-    console.log(item);
     this.verifyList = item.details;
-    this.verifyList = this.typeList.find((cntry: any) => cntry.VerifyType == item.target.value).details;
-    console.log(this.verifyList);
-    
+    this.verifyList = this.typeList.find((cntry: any) => cntry.VerifyType == item.target.value).details; 
   }
 
   onSelectVerify(verify){
-    console.log(verify);
     
   }
   returnZero() {

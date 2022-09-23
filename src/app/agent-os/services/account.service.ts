@@ -13,7 +13,6 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
 getAccountData(url: any) {
-  //console.log(url);
   return this.http.get(url);
 }
 

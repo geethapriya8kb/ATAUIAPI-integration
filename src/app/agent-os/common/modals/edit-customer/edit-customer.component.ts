@@ -63,8 +63,6 @@ export class EditCustomerComponent implements OnInit {
     return 0;
   }
   submit() {
-    console.log(this.form.value);
-
     this.storeService.accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
     this.storeService.customer.contactRows[0].columns[1].value =  this.form.controls['authUser'].value;
 

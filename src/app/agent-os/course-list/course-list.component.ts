@@ -44,7 +44,6 @@ export class CourseListComponent implements OnInit {
 
   getCurrentflow() {
     const label = this.courseListService.getData();
-    console.log(label);
     this.currentFlow = label ? label : '';
     this.flowInfo = this.flowService.getFlowInfo(this.currentFlow);
   }
