@@ -9,7 +9,7 @@ import { EtdService } from './etd.service';
 @Component({
   selector: 'app-etd',
   templateUrl: './etd.component.html',
-  styleUrls: ['./etd.component.scss']
+  styleUrls: ['./etd.component.scss'],
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
@@ -35,11 +35,15 @@ export class EtdComponent implements OnInit {
     reasons: new UntypedFormControl(),
     managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
-    search: new UntypedFormControl()
-  })
+    search: new UntypedFormControl(),
+  });
+  tempdata: any;
 
-  constructor(private searchService: SearchService, private etdservice: EtdService, private accountServ: AccountService
-  ) { }
+  constructor(
+    private searchService: SearchService,
+    private etdservice: EtdService,
+    private accountServ: AccountService
+  ) {}
 
   ngOnInit(): void {
     this.etdData();
@@ -61,103 +65,88 @@ export class EtdComponent implements OnInit {
 
   filter() {
     const searchTicket = this.etdValue.value;
-    console.log(this.etdValue.controls['status'].value);
+    console.log(searchTicket);
+    this.tempdata=this.data;
     if (searchTicket) {
-      for (let i = 0; i < this.data.content.length; i++) {
-        // console.log(this.data.content.);
-        // console.log(this.data.content[i].Ticket)
-
-        let abc = this.etdValue.controls['status'].value.toString();
-        console.log(this.etdValue.controls['status'].value[0]);
-        this.etdValue.controls['status'].value.forEach(element => {
-          if (String(this.data.content[i].Status) === element )
-          {
-            let temp = this.data.content[i];
-            this.filterAlert.push(temp)
+      for (let i = 0; i < this.tempdata.content.length; i++) {
+        console.log(this.tempdata.content);
+        console.log(this.tempdata.content[i].Ticket)
+        this.etdValue.controls['status'].value.forEach((element) => {
+          if (String(this.tempdata.content[i].Status) === element) {
+            let temp = this.tempdata.content[i];
+            this.filterAlert.push(temp);
             console.log(this.filterAlert);
           }
-          
+        });
+        this.data = this.filterAlert;
+
+        // if (
+        //   String(this.data.content[i].Ticket).toLowerCase().includes(searchTicket.search) &&
+        //   String(this.data.content[i].Account).toLowerCase().includes(searchTicket.search)) {
+        //   let temp = this.data.content[i];
+        //   this.filterAlert.push(temp)
+        //   console.log(this.filterAlert);
+        // }
+
+        // if(this.data.content[i].Ticket==searchTicket){
+
+        // }
       }
-
-      );
-      this.data=this.filterAlert;
-
-          // if (
-          //   String(this.data.content[i].Ticket).toLowerCase().includes(searchTicket.search) &&
-          //   String(this.data.content[i].Account).toLowerCase().includes(searchTicket.search)) {
-          //   let temp = this.data.content[i];
-          //   this.filterAlert.push(temp)
-          //   console.log(this.filterAlert);
-          // }
-
-
-          // if(this.data.content[i].Ticket==searchTicket){
-
-          // }
-
-        }
     }
 
-
-      // const reas=this.etdValue.controls['reasons'].value
-      // console.log(reas);
-
-    }
-
-    getCardData(accountNumber) {
-      if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-      let cardName = 'etd-account'
-      this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
-        next: (resp) => {
-          this.data = JSON.parse(resp.content);
-        },
-        error: (err) => console.log(err),
-        complete: () => {
-          console.log(this.data);
-          console.log('done loading data');
-          this.tableDatatest = this.data.content;
-          console.log(this.tableDatatest);
-          this.dataSource.data = this.tableDatatest;
-          this.columnsToDisplay = this.data.etdcol;
-
-          this.histableDatatest = this.data.historytab;
-          this.hisDataSource.data = this.histableDatatest;
-          this.hisColumnsToDisplay = this.data.historycol;
-          this.myticketTabTableDatatest.push(this.data.mytickettab);
-          this.myTicketDataSource.data = this.myticketTabTableDatatest;
-          this.ticketColumnsToDisplay = this.data.myticketcol;
-
-        }
-      });
-    }
-
-    etdDropData() {
-      const dataFileName = `assets/data/etd-table.json`;
-      this.accountServ.getverifydata(dataFileName).subscribe(
-        (resp) => {
-          this.etddata = resp
-        },
-        (err) => console.error(err),
-        () => {
-          console.log(this.etddata);
-        }
-      );
-    }
-
-
-    returnZero() {
-      return 0;
-    }
-
-    etdData() {
-      console.log(this.etdValue.value);
-    }
-
-    reset() {
-      this.etdValue.reset();
-    }
-
-    expand() {
-      this.flag = !this.flag;
-    }
+    // const reas=this.etdValue.controls['reasons'].value
+    // console.log(reas);
   }
+
+  getCardData(accountNumber) {
+    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    let cardName = 'etd-account';
+    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+      next: (resp) => {
+        this.data = JSON.parse(resp.content);
+      },
+      error: (err) => console.log(err),
+      complete: () => {
+        this.tableDatatest = this.data.content;
+        this.dataSource.data = this.tableDatatest;
+        this.columnsToDisplay = this.data.etdcol;
+
+        this.histableDatatest = this.data.historytab;
+        this.hisDataSource.data = this.histableDatatest;
+        this.hisColumnsToDisplay = this.data.historycol;
+        this.myticketTabTableDatatest.push(this.data.mytickettab);
+        this.myTicketDataSource.data = this.myticketTabTableDatatest;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
+      },
+    });
+  }
+
+  etdDropData() {
+    const dataFileName = `assets/data/etd-table.json`;
+    this.accountServ.getverifydata(dataFileName).subscribe(
+      (resp) => {
+        this.etddata = resp;
+      },
+      (err) => console.error(err),
+      () => {
+       // console.log(this.etddata);
+      }
+    );
+  }
+
+  returnZero() {
+    return 0;
+  }
+
+  etdData() {
+   // console.log(this.etdValue.value);
+  }
+
+  reset() {
+    this.etdValue.reset();
+  }
+
+  expand() {
+    this.flag = !this.flag;
+  }
+}

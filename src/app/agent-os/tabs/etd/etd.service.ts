@@ -22,7 +22,7 @@ export class EtdService extends BaseService {
       [{ key: "id", value: id.toString()},
       { key: "identifier", value: identifier.toString()}];
       
-      console.log(endpoint);
+      
       
       
     return this.doGet(endpoint,[],val);

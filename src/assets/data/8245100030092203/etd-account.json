@@ -7,7 +7,7 @@
             "City": "BUNNELL, FL",
             "Node": "",
             "Reason": "Must Do: Hazardous/Safety Situation",
-            "Status": "OUTAGE",
+            "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C"
         },
@@ -62,7 +62,7 @@
             "City": "BURBANK, CA",
             "Node": "GL232A",
             "Reason": "Must Do: Quota Not Available within the SLA",
-            "Status": "OPEN",
+            "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "C"
         },
@@ -73,7 +73,7 @@
             "City": "LA, CA",
             "Node": "GL232A",
             "Reason": "Must Do: Hazardous/Safety Situation",
-            "Status": "OPEN",
+            "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R"
         }
