@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 text-end">
                                 <button type="submit" mat-raised-button color="success" class="p-0  mat-button-xs "
-                                    (click)="etdData()">Search
+                                    (click)="etdData()" (click)="filter()">Search
                                 </button><br>
                                 <button type="button" mat-raised-button color="success"
                                     class="mt-1 p-0 mat-button-xs">Export
@@ -104,7 +104,7 @@
                         <th scope="col">Cust Type</th>
                       </tr>
                     </thead>
-                    <tbody *ngFor="let user of data.content | keyvalue| searchFilter:query" class="table table-bordered">
+                    <tbody *ngFor="let user of data?.content| keyvalue| searchFilter:query" class="table table-bordered">
                       <tr>
                         <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
                       </tr>

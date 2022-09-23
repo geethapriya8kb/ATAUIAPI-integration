@@ -1,13 +1,14 @@
 <mat-card class="orderbody" *ngIf="isOrderMove;else other_content">
     <h6 class="fw-bold">Serviceability</h6>
     <div class="row">
-            <mat-card *ngFor="let i of data?.icons" class="col-md-4">
-                <img src="{{i.path}}" height="30" width="30">
-                <b class="m-l-3">{{i.channel}}</b>
-                <span style="float:right">{{i.amount}}</span>
-            </mat-card>
+        <mat-card *ngFor="let i of data?.icons" class="col-md-4">
+            <img src="{{i.path}}" height="30" width="30">
+            <b class="m-l-3">{{i.channel}}</b>
+            <span style="float:right">{{i.amount}}</span>
+        </mat-card>
     </div>
-    <p>Asterisk (*) Denotes Pending Service</p><hr>
+    <p>Asterisk (*) Denotes Pending Service</p>
+    <hr>
     <h6 class="fw-bold">Order History</h6>
     <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4 w-100" matSort>
         <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
@@ -19,7 +20,8 @@
         </tr>
         <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
         </tr>
-    </table><hr>
+    </table>
+    <hr>
     <br>
     <div class="row">
         <div class="col-md-3">
@@ -29,7 +31,7 @@
             <i>DISCONNECT</i>
         </div>
         <div class="col-md-2">
-            <i >TRANSFER</i>
+            <i>TRANSFER</i>
         </div>
         <div class="col-md-2">
             <i>NEW CONNECT</i>
@@ -38,7 +40,7 @@
             <i>RESTART</i>
         </div>
         <div class="col-md-2">
-            <i >CHANGE OF SERVICE</i><br><br>
+            <i>CHANGE OF SERVICE</i><br><br>
             <i>SEASONAL SUSPEND</i>
         </div>
     </div><br><br>
@@ -74,7 +76,7 @@
         </mat-expansion-panel>
     </mat-accordion>
 </mat-card>
-    <!-- <br>
+<!-- <br>
     <mat-accordion>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
@@ -96,28 +98,31 @@
     <div class="card mt-1 p-2">
         <div class="container-fluid">
             <div class="head">
-                <h4 class="headstyle text-center">Offer Selection > </h4>
+                <h6 class="headstyle text-center pt-1">Offer Selection > </h6>
             </div>
             <div class="orderbody">
                 <div>
                     <form [formGroup]="orderValue" (ngSubmit)="orderData()">
-                        <p class="font-style">Customer Information</p><br>
+                        <p class="p-color ps-3 p-1">Offer Selection</p>
+                        <p class="fw-bold fs-6">Customer Information</p><br>
                         <div class="row">
-                            <div class="col-md-2">
-                                <label for="fname" class="form-label" style="font-size: small">First name</label>
-                                <input type="text" id="fname" name="fname" placeholder="First Name" formControlName="firstname" class="p-1 form-outline" size="40">
+                            <div class="col-md-2 col-sm-2">
+                                <label for="fname" class="fw-bold ">First name</label>
+                                <input type="text" id="fname" name="fname" placeholder="First Name"
+                                    formControlName="firstname" class="p-1 form-outline" size="25">
                             </div>
-                            <div class="col-md-2 offset-1">
-                                <label for="lname" class="form-label" style="font-size: small">First name</label>
-                                <input type="text" id="fname" name="lname" placeholder="Last Name" formControlName="lastname" class="p-1 form-outline" size="40">
+                            <div class="col-md-2 col-sm-2 offset-1">
+                                <label for="lname" class="fw-bold">Last name</label>
+                                <input type="text" id="fname" name="lname" placeholder="Last Name"
+                                    formControlName="lastname" class="p-1 form-outline" size="25">
                             </div>
-                            <div class="col-md-2 offset-1">
-                                <label for="pphone" class="form-label" style="font-size: small">Primary Phone</label>
+                            <div class="col-md-2 col-sm-2 offset-1">
+                                <label for="pphone"  class="fw-bold">Primary Phone</label>
                                 <input type="number" id="pphone" name="pphone" placeholder="(xxx) xxx-xxxx"
                                     class="phone-input form-outline" maxlength="10" formControlName="primaryPhone">
                             </div>
-                            <div class="col-md-2 offset-1">
-                                <label for="aphone" class="form-label" style="font-size: small">Alternate Phone</label>
+                            <div class="col-md-2 col-sm-2 offset-1">
+                                <label for="aphone"  class="fw-bold">Alternate Phone</label>
                                 <input type="number" id="aphone" name="aphone" placeholder="(xxx) xxx-xxxx"
                                     class="phone-input form-outline" maxlength="10" formControlName="alternatePhone">
                             </div>
@@ -127,15 +132,15 @@
                 </div>
                 <div>
                     <div class="row">
-                        <div class="col-md-7">
-                            <h4>Offer Selection</h4>
+                        <div class="col-md-7 col-sm-7">
+                            <h6 class="fw-bold">Offer Selection</h6>
                             <div class="row pt-2">
                                 <div class="col-xs-2 col-md-2">
-                                    <label class="lable-edit">LOB Play</label>
+                                    <label class="fw-bold">LOB Play</label>
                                 </div>
                                 <div class="col-xs-2 col-md-2">
                                     <label for="singleplay"><input type="checkbox" id="singleplay"><span
-                                            class="p-l-3">Single Play</span></label>
+                                            class="p-l-3 ">Single Play</span></label>
                                 </div>
                                 <div class="col-xs-2 col-md-2">
                                     <label for="doubleplay"><input type="checkbox" id="doubleplay"><span
@@ -148,7 +153,7 @@
                             </div>
                             <div class="row pt-2">
                                 <div class="col-xs-2 col-md-2">
-                                    <label class="lable-edit">LOB </label>
+                                    <label class="fw-bold">LOB </label>
                                 </div>
                                 <div class="col-xs-2 col-md-2">
                                     <label for="video"><input type="checkbox" id="video"><span
@@ -164,10 +169,10 @@
                                 </div>
                             </div>
                             <div class="row pt-2">
-                                <div class="col-xs-2 col-md-2">
-                                    <label class="lable-edit">Offer Type</label>
+                                <div class="col-sm-2 col-md-2">
+                                    <label class="fw-bold">Offer Type</label>
                                 </div>
-                                <div class="col-xs-2 col-md-2">
+                                <div class="col-sm-2 col-md-2">
                                     <label for="promo"><input type="checkbox" id="promo"><span
                                             class="p-l-3">Promotional</span></label>
                                 </div>
@@ -186,19 +191,19 @@
                             </div>
                             <div class="row pt-2">
                                 <div class="col-xs-2 col-md-2">
-                                    <label class="lable-edit">Search:</label>
+                                    <label class="fw-bold">Search:</label>
                                 </div>
                                 <div class="col-xs-5 col-md-5">
                                     <input type="text" id="search" name="search"
-                                        placeholder="Search By Offer Name Or ID Or Stuff codes" class="p-l-3" size="90">
+                                        placeholder="Search By Offer Name Or ID Or Stuff codes" class="p-1 form-select-md" size="70">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-5">
-                            <h4>Self Install Eligible</h4>
+                            <h6 class="fw-bold">Self Install Eligible</h6>
                             <div class="row pt-2">
                                 <div class="col-xs-5 col-md-5">
-                                    <label for="offer" class="lable-edit">Selected
+                                    <label for="offer" class="fw-bold">Selected
                                         Offer(s)</label>
                                     <select name="offer" id="offer" class="install-pm">
                                         <option value="none" selected>None</option>
@@ -248,4 +253,4 @@
         </div>
     </div>
     <br><br><br>
-</ng-template> 
+</ng-template>

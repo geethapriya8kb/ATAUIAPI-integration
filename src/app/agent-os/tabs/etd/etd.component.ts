@@ -12,21 +12,22 @@ import { EtdService } from './etd.service';
   styleUrls: ['./etd.component.scss']
 })
 export class EtdComponent implements OnInit {
-flag:boolean=false;
+  flag: boolean = false;
   data: EtdResponse;
-etddata:any;
+  etddata: any;
   dataSource = new MatTableDataSource<TicketInformation>();
-  columnsToDisplay:Array<string> = [];
-  tableDatatest: Array<TicketInformation>=[];
-  myticketTabTableDatatest: Array<Mytickettab>=new Array<Mytickettab>();
+  columnsToDisplay: Array<string> = [];
+  tableDatatest: Array<TicketInformation> = [];
+  myticketTabTableDatatest: Array<Mytickettab> = new Array<Mytickettab>();
   hisDataSource = new MatTableDataSource<string>();
-  hisColumnsToDisplay:string[] = [];
+  hisColumnsToDisplay: string[] = [];
   histableDatatest: Array<string> = new Array<string>();
   myTicketDataSource = new MatTableDataSource<Mytickettab>();
-  ticketColumnsToDisplay:Array<string> = [];
+  ticketColumnsToDisplay: Array<string> = [];
   accountVal: unknown;
   public searchFilter: any = '';
-  query:any;
+  filterAlert: Array<TicketInformation> = [];
+  query: any;
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl(),
     endDate: new UntypedFormControl(),
@@ -37,7 +38,7 @@ etddata:any;
     search: new UntypedFormControl()
   })
 
-  constructor(private searchService: SearchService, private etdservice: EtdService,private accountServ:AccountService
+  constructor(private searchService: SearchService, private etdservice: EtdService, private accountServ: AccountService
   ) { }
 
   ngOnInit(): void {
@@ -58,10 +59,39 @@ etddata:any;
     });
   }
 
+  filter() {
+    const searchTicket = this.etdValue.value;
+    console.log(searchTicket);
+    if (searchTicket) {
+      for (let i = 0; i < this.data.content.length; i++) {
+        console.log(this.data);
+        console.log(this.data.content[i].Ticket);
+        console.log(this.data.content[i].Ticket.toLowerCase().includes(searchTicket));
+      
+        if (String(this.data.content[i].Ticket).toLowerCase().includes(searchTicket)) {
+          let temp = this.data.content[i];
+          this.filterAlert.push(temp)
+          console.log(this.filterAlert);
+        }
+
+
+        // if(this.data.content[i].Ticket==searchTicket){
+
+        // }
+
+      }
+    }
+
+
+    // const reas=this.etdValue.controls['reasons'].value
+    // console.log(reas);
+
+  }
+
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-   let cardName='etd-account'
-   this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+    let cardName = 'etd-account'
+    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
       next: (resp) => {
         this.data = JSON.parse(resp.content);
       },
@@ -78,18 +108,18 @@ etddata:any;
         this.hisDataSource.data = this.histableDatatest;
         this.hisColumnsToDisplay = this.data.historycol;
         this.myticketTabTableDatatest.push(this.data.mytickettab);
-        this.myTicketDataSource.data =  this.myticketTabTableDatatest ;
+        this.myTicketDataSource.data = this.myticketTabTableDatatest;
         this.ticketColumnsToDisplay = this.data.myticketcol;
 
       }
     });
   }
 
-  etdDropData(){
+  etdDropData() {
     const dataFileName = `assets/data/etd-table.json`;
     this.accountServ.getverifydata(dataFileName).subscribe(
       (resp) => {
-        this.etddata= resp
+        this.etddata = resp
       },
       (err) => console.error(err),
       () => {
@@ -97,7 +127,7 @@ etddata:any;
       }
     );
   }
-  
+
 
   returnZero() {
     return 0;
@@ -107,11 +137,11 @@ etddata:any;
     console.log(this.etdValue.value);
   }
 
-  reset(){
+  reset() {
     this.etdValue.reset();
   }
 
-  expand(){
-    this.flag=!this.flag;
+  expand() {
+    this.flag = !this.flag;
   }
 }
