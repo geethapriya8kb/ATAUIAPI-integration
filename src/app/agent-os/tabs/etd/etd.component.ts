@@ -37,7 +37,6 @@ export class EtdComponent implements OnInit {
     status: new UntypedFormControl(),
     search: new UntypedFormControl(),
   });
-  tempdata: any;
 
   constructor(
     private searchService: SearchService,
@@ -66,36 +65,25 @@ export class EtdComponent implements OnInit {
   filter() {
     const searchTicket = this.etdValue.value;
     console.log(searchTicket);
-    this.tempdata=this.data;
+    let tempdata=this.data;
     if (searchTicket) {
-      for (let i = 0; i < this.tempdata.content.length; i++) {
-        console.log(this.tempdata.content);
-        console.log(this.tempdata.content[i].Ticket)
+      for (let i = 0; i < tempdata.content?.length; i++) {
+        console.log(tempdata.content[i].Ticket);
+        console.log(searchTicket.search);
+        console.log(String(tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search));
         this.etdValue.controls['status'].value.forEach((element) => {
-          if (String(this.tempdata.content[i].Status) === element) {
-            let temp = this.tempdata.content[i];
+          if (String(tempdata.content[i].Status) === element &&
+          String(tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search) ) {
+            let temp = tempdata.content[i];
             this.filterAlert.push(temp);
-            console.log(this.filterAlert);
+         
           }
         });
-        this.data = this.filterAlert;
-
-        // if (
-        //   String(this.data.content[i].Ticket).toLowerCase().includes(searchTicket.search) &&
-        //   String(this.data.content[i].Account).toLowerCase().includes(searchTicket.search)) {
-        //   let temp = this.data.content[i];
-        //   this.filterAlert.push(temp)
-        //   console.log(this.filterAlert);
-        // }
-
-        // if(this.data.content[i].Ticket==searchTicket){
-
-        // }
       }
+     
     }
-
-    // const reas=this.etdValue.controls['reasons'].value
-    // console.log(reas);
+    console.log(this.filterAlert);
+    this.data = this.filterAlert;
   }
 
   getCardData(accountNumber) {

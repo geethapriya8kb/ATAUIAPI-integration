@@ -64,7 +64,7 @@ export class OrderingComponent implements OnInit {
       },
       error: (err) => console.error(err),
       complete: () => {
-        console.log(this.data);
+        
         this.tableDataTest = this.data.content;
         this.dataSource.data = this.tableDataTest;
         this.columnsToDisplay = this.data.ordercol;

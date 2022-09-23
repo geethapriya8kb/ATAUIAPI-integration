@@ -22,7 +22,7 @@ export class AgingAmountComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-        console.log(this.data);
+        
       }
     );
   }

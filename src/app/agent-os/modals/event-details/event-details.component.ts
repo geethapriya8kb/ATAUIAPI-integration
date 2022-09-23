@@ -25,7 +25,7 @@ export class EventDetailsComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-        console.log(this.data);
+        
       }
     );
   }

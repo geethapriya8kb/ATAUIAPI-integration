@@ -21,7 +21,7 @@ export class MobileLearnMoreComponent implements OnInit {
     this.cardDataService.getCardData(dataFileName).subscribe(
       (resp) => {
         this.data = resp;
-        console.log(this.data);        
+                
       },
       (err) => console.error(err),
       () => {

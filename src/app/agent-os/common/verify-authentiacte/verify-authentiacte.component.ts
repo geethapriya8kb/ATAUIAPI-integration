@@ -26,7 +26,7 @@ export class VerifyAuthentiacteComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-        console.log(this.data);
+        
         this.data.type.forEach((type) => {
           console.log(type);
           this.typeList.push(type);
