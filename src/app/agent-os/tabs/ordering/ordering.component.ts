@@ -36,7 +36,7 @@ export class OrderingComponent implements OnInit {
 
   ngOnInit(): void {
     const label = this.courseListService.getHeader();
-    if (label === 'Move/Transfer') {
+    if (label === 'Move/Transfer'|| label==='Missing Channels') {
       this.isOrderMove = true;
     }
     const accountNumber = this.searchService.getAccountNumber();

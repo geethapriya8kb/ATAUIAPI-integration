@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="accountNoFlag && (data.callReason=='cannotConnect')">
+<ng-container *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel')">
     <!-- heder title part for all the section -->
     <div class="row m-1" *ngFor="let item of data.headerTitle | keyvalue">
         <ng-container *ngIf="courseName===item.key">
@@ -147,7 +147,7 @@
 
 
     <!-- callreson for missing channel -->
-    <ng-container *ngIf="courseName==='Missing Channels'">
+    <ng-container *ngIf="data?.callReason=='missingChannel'">
         <div>
             <mat-card class="m-2">
                 <ng-container *ngFor="let item of data.tvChannel|keyvalue:returnZero">
@@ -483,7 +483,7 @@
                 <h1 class="text-white">
                     <span>Unknown Call Reason</span>
                 </h1>
-                <h6 class="small color-white" >
+                <h6 class="small color-white fw-bold" >
                     <span>The reason for the customer's call is unknown.</span>
                 </h6>
             </div>

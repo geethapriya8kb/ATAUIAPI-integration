@@ -36,24 +36,24 @@ export class HitHistoryTableComponent implements OnInit,AfterViewInit {
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
   }
-  getValuetoTable() {
-    const dataFileName = `assets/data/callreason-historytable.json`;
-    this.cardDataService.getCardData(dataFileName).subscribe(
-      (resp) => {
-        this.data = resp;
-      },
-      (err) => console.error(err),
-      () => {
-        this.tableDatatest = this.data.hithistory;
-        console.log(this.tableDatatest);
-        this.dataSource.data = this.tableDatatest;
-        this.tableDatatestpro = this.data.provisionhistory;
-        console.log(this.tableDatatestpro);
-        this.dataSourcePro.data = this.tableDatatestpro;
-        this.columnsToDisplay = this.data.hitHistoryColumn;
-      }
-    );
-  }
+  // getValuetoTable() {
+  //   const dataFileName = `assets/data/callreason-historytable.json`;
+  //   this.cardDataService.getCardData(dataFileName).subscribe(
+  //     (resp) => {
+  //       this.data = resp;
+  //     },
+  //     (err) => console.error(err),
+  //     () => {
+  //       this.tableDatatest = this.data.hithistory;
+  //       console.log(this.tableDatatest);
+  //       this.dataSource.data = this.tableDatatest;
+  //       this.tableDatatestpro = this.data.provisionhistory;
+  //       console.log(this.tableDatatestpro);
+  //       this.dataSourcePro.data = this.tableDatatestpro;
+  //       this.columnsToDisplay = this.data.hitHistoryColumn;
+  //     }
+  //   );
+  // }
   getCardData(accountNumber) {
 
     const path = `${accountNumber}/hit-history`;

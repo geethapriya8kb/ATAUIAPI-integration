@@ -1,0 +1,69 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8345",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "3000",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "ROCHESTER",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "187 Cornell St ROCHESTER, MN 55904-5401",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "55904540100112",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "RR - St Rochester",
+        "type": "label"
+      },
+      "Node": {
+        "value": "3RE15A",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "RO",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+    "email":{
+      "value":"DCreekATA@charter.com"
+    },
+    "phone":{
+      "value1":"(402) 243-1267",
+      "value2":"(316) 232-5876"
+    }
+  }
+}
