@@ -69,8 +69,7 @@
                             </div>
                             <div class="col-md-2 col-sm-2">
                                 <input class="form-outline" type="search" id="search" class="form-control"
-                                    aria-label="Search" formControlName="search" placeholder="Search"
-                                    [(ngModel)]="query">
+                                    aria-label="Search" formControlName="search" placeholder="Search">
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
                                 <button type="button" mat-raised-button color="secondary" class="mat-button-xs"
@@ -115,11 +114,11 @@
                 </ng-container>
                     <ng-container *ngIf="filterAlert.length">
                         <tbody  class="table table-bordered">
-                            <tr>
+                            <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
                                 <!-- <ng-container *ngFor="let item of filterAlert">
                                     <td *ngFor="let i of item| keyvalue:returnZero"> {{i.value}}</td>
                                 </ng-container> -->
-                                <td *ngFor="let item of filterAlert[0]| keyvalue:returnZero"> {{item.value}}</td>
+                                <td *ngFor="let item of i.value| keyvalue:returnZero"> {{item.value}}</td>
                             </tr>
                         </tbody>
                     </ng-container>

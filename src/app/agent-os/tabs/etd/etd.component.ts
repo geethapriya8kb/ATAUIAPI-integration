@@ -42,7 +42,7 @@ export class EtdComponent implements OnInit {
     private searchService: SearchService,
     private etdservice: EtdService,
     private accountServ: AccountService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.etdData();
@@ -63,23 +63,42 @@ export class EtdComponent implements OnInit {
   }
 
   filter() {
-    this.filterAlert = [];
     const searchTicket = this.etdValue.value;
-    let test: Array<TicketInformation> = [];
+    console.log(searchTicket);
+    // let test: Array<TicketInformation> = [];
+    // if (searchTicket) {
+    //   for (let i = 0; i < this.tempdata.content?.length; i++) {
+    //     this.etdValue.controls['status'].value.forEach((element) => {
+    //       if (
+    //         String(this.tempdata.content[i].Status) === element ||
+    //         String(this.tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search)
+    //       ) {
+    //         let temp = this.tempdata.content[i];
+    //         test.push(temp);
+    //         console.log(test);
+
+    //       }
+    //     });
+    //   }
+    // }
+    // this.filterAlert = test;
+    // console.log(this.filterAlert);
     if (searchTicket) {
+      this.filterAlert = [];
       for (let i = 0; i < this.tempdata.content?.length; i++) {
-        this.etdValue.controls['status'].value.forEach((element) => {
-          if (
-            String(this.tempdata.content[i].Status) === element ||
-            String(this.tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search)
-          ) {
-            let temp = this.tempdata.content[i];
-            test.push(temp);
-          }
-        });
+        if (
+          ((!this.etdValue.controls['search'].value) ||
+            (String(this.tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search) ||
+              String(this.tempdata.content[i].Account).toLowerCase().includes(searchTicket.search))) &&
+          ((!this.etdValue.controls['status'].value) ||
+            this.etdValue.controls['status'].value.includes(String(this.tempdata.content[i].Status)))
+        ) {
+          let temp = this.tempdata.content[i];
+          this.filterAlert.push(temp);
+        }
       }
     }
-    this.filterAlert = test;
+    console.log(this.filterAlert);
   }
 
   getCardData(accountNumber) {
@@ -89,13 +108,14 @@ export class EtdComponent implements OnInit {
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         this.tempdata = this.data;
+        console.log(this.tempdata);
+
       },
       error: (err) => console.log(err),
       complete: () => {
         this.tableDatatest = this.data.content;
         this.dataSource.data = this.tableDatatest;
         this.columnsToDisplay = this.data.etdcol;
-
         this.histableDatatest = this.data.historytab;
         this.hisDataSource.data = this.histableDatatest;
         this.hisColumnsToDisplay = this.data.historycol;
@@ -134,4 +154,5 @@ export class EtdComponent implements OnInit {
   expand() {
     this.flag = !this.flag;
   }
+
 }
