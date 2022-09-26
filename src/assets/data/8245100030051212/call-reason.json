@@ -1,0 +1,49 @@
+{   "callReason":"noService", 
+   
+    "noService": {
+        "Account Overview": {
+            "Non-Pay Disconnect": "No",
+            "Outages": "None",
+            "Recent Work Orders": "None",
+            "Recent ETD Tickets": "None"
+        }
+    },
+    "iconNoService": {
+        "Subscribed Services": {
+            "icon1": "language",
+            "icon2": "tv",
+            "icon3": "phone"
+        }
+    },
+    
+    "troubleshootData":   {      
+            "Missing Channels": {                 
+                "Video > Picture": "Missing Channels/Channel Unavail/No Signal/Black Screen"
+            },
+            "Cannot Connect": {                 
+                "Internet > Connectivity": "Cannot Connect"
+            },
+            "No Service": {                 
+                "Video > Picture": "All LOB Out / Down Line / Hazard"
+            }
+},   
+   
+"headerTitle":{
+    "Payments":{
+      "aos-note":"Payment Due Soon"
+    },
+    "Missing Channels": {                 
+        "aos-missing-tv": "Missing TV Channels"
+    },
+    "Cannot Connect": {                 
+        "aos-modem": "Modem Not Connected"
+    },
+    "No Service": {                 
+        "aos-no-service": "No Service"
+    },
+    "Self-Install":{
+        "aos-self-install":"New Self-Installation"
+    }
+}
+
+}

@@ -1,0 +1,114 @@
+{
+ 
+  "content": {
+    "Video": {  
+      "subscription":true, 
+      "data":{ 
+      "S Digi Tier1": "$0.00",
+      "S HBO": "$0.00",
+      "S Showtime": "$0.00",
+      "Sslvrtiertrk": "$20.00",
+      "S Digi Tier2": "$0.00",
+      "S Starzencor": "$0.00",
+      "S Starz": "$0.00",
+      "S TMC": "$0.00",
+      "S Gldtiertrk": "$20.00",
+      "Interact Srv": "$0.00",
+      "S Secconnect": "$1.00",
+      "Sdvrreceiver": "$6.50",
+      "S Basic": "$16.54",
+      "S Expand": "$28.45",
+      "S Brdcstsvc": "$11.99",
+      "S Cinemax": "$9.99",
+      "S Vod": "$0.00",
+      "S Dvrsvcsngl": "$4.99"}
+    },
+    "Internet": {
+      "subscription":true,
+      "data":{  
+      "S Hsi Plus": "$0.00",
+      "S Hsi Modem": "$0.00",
+      "S Hsibase": "$44.99"
+      }
+    },
+    "Voice":{
+      "subscription":true,
+      "data":{
+      "S Telphnline": "$6.66",
+      "S Telephone": "$0.00",
+      "Stelunldintr": "$2.08",
+      "Steunldinta": "$0.00",
+      "S Tel 18Feat": "$0.00",
+      "Stelmtalease": "$1.25",
+      "Stelnoblkint": "$0.00",
+      "Steldirlstng": "$0.00"
+      }
+    } 
+  },
+  
+  "icons": {
+    "Video":{
+      "subscription":true,
+      "path": "../../assets/images/blue-check.png"
+    },
+    "Internet": {
+      "subscription":true,
+      "path": "../../assets/images/orange-computer.png"
+    },
+    "Voice": {
+      "subscription":true,
+      "path": "../../assets/images/purple-receiver.png"
+    }
+  },
+  "eventHistoryTable": [
+    {
+    "LOB":"../../assets/images/tv-blue.png",
+    "Type":"Video",
+    "Service Status":"",
+    "Device Status":"",
+    "Signal/Details":"",
+    "Model":"",
+    "MAC":"",
+    "Serial No":"",
+    "Description":"",
+    "visible":"false",
+    "Actions":""
+    },
+    {"LOB":"../../assets/images/computer-gold.png",
+      "Type":"Internet",
+      "Service Status":"",
+      "Device Status":"",
+      "Signal/Details":"",
+      "Model":"",
+      "MAC":"",
+      "Serial No":"",
+      "Description":"",
+      "visible":"false",
+      "Actions":""
+      },
+      {"LOB":"../../assets/images/phone-purple.png",
+        "Type":"Voice",
+        "Service Status":"",
+        "Device Status":"",
+        "Signal/Details":"",
+        "Model":"",
+        "MAC":"",
+        "Serial No":"",
+        "Description":"",
+        "visible":"false",
+        "Actions":""
+        }
+  ],
+  "eventHistoryColumns": [
+    "LOB",
+    "Type",
+    "Service Status",
+    "Device Status",
+    "Signal/Details",
+    "Model",
+    "MAC",
+    "Serial No",
+    "Description",
+    "Actions"
+  ]
+}
