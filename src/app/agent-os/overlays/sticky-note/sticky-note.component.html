@@ -5,19 +5,18 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
-            <ul>
-                <li *ngFor="let accountNumber of accountNumbers">
-                    <ng-container *ngIf="accountNumber?.type">
-                        <span>{{accountNumber?.type}}</span>
-                        <br />
-                    </ng-container>
-                    <span>{{accountNumber.account}}</span>
-                    <button mat-icon-button class="ml-3" (click)="copyData(accountNumber.account)">
-                        <mat-icon>content_copy</mat-icon>
-                    </button>
-                </li>
-            </ul>
-        </div>
+        <ul>
+            <li *ngFor="let accountNumber of accountNumbers">
+                <ng-container *ngIf="accountNumber?.type">
+                    <span><strong>{{accountNumber?.type}}</strong></span>
+                    <br />
+                </ng-container>
+                <span>{{accountNumber.account}}</span>
+                <!-- <button mat-icon-button class="ml-3 toastBtn" (click)="copyData(accountNumber.account)">
+                        <mat-icon svgIcon="aos-copy" class="px-1" color="primary"></mat-icon>
+                    </button> -->
+                <button class="ms-1 toastBtn" type="button" (click)="copyData(accountNumber.account)">Copy</button>
+            </li>
+        </ul>
     </div>
 </div>
