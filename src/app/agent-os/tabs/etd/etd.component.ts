@@ -85,13 +85,21 @@ export class EtdComponent implements OnInit {
     // console.log(this.filterAlert);
     if (searchTicket) {
       this.filterAlert = [];
+      
       for (let i = 0; i < this.tempdata.content?.length; i++) {
+        let customer= this.etdValue.controls['custType'].value.toString().charAt(0);
         if (
           ((!this.etdValue.controls['search'].value) ||
             (String(this.tempdata.content[i].Ticket).toLowerCase().includes(searchTicket.search) ||
               String(this.tempdata.content[i].Account).toLowerCase().includes(searchTicket.search))) &&
           ((!this.etdValue.controls['status'].value) ||
-            this.etdValue.controls['status'].value.includes(String(this.tempdata.content[i].Status)))
+            this.etdValue.controls['status'].value.includes(String(this.tempdata.content[i].Status))) &&
+          ((!this.etdValue.controls['reasons'].value) ||
+            this.etdValue.controls['reasons'].value.includes(String(this.tempdata.content[i].Reason))) &&
+          ((!this.etdValue.controls['custType'].value) ||
+          customer.includes(String(this.tempdata.content[i]['Cust Type']))) &&
+          ((!this.etdValue.controls['managmentArea'].value) ||
+          this.etdValue.controls['managmentArea'].value.includes(String(this.tempdata.content[i].City)))
         ) {
           let temp = this.tempdata.content[i];
           this.filterAlert.push(temp);
