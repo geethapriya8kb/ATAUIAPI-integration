@@ -1,6 +1,18 @@
 .sticky-note {
-    background-color: lightyellow;
+    background-color: #ffffc2!important;
     color: black;
-    min-width: 15em;
+    min-width: 22em;
     min-height: 12em;
+    font-family: Roboto,sans-serif;
+    font-size: 12px;
+}
+.toastBtn {
+    color: #1b59e6;
+    float: right;
+    border: 1px solid grey;
+    padding: 1px 8px;
+    border-radius: 3px;
+    background: #fff;
+    outline: none;
+    box-shadow: -1px 1px 1px 0 rgb(50 50 50 / 30%);
 }

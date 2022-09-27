@@ -25,19 +25,19 @@ export class AgentOsFlowsService {
               route: 'payments',
               accountList: [
                 {
-                  type:'Standard Payment',
+                  type: 'Standard Payment',
                   account: '8429763145879641',
                 },
                 {
-                  type:'Service Interrupted',
+                  type: 'Service Interrupted',
                   account: '8314713395279210',
                 },
                 {
-                  type:'Payment Due Recently',
+                  type: 'Payment Due Recently',
                   account: '8314713395279300',
                 },
                 {
-                  type:'Payment Past Due',
+                  type: 'Payment Past Due',
                   account: '8314713395279315',
                 },
               ],
@@ -54,9 +54,10 @@ export class AgentOsFlowsService {
               route: 'self-install',
               accountList: [
                 {
-                  type:'',
+                  type: '',
                   account: '8347100015617690',
-                },]
+                },
+              ],
             },
             {
               name: 'Cannot Connect',
@@ -65,9 +66,10 @@ export class AgentOsFlowsService {
               route: 'cannot-connect',
               accountList: [
                 {
-                  type:'',
+                  type: '',
                   account: '8245100030092200',
-                },]
+                },
+              ],
             },
             {
               name: 'Missing Channels',
@@ -76,9 +78,10 @@ export class AgentOsFlowsService {
               route: 'missing-channels',
               accountList: [
                 {
-                  type:'',
+                  type: '',
                   account: '8245100030050010',
-                },]
+                },
+              ],
             },
             {
               name: 'No Service',
@@ -87,9 +90,10 @@ export class AgentOsFlowsService {
               route: 'no-service',
               accountList: [
                 {
-                  type:'',
+                  type: '',
                   account: '8245100030051212',
-                },]
+                },
+              ],
             },
           ],
         },
@@ -249,19 +253,19 @@ export class AgentOsFlowsService {
 
               accountList: [
                 {
-                  type:'One Click Credit',
+                  type: 'One Click Credit',
                   account: '8345780121551174',
                 },
                 {
-                  type:'First Bill:',
+                  type: 'First Bill:',
                   account: '8345780013860741',
                 },
                 {
-                  type:'Bill Increase:',
+                  type: 'Bill Increase:',
                   account: '8245123940306051',
                 },
                 {
-                  type:'Take Payment Failure:',
+                  type: 'Take Payment Failure:',
                   account: '8245100990063956',
                 },
               ],
@@ -306,10 +310,10 @@ export class AgentOsFlowsService {
               route: 'missing-channels',
               accountList: [
                 {
-                  type:'CSG',
+                  type: 'CSG',
                   account: '8347100011144440',
                 },
-              ]
+              ],
             },
             {
               name: 'Self Installation',
@@ -318,20 +322,28 @@ export class AgentOsFlowsService {
               route: 'self-installation',
               accountList: [
                 {
-                  type:'ICOMS',
+                  type: 'ICOMS',
                   account: '210052777',
                 },
                 {
-                  type:'CSG',
+                  type: 'CSG',
                   account: '8347100011133330',
                 },
-              ]
+              ],
             },
             {
               name: 'Remote Control Issues',
               icons: [['fas fa-3x fa-gamepad']],
               color: 'fa-icon-call-reason',
               route: 'remote-control-issues',
+              accountList: [
+                {
+                  account: '8347100011133330',
+                },
+                {
+                  account: '210052777',
+                },
+              ],
             },
             {
               name: 'Equipment Issues',
@@ -344,30 +356,55 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-wifi']],
               color: 'fa-icon-call-reason',
               route: 'internet-issues',
+              accountList: [
+                {
+                  account: '8347100011133330',
+                },
+              ],
             },
             {
               name: 'Guide Issues',
               icons: [['fas fa-3x fa-ban']],
               color: 'fa-icon-call-reason',
               route: 'guide-issues',
+              accountList: [
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'Cable Box Error',
               icons: [['fas fa-3x fa-exclamation-circle']],
               color: 'fa-icon-call-reason',
               route: 'cable-box-error',
+              accountList: [
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'Features',
               icons: [['fas fa-3x fa-play-circle']],
               color: 'fa-icon-call-reason',
               route: 'features',
+              accountList: [
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'DVR Functionality',
               icons: [['fas fa-3x fa-video']],
               color: 'fa-icon-call-reason',
               route: 'dvr-functionality',
+              accountList: [
+                {
+                  account: '8150180011144440',
+                },
+              ],
             },
             {
               name: 'Picture Quality',
@@ -407,6 +444,11 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-tasks']],
               color: 'fa-icon-call-reason',
               route: 'work-management',
+              accountList: [
+                {
+                  account: '8347100011155550',
+                },
+              ],
             },
             {
               name: 'SMB - No Dial Tone/Cannot Receive/Make Calls',
@@ -415,11 +457,11 @@ export class AgentOsFlowsService {
               route: 'SMB-nodialtone',
               accountList: [
                 {
-                  type:'',
+                  type: '',
                   account: '8260161584576990',
                 },
                 {
-                  type:'singleline:',
+                  type: 'singleline:',
                   account: '357648901',
                 },
               ],
@@ -454,15 +496,15 @@ export class AgentOsFlowsService {
               route: 'mobile',
               accountList: [
                 {
-                  type:'Eligibile Customer',
+                  type: 'Eligible for Mobile Service:',
                   account: '8347100011155550',
                 },
                 {
-                  type:'Ineligibile Customer',
+                  type: 'Ineligible for Mobile Service:',
                   account: '8347100011133330',
                 },
                 {
-                  type:'Existing Customer',
+                  type: 'Existing Mobile Service:',
                   account: '8347100011144440',
                 },
               ],
