@@ -26,11 +26,11 @@
     <div class="row col-md-12" *ngFor="let row of data?.contactRows; let rowIndex = index;">
         <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
             <div class="row mt-1" >
-                <div class="col-md-4">
+                <div class="col-md-5">
                 <label  for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label fw-bold">{{column.label}}</label>
                 <h5 *ngIf="column.label==='Email'" class="fw-bold">Address Information</h5>
             </div>           
-            <div class="col-md-8">               
+            <div class="col-md-7">               
                 <input [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
                  formControlName="{{column.controlName}}">
                 </div>

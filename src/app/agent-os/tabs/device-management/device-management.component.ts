@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
+import { DeviceManagementResponse, EventHistoryTable } from './device-management.response';
+import { DeviceManagementService } from './device-management.service';
 @Component({
   selector: 'app-device-management',
   templateUrl: './device-management.component.html',
   styleUrls: ['./device-management.component.scss']
 })
 export class DeviceManagementComponent implements OnInit {
-  accountVal: unknown; 
-  styleVal:any={};
-  constructor(private cardDataService:CardDataService,private searchService: SearchService) { }
-  dataSource = new MatTableDataSource<any>();
-  columnsToDisplay = [];
-  tableDatatest: any = [];
-  data: any = {};
+  accountVal: unknown;
+  styleVal: boolean;
+  constructor(private cardDataService: CardDataService, private searchService: SearchService, private deviceManagementService: DeviceManagementService) { }
+  dataSource = new MatTableDataSource<EventHistoryTable>();
+  columnsToDisplay:Array<string>;
+  tableDatatest:Array<EventHistoryTable>;
+  data: DeviceManagementResponse;
   showData=false;
   ngOnInit(): void {  
     const accountNumber = this.searchService.getAccountNumber();
@@ -31,38 +33,18 @@ export class DeviceManagementComponent implements OnInit {
       }
     });
   }
-  getValuetoTable() {
-    const dataFileName = `assets/data/8245100030092203/device-summary.json`;
-    this.cardDataService.getCardData(dataFileName).subscribe(
-      (resp) => {
-        this.data = resp;
-      },
-      (err) => console.error(err),
-      () => {
-        this.tableDatatest = this.data.eventHistoryTable;
-        console.log(this.tableDatatest);
-        this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.eventHistoryColumns;
-      }
-    );
-  }
+
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-
-    const path = `${accountNumber}/device-summary`;
-    if(accountNumber==='empty'){
-      this.styleVal=true
-     }else{
-      this.styleVal=false
-     }
-    this.cardDataService.getCardDatafromService(path).subscribe(
+    this.styleVal = (accountNumber === 'empty') ? true : false;
+    let cardName = "device-summary";
+    this.deviceManagementService.getdatafromDeviceManagementAPI(accountNumber, cardName).subscribe(
       (resp) => {
-        this.data = resp;
+        this.data = JSON.parse(resp.content);
       },
       (err) => console.error(err),
       () => {
         this.tableDatatest = this.data.eventHistoryTable;
-        console.log(this.tableDatatest);
         this.dataSource.data = this.tableDatatest;
         this.columnsToDisplay = this.data.eventHistoryColumns;
       }

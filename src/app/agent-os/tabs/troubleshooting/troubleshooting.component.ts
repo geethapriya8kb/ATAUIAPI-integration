@@ -255,7 +255,7 @@ export class TroubleshootingComponent implements OnInit {
   openEventDetails() {
     const dialogConfig = {
       data: { name: 'some name' },
-      width: '80%',
+      width: '70%',
       height: '90%',
       screenLeft: 50,
       panelClass: 'search-dialog',
