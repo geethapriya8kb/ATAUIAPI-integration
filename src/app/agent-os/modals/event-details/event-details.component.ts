@@ -18,7 +18,7 @@ export class EventDetailsComponent implements OnInit {
     this.getData();
   }
   getData() {
-    const dataFileName = `assets/data/event-details.json`;
+    const dataFileName = `assets/data/forms/event-details.json`;
     this.tsService.getCardData(dataFileName).subscribe(
       (resp) => {
         this.data = resp;

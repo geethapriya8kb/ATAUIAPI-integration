@@ -1,39 +1,45 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12" *ngFor="let item of data.popup | keyvalue">
-            <div *ngFor="let i of item.value | keyvalue">
-                <label>{{i.key}}</label>
-                <h6>{{i.value}}</h6>
+<div class="container-fluid bg-white">
+    <div *ngFor="let item of data.popup | keyvalue:returnZero">
+        <h4 class="color-green fw-bold mt-2">{{item.key}}</h4>
+        <hr>
+
+        <div class="col-md-12 col-sm-12">
+            <div class="row mx-2 mb-3"  >               
+                    <div class="col-md-3 col-sm-3" *ngFor="let i of item.value | keyvalue:returnZero">
+                        <label class="fs-11" >{{i.key}}</label>
+                        <h6 class="fs-11" >{{i.value}}</h6>
+                    </div>               
             </div>
         </div>
-        <ng-container *ngIf="data.rows && data.rows.length">
-            <div class="row col-md-12" *ngFor="let row of data.rows; let rowIndex = index;">
-                <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
-                    <div class="mb-3">
-                        <label for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label">{{column.label}}</label>
-                        <textarea class="form-control" id="row-{{rowIndex}}-col-{{colIndex}}" placeholder=""></textarea>
-                    </div>
+    </div>
+    <ng-container  *ngIf="data.rows && data.rows.length">
+        <div class="row col-md-12 mx-2" *ngFor="let row of data.rows; let rowIndex = index;">
+            <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
+                <div class="mb-3">
+                    <label  for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label fs-11">{{column.label}}</label>
+                    <textarea class="form-control" id="row-{{rowIndex}}-col-{{colIndex}}" placeholder=""></textarea>
                 </div>
             </div>
-        </ng-container>
-    </div>
-    <div class="row">
+        </div>
+    </ng-container>
+
+    <div class="row mx-2">
         <div class="col-md-6">
-            <h6 class="table-label mt-4 p-2">Line of Business</h6>
+            <h6 class="bg-light-grey mt-4 p-2">Line of Business</h6>
             <div>
-                <p>0 entries returned - 0 entries matched</p>
+                <p class="fs-11">0 entries returned - 0 entries matched</p>
             </div>
             <div>
-                <table class="table">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="table-header">Line of Business</th>
+                            <th class="bg-light-blue fs-11">Line of Business</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of data.checkbox">
                             <td>
-                                <label><input type="checkbox" disabled="" />{{item.label}}</label>
+                                <input class="p-1" type="checkbox" disabled=""/><label class="fs-11 p-2 fw-bold mb-2">{{item.label}}</label>
                             </td>
                         </tr>
                     </tbody>
@@ -41,26 +47,22 @@
             </div>
         </div>
         <div class="col-md-6">
-            <h6 class="table-label mt-4 p-2">Outage Areas</h6>
+            <h6 class="bg-light-grey mt-4 p-2">Outage Areas</h6>
             <div>
-                <p>1 entries returned - 1 entries matched</p>
-            </div>
-            <div>
-                <table class="table table-bordered" *ngFor="let el of data.outage[0] | keyvalue: returnZero">
-                    <thead class="table-header">
-                        {{el.key}}
-                    </thead>
-                    <tbody>
-                        <tr>
-                            {{el.value}}
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <p class="fs-11">1 entries returned - 1 entries matched</p>
+            </div>          
+                <table class="table table-bordered fs-11" *ngFor="let item of data.outage | keyvalue: returnZero">                   
+                   <tr class="bg-light-blue"  >                    
+                    <th *ngFor="let i of item.value | keyvalue: returnZero">{{i.key}}</th>                    
+                   </tr>   
+                   <tr >                    
+                    <td *ngFor="let i of item.value | keyvalue: returnZero">{{i.value}}</td>                    
+                   </tr>                
+                </table>           
         </div>
     </div>
-    <div>
-        <button class="btn-green event-btn pl-3 pr-3 me-2">Close</button>
-        <button class="btn-grey event-btn pl-3 pr-3 me-2">Refresh</button>
-    </div>
+   <div class="mb-3">
+    <button class="btn-green float-end rounded-2  pl-3 small  me-2" (click)="close()">Close</button>
+    <button class="btn-grey float-end rounded-2 pl-3 small me-2">Refresh</button>
+</div>
 </div>

@@ -1,7 +1,7 @@
-.table-label {
+.bg-light-grey {
   background-color: lightgrey;
 }
-.table-header {
+.bg-light-blue {
   background-color: #e5eef2;
 }
 .btn-grey {
@@ -14,7 +14,16 @@
   border: 1px solid #349c3a;
   color: white;
 }
-.event-btn{
-    float: right;
-    border-radius: 5px;
+
+.color-green{
+  color: #43a047
 }
+hr{
+   border: 2px solid #43a047;
+    background-color: #43a047;   
+    opacity:1;
+}
+.fs-11{
+  font-size: 11px;
+}
+

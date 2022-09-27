@@ -79,7 +79,7 @@
     {
       "columns": [
         {
-          "label": "* Billing Address Line 1:",
+          "label": "Billing Address Line 1:",
           "type": "text",
           "class": "col col-md-6",
           "value": "187 Cornell St",
