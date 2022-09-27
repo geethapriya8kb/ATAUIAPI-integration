@@ -106,18 +106,15 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
-                    <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
-                        <tr>
-                            <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
-                        </tr>
-                    </tbody>
-                </ng-container>
+                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
+                            <tr>
+                                <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
+                            </tr>
+                        </tbody>
+                    </ng-container>
                     <ng-container *ngIf="filterAlert.length">
-                        <tbody  class="table table-bordered">
+                        <tbody class="table table-bordered">
                             <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
-                                <!-- <ng-container *ngFor="let item of filterAlert">
-                                    <td *ngFor="let i of item| keyvalue:returnZero"> {{i.value}}</td>
-                                </ng-container> -->
                                 <td *ngFor="let item of i.value| keyvalue:returnZero"> {{item.value}}</td>
                             </tr>
                         </tbody>
