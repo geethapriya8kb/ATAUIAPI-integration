@@ -40,7 +40,7 @@ export class EditCustomerComponent implements OnInit {
       }
       this.data = customer;
     } else {
-      const dataFileName = `assets/data/forms/edit-customer.json`;
+      const dataFileName = `assets/data/${this.accountNumber}/edit-customer.json`;
       this.cardDataService.getCardData(dataFileName).subscribe(
         (resp) => {
           for (const field of resp.contactRows) {

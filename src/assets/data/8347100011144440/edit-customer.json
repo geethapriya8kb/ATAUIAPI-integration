@@ -1,0 +1,140 @@
+{
+  "info": {
+    "First Name": {
+      "value": "Andrew",
+      "type": "text"
+    },
+    "Last Name": {
+      "value": "Hunt",
+      "type": "text"
+    },
+    "SSN/Tax ID": {
+      "value":"XXXXX6152",
+      "type": "text"
+    },
+    "* PPV Limit": {
+      "value": "127",
+      "type": "text"
+    }
+  },
+  "contactRows": [
+    {
+      "columns": [
+        {
+          "label": "Primary Phone:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "(402) 555-1111",
+          "controlName": "phone",
+          "required": false
+        },
+        {
+          "label": "Authorized Users:",
+          "type": "select",
+          "class": "col col-md-6",
+          "value": "Britney Fish (Manager)",
+          "controlName": "authUser",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Secondary Phone:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "(111) 111-1111",
+          "controlName": "phone2",
+          "required": false
+        },
+        {
+          "label": "",
+          "type": "text",
+          "class": "col col-md-6",
+          "controlName": "authUser1",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Email",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "Ahunt-ATA@charter.com",
+          "controlName": "email",
+          "required": false
+        },
+        {
+          "label": "",
+          "type": "text",
+          "class": "col col-md-6",
+          "controlName": "authUser2",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Billing Address Line 1:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "1600 ASHWOOD DRIVE",
+          "controlName": "address1",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Billing Address Line 2:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "ROCHESTER",
+          "controlName": "address2",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "* City:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "OMAHA",
+          "controlName": "city",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "State",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "Nebraska",
+          "controlName": "state",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Zip",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "68102",
+          "controlName": "zip",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
