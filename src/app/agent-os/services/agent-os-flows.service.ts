@@ -454,12 +454,15 @@ export class AgentOsFlowsService {
               route: 'mobile',
               accountList: [
                 {
+                  type:'Eligibile Customer',
                   account: '8347100011155550',
                 },
                 {
+                  type:'Ineligibile Customer',
                   account: '8347100011133330',
                 },
                 {
+                  type:'Existing Customer',
                   account: '8347100011144440',
                 },
               ],
