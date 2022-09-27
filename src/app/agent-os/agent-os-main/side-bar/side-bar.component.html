@@ -261,7 +261,7 @@
                             <mat-expansion-panel *ngFor="let item of actiondata?.content">
                                 <mat-expansion-panel-header>
                                     <mat-panel-title>
-                                        <i class="{{item.icon}}" style="font-size:20px;"></i>
+                                        <i class="{{item.icon}} fs-5 pe-2" ></i>
                                         <span class="ml-5">
                                             <div>
                                                 <span class="panel-header">{{item.scr}}</span><br>
@@ -270,7 +270,7 @@
                                         </span>
                                     </mat-panel-title>
                                     <mat-panel-description>
-                                        <span class="panel-time">{{item.time}}</span>
+                                        <span class="panel-time fw-bold">{{item.time}}</span>
                                     </mat-panel-description>
                                 </mat-expansion-panel-header>
                             </mat-expansion-panel>
