@@ -45,7 +45,7 @@ export class HitHistoryTableComponent implements OnInit,AfterViewInit {
   //     (err) => console.error(err),
   //     () => {
   //       this.tableDatatest = this.data.hithistory;
-  //       console.log(this.tableDatatest);
+  //       
   //       this.dataSource.data = this.tableDatatest;
   //       this.tableDatatestpro = this.data.provisionhistory;
   //       console.log(this.tableDatatestpro);
@@ -65,10 +65,8 @@ export class HitHistoryTableComponent implements OnInit,AfterViewInit {
       (err) => console.error(err),
       () => {
         this.tableDatatest = this.data.hithistory;
-        console.log(this.tableDatatest);
         this.dataSource.data = this.tableDatatest;
         this.tableDatatestpro = this.data.provisionhistory;
-        console.log(this.tableDatatestpro);
         this.dataSourcePro.data = this.tableDatatestpro;
         this.columnsToDisplay = this.data.hitHistoryColumn;
       }

@@ -12,7 +12,7 @@
                 <mat-tab-group [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)" class="symptoms">
                     <mat-tab  >
                         <ng-template mat-tab-label> <mat-icon svgIcon="aos-tv" class="tv-icon"></mat-icon>Video </ng-template>
-                        <ng-container *ngFor="let item of symptomsData.content | keyvalue">
+                        <ng-container *ngFor="let item of symptomsData?.content | keyvalue">
                             <ng-container *ngIf="item.key=='Video'">
                                 <ng-container *ngFor="let subitem of item.value | keyvalue">
                                     <mat-expansion-panel class="mt-1 bg-grey"  *ngFor="let nestitem of subitem.value | keyvalue">
@@ -32,7 +32,7 @@
                     </mat-tab>
                     <mat-tab>
                         <ng-template mat-tab-label> <mat-icon svgIcon="aos-internet" class="globe-icon"></mat-icon>Internet </ng-template>
-                        <ng-container *ngFor="let item of symptomsData.content | keyvalue">
+                        <ng-container *ngFor="let item of symptomsData?.content | keyvalue">
                             <ng-container *ngIf="item.key=='Internet'">
                                 <ng-container *ngFor="let subitem of item.value | keyvalue">
                                     <mat-expansion-panel class="mt-1 bg-grey"  *ngFor="let nestitem of subitem.value | keyvalue">
@@ -52,7 +52,7 @@
                     </mat-tab>
                     <mat-tab>
                         <ng-template mat-tab-label> <mat-icon svgIcon="aos-telephone" class="voice-icon"></mat-icon>Voice </ng-template>
-                        <ng-container *ngFor="let item of symptomsData.content | keyvalue">
+                        <ng-container *ngFor="let item of symptomsData?.content | keyvalue">
                             <ng-container *ngIf="item.key=='Voice'">
                                 <ng-container *ngFor="let subitem of item.value | keyvalue">
                                     <mat-expansion-panel class="mt-1 bg-grey"  *ngFor="let nestitem of subitem.value | keyvalue">
@@ -81,7 +81,7 @@
                     <mat-tab-group class="alerts">
                         <mat-tab label="Active Alerts">
                             <mat-card>
-                                <div *ngFor="let item of eventAlertsData.content  ">
+                                <div *ngFor="let item of eventAlertsData?.content">
                                     <div class="row" [ngClass]="{'border-red': item.color==='red', 'border-blue': item.color==='blue', 'border-yellow': item.color==='yellow' }">
                                         <div class="col-md-1">
                                             <mat-icon [ngClass]="{'icon-red': item.color==='red', 'info-icon': item.color==='blue', 'globe-icon': item.color==='yellow' }"> {{item.icon}}</mat-icon>
@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p *ngIf="eventAlertsData.accountNo==='No Account Selected'"><strong>No Alert found</strong></p>
+                                <p *ngIf="eventAlertsData?.accountNo==='No Account Selected'"><strong>No Alert found</strong></p>
                             </mat-card>
                         </mat-tab>
                         <mat-tab label="Event History">
