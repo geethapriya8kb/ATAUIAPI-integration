@@ -237,7 +237,7 @@
 <!-- mobile page for eligible and ineligible customers -->
 <ng-container *ngIf="accNum=='8347100011155550'|| accNum=='8347100011133330'|| accNum=='8245123922263374' || accNum=='8429763145879632'">
     <div class="justify-content-center d-flex text-center ">
-        <mat-card class="m-2 w-50" >       
+        <mat-card class="m-2 w-40" >       
             <i *ngIf="accNum=='8347100011155550'|| accNum=='8245123922263374'" class="fa-solid fa-circle-check fs-1 color-green" ></i>
             <i *ngIf="accNum=='8347100011133330'"  class="fa-solid fa-circle-xmark fs-1 color-red" ></i>
             <p class="fw-bold fs-6">This customer is <span *ngIf="accNum=='8347100011155550'|| accNum=='8245123922263374'|| accNum=='8429763145879632'">eligible</span>  <span *ngIf="accNum=='8347100011133330'">ineligible</span>  for mobile</p>
