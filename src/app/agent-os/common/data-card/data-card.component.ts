@@ -32,9 +32,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
   ngOnInit(): any {
     const accountNumber = this.searchService.getAccountNumber();
     const location = this.storeService.location;
-    console.log(location)
     const accountDetails = this.storeService.accountDetails;
-    console.log(accountDetails)
     const billingDetails = this.storeService.billingDetails;
 
     if ( accountNumber !='empty' &&
@@ -87,7 +85,6 @@ export class DataCardComponent implements OnInit, AfterViewInit {
           if(accountNumber === 'empty' &&  this.cardName==='location')
           {
             this.storeService.locationEmpty = this.data
-            console.log(this.storeService.locationEmpty);
           }
         
       },

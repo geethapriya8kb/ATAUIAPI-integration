@@ -54,8 +54,8 @@ export class AgentOsFlowsService {
               route: 'self-install',
               accountList: [
                 {
-                  type: '',
-                  account: '8347100015617690',
+                  type: 'Call Reason: Self-Install',
+                  account: '8245100030092203',
                 },
               ],
             },
@@ -66,8 +66,8 @@ export class AgentOsFlowsService {
               route: 'cannot-connect',
               accountList: [
                 {
-                  type: '',
-                  account: '8245100030092200',
+                  type: 'Call Reason: Cannot Connect',
+                  account: '8245100030092203',
                 },
               ],
             },

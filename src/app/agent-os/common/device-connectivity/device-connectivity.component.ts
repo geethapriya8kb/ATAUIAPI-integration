@@ -148,7 +148,7 @@ export class DeviceConnectivityComponent implements OnInit {
       (err) => console.error(err),
       () => {
         this.tableDatatest = this.data.deviceConnectivityTable;
-        console.log(this.tableDatatest);
+        
         this.dataSource.data = this.tableDatatest;
         this.columnsToDisplay = this.data.deviceConnectivityColumns;
       }

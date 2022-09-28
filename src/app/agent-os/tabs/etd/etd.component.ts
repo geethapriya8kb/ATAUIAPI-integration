@@ -116,8 +116,6 @@ export class EtdComponent implements OnInit {
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         this.tempdata = this.data;
-        console.log(this.tempdata);
-
       },
       error: (err) => console.log(err),
       complete: () => {
@@ -142,7 +140,7 @@ export class EtdComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-        // console.log(this.etddata);
+        
       }
     );
   }
