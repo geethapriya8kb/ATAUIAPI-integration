@@ -24,4 +24,10 @@ export class ToolsComponent implements OnInit {
       }
     );
   }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue);
+    
+  }
 }
