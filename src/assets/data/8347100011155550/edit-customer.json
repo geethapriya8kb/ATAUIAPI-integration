@@ -1,0 +1,140 @@
+{
+  "info": {
+    "First Name": {
+      "value": "Jenny",
+      "type": "text"
+    },
+    "Last Name": {
+      "value": "Shellstrop",
+      "type": "text"
+    },
+    "SSN/Tax ID": {
+      "value": "XXXXX8675",
+      "type": "text"
+    },
+    "* PPV Limit": {
+      "value": "150",
+      "type": "text"
+    }
+  },
+  "contactRows": [
+    {
+      "columns": [
+        {
+          "label": "Primary Phone:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "(402) 555-0101",
+          "controlName": "phone",
+          "required": false
+        },
+        {
+          "label": "Authorized Users:",
+          "type": "select",
+          "class": "col col-md-6",
+          "value": "Britney Fish (Manager)",
+          "controlName": "authUser",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Secondary Phone:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "(316) 232-5876",
+          "controlName": "phone2",
+          "required": false
+        },
+        {
+          "label": "",
+          "type": "text",
+          "class": "col col-md-6",
+          "controlName": "authUser1",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Email",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "jenny.shellstrop@gmail.com",
+          "controlName": "email",
+          "required": false
+        },
+        {
+          "label": "",
+          "type": "text",
+          "class": "col col-md-6",
+          "controlName": "authUser2",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Billing Address Line 1:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "92 EL DORADO DR.",
+          "controlName": "address1",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Billing Address Line 2:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "",
+          "controlName": "address2",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "* City:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "SHELDON",
+          "controlName": "city",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "State",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "Missoury",
+          "controlName": "state",
+          "required": false
+        }
+      ]
+    },
+    {
+      "columns": [
+        {
+          "label": "Zip",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "64784",
+          "controlName": "zip",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
