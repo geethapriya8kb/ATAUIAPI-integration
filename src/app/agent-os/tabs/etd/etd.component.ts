@@ -13,8 +13,6 @@ import { EtdService } from './etd.service';
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
-  data: any;
-  etddata: any;
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
   tableDatatest: Array<TicketInformation> = [];
@@ -25,9 +23,7 @@ export class EtdComponent implements OnInit {
   myTicketDataSource = new MatTableDataSource<Mytickettab>();
   ticketColumnsToDisplay: Array<string> = [];
   accountVal: unknown;
-  public searchFilter: any = '';
   filterAlert: Array<TicketInformation> = [];
-  query: any;
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl(),
     endDate: new UntypedFormControl(),
@@ -38,6 +34,10 @@ export class EtdComponent implements OnInit {
     search: new UntypedFormControl(),
   });
   tempdata: any;
+  data: any;
+  etddata: any;
+  query: any;
+  public searchFilter: any = '';
   constructor(
     private searchService: SearchService,
     private etdservice: EtdService,
