@@ -73,24 +73,15 @@
                             </div>
                             <div class="col-md-3 offset-5 col-sm-3 offset-5 text-end pe-4">
                                 <button type="button" mat-raised-button color="secondary" class="mat-button-xs"
-                                    (click)="reset()">Reset</button>
+                                    (click)="reset()">Reset</button><br>
+                                <div>
+                                    <label class="me-1">Auto Refresh</label>
+                                    <mat-slide-toggle class="mt-1"></mat-slide-toggle>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
-
-                <!-- <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8 mt-4"
-                    matSort>
-                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay | searchFilter: query">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
-                            {{column}}</th>
-                        <td mat-cell *matCellDef="let element">{{element[column]}}</td>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay">
-                    </tr>
-                    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
-                    </tr>
-                </table> -->
                 <table class="table table-hover table-borderless table-sm mt-4">
                     <thead class="text-center tab-bg-color">
                         <tr>
@@ -108,7 +99,8 @@
                     <ng-container *ngIf="!filterAlert.length">
                         <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
                             <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero ">{{i.value}}</td>
+                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
+                                    {{i.value}}</td>
                             </tr>
                         </tbody>
                     </ng-container>
@@ -124,107 +116,6 @@
                     <p class="no-records">No Ticket found</p>
                 </div>
             </mat-card>
-            <mat-card class="card border-0 mt-4">
-                <div>
-                    <p>Total Tickets:{{dataSource.data.length}}</p>
-                    <p style="background-color: #e1e1e1;">
-                        <button class="btn btn-sm btn-cl" (click)="expand()">
-                            <span>
-                                <em class="fas pb-5" [ngClass]="{ 'fa-caret-down': flag, 'fa-caret-up': !flag }"></em>
-                            </span>
-                        </button>
-                    </p>
-                </div>
-                <div>
-                    <div class="row">
-                        <div class="col-md-3"><strong>Ticket:</strong>11177548 (Escalated 1)
-                            <br> <strong>Status:</strong>Open
-                        </div>
-                        <div class="col-md-4 text-end">
-                            <strong>Video</strong>
-                            <strong class="ms-4">HSI</strong>
-                            <strong class="ms-4">Phone</strong>
-                            <br>
-                            <i class="fa fa-check-square  me-5" aria-hidden="true"></i>
-                            <i class="fa fa-check-square me-4" aria-hidden="true"></i>
-                            <i class="fa fa-check-square ms-4" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-md-5 text-end">
-                            <div class="row">
-                                <div class="col-md-9 col-sm-9 offset-3 p-0">
-                                    <i class="fa pe-1">&#xf021;</i>
-                                    <button type="button" mat-raised-button color="success" class="me-1 mat-button-xs">
-                                        Assign to Me
-                                    </button>
-                                    <button type="button" mat-raised-button color="success" class="mat-button-xs"
-                                        routerLink="work-ticket">
-                                        Work Ticket
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </mat-card>
-
-            <mat-card class="mt-2" *ngIf="flag">
-                <mat-tab-group mat-align-tabs="start">
-                    <mat-tab label="Details">
-                        <div class="row mx-0 my-1" *ngIf="data?.etd && data?.etd.length">
-                            <div class="col" *ngFor="let etdList of data.etd">
-                                <mat-card class="card-edit" *ngFor="let etd of etdList">
-                                    <ng-container *ngIf="etd.header">
-                                        <mat-card-header class="header-edit"
-                                            *ngFor="let p of etd.header | keyvalue:returnZero">
-                                            <mat-card-title class="title-font mb-0">
-                                                {{p.key}} {{p.value}}
-                                            </mat-card-title>
-                                        </mat-card-header>
-                                    </ng-container>
-                                    <ng-container *ngIf="etd.info">
-                                        <mat-card-content class="content-style">
-                                            <div *ngFor="let i of etd.info | keyvalue:returnZero" class="my-1">
-                                                <div><strong>
-                                                        {{i.key}}</strong>: {{i.value}}
-                                                </div>
-                                            </div>
-                                        </mat-card-content>
-                                    </ng-container>
-                                </mat-card>
-                            </div>
-                        </div>
-                    </mat-tab>
-                    <mat-tab label="History">
-                        <div class="row mt-4 mb-4">
-                            <div class="col-md-4">
-                                <b>Submitted By:</b> P786543
-                            </div>
-                            <div class="col-md-4">
-                                <b>Submitted On:</b> 1/21/20 5:20 PM
-                            </div>
-                            <div class="col-md-4">
-                                <b>Submitted Location:</b> MARYLAND HEIGHTS, MO
-                            </div>
-                        </div>
-                        <table mat-table [dataSource]="hisDataSource" multiTemplateDataRows
-                            class="mb-3 mat-elevation-z8" matSort>
-                            <ng-container matColumnDef="{{column}}" *ngFor="let column of hisColumnsToDisplay">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
-                                    {{column}}</th>
-                                <td mat-cell *matCellDef="let element">{{element[column]}}</td>
-                            </ng-container>
-                            <tr mat-header-row *matHeaderRowDef="hisColumnsToDisplay">
-                            </tr>
-                            <tr mat-row *matRowDef="let element; columns: hisColumnsToDisplay;"
-                                class="example-element-row">
-                            </tr>
-                        </table>
-                        <div *ngIf="hisDataSource.data.length === 0">
-                            <p class="no-records">No History found</p>
-                        </div>
-                    </mat-tab>
-                </mat-tab-group>
-            </mat-card>
         </mat-tab>
         <mat-tab label="My Tickets">
             <table mat-table [dataSource]="myTicketDataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8"
@@ -239,9 +130,140 @@
                 <tr mat-row *matRowDef="let element; columns: ticketColumnsToDisplay;" class="example-element-row">
                 </tr>
             </table>
+            <!-- <table class="table table-hover table-borderless table-sm mt-4">
+                    <thead class="text-center tab-bg-color">
+                        <tr>
+                            <th scope="col">Ticket</th>
+                            <th scope="col">SLA Call Time</th>
+                            <th scope="col">Account</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Node</th>
+                            <th scope="col">Reason</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Owner</th>
+                            <th scope="col">Cust Type</th>
+                        </tr>
+                    </thead>
+                    <ng-container *ngIf="!filterAlert.length">
+                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
+                            <tr>
+                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">{{i.value}}</td>
+                            </tr>
+                        </tbody>
+                    </ng-container>
+                    <ng-container *ngIf="filterAlert.length">
+                        <tbody class="table table-bordered">
+                            <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
+                                <td *ngFor="let item of i.value| keyvalue:returnZero"> {{item.value}}</td>
+                            </tr>
+                        </tbody>
+                    </ng-container>
+                </table> -->
             <div *ngIf="myTicketDataSource.data.length === 0">
                 <p class="no-records">No Ticket found</p>
             </div>
         </mat-tab>
+
     </mat-tab-group>
+    <!-- ======================= -->
+    <mat-card class="card border-0 mt-4">
+        <div>
+            <p>Total Tickets:{{dataSource.data.length}}</p>
+            <p style="background-color: #e1e1e1;">
+                <button class="btn btn-sm btn-cl" (click)="expand()">
+                    <span>
+                        <em class="fas pb-5" [ngClass]="{ 'fa-caret-down': flag, 'fa-caret-up': !flag }"></em>
+                    </span>
+                </button>
+            </p>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-md-3"><strong>Ticket:</strong>11177548 (Escalated 1)
+                    <br> <strong>Status:</strong>Open
+                </div>
+                <div class="col-md-4 text-end">
+                    <strong>Video</strong>
+                    <strong class="ms-4">HSI</strong>
+                    <strong class="ms-4">Phone</strong>
+                    <br>
+                    <i class="fa fa-check-square  me-5" aria-hidden="true"></i>
+                    <i class="fa fa-check-square me-4" aria-hidden="true"></i>
+                    <i class="fa fa-check-square ms-4" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-5 text-end">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9 offset-3 p-0">
+                            <i class="fa pe-1">&#xf021;</i>
+                            <button type="button" mat-raised-button color="success" class="me-1 mat-button-xs"
+                                (click)="assign()">
+                                Assign to Me
+                            </button>
+                            <button type="button" mat-raised-button color="success" class="mat-button-xs"
+                                routerLink="work-ticket">
+                                Work Ticket
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+
+    <mat-card class="mt-2" *ngIf="flag">
+        <mat-tab-group mat-align-tabs="start">
+            <mat-tab label="Details">
+                <div class="row mx-0 my-1" *ngIf="data?.etd && data?.etd.length">
+                    <div class="col" *ngFor="let etdList of data.etd">
+                        <mat-card class="card-edit" *ngFor="let etd of etdList">
+                            <ng-container *ngIf="etd.header">
+                                <mat-card-header class="header-edit" *ngFor="let p of etd.header | keyvalue:returnZero">
+                                    <mat-card-title class="title-font mb-0">
+                                        {{p.key}} {{p.value}}
+                                    </mat-card-title>
+                                </mat-card-header>
+                            </ng-container>
+                            <ng-container *ngIf="etd.info">
+                                <mat-card-content class="content-style">
+                                    <div *ngFor="let i of etd.info | keyvalue:returnZero" class="my-1">
+                                        <div><strong>
+                                                {{i.key}}</strong>: {{i.value}}
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                            </ng-container>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="History">
+                <div class="row mt-4 mb-4">
+                    <div class="col-md-4">
+                        <b>Submitted By:</b> P786543
+                    </div>
+                    <div class="col-md-4">
+                        <b>Submitted On:</b> 1/21/20 5:20 PM
+                    </div>
+                    <div class="col-md-4">
+                        <b>Submitted Location:</b> MARYLAND HEIGHTS, MO
+                    </div>
+                </div>
+                <table mat-table [dataSource]="hisDataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8"
+                    matSort>
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of hisColumnsToDisplay">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
+                            {{column}}</th>
+                        <td mat-cell *matCellDef="let element">{{element[column]}}</td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="hisColumnsToDisplay">
+                    </tr>
+                    <tr mat-row *matRowDef="let element; columns: hisColumnsToDisplay;" class="example-element-row">
+                    </tr>
+                </table>
+                <div *ngIf="hisDataSource.data.length === 0">
+                    <p class="no-records">No History found</p>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
 </mat-card>
