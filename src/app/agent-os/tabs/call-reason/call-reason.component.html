@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel'||data?.callReason=='noService'||data?.callReason=='selfInstall')">
+<ng-container *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel'||data?.callReason=='noService'||data?.callReason=='selfInstall'||data?.callReason=='payments')">
     <!-- heder title part for all the section -->
     <div class="row m-1" *ngFor="let item of data.headerTitle | keyvalue">
         <ng-container *ngIf="courseName===item.key">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- callreson for payment -->
-    <ng-container *ngIf="courseName==='Payments'">
+    <ng-container *ngIf="data?.callReason=='payments'">
         <mat-card class="m-2">
             <ng-container *ngFor="let item of data.content | keyvalue:returnZero">
                 <mat-card-title class="fw-bold">{{item.key}}</mat-card-title>
@@ -237,7 +237,7 @@
     </ng-container>
 
     <!-- callreason cannot connect -->
-    <ng-container *ngIf="courseName==='Cannot Connect'">
+    <ng-container *ngIf="data?.callReason=='cannotConnect'">
         <div class="m-2">
             <mat-card>
                 <app-device-connectivity> </app-device-connectivity>

@@ -1,0 +1,40 @@
+{
+    "content": [
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "Verification Success",
+            "time": "Sep 21, 2022, 2:01 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Call Tracker Submitted",
+            "time": "Sep 20, 2022, 2:01 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "VERIFICATION SUCCESS",
+            "time": "Sep 20, 2022, 2:01 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication Sent successfully",
+            "time": "Jul 21, 2022, 2:01 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication - Sent Successfully",
+            "time": "Jun 21, 2022, 2:01 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "One Time Payment Failure",
+            "time": "May 21, 2022, 2:01 PM GMT+5:30"
+        }
+    ]
+}

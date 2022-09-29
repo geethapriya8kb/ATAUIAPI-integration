@@ -1,0 +1,280 @@
+{
+    "callReason":"payments",
+    "content": {
+        "Billing Overview": {
+            "Current Billing Cycle": "Sep 6 - Oct 5",
+            "Current Amount Due": [
+                {
+                    "$187.59": "Pay Amount"
+                }
+            ],
+            "Current Due Date": "September 23, 2022"
+        }
+    },
+    "paymentHistoryTable": [
+        {
+            "position": 1,
+            "BillingCycle": "Sep6-Oct5",
+            "DueDate": "Sep-23-2022",
+            "DatePosted": "--",
+            "AmountDue": "$187.59",
+            "PaymentStatus": "--"
+        },
+        {
+            "position": 2,
+            "BillingCycle": "Aug6-Sep5",
+            "DueDate": "Aug-23-2022",
+            "DatePosted": "Aug-21-2022",
+            "AmountDue": "$187.59",
+            "PaymentStatus": "Paid in Full"
+        },
+        {
+            "position": 3,
+            "BillingCycle": "Jul6-Aug5",
+            "DueDate": "Jul-23-2022",
+            "DatePosted": "Jul-21-2022",
+            "AmountDue": "$187.59",
+            "PaymentStatus": "Paid in Full"
+        },
+        {
+            "position": 4,
+            "BillingCycle": "Jun6-Jul5",
+            "DueDate": "Jun-23-2022",
+            "DatePosted": "Jun-21-2022",
+            "AmountDue": "$187.59",
+            "PaymentStatus": "Paid in Full"
+        },
+        {
+            "position": 5,
+            "BillingCycle": "May6-Jun5",
+            "DueDate": "May-23-2022",
+            "DatePosted": "May-21-2022",
+            "AmountDue": "$187.59",
+            "PaymentStatus": "Paid in Full"
+        },
+		{
+            "position": 6,
+            "BillingCycle": "Apr6-May5",
+            "DueDate": "Apr-23-2022",
+            "DatePosted": "Apr-21-2022",
+            "AmountDue": "$187.59",
+            "PaymentStatus": "Paid in Full"
+        }
+    ],
+    "PaymentHistoryColumns": [
+        "BillingCycle",
+        "DueDate",
+        "DatePosted",
+        "AmountDue",
+        "PaymentStatus"
+    ],
+    "statementHistory": [
+        {
+            "bill": "Apr 6 Bill",
+            "amount": "$187.59",
+            "timeframe": "Apr 6 to May 5",
+            "duedate": "Due Apr 23"
+        },
+        {
+            "bill": "May 6 Bill",
+            "amount": "$187.59",
+            "timeframe": "May 6 to Jun 5",
+            "duedate": "Due May 23"
+        },
+        {
+            "bill": "Jun 6 Bill",
+            "amount": "$187.59",
+            "timeframe": "Jun 6 to Jul 5",
+            "duedate": "Due Jun 23"
+        },
+        {
+            "bill": "Jul 6 Bill",
+            "amount": "$187.59",
+            "timeframe": "Jul 6 to Aug 5",
+            "duedate": "Due Jul 23"
+        },
+        {
+            "bill": "Aug 6 Bill",
+            "amount": "$187.59",
+            "timeframe": "Aug 6 to Sep 5",
+            "duedate": "Due Aug 23"
+        },
+        {
+            "bill": "Sep 6 Bill",
+            "amount": "$187.59",
+            "timeframe": "Sep 6 to Oct 5",
+            "duedate": "Due Sep 23"
+        }
+    ],
+    "expansionPanelStatement": {
+        "May 5 Bill": {
+            "Previous Balance": [
+                {
+                    "value": "$175.33"
+                },
+                {}
+            ],
+            "Remaining Balance": [
+                {
+                    "value": "$0.00"
+                },
+                {}
+            ],
+            "Spectrum TV™": [
+                {
+                    "value": "$81.98"
+                },
+                {
+                    "val": [
+                        {
+                            "Spectrum TV Select Basic TV & Expanded Basic TV Services": "$73.99"
+                        },
+                        {
+                            "Spectrum Receiver": "$7.99"
+                        }
+                    ]
+                }
+            ],
+            "Spectrum Internet™": [
+                {
+                    "value": "$70.99"
+                },
+                {
+                    "val": [
+                        {
+                            "Spectrum Internet": "$65.99"
+                        },
+                        {
+                            "Spectrum WiFi Service": "$5.00"
+                        }
+                    ]
+                }
+            ],
+            "Other Charges": [
+                {
+                    "value": "$16.45"
+                },
+                {
+                    "val": [
+                        {
+                            "Broadcast TV Surcharge": "$16.45"
+                        }
+                    ]
+                }
+            ],
+            "Taxes, Fees and Charges": [
+                {
+                    "value": "$5.91"
+                },
+                {
+                    "val": [
+                        {
+                            "FCC Admin Fee": "$0.07"
+                        },
+                        {
+                            "State and Local Sales Tax": "$2.50"
+                        },
+                        {
+                            "Franchise Fee": "$3.34"
+                        }
+                    ]
+                }
+            ],
+            "Total Due": [
+                {
+                    "value": "$187.59"
+                },
+                {}
+            ]
+        }
+    },
+    "billingHistoryData": [
+        {
+            "Statement Date": "Sep 6",
+            "Remaining Balance": "$0.00",
+            "Recurring Charges": "$176.97",
+            "One-Time Charges": "$0.00",
+            "Taxes, Fees & Charges": "$10.62",
+            "Amount Due": "$187.59"
+        },
+        {
+            "Statement Date": "Aug 6",
+            "Remaining Balance": "$0.00",
+            "Recurring Charges": "$176.97",
+            "One-Time Charges": "$0.00",
+            "Taxes, Fees & Charges": "$10.62",
+            "Amount Due": "$187.59"
+        },
+        {
+            "Statement Date": "Jul 6",
+            "Remaining Balance": "$0.00",
+            "Recurring Charges": "$176.97",
+            "One-Time Charges": "$0.00",
+            "Taxes, Fees & Charges": "$10.62",
+            "Amount Due": "$187.59"
+        },
+        {
+            "Statement Date": "Jun 6",
+            "Remaining Balance": "$0.00",
+            "Recurring Charges": "$176.97",
+            "One-Time Charges": "$0.00",
+            "Taxes, Fees & Charges": "$10.62",
+            "Amount Due": "$187.59"
+        },
+        {
+            "Statement Date": "May 6",
+            "Remaining Balance": "$0.00",
+            "Recurring Charges": "$176.97",
+            "One-Time Charges": "$0.00",
+            "Taxes, Fees & Charges": "$10.62",
+            "Amount Due": "$187.59"
+        },
+        {
+            "Statement Date": "Apr 6",
+            "Remaining Balance": "$0.00",
+            "Recurring Charges": "$176.97",
+            "One-Time Charges": "$0.00",
+            "Taxes, Fees & Charges": "$10.62",
+            "Amount Due": "$187.59"
+        }
+    ],
+    "billingHistoryColumns": [
+        "Statement Date",
+        "Remaining Balance",
+        "Recurring Charges",
+        "One-Time Charges",
+        "Taxes, Fees & Charges",
+        "Amount Due"
+    ],
+    "eventsHistory": [
+        {
+            "Event": " Billing Cycle Begins",
+            "Date": "May 6, 2022"
+        },
+        {
+            "Event": "Due Date",
+            "Date": "May 23, 2022"
+        },
+        {
+            "Event": "Billing Cycle Ends",
+            "Date": "Jun 5, 2022"
+        },
+        {
+            "Event": "Billing Cycle Ends",
+            "Date": "Jun 5, 2022"
+        },
+        {
+            "Event": "Billing Cycle Ends",
+            "Date": "Jun 5, 2022"
+        }
+    ],
+    "eventHistoryColumns": [
+        "Event",
+        "Date"
+    ],
+    "headerTitle":{
+        "Payments":{
+          "aos-note":"Payment Due Soon"
+        }
+    }
+}
