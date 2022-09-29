@@ -1,0 +1,66 @@
+{
+   
+"callReason":"selfInstall",
+"selfInstallContent": [
+    {
+        "order": "#1200040847221019",
+        "address": "1400 Avenue of America, New York, NY 12345, New York, NY 12345",
+        "Tracking": "13694877499073638",
+        "Device": "MOTOROLA DCX3510M",
+        "SerialNumber": "C17TF7898",
+        "ExpectedDelivery": "Jun 3, 2022",
+        "ordered": "05/28/22",
+        "transit": "05/28/22",
+        "delivered": "06/03/22"
+    },
+    {
+        "order": "#1200040847221018",
+        "address": "1400 Avenue of America, New York, NY 12345, New York, NY 12345",
+        "Tracking": "13694877499073638",
+        "Device": "MOTOROLA DCX3510M",
+        "SerialNumber": "C17TF7898",
+        "ExpectedDelivery": "Jun 3, 2022",
+        "ordered": "05/28/22",
+        "transit": "05/28/22",
+        "delivered": "06/03/22"
+    }
+    ],
+    "selfInstallOrder": {
+        "Order #1200040847221019":{          
+            "Creation Date": "May 26,2022",
+            "Modified On": "May 26,2022",
+            "Status": "Open"
+        },
+        "Order #1200040847221018":{          
+            "Creation Date": "May 26,2022",
+            "Modified On": "May 26,2022",
+            "Status": "Open"
+        }
+    },
+   
+    "Agreements":
+    [
+        "Accepted: E911 Enrollment Agreement",
+        "Accepted: Terms & Conditions",
+        "Accepted: Privacy Policy"
+    ]
+,
+"headerTitle":{
+    "Payments":{
+      "aos-note":"Payment Due Soon"
+    },
+    "Missing Channels": {                 
+        "aos-missing-tv": "Missing TV Channels"
+    },
+    "Cannot Connect": {                 
+        "aos-modem": "Modem Not Connected"
+    },
+    "No Service": {                 
+        "aos-no-service": "No Service"
+    },
+    "Self-Install":{
+        "aos-self-install":"New Self-Installation"
+    }
+}
+    
+}

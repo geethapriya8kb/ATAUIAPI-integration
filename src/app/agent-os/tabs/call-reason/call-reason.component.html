@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel'||data?.callReason=='noService')">
+<ng-container *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel'||data?.callReason=='noService'||data?.callReason=='selfInstall')">
     <!-- heder title part for all the section -->
     <div class="row m-1" *ngFor="let item of data.headerTitle | keyvalue">
         <ng-container *ngIf="courseName===item.key">
@@ -308,7 +308,7 @@
     </ng-container>
 
     <!-- call reason for self installation -->
-    <ng-container *ngIf="courseName==='Self-Install'">
+    <ng-container *ngIf="data?.callReason=='selfInstall'">
         <div class="row mr-35">
             <div class="col-sm-3 text-center ">
                 <button (click)="selfInstallFlag='order'" [ngClass]="{'active-self-button':selfInstallFlag==='order'}"
@@ -342,12 +342,10 @@
             </mat-card>
         </ng-container>
         <ng-container *ngIf="selfInstallFlag==='agreement'">
-            <mat-card class="m-2">
-                <div class="flex" *ngFor="let i of data.selfInstallAgree[0] | keyvalue">
-                    <h3 class="bill">Agreements</h3>
-                </div>
-                <div *ngFor="let i of data.selfInstallAgree[0].selfInstallAgreements | keyvalue">
-                    <h6><span> <i class="fa-solid fa-check green-icon m-1"></i></span>{{i.value}}</h6>
+            <mat-card class="m-2"> 
+                <h6 class="fw-bold">Agreements</h6>               
+                <div *ngFor="let item of data?.Agreements">                   
+                    <h6><span> <i class="fa-solid fa-check green-icon m-1"></i></span>{{item}}</h6>
                 </div>
                 <button class="rounded-pill" mat-flat-button color="primary">Resend Agreements</button>
             </mat-card>

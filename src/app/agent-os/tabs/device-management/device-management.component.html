@@ -17,7 +17,7 @@
                 </div>
                 <div *ngIf="!styleVal" class="row mt-5">
                     <label class="fw-bold smaller">Outage/Maint Board</label>                   
-                    <ng-container *ngFor="let item of data.content | keyvalue:returnZero">
+                    <ng-container *ngFor="let item of data?.content | keyvalue:returnZero">
                         <div class="col col-md-4 col-xs-1">
                             <mat-card class="bg-green text-center ">
                                 <i class="fa-solid fa-check fa-1x"></i>

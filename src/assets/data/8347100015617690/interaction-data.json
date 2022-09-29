@@ -1,0 +1,40 @@
+{
+    "content": [
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "Verification Success",
+            "time": "Sep 28, 2022, 11:23 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Device Activation Pending",
+            "time": "Sep 27, 2022, 11:23 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "VERIFICATION SUCCESS",
+            "time": "Sep 27, 2022, 11:23 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication Sent successfully",
+            "time": "Jul 28, 2022, 11:23 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication - Sent Successfully",
+            "time": "Jun 28, 2022, 11:23 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "One Time Payment Failure",
+            "time": "May 28, 2022, 11:23 AM GMT+5:30"
+        }
+    ]
+}

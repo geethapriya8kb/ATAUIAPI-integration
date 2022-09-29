@@ -1,0 +1,126 @@
+{
+    "icons": [
+        {
+            "path": "../../assets/images/blue-check.png",
+            "amount":"$110.98",
+            "channel":"video"
+        },
+        {
+            "path": "../../assets/images/orange-computer.png",
+            "amount":"$65.99",
+            "channel":"Internet"
+        },
+        {
+            "path": "../../assets/images/purple-receiver.png",
+            "amount":"$0.00",
+            "channel":"Voice"
+        }
+    ],
+    "content": [
+        {
+            "Order Number": "1200014599101018",
+            "Order Status": "Closed",
+            "Order Date": "08-28-2022",
+            "Order Type": "NewConnect",
+            "Scheduled Date": "08-28-2022",
+            "Completion Date": "",
+            "Sales Agent ID": "00085",
+            "Sales Agent Name": "Dev User"
+        },
+		{
+            "Order Number": "1200040847221019",
+            "Order Status": "Open",
+            "Order Date": "09-21-2022",
+            "Order Type": "changeOfService",
+            "Scheduled Date": "09-21-2022",
+            "Completion Date": "",
+            "Sales Agent ID": "00085",
+            "Sales Agent Name": "Dev User"
+        }
+    ],
+    "ordercol": [
+        "Order Number",
+        "Order Status",
+        "Order Date",
+        "Order Type",
+        "Scheduled Date",
+        "Completion Date",
+        "Sales Agent ID",
+        "Sales Agent Name"
+    ],
+    "expansioncontent":[
+        {
+            "Quantity":"1",
+            "Service":"Spectrum TV Select",
+            "Amount":"$14.99"
+        },
+        {
+            "Quantity":"1",
+            "Service":"Broadcast TV Surcharge",
+            "Amount":"$21.00"
+        },
+        {
+            "Quantity":"1",
+            "Service":"Spectrum HD Receiver",
+            "Amount":"$9.99"
+        },
+		 {
+            "Quantity":"1",
+            "Service":"Spectrum Internet",
+            "Amount":"$65.99"
+        },
+        {
+            "Quantity":"1",
+            "Service":"Spectrum Internet",
+            "Amount":"$0.00"
+        },
+        {
+            "Quantity":"1",
+            "Service":"Spectrum Modem",
+            "Amount":"$0.00"
+        }
+    ],
+    "expansioncol":[
+        "Quantity",
+        "Service",
+        "Amount"
+    ],
+    "ordercontent":[
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        },
+        {
+            "sym":"fa fa-shopping-cart table-bg",
+            "Type":"Promotional",
+            "OfferName":"1Y Select SPP 3.0",
+            "Price":"$49"
+        }
+    ]
+}
