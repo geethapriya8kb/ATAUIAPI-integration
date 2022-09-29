@@ -9,6 +9,7 @@ import { SharedService } from '../services/shared.service';
 import { SearchService } from '../services/search.service';
 import { MatIconRegistry } from '@angular/material/icon';
 
+
 @Component({
   selector: 'app-agent-os-main',
   templateUrl: './agent-os-main.component.html',
@@ -21,7 +22,6 @@ export class AgentOsMainComponent implements OnInit {
   menuItems: any;
   public selectedIdx!: number;
   showsidebar = true;
-
 
   constructor(
     private route: ActivatedRoute,
@@ -86,9 +86,10 @@ export class AgentOsMainComponent implements OnInit {
   }
 
   private setSelectedIndex(): void {
+    debugger;
     let url = this.router.url === '/' ? '/dashboard' : this.router.url;
     this.selectedIdx = this.menuItems.indexOf(
-      this.menuItems.find((tab: { link: string }) => tab.link === '.' + url)
+      this.menuItems.find((tab: { link: string }) => tab.link === url)
     );
   }
 

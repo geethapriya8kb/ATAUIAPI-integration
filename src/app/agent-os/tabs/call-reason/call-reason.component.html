@@ -334,10 +334,10 @@
         </div>
         <ng-container *ngIf="selfInstallFlag==='order'">
             <mat-card class="m-2" *ngFor="let item of data.selfInstallOrder | keyvalue">
-                <h2 class="bill">{{item.key}}</h2><br>
+                <h4 class="fw-bold">{{item.key}}</h4><br>
                 <div class="row" *ngFor="let i of item.value | keyvalue">
-                    <div class="col-md-3">{{i.key}}</div>
-                    <div class="col-md-3">{{i.value}}</div>
+                    <h6 class="col-md-3 fw-bold color-text-secondary">{{i.key}}</h6>
+                    <h6 class="col-md-3 fw-bold">{{i.value}}</h6>
                 </div>
             </mat-card>
         </ng-container>

@@ -3,7 +3,7 @@
         <div class="p-3">
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <input type="search" class="form-control" placeholder="Search Tools" aria-label="Search" />
+                    <input type="search" class="form-control" (keyup)="applyFilter($event)" #input placeholder="Search Tools" aria-label="Search" />
                 </div>
             </div>
             <div class="row mr-5 mb-5">
