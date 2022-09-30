@@ -20,6 +20,7 @@ export class Mytickettab {
     Status: string;
     Owner: string;
     ['Cust Type']: string;
+    "etd":ETD
     
 }
 
@@ -33,6 +34,7 @@ export class TicketInformation {
     Status: string;
     Owner: string;
     ['Cust Type']: string;
+    "etd":ETD;
 }
 
 export class Info {

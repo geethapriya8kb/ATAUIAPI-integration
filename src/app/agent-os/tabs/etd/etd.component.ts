@@ -15,7 +15,8 @@ export class EtdComponent implements OnInit {
   flag: boolean = false;
   data: any;
   etddata: any;
-  j:any;
+  etdDetailData:any;
+  unassignData: any;
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
   tableDatatest: Array<TicketInformation> = [];
@@ -45,7 +46,7 @@ export class EtdComponent implements OnInit {
     private searchService: SearchService,
     private etdservice: EtdService,
     private accountServ: AccountService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.etdData();
@@ -113,6 +114,9 @@ export class EtdComponent implements OnInit {
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         this.tempData = this.data;
+        this.etdDetailData= this.data.etd;
+        console.log(this.etdDetailData);
+        
       },
       error: (err) => console.log(err),
       complete: () => {
@@ -136,7 +140,7 @@ export class EtdComponent implements OnInit {
         this.etddata = resp;
       },
       (err) => console.error(err),
-      () => {}
+      () => { }
     );
   }
 
@@ -170,20 +174,16 @@ export class EtdComponent implements OnInit {
         }
       }
 
-      this.myticketTabTableDatatest.push(this.testData);
-     
- 
-    } else if (this.assignFlag) {
+      this.myticketTabTableDatatest.push(this.testData)
+    } 
+    else if (this.assignFlag) {
       for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
         if (this.myticketTabTableDatatest[i].Ticket === this.testData.Ticket) {
-          console.log("clicked");
-          this.j = this.myticketTabTableDatatest[i];
+          this.unassignData = this.myticketTabTableDatatest[i];
           this.myticketTabTableDatatest.splice(i, 1);
         }
-        console.log(this.j);
-        this.data.content.push(this.j);
-        
       }
+      this.data.content.push(this.unassignData);
       console.log(this.data);
       console.log(this.myticketTabTableDatatest);
     }

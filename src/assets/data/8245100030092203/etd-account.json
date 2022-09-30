@@ -9,7 +9,68 @@
             "Reason": "Must Do: Hazardous/Safety Situation",
             "Status": "OPEN",
             "Owner": "",
-            "Cust Type": "C"
+            "Cust Type": "C",
+            "etd": [
+                [
+                    {
+                        "info": {
+                            "Contact": "STEVE BOGERS",
+                            "Phone 1": "(314)555-5555",
+                            "Phone 2": "",
+                            "Node": "",
+                            "City/Status": "BUNNELL, FL",
+                            "Region": "Florida",
+                            "Mgmt": "",
+                            "SLA Call Time": "9/9/22 9:30 AM"
+                        },
+                        "header": {
+                            "Acct:": "002044872555 (C)"
+                        }
+                    }
+                ],
+                [
+                    {
+                        "info": {
+                            "Reason": "Must Do: Hazardous/Safety",
+                            "Job": "222355458",
+                            "Arrival Window": "",
+                            "Owner": "",
+                            "Customer SLA refused": ""
+                        },
+                        "header": {
+                            "Customer Contact made": ""
+                        }
+                    },
+                    {
+                        "header": {
+                            "Customer SLA Comments": ""
+                        }
+                    },
+                    {
+                        "header": {
+                            "Out Of Compliance:": ""
+                        },
+                        "info": {
+                            "OOC Reason": ""
+                        }
+                    }
+                ],
+                [
+                    {
+                        "header": {
+                            "Customer Care Comments:": ""
+                        },
+                        "info": {
+                            "COMMERCIAL": "NO CALL FROM DIALER"
+                        }
+                    },
+                    {
+                        "header": {
+                            "Field Ops Comments": ""
+                        }
+                    }
+                ]
+            ]
         },
         {
             "Ticket": "11177548",
@@ -111,67 +172,6 @@
         "Action",
         "Contact Results",
         "Comments"
-    ],
-    "etd": [
-        [
-            {
-                "info": {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt": "",
-                    "SLA Call Time": "9/9/22 9:30 AM"
-                },
-                "header": {
-                    "Acct:": "002044872555 (C)"
-                }
-            }
-        ],
-        [
-            {
-                "info": {
-                    "Reason": "Must Do: Hazardous/Safety",
-                    "Job": "222355458",
-                    "Arrival Window": "",
-                    "Owner": "",
-                    "Customer SLA refused": ""
-                },
-                "header": {
-                    "Customer Contact made": ""
-                }
-            },
-            {
-                "header": {
-                    "Customer SLA Comments": ""
-                }
-            },
-            {
-                "header": {
-                    "Out Of Compliance:": ""
-                },
-                "info": {
-                    "OOC Reason": ""
-                }
-            }
-        ],
-        [
-            {
-                "header": {
-                    "Customer Care Comments:": ""
-                },
-                "info": {
-                    "COMMERCIAL": "NO CALL FROM DIALER"
-                }
-            },
-            {
-                "header": {
-                    "Field Ops Comments": ""
-                }
-            }
-        ]
     ],
     "myticketcol": [
         "Ticket",

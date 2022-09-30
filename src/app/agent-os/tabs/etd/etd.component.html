@@ -97,11 +97,16 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
+                    
                         <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
                             <tr>
                                 <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
-                                    {{i.value}}</td>
+                                    <ng-container *ngIf="i.key!='etd'">
+                                    {{i.value}}
+                                </ng-container>
+                                </td>
                             </tr>
+                   
                         </tbody>
                     </ng-container>
                     <ng-container *ngIf="filterAlert.length">
@@ -118,18 +123,6 @@
             </mat-card>
         </mat-tab>
         <mat-tab label="My Tickets">
-            <!-- <table mat-table [dataSource]="myTicketDataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8"
-                matSort>
-                <ng-container matColumnDef="{{column}}" *ngFor="let column of ticketColumnsToDisplay">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
-                        {{column}}</th>
-                    <td mat-cell *matCellDef="let element">{{element[column]}}</td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="ticketColumnsToDisplay">
-                </tr>
-                <tr mat-row *matRowDef="let element; columns: ticketColumnsToDisplay;" class="example-element-row">
-                </tr>
-            </table> -->
             <table class="table table-hover table-borderless table-sm mt-4">
                     <thead class="text-center tab-bg-color">
                         <tr>
@@ -168,7 +161,7 @@
     <!-- ======================= -->
     <mat-card class="card border-0 mt-4">
         <div>
-            <p>Total Tickets:{{dataSource.data.length}}</p>
+            <p>Total Tickets:{{data?.content.length}}</p>
             <p style="background-color: #e1e1e1;">
                 <button class="btn btn-sm btn-cl" (click)="expand()">
                     <span>
@@ -179,8 +172,8 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3"><strong>Ticket:</strong>11177548 (Escalated 1)
-                    <br> <strong>Status:</strong>Open
+                <div class="col-md-3"><strong>Ticket:</strong>{{testData.Ticket}}<span class="text-danger">(Escalated 1)</span>
+                    <br> <strong>Status:</strong>{{testData.Status}}
                 </div>
                 <div class="col-md-4 text-end">
                     <strong>Video</strong>
@@ -214,8 +207,8 @@
     <mat-card class="mt-2" *ngIf="flag">
         <mat-tab-group mat-align-tabs="start">
             <mat-tab label="Details">
-                <div class="row mx-0 my-1" *ngIf="data?.etd && data?.etd.length">
-                    <div class="col" *ngFor="let etdList of data.etd">
+                <div class="row mx-0 my-1" *ngIf="etdDetailData && etdDetailData?.length">
+                    <div class="col" *ngFor="let etdList of etdDetailData">
                         <mat-card class="card-edit" *ngFor="let etd of etdList">
                             <ng-container *ngIf="etd.header">
                                 <mat-card-header class="header-edit" *ngFor="let p of etd.header | keyvalue:returnZero">
