@@ -37,13 +37,14 @@ export class EtdComponent implements OnInit {
     status: new UntypedFormControl(),
     search: new UntypedFormControl(),
   });
-  testData: any=[];
+  testData: any = [];
   tempData: any;
+  assignFlag: boolean=true;
   constructor(
     private searchService: SearchService,
     private etdservice: EtdService,
     private accountServ: AccountService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.etdData();
@@ -70,19 +71,31 @@ export class EtdComponent implements OnInit {
       this.filterAlert = [];
 
       for (let i = 0; i < this.tempData.content?.length; i++) {
-        let customer = this.etdValue.controls['custType'].value.toString().charAt(0);
+        let customer = this.etdValue.controls['custType'].value
+          .toString()
+          .charAt(0);
         if (
-          ((!this.etdValue.controls['search'].value) ||
-            (String(this.tempData.content[i].Ticket).toLowerCase().includes(searchTicket.search) ||
-              String(this.tempData.content[i].Account).toLowerCase().includes(searchTicket.search))) &&
-          ((!this.etdValue.controls['status'].value) ||
-            this.etdValue.controls['status'].value.includes(String(this.tempData.content[i].Status))) &&
-          ((!this.etdValue.controls['reasons'].value) ||
-            this.etdValue.controls['reasons'].value.includes(String(this.tempData.content[i].Reason))) &&
-          ((!this.etdValue.controls['custType'].value) ||
+          (!this.etdValue.controls['search'].value ||
+            String(this.tempData.content[i].Ticket)
+              .toLowerCase()
+              .includes(searchTicket.search) ||
+            String(this.tempData.content[i].Account)
+              .toLowerCase()
+              .includes(searchTicket.search)) &&
+          (!this.etdValue.controls['status'].value ||
+            this.etdValue.controls['status'].value.includes(
+              String(this.tempData.content[i].Status)
+            )) &&
+          (!this.etdValue.controls['reasons'].value ||
+            this.etdValue.controls['reasons'].value.includes(
+              String(this.tempData.content[i].Reason)
+            )) &&
+          (!this.etdValue.controls['custType'].value ||
             customer.includes(String(this.tempData.content[i]['Cust Type']))) &&
-          ((!this.etdValue.controls['managmentArea'].value) ||
-            this.etdValue.controls['managmentArea'].value.includes(String(this.tempData.content[i].City)))
+          (!this.etdValue.controls['managmentArea'].value ||
+            this.etdValue.controls['managmentArea'].value.includes(
+              String(this.tempData.content[i].City)
+            ))
         ) {
           let temp = this.tempData.content[i];
           this.filterAlert.push(temp);
@@ -122,9 +135,7 @@ export class EtdComponent implements OnInit {
         this.etddata = resp;
       },
       (err) => console.error(err),
-      () => {
-
-      }
+      () => {}
     );
   }
 
@@ -150,17 +161,22 @@ export class EtdComponent implements OnInit {
   }
 
   assign() {
-    for (let i = 0; i < this.tempData.content?.length; i++) {      
-      if (this.tempData.content[i].Ticket === this.testData.Ticket) {
-        this.data.content.splice(i,1);
-        console.log(this.data);  
+    this.assignFlag=!this.assignFlag;
+    if(this.assignFlag){
+      for (let i = 0; i < this.tempData.content?.length; i++) {
+        if (this.tempData.content[i].Ticket === this.testData.Ticket) {
+          this.data.content.splice(i, 1);
+          console.log(this.data);
+        }
       }
+  
+      this.myticketTabTableDatatest.push(this.testData);
+      this.myTicketDataSource.data = this.myticketTabTableDatatest;
+      console.log(this.myticketTabTableDatatest);
     }
-
-
-    this.myticketTabTableDatatest.push(this.testData);
-    this.myTicketDataSource.data = this.myticketTabTableDatatest;
-    console.log(this.myticketTabTableDatatest);
-
-  }
+    else if(!this.assignFlag){
+      
+    }
+    }
+    
 }

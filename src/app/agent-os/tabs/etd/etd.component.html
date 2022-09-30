@@ -197,7 +197,8 @@
                             <i class="fa pe-1">&#xf021;</i>
                             <button type="button" mat-raised-button color="success" class="me-1 mat-button-xs"
                                 (click)="assign()">
-                                Assign to Me
+                                <span *ngIf="assignFlag">Assign to Me</span>
+                                <span *ngIf="!assignFlag">Unassign</span>
                             </button>
                             <button type="button" mat-raised-button color="success" class="mat-button-xs"
                                 routerLink="work-ticket">
