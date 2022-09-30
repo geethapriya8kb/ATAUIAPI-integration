@@ -86,7 +86,6 @@ export class AgentOsMainComponent implements OnInit {
   }
 
   private setSelectedIndex(): void {
-    debugger;
     let url = this.router.url === '/' ? '/dashboard' : this.router.url;
     this.selectedIdx = this.menuItems.indexOf(
       this.menuItems.find((tab: { link: string }) => tab.link === url)
