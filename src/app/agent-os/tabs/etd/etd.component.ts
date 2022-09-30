@@ -39,7 +39,7 @@ export class EtdComponent implements OnInit {
   });
   testData: any = [];
   tempData: any;
-  assignFlag: boolean=true;
+  assignFlag: boolean = true;
   constructor(
     private searchService: SearchService,
     private etdservice: EtdService,
@@ -161,22 +161,28 @@ export class EtdComponent implements OnInit {
   }
 
   assign() {
-    this.assignFlag=!this.assignFlag;
-    if(this.assignFlag){
+    this.assignFlag = !this.assignFlag;
+    if (!this.assignFlag) {
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
           this.data.content.splice(i, 1);
-          console.log(this.data);
         }
       }
-  
+
       this.myticketTabTableDatatest.push(this.testData);
-      this.myTicketDataSource.data = this.myticketTabTableDatatest;
+     
+ 
+    } else if (this.assignFlag) {
+      for (let i = 0; i < this.tempData.content?.length; i++) {
+        if (this.myticketTabTableDatatest[i].Ticket === this.testData.Ticket) {
+          this.myticketTabTableDatatest.splice(i, 1);
+        }
+      }
+      let length=this.data.content.length;
+      console.log(length);
+      this.data.content[length-1]=this.testData;
+      console.log(this.data);
       console.log(this.myticketTabTableDatatest);
     }
-    else if(!this.assignFlag){
-      
-    }
-    }
-    
+  }
 }

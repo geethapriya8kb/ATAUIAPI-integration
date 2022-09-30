@@ -11,6 +11,16 @@ export class EtdResponse
 }
 
 export class Mytickettab {
+    Ticket: string;
+    ['SLA Call Time']: string;
+    Account: string;
+    City: string;
+    Node: string;
+    Reason: string;
+    Status: string;
+    Owner: string;
+    ['Cust Type']: string;
+    
 }
 
 export class TicketInformation {
