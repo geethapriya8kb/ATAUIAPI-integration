@@ -15,6 +15,7 @@ export class EtdComponent implements OnInit {
   flag: boolean = false;
   data: any;
   etddata: any;
+  j:any;
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
   tableDatatest: Array<TicketInformation> = [];
@@ -173,14 +174,16 @@ export class EtdComponent implements OnInit {
      
  
     } else if (this.assignFlag) {
-      for (let i = 0; i < this.tempData.content?.length; i++) {
+      for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
         if (this.myticketTabTableDatatest[i].Ticket === this.testData.Ticket) {
+          console.log("clicked");
+          this.j = this.myticketTabTableDatatest[i];
           this.myticketTabTableDatatest.splice(i, 1);
         }
+        console.log(this.j);
+        this.data.content.push(this.j);
+        
       }
-      let length=this.data.content.length;
-      console.log(length);
-      this.data.content[length-1]=this.testData;
       console.log(this.data);
       console.log(this.myticketTabTableDatatest);
     }
