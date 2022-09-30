@@ -118,7 +118,7 @@
             </mat-card>
         </mat-tab>
         <mat-tab label="My Tickets">
-            <table mat-table [dataSource]="myTicketDataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8"
+            <!-- <table mat-table [dataSource]="myTicketDataSource" multiTemplateDataRows class="mb-3 mat-elevation-z8"
                 matSort>
                 <ng-container matColumnDef="{{column}}" *ngFor="let column of ticketColumnsToDisplay">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-bold color-header">
@@ -129,8 +129,8 @@
                 </tr>
                 <tr mat-row *matRowDef="let element; columns: ticketColumnsToDisplay;" class="example-element-row">
                 </tr>
-            </table>
-            <!-- <table class="table table-hover table-borderless table-sm mt-4">
+            </table> -->
+            <table class="table table-hover table-borderless table-sm mt-4">
                     <thead class="text-center tab-bg-color">
                         <tr>
                             <th scope="col">Ticket</th>
@@ -145,20 +145,20 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
-                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
+                        <tbody *ngFor="let user of myticketTabTableDatatest| keyvalue" class="table table-bordered text-center">
                             <tr>
                                 <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">{{i.value}}</td>
                             </tr>
                         </tbody>
                     </ng-container>
                     <ng-container *ngIf="filterAlert.length">
-                        <tbody class="table table-bordered">
-                            <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
+                        <tbody *ngFor="let i of filterAlert| keyvalue:returnZero" class="table table-bordered">
+                            <tr >
                                 <td *ngFor="let item of i.value| keyvalue:returnZero"> {{item.value}}</td>
                             </tr>
                         </tbody>
                     </ng-container>
-                </table> -->
+                </table>
             <div *ngIf="myTicketDataSource.data.length === 0">
                 <p class="no-records">No Ticket found</p>
             </div>
