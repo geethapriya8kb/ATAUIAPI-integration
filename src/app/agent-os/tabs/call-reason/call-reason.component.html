@@ -557,10 +557,12 @@
 
 <!-- callreason for no relevent info -->
 <ng-container *ngIf="!accountNoFlag || data?.callReason=='noInfo' ">
+   
     <div class="text-center m-5">
         <i class="fa-solid fa-circle-info fa-4x mb-4"></i>
         <h2 class="fw-bold">Relevant Info Unavailable</h2>
         <h6>After you receive a call or select a customer's account, we'll check for any relevant info, such as an
             outage, upcoming appointment or something else, that could help with the call.</h6>
     </div>
+   
 </ng-container>

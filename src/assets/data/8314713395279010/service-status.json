@@ -1,0 +1,42 @@
+{
+  "heading": "Service Status",
+  "channel": [
+    {
+      "type": "Event Board",
+      "Video": "yes",
+      "Internet": "yes",
+      "Voice": "yes"
+    },
+    {
+      "type": "Device Status",
+      "Video": "yes",
+      "Internet": "yes",
+      "Voice": "-"
+    }
+  ],
+  "serviceDetails": [
+    {
+      "Subscribed": "yes",
+      "Speed": "TM822A",
+      "200 Mbps": "1 Gbps",
+      "Mbps": "1 Gbps"
+    },
+	{
+      "Subscribed": "yes",
+      "Speed": "DOCSIS",
+      "200 Mbps": "1 Gbps",
+      "Mbps": "1 Gbps"
+    },
+    {
+      "Subscribed": "yes",
+      "Speed": "Provisioned Speed",
+      "200 Mbps": "240 Mbps",
+      "Mbps": "2 Gbps"
+    }
+  ],
+  "modem": [
+    {
+      "Modem MAC": "B4:31:18:46:8G:23"
+    }
+  ]
+}

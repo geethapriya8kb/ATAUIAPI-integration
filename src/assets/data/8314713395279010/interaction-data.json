@@ -1,0 +1,46 @@
+{
+    "content": [
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "Verification Success",
+            "time": "Sep 16, 2022, 1:16 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Auto Pay Enrollment Failure",
+            "time": "Aug 16, 2022, 1:16 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "VERIFICATION SUCCESS",
+            "time": "Aug 16, 2022, 1:16 PM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Self Install - Equipment Setup - Activation Com",
+            "time": "Aug 16, 2022, 1:16 PM GMT+5:30"
+        },
+		{
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication - Sent Successfully",
+            "time": "Jul 16, 2022, 1:16 PM GMT+5:30"
+        },
+		{
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication - Sent Successfully",
+            "time": "Jun 16, 2022, 1:16 PM GMT+5:30"
+        },
+		{
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "One Time Payment Failure",
+            "time": "May 16, 2022, 1:16 PM GMT+5:30"
+        }
+    ]
+}
