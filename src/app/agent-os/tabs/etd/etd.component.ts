@@ -15,8 +15,10 @@ export class EtdComponent implements OnInit {
   flag: boolean = false;
   data: any;
   etddata: any;
-  etdDetailData:any;
+  etdDetailData: any;
+  etdDetail:any;
   unassignData: any;
+  
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
   tableDatatest: Array<TicketInformation> = [];
@@ -101,6 +103,7 @@ export class EtdComponent implements OnInit {
         ) {
           let temp = this.tempData.content[i];
           this.filterAlert.push(temp);
+          console.log(this.filterAlert);
         }
       }
     }
@@ -114,9 +117,9 @@ export class EtdComponent implements OnInit {
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         this.tempData = this.data;
-        this.etdDetailData= this.data.etd;
-        console.log(this.etdDetailData);
-        
+        // this.etdDetailData = this.data.etd;
+        // console.log(this.etdDetailData);
+
       },
       error: (err) => console.log(err),
       complete: () => {
@@ -163,6 +166,17 @@ export class EtdComponent implements OnInit {
   clickvalue(test: any) {
     this.testData = test;
     console.log(this.testData);
+    if (this.testData) {
+      for (let i = 0; i < this.tempData.content?.length; i++) {
+        if (this.tempData.content[i].Ticket === this.testData.Ticket) {
+          this.etdDetailData = this.tempData.content[i].etd;
+          console.log(this.etdDetailData);
+          
+        }
+      }
+      this.etdDetail=this.etdDetailData;
+      console.log(this.etdDetail);
+    }
   }
 
   assign() {
@@ -175,7 +189,7 @@ export class EtdComponent implements OnInit {
       }
 
       this.myticketTabTableDatatest.push(this.testData)
-    } 
+    }
     else if (this.assignFlag) {
       for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
         if (this.myticketTabTableDatatest[i].Ticket === this.testData.Ticket) {
