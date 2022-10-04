@@ -1,0 +1,44 @@
+{
+    "callReason": "serviceOutage",
+    "outageInfo": {
+        "Telephone Services Affected - Customers Service could be Out or Degraded": {
+            "Start Time":{
+                "value":"Today, 9:30 AM CST"
+            },
+            "Estimated Resolution":{
+                "value":"Today, 1:30 PM CST"
+            },
+           
+            "details":{
+                "detailFlag":false,
+                "Description":{
+                    "value":"CARS 011921dy - TEST"
+                },
+                "Service Affected":{                   
+                    "Voice":"fa-solid fa-phone" ,
+                    "Video": "fa-solid fa-tv",
+                    "Internet": "fa-solid fa-globe"                   
+                }
+            }
+        },
+        "All Services Affected - Customers Service could be Out or Degraded": {
+            "Start Time":{
+                "value":"January 19, 4:04 PM CST"
+            },
+            "Estimated Resolution":{
+                "value":"---"
+            },          
+            "details":{
+                "detailFlag":false,
+                "Description":{
+                    "value":"CARS 024721xm - TEST"
+                },
+                "Service Affected":{
+                    "Voice":"fa-solid fa-phone" ,
+                    "Video": "fa-solid fa-tv",
+                    "Internet": "fa-solid fa-globe" 
+                }
+            }
+        }
+    }
+}
