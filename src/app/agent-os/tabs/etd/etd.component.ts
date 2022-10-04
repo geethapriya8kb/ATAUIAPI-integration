@@ -3,7 +3,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
-import { EtdResponse, Mytickettab, TicketInformation } from './etd.response';
+import { EtdResponse,  ETDRoot,  Mytickettab, TicketInformation } from './etd.response';
 import { EtdService } from './etd.service';
 
 @Component({
@@ -13,9 +13,10 @@ import { EtdService } from './etd.service';
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
-  data: any;
+  data: ETDRoot;
   etddata: any;
-  etdDetailData:any;
+  etdDetailData: any;
+  etdDetail: any;
   unassignData: any;
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
@@ -37,7 +38,7 @@ export class EtdComponent implements OnInit {
     reasons: new UntypedFormControl(),
     managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
-    search: new UntypedFormControl(),
+    search: new UntypedFormControl()
   });
   testData: any = [];
   tempData: any;
@@ -101,6 +102,7 @@ export class EtdComponent implements OnInit {
         ) {
           let temp = this.tempData.content[i];
           this.filterAlert.push(temp);
+          console.log(this.filterAlert);
         }
       }
     }
@@ -110,25 +112,20 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName,"AgentOs").subscribe({
       next: (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data = resp;
         this.tempData = this.data;
-        this.etdDetailData= this.data.etd;
-        console.log(this.etdDetailData);
-        
       },
       error: (err) => console.log(err),
       complete: () => {
-        this.tableDatatest = this.data.content;
+        this.tableDatatest =  this.data.content.content;
         this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.etdcol;
-        this.histableDatatest = this.data.historytab;
+        this.columnsToDisplay = this.data.content.etdcol;
+        this.histableDatatest = this.data.content.historytab;
         this.hisDataSource.data = this.histableDatatest;
-        this.hisColumnsToDisplay = this.data.historycol;
-        // this.myticketTabTableDatatest.push(this.data.mytickettab);
-        // this.myTicketDataSource.data = this.myticketTabTableDatatest;
-        this.ticketColumnsToDisplay = this.data.myticketcol;
+        this.hisColumnsToDisplay = this.data.content.historycol;
+        this.ticketColumnsToDisplay = this.data.content.myticketcol;
       },
     });
   }
@@ -142,10 +139,6 @@ export class EtdComponent implements OnInit {
       (err) => console.error(err),
       () => { }
     );
-  }
-
-  returnZero() {
-    return 0;
   }
 
   etdData() {
@@ -163,6 +156,17 @@ export class EtdComponent implements OnInit {
   clickvalue(test: any) {
     this.testData = test;
     console.log(this.testData);
+    if (this.testData) {
+      for (let i = 0; i < this.tempData.content?.length; i++) {
+        if (this.tempData.content[i].Ticket === this.testData.Ticket) {
+          this.etdDetailData = this.tempData.content[i].etd;
+          console.log(this.etdDetailData);
+
+        }
+      }
+      this.etdDetail = this.etdDetailData;
+      console.log(this.etdDetail);
+    }
   }
 
   assign() {
@@ -170,20 +174,25 @@ export class EtdComponent implements OnInit {
     if (!this.assignFlag) {
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
-          this.data.content.splice(i, 1);
+          if (this.testData.Status === "OPEN") {
+            this.testData.Status = "IN PROGRESS"
+          }
+          this.data.content.content.splice(i, 1);
         }
       }
-
       this.myticketTabTableDatatest.push(this.testData)
-    } 
+    }
     else if (this.assignFlag) {
       for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
         if (this.myticketTabTableDatatest[i].Ticket === this.testData.Ticket) {
+          if (this.myticketTabTableDatatest[i].Status === "IN PROGRESS") {
+            this.myticketTabTableDatatest[i].Status = "OPEN"
+          }
           this.unassignData = this.myticketTabTableDatatest[i];
           this.myticketTabTableDatatest.splice(i, 1);
         }
       }
-      this.data.content.push(this.unassignData);
+      this.data.content.content.push(this.unassignData);
       console.log(this.data);
       console.log(this.myticketTabTableDatatest);
     }

@@ -97,22 +97,24 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
-                    
-                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
+                        <tbody *ngFor="let user of data?.content.content| keyvalue" class="table table-bordered">
                             <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
+                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)" >
                                     <ng-container *ngIf="i.key!='etd'">
                                     {{i.value}}
-                                </ng-container>
+                                    </ng-container>
                                 </td>
                             </tr>
-                   
                         </tbody>
                     </ng-container>
                     <ng-container *ngIf="filterAlert.length">
                         <tbody class="table table-bordered">
                             <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
-                                <td *ngFor="let item of i.value| keyvalue:returnZero"> {{item.value}}</td>
+                                <td *ngFor="let item of i.value| keyvalue:returnZero" (click)="clickvalue(user.value)"> 
+                                    <ng-container *ngIf="item.key!='etd'">
+                                        {{item.value}}
+                                    </ng-container>
+                                </td>
                             </tr>
                         </tbody>
                     </ng-container>
@@ -140,19 +142,27 @@
                     <ng-container *ngIf="!filterAlert.length">
                         <tbody *ngFor="let user of myticketTabTableDatatest| keyvalue" class="table table-bordered text-center">
                             <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">{{i.value}}</td>
+                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
+                                    <ng-container *ngIf="i.key!='etd'">
+                                        {{i.value}}
+                                    </ng-container>
+                                </td>
                             </tr>
                         </tbody>
                     </ng-container>
                     <ng-container *ngIf="filterAlert.length">
                         <tbody *ngFor="let i of filterAlert| keyvalue:returnZero" class="table table-bordered">
                             <tr >
-                                <td *ngFor="let item of i.value| keyvalue:returnZero"> {{item.value}}</td>
+                                <td *ngFor="let item of i.value| keyvalue:returnZero"> 
+                                    <ng-container *ngIf="item.key!='etd'">
+                                        {{item.value}}
+                                    </ng-container>
+                                </td>
                             </tr>
                         </tbody>
                     </ng-container>
                 </table>
-                <div *ngIf="myTicketDataSource.data.length === 0">
+                <div *ngIf="myticketTabTableDatatest.length === 0">
                     <p class="no-records">No Ticket found</p>
                 </div>
         </mat-tab>
