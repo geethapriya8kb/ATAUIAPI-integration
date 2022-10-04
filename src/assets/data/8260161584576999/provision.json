@@ -1,0 +1,59 @@
+{
+  "data": [
+      {
+          "Model": "SABVWFKDC",
+          "Type": "VIDEO",
+          "ServiceStatus": "Active",
+          "DeviceStatus": "Active",
+          "DeviceSignal": "no",
+          "MAC": "02:03:27:45:77",
+          "SerialNo": "SRBCLMGJ",
+          "Description": "CISCO/SA 4250HDC STB Digital HD (w/CISCO Card)",
+          "Actions": "Device hits"
+      },
+      {
+          "Model": "8640HDC",
+          "Type": "VIDEO",
+          "ServiceStatus": "Active",
+          "DeviceStatus": "Active",
+          "DeviceSignal": "yes",
+          "MAC": "01:02:03:04:05",
+          "SerialNo": "SACDMVCTR",
+          "Description": "CISCO Explorer 8640HDC DVR HD (w/CISCO Card)",
+          "Actions": "Hit all"
+      },
+      {
+          "Model": "DCX3520ED",
+          "Type": "VIDEO",
+          "ServiceStatus": "Active",
+          "DeviceStatus": "Active",
+          "DeviceSignal": "yes",
+          "MAC": "06:07:08:09:10",
+          "SerialNo": "M11625TC7385",
+          "Description": "Arris/Motorola DCX3520e DVR HD (w/Arris Card)",
+          "Actions": "Hit all"
+      },
+      {
+          "Model": "SAC2V2S",
+          "Type": "INTERNET & WIFI",
+          "ServiceStatus": "Active",
+          "DeviceStatus": "Active",
+          "DeviceSignal": "no",
+          "MAC": "F0:81:75:DD:47:F8",
+          "SerialNo": "F08175DD47F8",
+          "Description": "Spectrum Wave 2 / Wifi 6 Router",
+          "Actions": "Hit all"
+      },
+      {
+          "Model": "TM822A",
+          "Type": "VOICE",
+          "ServiceStatus": "Active",
+          "DeviceStatus": "Active",
+          "DeviceSignal": "no",
+          "MAC": "40:70:09:C6:33:22",
+          "SerialNo": "E4PBRR34T105006",
+          "Description": "Arris TM19034 eMTA",
+          "Actions": "Hit all"
+      }
+  ]
+}

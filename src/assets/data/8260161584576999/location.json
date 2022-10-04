@@ -1,0 +1,69 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8347",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1000",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "AUSTIN",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "5811 MANOR RD OFC APT 1A AUSTIN, TX 78723-3628",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "1104644239476",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "01",
+        "type": "label"
+      },
+      "Node": {
+        "value": "",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+    "email":{
+      "value":"test@gmail.com"
+    },
+    "phone":{
+      "value1":"(512) 300-0226",
+      "value2":"(512) 300-0525"
+    }
+  }
+}
