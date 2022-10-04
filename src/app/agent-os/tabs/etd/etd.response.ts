@@ -59,6 +59,6 @@ export class ETD {
 
 export class ETDRoot{
     accountId:string;
-    content:string;
+    content:EtdResponse;
     identifier:string;
 }

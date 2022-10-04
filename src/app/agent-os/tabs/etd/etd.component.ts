@@ -3,7 +3,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
-import { EtdResponse, Mytickettab, TicketInformation } from './etd.response';
+import { EtdResponse,  ETDRoot,  Mytickettab, TicketInformation } from './etd.response';
 import { EtdService } from './etd.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { EtdService } from './etd.service';
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
-  data: any;
+  data: ETDRoot;
   etddata: any;
   etdDetailData: any;
   etdDetail: any;
@@ -112,20 +112,20 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName,"AgentOs").subscribe({
       next: (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data = resp;
         this.tempData = this.data;
       },
       error: (err) => console.log(err),
       complete: () => {
-        this.tableDatatest = this.data.content;
+        this.tableDatatest =  this.data.content.content;
         this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.etdcol;
-        this.histableDatatest = this.data.historytab;
+        this.columnsToDisplay = this.data.content.etdcol;
+        this.histableDatatest = this.data.content.historytab;
         this.hisDataSource.data = this.histableDatatest;
-        this.hisColumnsToDisplay = this.data.historycol;
-        this.ticketColumnsToDisplay = this.data.myticketcol;
+        this.hisColumnsToDisplay = this.data.content.historycol;
+        this.ticketColumnsToDisplay = this.data.content.myticketcol;
       },
     });
   }
@@ -177,7 +177,7 @@ export class EtdComponent implements OnInit {
           if (this.testData.Status === "OPEN") {
             this.testData.Status = "IN PROGRESS"
           }
-          this.data.content.splice(i, 1);
+          this.data.content.content.splice(i, 1);
         }
       }
       this.myticketTabTableDatatest.push(this.testData)
@@ -192,7 +192,7 @@ export class EtdComponent implements OnInit {
           this.myticketTabTableDatatest.splice(i, 1);
         }
       }
-      this.data.content.push(this.unassignData);
+      this.data.content.content.push(this.unassignData);
       console.log(this.data);
       console.log(this.myticketTabTableDatatest);
     }

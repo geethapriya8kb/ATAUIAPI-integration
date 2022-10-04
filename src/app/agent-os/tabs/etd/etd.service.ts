@@ -16,11 +16,13 @@ export class EtdService extends BaseService {
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromAPI(id:number,identifier:string): Observable<ETDRoot> {
+  getdatafromAPI(accountId:number,identifier:string,name :string): Observable<ETDRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
+      [{ key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "name", value: name.toString()}
+    ];
       
       
       

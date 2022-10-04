@@ -97,7 +97,7 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
-                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
+                        <tbody *ngFor="let user of data?.content.content| keyvalue" class="table table-bordered">
                             <tr>
                                 <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)" >
                                     <ng-container *ngIf="i.key!='etd'">
