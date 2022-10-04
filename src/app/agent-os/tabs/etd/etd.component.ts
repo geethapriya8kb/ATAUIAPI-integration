@@ -16,9 +16,8 @@ export class EtdComponent implements OnInit {
   data: any;
   etddata: any;
   etdDetailData: any;
-  etdDetail:any;
+  etdDetail: any;
   unassignData: any;
-  
   dataSource = new MatTableDataSource<TicketInformation>();
   columnsToDisplay: Array<string> = [];
   tableDatatest: Array<TicketInformation> = [];
@@ -39,7 +38,7 @@ export class EtdComponent implements OnInit {
     reasons: new UntypedFormControl(),
     managmentArea: new UntypedFormControl(),
     status: new UntypedFormControl(),
-    search: new UntypedFormControl(),
+    search: new UntypedFormControl()
   });
   testData: any = [];
   tempData: any;
@@ -117,9 +116,6 @@ export class EtdComponent implements OnInit {
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         this.tempData = this.data;
-        // this.etdDetailData = this.data.etd;
-        // console.log(this.etdDetailData);
-
       },
       error: (err) => console.log(err),
       complete: () => {
@@ -129,8 +125,6 @@ export class EtdComponent implements OnInit {
         this.histableDatatest = this.data.historytab;
         this.hisDataSource.data = this.histableDatatest;
         this.hisColumnsToDisplay = this.data.historycol;
-        // this.myticketTabTableDatatest.push(this.data.mytickettab);
-        // this.myTicketDataSource.data = this.myticketTabTableDatatest;
         this.ticketColumnsToDisplay = this.data.myticketcol;
       },
     });
@@ -145,10 +139,6 @@ export class EtdComponent implements OnInit {
       (err) => console.error(err),
       () => { }
     );
-  }
-
-  returnZero() {
-    return 0;
   }
 
   etdData() {
@@ -171,10 +161,10 @@ export class EtdComponent implements OnInit {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
           this.etdDetailData = this.tempData.content[i].etd;
           console.log(this.etdDetailData);
-          
+
         }
       }
-      this.etdDetail=this.etdDetailData;
+      this.etdDetail = this.etdDetailData;
       console.log(this.etdDetail);
     }
   }
@@ -184,15 +174,20 @@ export class EtdComponent implements OnInit {
     if (!this.assignFlag) {
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
+          if (this.testData.Status === "OPEN") {
+            this.testData.Status = "IN PROGRESS"
+          }
           this.data.content.splice(i, 1);
         }
       }
-
       this.myticketTabTableDatatest.push(this.testData)
     }
     else if (this.assignFlag) {
       for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
         if (this.myticketTabTableDatatest[i].Ticket === this.testData.Ticket) {
+          if (this.myticketTabTableDatatest[i].Status === "IN PROGRESS") {
+            this.myticketTabTableDatatest[i].Status = "OPEN"
+          }
           this.unassignData = this.myticketTabTableDatatest[i];
           this.myticketTabTableDatatest.splice(i, 1);
         }
