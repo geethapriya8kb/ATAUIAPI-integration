@@ -1,0 +1,65 @@
+{
+  "deviceConnectivityTable": [
+      {
+          "position": "1",
+          "Type": "STB Digital High Def",
+          "EquipStatus": "Active",
+          "Model": "SABVWFKDC",
+          "LOBCapability": "tvicon",
+          "Serial": "SRBCLMGJ",
+          "MAC": "Multiple",
+          "AddedDate": "2020-03-06"
+      },
+      {
+          "position": "2",
+          "Type": "DVR High Def",
+          "EquipStatus": "Active",
+          "Model": "8640HDC",
+          "LOBCapability": "tvicon",
+          "Serial": "SACDMVCTR",
+          "MAC": "Multiple",
+          "AddedDate": "2020-03-06"
+      },
+      {
+          "position": "3",
+          "Type": "DVR MultiRoom High Def",
+          "EquipStatus": "Active",
+          "Model": "DCX3520ED",
+          "LOBCapability": "tvicon",
+          "Serial": "M11625TC7385",
+          "MAC": "Multiple",
+          "AddedDate": "2020-03-06"
+      },
+    {
+        "position": "4",
+        "Type": "Wireless Router",
+        "EquipStatus": "Active",
+        "Model": "SAC2V2S",
+        "LOBCapability": "globeicon",
+        "Serial": "F08175DD47F8",
+        "MAC": "Multiple",
+        "AddedDate": "2020-03-06"
+    },
+    {
+        "position": "5",
+        "Type": "eMTA",
+        "EquipStatus": "Active",
+        "Model": "TM822A",
+        "LOBCapability": "voiceIcon",
+        "Serial": "E4PBRR34T105006",
+        "MAC": "Multiple",
+        "AddedDate": "2020-03-06"
+    }
+  ],
+  "deviceConnectivityColumns": [
+      "Type",
+      "EquipStatus",
+      "Model",
+      "LOBCapability",
+      "Serial",
+      "MAC",
+      "AddedDate",
+      "icon"
+  ],
+  "heading": "Device Connectivity"
+}

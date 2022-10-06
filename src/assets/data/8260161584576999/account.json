@@ -4,11 +4,11 @@
   "content": {
     "Account": {
       "Salutation": {
-        "value": "MRS",
+        "value": "MR",
         "type": "label"
       },
       "Customer Name": {
-        "value": "JOSEPH SENG",
+        "value": "BOB SMITH",
         "type": "label"
       },
       "Solo Account ID": {
@@ -20,14 +20,14 @@
         "type": "label"
       },
       "Acct Type": {
-        "value": "RESIDENTIAL",
+        "value": "COMMERCIAL",
         "type": "label"
       },
       "Authorized Users": {
-        "value": "Janna Seng",
+        "value": "",
         "type": "select",
         "options": [
-          "Janna Seng"
+                  
         ]
       },
       "Responsible Party": {
@@ -43,7 +43,7 @@
         "type": "label"
       }
     },
-    "Acct: 8150180011144440": {
+    "Acct: 8245100030092203": {
       "Account Status": {
         "value": "Active",
         "type": "label"
@@ -65,7 +65,7 @@
         "type": "label"
       },
       "Connection Date": {
-        "value": "01/19/2020",
+        "value": "11/05/2018",
         "type": "label"
       },
       "Auto Pay": {
@@ -73,7 +73,7 @@
         "type": "label"
       },
       "Online Customer Portal": {
-        "value": "Registered",
+        "value": "Not Registered",
         "type": "label"
       }
     }

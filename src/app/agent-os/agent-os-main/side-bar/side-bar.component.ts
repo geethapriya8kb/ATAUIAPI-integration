@@ -203,9 +203,7 @@ export class SideBarComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `recommended-articles`;
     this.sidebarservice.getDataFromAPI(accountNumber, cardName).subscribe({
-      next: (resp) => {
-        this.articlesdata = JSON.parse(resp.content);
-    },
+      next: (resp) => (this.articlesdata = JSON.parse(resp.content)),
       error: (err) => console.error(err),
     });
   }

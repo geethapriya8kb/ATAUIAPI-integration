@@ -1,0 +1,69 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8347",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1000",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "ROCHESTER",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "730 PLEASANT VALLEY RD APT 1 OWENSBORO, KY 42303-0553",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "3576489",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "01",
+        "type": "label"
+      },
+      "Node": {
+        "value": "",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+    "email":{
+      "value":"test@gmail.com"
+    },
+    "phone":{
+      "value1":"(270) 478-4407",
+      "value2":"(270) 686-7004"
+    }
+  }
+}

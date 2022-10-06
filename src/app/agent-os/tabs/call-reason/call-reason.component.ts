@@ -80,7 +80,8 @@ export class CallReasonComponent implements OnInit {
       'aos-no-service': 'assets/images/agent-os/no-service.svg',
       'aos-self-install': 'assets/images/agent-os/self-install.svg',
       'aos-truck': 'assets/images/agent-os/truck.svg',
-      'aos-unknown': 'assets/images/agent-os/unknown-call.svg'
+      'aos-unknown': 'assets/images/agent-os/unknown-call.svg',
+      'aos-outage':'assets/images/agent-os/service-outage.svg'
     };
 
     for (const iconName of Object.keys(svgIcons)) {
@@ -128,9 +129,11 @@ export class CallReasonComponent implements OnInit {
       this.accountNoFlag = true
     }
 
-    this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({
+    this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({      
       next: (resp: CallReasonRoot) => {
+        console.log(resp);        
         this.data = JSON.parse(resp.content);
+        console.log(this.data);          
 
       },
       error: (err: any) => {

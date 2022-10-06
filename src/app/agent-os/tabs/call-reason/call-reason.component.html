@@ -1,5 +1,5 @@
-
-<ng-container *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel'||data?.callReason=='noService'||data?.callReason=='selfInstall'||data?.callReason=='payments')">
+<ng-container
+    *ngIf="accountNoFlag && (data?.callReason=='cannotConnect'||data?.callReason=='missingChannel'||data?.callReason=='noService'||data?.callReason=='selfInstall'||data?.callReason=='payments')">
     <!-- heder title part for all the section -->
     <div class="row m-1" *ngFor="let item of data.headerTitle | keyvalue">
         <ng-container *ngIf="courseName===item.key">
@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-md-8">
                     <span class="color-text-secondary fw-bold fs-6">Primary Call Reason</span>
-                    <h3 class="fw-bold" >{{i.value}}</h3>
+                    <h3 class="fw-bold">{{i.value}}</h3>
                 </div>
                 <div class="col-md-2 mt-4" *ngIf="courseName==='Payments'">
                     <button mat-raised-button color="primary" class="rounded-pill" (click)="openDialog()">Take
@@ -41,7 +41,9 @@
                                             <p class="color-dark-blue fw-bold fs-3 ">
                                                 {{data.key}}
                                                 <span>
-                                                    <a class="color-dark-blue text-decoration-none" href=""><h6>{{data.value}}</h6></a>
+                                                    <a class="color-dark-blue text-decoration-none" href="">
+                                                        <h6>{{data.value}}</h6>
+                                                    </a>
                                                 </span>
                                             </p>
                                         </span>
@@ -125,7 +127,7 @@
                     </mat-card-title>
                     <mat-card-content>
                         <table *ngFor="let i of item.value | keyvalue:returnZero">
-                            <tr class="fw-bold fs-5" >
+                            <tr class="fw-bold fs-5">
                                 <td>{{i.key}}</td>
                                 <td class="text-end">{{i.value[0].value}}</td>
                             </tr>
@@ -156,7 +158,8 @@
                         <div class="row">
                             <ng-container *ngFor="let i of item.value|keyvalue:returnZero">
                                 <div class="col-md-6" [ngClass]="{'side-border':i.key==='Recent Work Orders'}">
-                                    <p class="color-text-secondary fw-bold fs-6">{{i.key}}<span *ngIf="i.key==='Recent Work Orders'"><i
+                                    <p class="color-text-secondary fw-bold fs-6">{{i.key}}<span
+                                            *ngIf="i.key==='Recent Work Orders'"><i
                                                 class="fa-solid fa-circle-info blue-icon"></i></span></p>
                                     <p class="color-dark-blue fw-bold fs-3 ">{{i.value}}</p>
                                 </div>
@@ -290,7 +293,8 @@
                                         <div class="row">
                                             <div class="col-md-9 color-text-secondary fw-bold fs-6">{{i.key}}</div>
                                             <div class="col-md-3">
-                                                <button class="rounded-pill fw-bold" mat-raised-button color="primary" >Troubleshoot Issue</button>
+                                                <button class="rounded-pill fw-bold" mat-raised-button
+                                                    color="primary">Troubleshoot Issue</button>
                                             </div>
                                         </div>
                                         <h3 class="fw-bold">{{i.value}}</h3>
@@ -300,7 +304,8 @@
                         </mat-card-content>
                     </mat-card>
                     <div>
-                        <button class="mt-2 fw-bold fs-6" mat-stroked-button color="primary"><i class="fa-solid fa-plus m-1"></i>Troubleshoot New Issue</button>
+                        <button class="mt-2 fw-bold fs-6" mat-stroked-button color="primary"><i
+                                class="fa-solid fa-plus m-1"></i>Troubleshoot New Issue</button>
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -342,9 +347,9 @@
             </mat-card>
         </ng-container>
         <ng-container *ngIf="selfInstallFlag==='agreement'">
-            <mat-card class="m-2"> 
-                <h6 class="fw-bold">Agreements</h6>               
-                <div *ngFor="let item of data?.Agreements">                   
+            <mat-card class="m-2">
+                <h6 class="fw-bold">Agreements</h6>
+                <div *ngFor="let item of data?.Agreements">
                     <h6><span> <i class="fa-solid fa-check green-icon m-1"></i></span>{{item}}</h6>
                 </div>
                 <button class="rounded-pill" mat-flat-button color="primary">Resend Agreements</button>
@@ -353,7 +358,7 @@
         <ng-container *ngIf="selfInstallFlag==='deviceReceived'">
             <mat-card class="m-2">
                 <div *ngFor="let i of data.selfInstallContent">
-                    <h2 class="fw-bold" >Delivery Info</h2>
+                    <h2 class="fw-bold">Delivery Info</h2>
                     <h4 class="bill">Shipments for Order: {{i.order}}</h4>
                     <h5 class="fs-6 fw-lighter">Delivery Address: {{i.address}}</h5>
 
@@ -453,7 +458,8 @@
                     </button>
                 </div>
                 <div class="col-md-4">
-                    <a class="color-dark-blue text-decoration-none text-size m-2"><span><i class="fa-solid fa-pen m-1"></i></span>Update
+                    <a class="color-dark-blue text-decoration-none text-size m-2"><span><i
+                                class="fa-solid fa-pen m-1"></i></span>Update
                         Appointment Details</a>
                 </div>
             </div>
@@ -465,13 +471,13 @@
 
     </ng-container>
 
-   
 
-   
+
+
 </ng-container>
- 
+
 <!-- callreason page for unknown callreason -->
-<ng-container *ngIf="accountNoFlag && data?.callReason=='unknownCall' " >
+<ng-container *ngIf="accountNoFlag && data?.callReason=='unknownCall' ">
     <div class="card m-2 bg-blue-light rounded-3 py-2">
         <div class="row">
             <div class="col-md-1 bg-white icon mt-2 position-relative">
@@ -479,10 +485,10 @@
             </div>
             <div class="col-md-9">
                 <h1 class="text-white">
-                    <span>Unknown Call Reason</span>
+                    Unknown Call Reason
                 </h1>
-                <h6 class="small color-white fw-bold" >
-                    <span>The reason for the customer's call is unknown.</span>
+                <h6 class="small color-white fw-bold">
+                    The reason for the customer's call is unknown.
                 </h6>
             </div>
         </div>
@@ -501,8 +507,8 @@
     </div>
 </ng-container>
 
- <!--unschedule appointment callreason page  -->
- <ng-container *ngIf="accountNoFlag && data?.callReason=='unscheduleAppointment' " >
+<!--unschedule appointment callreason page  -->
+<ng-container *ngIf="accountNoFlag && data?.callReason=='unscheduleAppointment' ">
     <div class="card m-2 py-2 rounded-3 " [ngClass]="courseName==='Equipment Issues'?'bg-red-dark':'bg-blue'">
         <div class="row">
             <div class="col-md-1 bg-white icon mt-2" style="position:relative ;">
@@ -526,10 +532,10 @@
             <p class="fs-5 fw-bold mt-3">Appointment Info</p>
         </div>
         <div class="col-md-9 ">
-            <div class="d-flex justify-content-between mt-2" >               
-                    <button class="rounded-pill" mat-stroked-button color="primary">Update Dispatch</button>             
-                    <button class="rounded-pill" mat-stroked-button color="primary">Cancel Appointment</button>               
-                    <button class="rounded-pill " mat-flat-button color="primary">Reschedule Appointment</button>               
+            <div class="d-flex justify-content-between mt-2">
+                <button class="rounded-pill" mat-stroked-button color="primary">Update Dispatch</button>
+                <button class="rounded-pill" mat-stroked-button color="primary">Cancel Appointment</button>
+                <button class="rounded-pill " mat-flat-button color="primary">Reschedule Appointment</button>
             </div>
         </div>
     </div>
@@ -544,7 +550,8 @@
                 </button>
             </div>
             <div class="col-md-4">
-                <a class="color-dark-blue text-decoration-none text-size m-2"><span><i class="fa-solid fa-pen m-1"></i></span>Update
+                <a class="color-dark-blue text-decoration-none text-size m-2"><span><i
+                            class="fa-solid fa-pen m-1"></i></span>Update
                     Appointment Details</a>
             </div>
         </div>
@@ -555,14 +562,74 @@
     </mat-card>
 </ng-container>
 
+<!-- callreason page for service outage -->
+<ng-container *ngIf="accountNoFlag && data?.callReason=='serviceOutage'">
+    <div class="card m-2 bg-red-dark rounded-3 py-2">
+        <div class="row">
+            <div class="col-md-1 bg-white icon mt-2 position-relative">
+                <mat-icon class="color-red icon-position" svgIcon="aos-outage"></mat-icon>
+            </div>
+            <div class="col-md-10">
+                <h1 class="text-white">
+                    Service Outage
+                </h1>
+                <h6 class="small color-white fw-bold">
+                    Spectrum TV, Spectrum Internet and Spectrum Voice services are currently affected by an outage in
+                    the customer's area.
+                </h6>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex mx-2 mt-3 justify-content-between">
+        <h5 class="fw-bold">Outage Info</h5>
+        <button class="rounded-pill" mat-flat-button color="primary">Notify When Resolved</button>
+    </div>.
+    <ng-container *ngFor="let item of data?.outageInfo | keyvalue:returnZero">
+        <div class="card mt-2">
+            <div class="d-flex justify-content-between">
+                <h6 class="fw-bold m-2">{{item.key}}</h6>
+                <button class="border-0 bg-white"
+                    (click)="item.value.details.detailFlag=!item.value.details.detailFlag">
+                    <i *ngIf="!item.value.details.detailFlag" class="fa-solid fa-angle-down"></i>
+                    <i *ngIf="item.value.details.detailFlag" class="fa-solid fa-angle-up"></i>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-md-5 m-2" *ngFor="let i of item.value| keyvalue:returnZero">
+                    <ng-container *ngIf="i.key!='details'">
+                        <h6 class="fw-bold fs-5 color-grey">{{i.key}}</h6>
+                        <h6 class="color-dark-blue fw-bold">{{i.value.value}}</h6>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row" *ngIf="item.value.details.detailFlag">
+                <ng-container *ngFor="let data of item.value.details| keyvalue:returnZero" class="row">
+                    <ng-container [ngSwitch]="data.key">
+                        <div *ngSwitchCase="'Description'">
+                            <h6 class="fw-bold fs-5 color-grey m-2">{{data.key}}</h6>
+                            <h6 class="m-2">{{data.value.value}}</h6>
+                        </div>
+                        <div *ngSwitchCase="'Service Affected'">
+                            <h6 class="fw-bold fs-5 color-grey m-2">{{data.key}}</h6> 
+                            <div class="row" >                          
+                                <div class="col-md-1 d-flex m-2"  *ngFor="let icon of data.value| keyvalue:returnZero">
+                                   
+                                  <i [class]=icon.value></i><h6 class="ms-1">{{icon.key}}</h6></div>                                 
+                            </div>                            
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>
+
 <!-- callreason for no relevent info -->
 <ng-container *ngIf="!accountNoFlag || data?.callReason=='noInfo' ">
-   
     <div class="text-center m-5">
         <i class="fa-solid fa-circle-info fa-4x mb-4"></i>
         <h2 class="fw-bold">Relevant Info Unavailable</h2>
         <h6>After you receive a call or select a customer's account, we'll check for any relevant info, such as an
             outage, upcoming appointment or something else, that could help with the call.</h6>
     </div>
-   
 </ng-container>

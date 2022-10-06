@@ -235,18 +235,18 @@
 
 
 <!-- mobile page for eligible and ineligible customers -->
-<ng-container *ngIf="accNum=='8347100011155550'|| accNum=='8347100011133330'|| accNum=='8245123922263374' || accNum=='8429763145879632'">
+<ng-container *ngIf="data?.custType=='ineligible'||data?.custType=='eligible'">
     <div class="justify-content-center d-flex text-center ">
         <mat-card class="m-2 w-40" >       
-            <i *ngIf="accNum=='8347100011155550'|| accNum=='8245123922263374'" class="fa-solid fa-circle-check fs-1 color-green" ></i>
-            <i *ngIf="accNum=='8347100011133330'"  class="fa-solid fa-circle-xmark fs-1 color-red" ></i>
-            <p class="fw-bold fs-6">This customer is <span *ngIf="accNum=='8347100011155550'|| accNum=='8245123922263374'|| accNum=='8429763145879632'">eligible</span>  <span *ngIf="accNum=='8347100011133330'">ineligible</span>  for mobile</p>
+            <i *ngIf="data?.custType=='eligible'"   class="fa-solid fa-circle-check fs-1 color-green" ></i>
+            <i *ngIf="data?.custType=='ineligible'" class="fa-solid fa-circle-xmark fs-1 color-red" ></i>
+            <p class="fw-bold fs-6">This customer is <span *ngIf="data?.custType=='eligible'"  >eligible</span> <span  *ngIf="data?.custType=='ineligible'" >ineligible</span>  for mobile</p>
             <ng-conntainer *ngFor="let item of data.content | keyvalue:returnZero">
                 <h6 class="fw-light"> {{item.key}}</h6>
                 <div class="justify-content-center d-flex">
                 <mat-card class="w-75 bg-white-smoke ">
                     <div *ngFor="let i of item.value| keyvalue:returnZero">
-                        <p class="mx-0 text-start"  > <span><i *ngIf="i.key!='HSD Active or Pending Connect' || accNum!='8347100011133330' "  class="fa-solid fa-check fs-6 color-green" ></i><i *ngIf="i.key=='HSD Active or Pending Connect' && accNum=='8347100011133330' " class="fa-solid fa-xmark fs-6 color-red p-1"></i></span>{{i.key}}</p>
+                        <p class="mx-0 text-start"  > <span><i *ngIf="i.key!='HSD Active or Pending Connect' ||data?.custType=='eligible'"  class="fa-solid fa-check fs-6 color-green" ></i><i *ngIf="i.key=='HSD Active or Pending Connect' && data?.custType=='ineligible'" class="fa-solid fa-xmark fs-6 color-red p-1"></i></span>{{i.key}}</p>
                     </div>
                 </mat-card>
             </div>

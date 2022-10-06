@@ -457,13 +457,13 @@ export class AgentOsFlowsService {
               route: 'SMB-nodialtone',
               accountList: [
                 {
-                  type: '',
-                  account: '8260161584576990',
-                },
-                {
-                  type: 'singleline:',
+                  type: 'Singleline:',
                   account: '357648901',
                 },
+                {
+                  type: 'Multi Line',
+                  account: '8260161584576999',
+                }               
               ],
             },
             {
