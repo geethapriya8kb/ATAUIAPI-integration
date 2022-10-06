@@ -99,8 +99,9 @@
                     <ng-container *ngIf="!filterAlert.length">
                         <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
                             <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)" >
-                                    <ng-container *ngIf="i.key!='etd'">
+                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)"  (click)="user.value.flag=!user.value.flag"
+                                [ngClass]="{'row-selected-clr': user.value.flag === true}">
+                                    <ng-container *ngIf="i.key!='etd'&& i.key!='flag'">
                                     {{i.value}}
                                     </ng-container>
                                 </td>
@@ -168,7 +169,6 @@
         </mat-tab>
 
     </mat-tab-group>
-    <!-- ======================= -->
     <mat-card class="card border-0 mt-4">
         <div>
             <p>Total Tickets:{{data?.content.length}}</p>
@@ -200,7 +200,9 @@
                             <i class="fa pe-1">&#xf021;</i>
                             <button type="button" mat-raised-button color="success" class="me-1 mat-button-xs"
                                 (click)="assign()">
-                                <span *ngIf="assignFlag">Assign to Me</span>
+                                <span *ngIf="assignFlag">
+                                    <ng-container *ngIf="statusFlag">Assign to Me</ng-container>
+                                </span>
                                 <span *ngIf="!assignFlag">Unassign</span>
                             </button>
                             <button type="button" mat-raised-button color="success" class="mat-button-xs"

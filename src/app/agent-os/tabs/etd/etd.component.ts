@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { faSliders } from '@fortawesome/free-solid-svg-icons';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
 import { EtdResponse, Mytickettab, TicketInformation } from './etd.response';
@@ -43,6 +44,7 @@ export class EtdComponent implements OnInit {
   testData: any = [];
   tempData: any;
   assignFlag: boolean = true;
+  statusFlag: boolean = false;
   constructor(
     private searchService: SearchService,
     private etdservice: EtdService,
@@ -72,7 +74,6 @@ export class EtdComponent implements OnInit {
     console.log(searchTicket);
     if (searchTicket) {
       this.filterAlert = [];
-
       for (let i = 0; i < this.tempData.content?.length; i++) {
         let customer = this.etdValue.controls['custType'].value
           .toString()
@@ -149,19 +150,23 @@ export class EtdComponent implements OnInit {
     this.etdValue.reset();
   }
 
+  returnZero = () => 0;
+
   expand() {
     this.flag = !this.flag;
   }
 
   clickvalue(test: any) {
     this.testData = test;
-    console.log(this.testData);
+    if (this.testData.Status === "OPEN") {
+      console.log(this.testData.Status);
+      this.statusFlag = true;
+    }
     if (this.testData) {
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
           this.etdDetailData = this.tempData.content[i].etd;
           console.log(this.etdDetailData);
-
         }
       }
       this.etdDetail = this.etdDetailData;

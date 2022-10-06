@@ -10,6 +10,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -82,6 +83,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -154,6 +156,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -226,6 +229,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -298,6 +302,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -371,6 +376,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -444,6 +450,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -517,6 +524,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -589,6 +597,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -661,6 +670,7 @@
             "Status": "IN-PROCESS",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -733,6 +743,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -805,6 +816,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -877,6 +889,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -950,6 +963,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1023,6 +1037,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1096,6 +1111,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1169,6 +1185,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1242,6 +1259,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1315,6 +1333,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1388,6 +1407,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "R",
+            "flag":false,
             "etd": [
                 [
                     {
@@ -1449,10 +1469,7 @@
                     }
                 ]
             ]
-
         }
-
-
     ],
     "etdcol": [
         "Ticket",
