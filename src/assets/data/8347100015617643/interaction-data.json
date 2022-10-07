@@ -1,0 +1,23 @@
+{
+    "content": [
+        
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication Sent successfully",
+            "time": "Aug 3, 2022, 11:03 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication - Sent Successfully",
+            "time": "Jul 3, 2022, 11:03 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "One Time Payment Failure",
+            "time": "Jun 3, 2022, 11:03 AM GMT+5:30"
+        }
+    ]
+}
