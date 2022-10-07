@@ -36,7 +36,8 @@
                  <select *ngSwitchCase="'select'"  id="row-{{rowIndex}}-col-{{colIndex}}" formControlName="{{column.controlName}}" class="form-select">
                     <!-- <option *ngFor="let option of column.value; index as i" [value]="option[i]">{{option}}
                     </option> -->
-                    <option *ngFor="let option of column.value" [ngValue]="option">{{option}} </option>                   
+                   
+                    <option *ngFor="let option of column.value"  [ngValue]="option">{{option}} </option>                   
                   </select>
                 </div>
             </div>
