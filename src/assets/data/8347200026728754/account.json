@@ -1,0 +1,103 @@
+{
+  "orientation": "horizontal",
+  "labelAlignment": "right",
+  "content": {
+    "Account": {
+      "Salutation": {
+        "value": "MR",
+        "type": "label"
+      },
+      "Customer Name": {
+        "value": "TYLER CHRISTMAN",
+        "type": "label"
+      },
+      "Solo Account ID": {
+        "value": "435368",
+        "type": "label"
+      },
+      "National Account": {
+        "value": "",
+        "type": "label"
+      },
+      "Acct Type": {
+        "value": "RESIDENTIAL",
+        "type": "label"
+      },
+      "Authorized Users": {
+        "value": "Tammy Christman",
+        "type": "select",
+        "options": [
+          "Tammy Christman"
+        ]
+      },
+      "Responsible Party": {
+        "value": "CAREOF TEST",
+        "type": "label"
+      },
+      "Seasonal Begin Date": {
+        "value": "",
+        "type": "label"
+      },
+      "Seasonal End Date": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "Acct: 8347200026728754": {
+      "Account Status": {
+        "value": "disclt60",
+        "type": "label"
+      },
+      "Disconnect Type": {
+        "value": "",
+        "type": "label"
+      },
+      "Classification": {
+        "value": "DEFAULT",
+        "type": "label"
+      },
+      "Bulk": {
+        "value": "No",
+        "type": "label"
+      },
+      "Prorated Monthly": {
+        "value": "No",
+        "type": "label"
+      },
+      "Connection Date": {
+        "value": "06/18/2016",
+        "type": "label"
+      },
+      "Auto Pay": {
+        "value": "No",
+        "type": "label"
+      },
+      "Online Customer Portal": {
+        "value": "Registered",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "Edit Customer",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60%"
+    },
+    {
+      "label": "Edit Account Access",
+      "dialog": "EditAccountDialogComponent",
+      "width": "60%"
+    },
+    {
+      "label": "Contact Preferences",
+      "dialog": "ContactPreferencesComponent",
+      "width": "60%"
+    },
+    {
+      "label": "CIMT",
+      "dialog": "",
+      "width": "60%"
+    }
+  ]
+}

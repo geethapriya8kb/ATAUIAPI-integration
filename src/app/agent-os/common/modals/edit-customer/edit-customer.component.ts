@@ -15,6 +15,7 @@ export class EditCustomerComponent implements OnInit {
   form = new FormGroup({});
   accountNumber: string;
   temp: any;
+  dropdownValue:string;
   constructor(
     private cardDataService: CardDataService,
     public dialogRef: MatDialogRef<EditCustomerComponent>,
@@ -25,6 +26,12 @@ export class EditCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFormData();
+   
+    
+  }
+  dropValue(){
+    console.log(this.dropdownValue);
+    
   }
   getFormData() {
     this.accountNumber = this.searchService.getAccountNumber();

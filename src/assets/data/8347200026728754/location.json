@@ -1,0 +1,69 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8347",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1000",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "SPRING HILL",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "1616 ZURICH DR SPRING HILL, TN 37174-7181",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "37174000026476",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "A4 - Columbia Smcst",
+        "type": "label"
+      },
+      "Node": {
+        "value": "NIOIU2",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "CM",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+    "email":{
+      "value":"DCreekATA@charter.com"
+    },
+    "phone":{
+      "value1":"(314) 555-0101",
+      "value2":"(111) 111-1111"
+    }
+  }
+}
