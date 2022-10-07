@@ -5,7 +5,7 @@ export class CallReasonRoot {
 }
 
 export class CallReasonResponse {
-  callReason:string
+  callReason:string;
   content: Content;
   paymentHistoryTable: PaymentHistoryTable[];
   PaymentHistoryColumns: string[];
