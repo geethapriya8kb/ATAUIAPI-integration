@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { faSliders } from '@fortawesome/free-solid-svg-icons';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
 import { EtdResponse,  ETDRoot,  Mytickettab, TicketInformation } from './etd.response';
@@ -113,7 +114,7 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName,"AgentOs").subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data = resp;
         this.tempData = this.data;
