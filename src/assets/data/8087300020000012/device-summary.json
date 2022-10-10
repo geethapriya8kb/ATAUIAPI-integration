@@ -1,0 +1,100 @@
+{
+ 
+  "content": {
+    "Video": {
+      "subscription":true,
+      "data":{
+      "S TV SELECT":"$79.99",
+      "S BASIC":"$0.00",
+      "S EXPAND":"$0.00",
+      "S VOD":"$0.00",
+      "S BRDCSTSVC":"$21.00",
+      "Hd Receiver":"$9.99",
+      "Interact Srv":"$0.00"
+      }
+    },
+    "Internet": {
+      "subscription":false,
+      "data":[ "No Voice Service","Sales Opportunity","Make an Offer or Transfer to Inbound Sales"]
+    },
+    "Voice": {
+      "subscription":true,
+      "data":{
+        "S Telphnline": "$6.66",
+        "S Telephone": "$0.00",
+        "Stelunldintr": "$2.08",
+        "Steunldinta": "$0.00",
+        "S Tel 18Feat": "$0.00",
+        "Stelmtalease": "$1.25",
+        "Stelnoblkint": "$0.00",
+        "Steldirlstng": "$0.00"
+        }
+    }
+  },
+  
+  "icons": {
+    "Video":{
+      "subscription":true,
+      "path": "../../assets/images/blue-check.png"
+    },
+    "Internet": {
+      "subscription":false,
+      "path": "../../assets/images/orange-computer.png"
+    },
+    "Voice": {
+      "subscription":true,
+      "path": "../../assets/images/purple-receiver.png"
+    }
+  },
+  "eventHistoryTable": [
+    {
+    "LOB":"../../assets/images/tv-blue.png",
+    "Type":"No Service were found for this account",
+    "Service Status":"",
+    "Device Status":"",
+    "Signal/Details":"",
+    "Model":"",
+    "MAC":"",
+    "Serial No":"",
+    "Description":"",
+    "visible":"false",
+    "Actions":""
+    },
+    {"LOB":"../../assets/images/computer-gold.png",
+      "Type":"No Service were found for this account",
+      "Service Status":"",
+      "Device Status":"",
+      "Signal/Details":"",
+      "Model":"",
+      "MAC":"",
+      "Serial No":"",
+      "Description":"",
+      "visible":"false",
+      "Actions":""
+      },
+      {"LOB":"../../assets/images/phone-purple.png",
+        "Type":"No Service were found for this account",
+        "Service Status":"",
+        "Device Status":"",
+        "Signal/Details":"",
+        "Model":"",
+        "MAC":"",
+        "Serial No":"",
+        "Description":"",
+        "visible":"false",
+        "Actions":""
+        }
+  ],
+  "eventHistoryColumns": [
+    "LOB",
+    "Type",
+    "Service Status",
+    "Device Status",
+    "Signal/Details",
+    "Model",
+    "MAC",
+    "Serial No",
+    "Description",
+    "Actions"
+  ]
+}

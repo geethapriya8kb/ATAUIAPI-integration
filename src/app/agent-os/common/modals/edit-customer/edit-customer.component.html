@@ -33,11 +33,8 @@
             <div class="col-md-7" [ngSwitch]="column.type">               
                 <input *ngSwitchCase="'text'" [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
                  formControlName="{{column.controlName}}">
-                 <select *ngSwitchCase="'select'"  id="row-{{rowIndex}}-col-{{colIndex}}" formControlName="{{column.controlName}}" class="form-select">
-                    <!-- <option *ngFor="let option of column.value; index as i" [value]="option[i]">{{option}}
-                    </option> -->
-                   
-                    <option *ngFor="let option of column.value"  [ngValue]="option">{{option}} </option>                   
+                 <select *ngSwitchCase="'select'"   id="row-{{rowIndex}}-col-{{colIndex}}" formControlName="{{column.controlName}}" class="form-select">              
+                    <option *ngFor="let option of column.value" selected [ngValue]="option">{{option}} </option>                   
                   </select>
                 </div>
             </div>
@@ -47,7 +44,7 @@
 </ng-container>
 <div class="row mt-3">
     <div class="col-md-1">
-        <button class="rounded-pill " mat-raised-button color="primary" (click)="submit()">Update</button>
+        <button class="rounded-pill " mat-raised-button color="primary" (click)="submit();">Update</button>
     </div>
     <div class="col-md-10">
         <button  class="rounded-pill " mat-raised-button color="primary">Reset</button>
