@@ -97,12 +97,13 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
-                        <tbody *ngFor="let user of data?.content.content| keyvalue" class="table table-bordered">
+                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
                             <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)"  (click)="user.value.flag=!user.value.flag"
-                                [ngClass]="{'row-selected-clr': user.value.flag === true}">
+                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)"
+                                    (click)="user.value.flag=!user.value.flag"
+                                    [ngClass]="{'row-selected-clr': user.value.flag === true}">
                                     <ng-container *ngIf="i.key!='etd'&& i.key!='flag'">
-                                    {{i.value}}
+                                        {{i.value}}
                                     </ng-container>
                                 </td>
                             </tr>
@@ -111,7 +112,7 @@
                     <ng-container *ngIf="filterAlert.length">
                         <tbody class="table table-bordered">
                             <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
-                                <td *ngFor="let item of i.value| keyvalue:returnZero" (click)="clickvalue(user.value)"> 
+                                <td *ngFor="let item of i.value| keyvalue:returnZero" (click)="clickvalue(user.value)">
                                     <ng-container *ngIf="item.key!='etd'">
                                         {{item.value}}
                                     </ng-container>
@@ -127,45 +128,46 @@
         </mat-tab>
         <mat-tab label="My Tickets">
             <table class="table table-hover table-borderless table-sm mt-4">
-                    <thead class="text-center tab-bg-color">
+                <thead class="text-center tab-bg-color">
+                    <tr>
+                        <th scope="col">Ticket</th>
+                        <th scope="col">SLA Call Time</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Node</th>
+                        <th scope="col">Reason</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Cust Type</th>
+                    </tr>
+                </thead>
+                <ng-container *ngIf="!filterAlert.length">
+                    <tbody *ngFor="let user of myticketTabTableDatatest| keyvalue"
+                        class="table table-bordered text-center">
                         <tr>
-                            <th scope="col">Ticket</th>
-                            <th scope="col">SLA Call Time</th>
-                            <th scope="col">Account</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Node</th>
-                            <th scope="col">Reason</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Owner</th>
-                            <th scope="col">Cust Type</th>
+                            <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
+                                <ng-container *ngIf="i.key!='etd'">
+                                    {{i.value}}
+                                </ng-container>
+                            </td>
                         </tr>
-                    </thead>
-                    <ng-container *ngIf="!filterAlert.length">
-                        <tbody *ngFor="let user of myticketTabTableDatatest| keyvalue" class="table table-bordered text-center">
-                            <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
-                                    <ng-container *ngIf="i.key!='etd'">
-                                        {{i.value}}
-                                    </ng-container>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </ng-container>
-                    <ng-container *ngIf="filterAlert.length">
-                        <tbody *ngFor="let i of filterAlert| keyvalue:returnZero" class="table table-bordered">
-                            <tr >
-                                <td *ngFor="let item of i.value| keyvalue:returnZero"> 
-                                    <ng-container *ngIf="item.key!='etd'">
-                                        {{item.value}}
-                                    </ng-container>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </ng-container>
-                </table>
-                <div *ngIf="myticketTabTableDatatest.length === 0">
-                    <p class="no-records">No Ticket found</p>
-                </div>
+                    </tbody>
+                </ng-container>
+                <ng-container *ngIf="filterAlert.length">
+                    <tbody *ngFor="let i of filterAlert| keyvalue:returnZero" class="table table-bordered">
+                        <tr>
+                            <td *ngFor="let item of i.value| keyvalue:returnZero">
+                                <ng-container *ngIf="item.key!='etd'">
+                                    {{item.value}}
+                                </ng-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </ng-container>
+            </table>
+            <div *ngIf="myticketTabTableDatatest.length === 0">
+                <p class="no-records">No Ticket found</p>
+            </div>
         </mat-tab>
 
     </mat-tab-group>
@@ -182,7 +184,8 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3"><strong>Ticket:</strong>{{testData.Ticket}}<span class="text-danger">(Escalated 1)</span>
+                <div class="col-md-3"><strong>Ticket:</strong>{{testData.Ticket}}<span class="text-danger">(Escalated
+                        1)</span>
                     <br> <strong>Status:</strong>{{testData.Status}}
                 </div>
                 <div class="col-md-4 text-end">
@@ -206,7 +209,7 @@
                                 <span *ngIf="!assignFlag">Unassign</span>
                             </button>
                             <button type="button" mat-raised-button color="success" class="mat-button-xs"
-                                routerLink="work-ticket">
+                                routerLink="work-ticket" (click)="sendTicket()">
                                 Work Ticket
                             </button>
                         </div>
