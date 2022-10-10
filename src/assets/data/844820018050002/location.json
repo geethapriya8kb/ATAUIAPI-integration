@@ -1,0 +1,77 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8448",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "2000",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "SNFN PACM",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "9303 Roslyndale Ave Arleta, CA 91331-5552",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "91331555200012",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "90 - E. Valley",
+        "type": "label"
+      },
+      "Node": {
+        "value": "AC171Z",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "GH",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+
+    "email":{
+  
+      "value":"Marty1955@charter.com"
+  
+    },
+  
+    "phone":{
+  
+      "value1":"(818) 995-1267",
+  
+      "value2":"(818) 232-5876"
+  
+    }
+  
+  }
+}

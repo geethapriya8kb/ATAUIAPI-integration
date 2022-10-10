@@ -25,20 +25,20 @@ export class AgentOsFlowsService {
               route: 'payments',
               accountList: [
                 {
-                  type: 'Standard Payment',
+                  type: 'Standard Payment-',
                   account: '8429763145879641',
                 },
                 {
-                  type: 'Service Interrupted',
-                  account: '8314713395279210',
-                },
-                {
-                  type: 'Payment Due Recently',
+                  type: 'Payment Due Recently-',
                   account: '8314713395279300',
                 },
                 {
-                  type: 'Payment Past Due',
+                  type: 'Payment Past Due-',
                   account: '8314713395279315',
+                },
+                {
+                  type: 'Service Interrupted-',
+                  account: '8314713395279210',
                 },
               ],
             },
@@ -78,7 +78,7 @@ export class AgentOsFlowsService {
               route: 'missing-channels',
               accountList: [
                 {
-                  type: '',
+                  type: 'Missing Channels',
                   account: '8245100030050010',
                 },
               ],
@@ -90,7 +90,7 @@ export class AgentOsFlowsService {
               route: 'no-service',
               accountList: [
                 {
-                  type: '',
+                  type: 'No Service',
                   account: '8245100030051212',
                 },
               ],
@@ -111,6 +111,16 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-user-plus']],
               color: 'fa-icon-ordering',
               route: 'new-connect',
+              accountList: [
+                {
+                  type: 'CSG Residential-',
+                  account: '63141555110000',
+                },
+                {
+                  type: 'CSG Residential (FTTP)-',
+                  account: '63141666140000',
+                },
+              ],
             },
             {
               name: 'Reschedule Or Cancel Order',
@@ -119,10 +129,12 @@ export class AgentOsFlowsService {
               route: 'reschedule-cancel',
               accountList: [
                 {
-                  account: '8245123922263374',
+                   type: 'CSG Residential-',
+                  account: '8429763145879632',
                 },
                 {
-                  account: '8429763145879632',
+                  type: 'CSG Residential (FTTP)-',
+                  account: '8245123922263374',
                 },
               ],
             },
@@ -131,19 +143,22 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-user-cog']],
               color: 'fa-icon-ordering',
               route: 'cos',
-
               accountList: [
                 {
-                  account: '8429763145879630',
+                  type: 'CSG-',
+                  account: '8429763145879631',
                 },
                 {
-                  account: '8429874256980740',
+                  type: 'CSG (FTTP)-',
+                  account: '8429874256980742',
                 },
                 {
-                  account: '8345780010000010',
+                  type: 'Single Play TV Select-',
+                  account: '8345780010000013',
                 },
                 {
-                  account: '8087300020000010',
+                  type: 'Single Play HSD',
+                  account: '8087300020000012',
                 },
               ],
             },
@@ -152,48 +167,152 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-user-cog']],
               color: 'fa-icon-ordering',
               route: 'cos-retention',
+              accountList: [               
+                {
+                  type: 'Single Play HSD',
+                  account: '844820018050002',
+                },
+                {
+                  type: 'Double Play',
+                  account: '834578048050001',
+                },
+                {
+                  type: 'Triple Play',
+                  account: '8203110010828312',
+                }
+              ]
             },
             {
               name: 'Modify Pending Order',
               icons: [['fas fa-3x fa-user-edit']],
               color: 'fa-icon-ordering',
               route: 'edit-order',
+              accountList: [
+                {
+                  type: 'CSG Residential-',
+                  account: '8429763145879633',
+                },
+                {
+                  type: 'CSG Residential (FTTP)-',
+                  account: '8381190010466235',
+                },
+                {
+                  type: 'Internet Only-',
+                  account: '8448410820011340',
+                }
+              ]
             },
             {
               name: 'Move/Transfer',
               icons: [['fas fa-3x fa-map-marked-alt']],
               color: 'fa-icon-ordering',
               route: 'move-transfer',
+              accountList: [
+                {
+                  type: '',
+                  account: '8245100020098880',
+                },
+              ]
             },
             {
               name: 'Restart',
               icons: [['fas fa-3x fa-redo']],
               color: 'fa-icon-ordering',
               route: 'restart',
+              accountList: [
+                {
+                  type: 'CSG Residential-',
+                  account: '8347100015617643',
+                },
+                {
+                  type: 'CSG Residential (FTTP)-',
+                  account: '8347200026728754',
+                },
+              ]
             },
             {
               name: 'Restart (Unreturned Equiment)',
               icons: [['fas fa-3x fa-redo']],
               color: 'fa-icon-ordering',
               route: 'restart-equip',
+              accountList: [
+                {
+                  type: 'Unreturned Equipment',
+                  account: '8260130590215055',
+                },
+              ]
             },
             {
               name: 'Disconnect',
               icons: [['fas fa-3x fa-user-slash']],
               color: 'fa-icon-ordering',
               route: 'disconnect',
+              accountList: [
+                {
+                  type: 'CSG Residential-',
+                  account: '8429764054960542',
+                },
+                {
+                  type: 'CSG Residential (FTTP)-',
+                  account: '8429764065071653',
+                },
+              ]
             },
             {
               name: 'Seasonal Suspend',
               icons: [['fas fa-3x fa-calendar-day']],
               color: 'fa-icon-ordering',
               route: 'suspend',
+              accountList: [
+                {
+                  type: '',
+                  account: '8429855963148393',
+                },
+              ]
             },
             {
               name: 'Bulk Tenant(Tenant Responsible Equipment)',
               icons: [['fas fa-3x fa-building']],
               color: 'fa-icon-ordering',
               route: 'bulk',
+              accountList: [
+                {
+                  type: 'Bulk Supported (Location Id)-',
+                  account: '65079686500014',
+                },
+                {
+                  type: 'Bulk Unsupported (Location Id)-',
+                  account: '65079687800015',
+                },
+                {
+                  type: 'Bulk Modify Pending Order-',
+                  account: '8750763145879632',
+                },
+                {
+                  type: 'Bulk Reschedule Pending Order-',
+                  account: '8750763145980633',
+                },
+                {
+                  type: 'Bulk Cancel Pending Order-',
+                  account: '8750763145980744',
+                },
+                {
+                  type: 'Bulk Disconnect Account-',
+                  account: '8750763145991855',
+                },
+                {
+                  type: 'Bulk Change of Service Account-',
+                  account: '8429874256989897',
+                },
+                {
+                  type: 'Bulk COS-Downgrade-',
+                  account: '815010230050003',
+                },
+                {
+                  type: 'Bulk COS-Upgrade-',
+                  account: '8429874256989827',
+                },
+              ]
             },
           ],
         },
@@ -213,10 +332,12 @@ export class AgentOsFlowsService {
               route: 'take-payment',
               accountList: [
                 {
-                  account: '8314713395279010',
+                  type: 'Account in Good Standing:',
+                  account: '8429763145879640',
                 },
                 {
-                  account: '8429763145879640',
+                  type: 'Delinquent Account:',
+                  account: '8314713395279010',
                 },
               ],
             },
@@ -238,9 +359,11 @@ export class AgentOsFlowsService {
               route: 'credit-calc',
               accountList: [
                 {
+                  type: 'Credit Calculator:',
                   account: '8429763145879660',
                 },
                 {
+                  type: 'Credit Calculator- Courtesy:',
                   account: '8150180011144440',
                 },
               ],
@@ -249,26 +372,8 @@ export class AgentOsFlowsService {
               name: 'Call Reason',
               icons: [['fas fa-3x fa-phone-volume']],
               color: 'fa-icon-billing',
-              route: 'call-reason',
-
-              accountList: [
-                {
-                  type: 'One Click Credit',
-                  account: '8345780121551174',
-                },
-                {
-                  type: 'First Bill:',
-                  account: '8345780013860741',
-                },
-                {
-                  type: 'Bill Increase:',
-                  account: '8245123940306051',
-                },
-                {
-                  type: 'Take Payment Failure:',
-                  account: '8245100990063956',
-                },
-              ],
+              route: '',             
+              
             },
           ],
         },
@@ -310,8 +415,20 @@ export class AgentOsFlowsService {
               route: 'missing-channels',
               accountList: [
                 {
-                  type: 'CSG',
+                  type: 'ICOMS-',
+                  account: '210052777',
+                },
+                {
+                  type: 'CSG-',
+                  account: '8347100011133330',
+                },
+                {
+                  type: 'CSG (Spectrum Guide)- SCI-',
                   account: '8347100011144440',
+                },
+                {
+                  type: 'ICOMS-',
+                  account: '210052777',
                 },
               ],
             },
@@ -338,10 +455,12 @@ export class AgentOsFlowsService {
               route: 'remote-control-issues',
               accountList: [
                 {
-                  account: '8347100011133330',
+                  type: 'ICOMS',
+                  account: '210052777',
                 },
                 {
-                  account: '210052777',
+                  type: 'CSG',
+                  account: '8347100011133330',
                 },
               ],
             },
@@ -350,6 +469,13 @@ export class AgentOsFlowsService {
               icons: [['fas fa-3x fa-tv']],
               color: 'fa-icon-call-reason',
               route: 'equipment-issues',
+              accountList: [
+                {
+                  type: 'CSG',
+                  account: '8347100011166660',
+                },
+              
+              ],
             },
             {
               name: 'Internet Issues',
@@ -358,6 +484,7 @@ export class AgentOsFlowsService {
               route: 'internet-issues',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8347100011133330',
                 },
               ],
@@ -369,6 +496,7 @@ export class AgentOsFlowsService {
               route: 'guide-issues',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8150180011144440',
                 },
               ],
@@ -380,6 +508,7 @@ export class AgentOsFlowsService {
               route: 'cable-box-error',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8150180011144440',
                 },
               ],
@@ -391,6 +520,7 @@ export class AgentOsFlowsService {
               route: 'features',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8150180011144440',
                 },
               ],
@@ -402,7 +532,8 @@ export class AgentOsFlowsService {
               route: 'dvr-functionality',
               accountList: [
                 {
-                  account: '8150180011144440',
+                  type: 'CSG',
+                  account: '8347100011144440',
                 },
               ],
             },
@@ -413,6 +544,7 @@ export class AgentOsFlowsService {
               route: 'picture-quality',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8347100011177770',
                 },
               ],
@@ -424,6 +556,7 @@ export class AgentOsFlowsService {
               route: 'audio-issues',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8150180011144440',
                 },
               ],
@@ -435,6 +568,7 @@ export class AgentOsFlowsService {
               route: 'all-lob-out',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8150180011144440',
                 },
               ],
@@ -446,6 +580,7 @@ export class AgentOsFlowsService {
               route: 'work-management',
               accountList: [
                 {
+                  type: 'CSG',
                   account: '8347100011155550',
                 },
               ],
@@ -457,7 +592,7 @@ export class AgentOsFlowsService {
               route: 'SMB-nodialtone',
               accountList: [
                 {
-                  type: 'Singleline:',
+                  type: 'Single Line:',
                   account: '357648901',
                 },
                 {

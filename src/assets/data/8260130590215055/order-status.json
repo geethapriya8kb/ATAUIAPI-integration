@@ -1,0 +1,100 @@
+{
+  "orderStatusTable": [
+    {
+      "position": "1",
+      "Order": "1200014358921010",
+      "OrderType": "NewConnect",
+      "Status": "Closed",
+      "Reason": "NA",
+      "expand": {
+        "Job #": "000000",
+        "Job Description": "NC HSD",
+        "Job Comments": "N/A",
+        "Job Class": "INSHSD",
+        "Resolution": "001",
+        "Resolution Date and Time": "2022-10-03 16:25",
+        "Job Type": "New Connect Or Install",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
+        "Duration": "145 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2022-10-03"
+      }
+    },
+	{
+      "position": "2",
+      "Order": "1200014599101018",
+      "OrderType": "N/A",
+      "Status": "Cancelled",
+      "Reason": "NA",
+      "expand": {
+        "Job #": "000000",
+        "Job Description": "NC HSD",
+        "Job Comments": "N/A",
+        "Job Class": "INSHSD",
+        "Resolution": "001",
+        "Resolution Date and Time": "2022-10-03 16:25",
+        "Job Type": "New Connect Or Install",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
+        "Duration": "145 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2022-10-03"
+      }
+    },
+	{
+      "position": "3",
+      "Order": "1200016521961013",
+      "OrderType": "Disconnect",
+      "Status": "Closed",
+      "Reason": "NA",
+      "expand": {
+        "Job #": "000000",
+        "Job Description": "NC HSD",
+        "Job Comments": "N/A",
+        "Job Class": "INSHSD",
+        "Resolution": "001",
+        "Resolution Date and Time": "2022-10-03 16:25",
+        "Job Type": "New Connect Or Install",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
+        "Duration": "145 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2022-10-03"
+      }
+    }
+  ],
+  "orderStatusColumns": [
+    "Order",
+    "OrderType",
+    "Status",
+    "Reason"
+  ],
+  "statusLabel": "Order Status",
+  "status": [
+    "ALL",
+    "OPEN",
+    "COMPLETED",
+    "CANCELLED"
+  ],
+  "typeLabel": "Order Types",
+  "type": [
+    "ALL",
+    "PRODUCT",
+    "SPECIAL REQUEST",
+    "TROUBLE CALL"
+  ],
+  "heading": "Orders",
+  "tasks": [
+    {
+      "label": "Unified Case Management",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "View Shipping Details",
+      "dialog": "EditAccountDialogComponent",
+      "width": "60"
+    }
+  ]
+}

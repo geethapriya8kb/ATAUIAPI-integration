@@ -22,7 +22,7 @@
 </div>
 <h5 class="fw-bold mt-3 ms-3 mb-5">Contact Information</h5>
 <ng-container *ngIf="data?.contactRows && data?.contactRows.length">  
-    <form [formGroup]="form">
+    <form [formGroup]="form"  >
     <div class="row col-md-12 fs-13 ms-2" *ngFor="let row of data?.contactRows; let rowIndex = index;">
         <div *ngFor="let column of row.columns; let colIndex = index;" class="{{column.class}}">
             <div class="row mt-1" >
@@ -30,9 +30,12 @@
                 <label  for="row-{{rowIndex}}-col-{{colIndex}}" class="form-label fw-bold float-end">{{column.label}}</label>
                 <h5 *ngIf="column.label==='Email'" class="fw-bold mt-5 mb-4">Address Information</h5>
             </div>           
-            <div class="col-md-7">               
-                <input [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
+            <div class="col-md-7" [ngSwitch]="column.type">               
+                <input *ngSwitchCase="'text'" [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
                  formControlName="{{column.controlName}}">
+                 <select *ngSwitchCase="'select'"   id="row-{{rowIndex}}-col-{{colIndex}}" formControlName="{{column.controlName}}" class="form-select">              
+                    <option *ngFor="let option of column.value" selected [ngValue]="option">{{option}} </option>                   
+                  </select>
                 </div>
             </div>
         </div>
@@ -41,7 +44,7 @@
 </ng-container>
 <div class="row mt-3">
     <div class="col-md-1">
-        <button class="rounded-pill " mat-raised-button color="primary" (click)="submit()">Update</button>
+        <button class="rounded-pill " mat-raised-button color="primary" (click)="submit();">Update</button>
     </div>
     <div class="col-md-10">
         <button  class="rounded-pill " mat-raised-button color="primary">Reset</button>

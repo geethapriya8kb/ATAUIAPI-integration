@@ -1,0 +1,37 @@
+{
+  "content": [
+    {
+      "icon": "cancel",
+      "Event": "Event:",
+      "desc": "All Services Affected - Customers Service could be Out or Degraded TEL HSD VID",
+      "color": "red",
+      "icon1": "phone_forwarded"
+    },
+    {
+      "icon": "cancel",
+      "Event": "Event: ",
+      "desc": "Testing National TEL HSD VID",
+      "color": "red",
+      "icon1": "phone_forwarded"
+    },
+    {
+      "icon": "info",
+      "Event": "Event: ",
+      "desc": "L-TWC - STVA - Entitlements not updating",
+      "color": "blue"
+    },
+    {
+      "icon": "info",
+      "Event": "Event: ",
+      "desc": "Lincoln, NE - Hubs 0 and 4 - STVA - Unable to login in on Roku / OOH on other devices- No further excalations are required for this issue including scheduling trouble calls, ETDs, SCI tickets or CET escalations.",
+      "color": "blue"
+    },
+    {
+      "icon": "report",
+      "Event": "Event: ",
+      "desc": "Informational Event- Attention Reps: Please do no roll trucks or create ETDs. Be aware that customers serviced in the Spectrum Enterprice may be experiencing 'Forg",
+      "color": "yellow"
+    }
+  ],
+  "accountNo": "8245100030092203"
+}

@@ -1,0 +1,36 @@
+{
+  "heading": "Service Status",
+  "channel": [
+    {
+      "type": "Event Board",
+      "Video": "yes",
+      "Internet": "yes",
+      "Voice": "yes"
+    },
+    {
+      "type": "Device Status",
+      "Video": "no",
+      "Internet": "no",
+      "Voice": "no"
+    }
+  ],
+  "serviceDetails": [
+    {
+      "Subscribed": "yes",
+      "Speed": "TC8715D",
+      "200 Mbps": "1 Gbps",
+      "Mbps": "1 Gbps"
+    },
+    {
+      "Subscribed": "yes",
+      "Speed": "Provisioned Speed",
+      "200 Mbps": "1 Gbps",
+      "Mbps": "1 Gbps"
+    }
+  ],
+  "modem": [
+    {
+      "Modem MAC": "10:20:30:40:50:60"
+    }
+  ]
+}
