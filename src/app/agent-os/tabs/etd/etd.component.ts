@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
 import { EtdResponse,  ETDRoot,  Mytickettab, TicketInformation } from './etd.response';
@@ -12,7 +13,6 @@ import { EtdService } from './etd.service';
   styleUrls: ['./etd.component.scss'],
 })
 export class EtdComponent implements OnInit {
-  
   flag: boolean = false;
   data: ETDRoot;
   etddata: any;
