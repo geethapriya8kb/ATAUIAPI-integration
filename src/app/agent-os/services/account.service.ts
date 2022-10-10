@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -9,8 +9,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AccountService {
-
-  constructor(private http: HttpClient) { }
+  ticketId = new BehaviorSubject("");
+constructor(private http: HttpClient) { 
+  
+}
 
 getAccountData(url: any) {
   return this.http.get(url);
@@ -24,7 +26,9 @@ getsidebardata(url: any){
 return this.http.get(url);
 }
 
-getverifydata(url: any){
+getverifydata(url: any) {
   return this.http.get(url);
-  }
+}
+
+
 }

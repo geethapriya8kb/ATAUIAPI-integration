@@ -10,7 +10,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -71,7 +71,22 @@
                         }
                     }
                 ]
-            ]
+            ],
+            "etdWork": {
+                "info": {
+                    "Contact": "STEVE BOGERS",
+                    "Phone 1": "(314)555-5555",
+                    "Phone 2": "",
+                    "Node": "",
+                    "City/Status": "BUNNELL, FL",
+                    "Region": "Florida",
+                    "Mgmt Area": "",
+                    "SLA Call Time": "9/9/22 9:30 AM",
+                    "Account": "002044872555",
+                    "Avail same day": "",
+                    "Reason": "Must Do: Hazardous/Safety Situation"
+                }
+            }
         },
         {
             "Ticket": "11177548",
@@ -83,7 +98,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -156,7 +171,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -229,7 +244,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -302,7 +317,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -364,7 +379,6 @@
                     }
                 ]
             ]
-
         },
         {
             "Ticket": "11177941",
@@ -376,7 +390,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -439,7 +453,6 @@
                 ]
             ]
         },
-
         {
             "Ticket": "11177547",
             "SLA Call Time": "9/9/22 9:30 AM",
@@ -450,7 +463,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -512,7 +525,6 @@
                     }
                 ]
             ]
-
         },
         {
             "Ticket": "11177564",
@@ -524,7 +536,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -597,7 +609,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -670,7 +682,7 @@
             "Status": "IN-PROCESS",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -743,7 +755,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -816,7 +828,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -889,7 +901,7 @@
             "Status": "OPEN",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -951,7 +963,6 @@
                     }
                 ]
             ]
-
         },
         {
             "Ticket": "11188358",
@@ -963,7 +974,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -1025,7 +1036,6 @@
                     }
                 ]
             ]
-
         },
         {
             "Ticket": "11177876",
@@ -1037,7 +1047,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -1099,8 +1109,7 @@
                     }
                 ]
             ]
-
-        }, 
+        },
         {
             "Ticket": "11188357",
             "SLA Call Time": "9/9/22 9:30 AM",
@@ -1111,7 +1120,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -1173,8 +1182,7 @@
                     }
                 ]
             ]
-
-        }, 
+        },
         {
             "Ticket": "11188389",
             "SLA Call Time": "9/9/22 9:30 AM",
@@ -1185,7 +1193,7 @@
             "Status": "CLOSED",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -1247,8 +1255,7 @@
                     }
                 ]
             ]
-
-        }, 
+        },
         {
             "Ticket": "11177574",
             "SLA Call Time": "9/9/22 9:30 AM",
@@ -1259,7 +1266,7 @@
             "Status": "OUTAGE",
             "Owner": "",
             "Cust Type": "C",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -1321,8 +1328,7 @@
                     }
                 ]
             ]
-
-        }, 
+        },
         {
             "Ticket": "11188367",
             "SLA Call Time": "9/9/22 9:30 AM",
@@ -1333,7 +1339,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
@@ -1395,7 +1401,6 @@
                     }
                 ]
             ]
-
         },
         {
             "Ticket": "11177544",
@@ -1407,7 +1412,7 @@
             "Status": "IN-PROGRESS",
             "Owner": "",
             "Cust Type": "R",
-            "flag":false,
+            "flag": false,
             "etd": [
                 [
                     {
