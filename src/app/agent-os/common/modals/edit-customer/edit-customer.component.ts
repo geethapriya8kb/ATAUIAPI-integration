@@ -26,6 +26,8 @@ export class EditCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFormData();
+   console.log(this.form.value);
+   
    
     
   }
@@ -34,6 +36,7 @@ export class EditCustomerComponent implements OnInit {
     
   }
   getFormData() {
+    
     this.accountNumber = this.searchService.getAccountNumber();
     const customer = this.storeService.customer;
     if (customer) {

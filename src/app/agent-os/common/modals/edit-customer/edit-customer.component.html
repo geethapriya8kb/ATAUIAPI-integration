@@ -34,8 +34,9 @@
                 <input *ngSwitchCase="'text'" [type]="column.type" class="col-md-3 form-control" id="row-{{rowIndex}}-col-{{colIndex}}"
                  formControlName="{{column.controlName}}">
                  <select *ngSwitchCase="'select'"   id="row-{{rowIndex}}-col-{{colIndex}}" formControlName="{{column.controlName}}" class="form-select">              
-                    <option *ngFor="let option of column.value" selected [ngValue]="option">{{option}} </option>                   
-                  </select>
+                    <option *ngFor="let option of column.option"  [ngValue]="option">{{option}} </option>
+                                     
+                </select> 
                 </div>
             </div>
         </div>

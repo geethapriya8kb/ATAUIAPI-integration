@@ -118,7 +118,8 @@
           "label": "State",
           "type": "select",
           "class": "col col-md-6",
-          "value": ["-Select State-", "Alabama","Alaska", "American Samoa","Arizona","Arkansas","California", "Colorado","Connecticut", "Delaware","District Of Columbia","Federated States Of Micronesia"],
+          "option": ["-Select State-", "Alabama","Alaska", "American Samoa","Arizona","Arkansas","California", "Colorado","Connecticut", "Delaware","District Of Columbia","Federated States Of Micronesia"],
+          "value": "-Select State-",
           "controlName": "state",
           "required": false
         }
