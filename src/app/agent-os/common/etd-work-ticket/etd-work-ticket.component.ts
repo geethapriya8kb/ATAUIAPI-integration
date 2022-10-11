@@ -3,7 +3,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
 import { EtdService } from '../../tabs/etd/etd.service';
-
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 @Component({
   selector: 'app-etd-work-ticket',
   templateUrl: './etd-work-ticket.component.html',
@@ -67,7 +67,7 @@ export class EtdWorkTicketComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         this.tempData = this.data;
