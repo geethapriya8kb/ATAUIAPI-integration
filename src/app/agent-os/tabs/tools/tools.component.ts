@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CardDataService } from '../../services/card-data.service';
 
@@ -8,6 +9,8 @@ import { CardDataService } from '../../services/card-data.service';
 })
 export class ToolsComponent implements OnInit {
   data: any = {};
+  filterData:any;
+  flag: boolean;
   constructor(private toolsService: CardDataService) {}
 
   ngOnInit(): void {
@@ -28,6 +31,23 @@ export class ToolsComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     console.log(filterValue);
+    if(filterValue.length>0){
+      this.flag=true
+    }
+   console.log(this.data.content);
+   for(let i=0;i<=this.data.content.length;i++){
+   
+    const sam=this.data.content[i];
+    if((String(sam?.label).includes(filterValue))){
+      console.log(this.data.content[i]);
+      this.filterData=this.data.content[i]
+    };
+   }
+    // this.data.content=this.data.content.filter((obj)=>obj.label.includes(filterValue))
+   
+    
+
+   
     
   }
 }

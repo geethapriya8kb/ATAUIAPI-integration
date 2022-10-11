@@ -3,15 +3,25 @@
         <div class="p-3">
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <input type="search" class="form-control" (keyup)="applyFilter($event)" #input placeholder="Search Tools" aria-label="Search" />
+                    <input type="search" class="form-control" (keyup)="applyFilter($event)" #input
+                        placeholder="Search Tools" aria-label="Search" />
                 </div>
             </div>
             <div class="row mr-5 mb-5">
+                <ng-container *ngIf="!flag">
                 <div *ngFor="let item of data.content" class="col-md-1 box">
                     <div class="p-img">
                         <img class="img" src="{{item.path}}" alt="{{item.label}}" id="{{item.label}}">
-                    </div>  
+                    </div>
                 </div>
+            </ng-container>
+                <ng-container *ngIf="flag">
+                    <div *ngFor="let item of filterData" class="col-md-1 box">
+                        <div class="p-img">
+                            <img class="img" src="{{filterData.path}}" alt="{{item.label}}" id="{{item.label}}">
+                        </div>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </mat-tab>
