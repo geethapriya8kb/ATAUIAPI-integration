@@ -82,9 +82,9 @@
                         </div>
                     </div>
                 </form>
-                <table class="table table-hover table-borderless table-sm mt-4">
-                    <thead class="text-center tab-bg-color">
-                        <tr>
+                <table class="table table-hover table-sm mt-4">
+                    <thead class="text-center tab-bg-color " >
+                        <tr style="border: 1px solid lightgray;">
                             <th scope="col">Ticket</th>
                             <th scope="col">SLA Call Time</th>
                             <th scope="col">Account</th>
@@ -97,12 +97,12 @@
                         </tr>
                     </thead>
                     <ng-container *ngIf="!filterAlert.length">
-                        <tbody *ngFor="let user of data?.content| keyvalue" class="table table-bordered">
+                        <tbody *ngFor="let user of data?.content| keyvalue" class="table-bordered">
                             <tr>
                                 <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)"
                                     (click)="user.value.flag=!user.value.flag"
-                                    [ngClass]="{'row-selected-clr': user.value.flag === true}">
-                                    <ng-container *ngIf="i.key!='etd'&& i.key!='flag'">
+                                    [ngClass]="{'row-selected-clr': user.value.flag === true}" style="border: 1px solid lightgray;">
+                                    <ng-container *ngIf="i.key!='etd'&& i.key!='etdWork' && i.key!='flag'">
                                         {{i.value}}
                                     </ng-container>
                                 </td>
@@ -121,7 +121,7 @@
                         </tbody>
                     </ng-container>
                 </table>
-                <div *ngIf="dataSource.data.length === 0">
+                <div *ngIf="tableDatatest?.length === 0">
                     <p class="no-records">No Ticket found</p>
                 </div>
             </mat-card>
