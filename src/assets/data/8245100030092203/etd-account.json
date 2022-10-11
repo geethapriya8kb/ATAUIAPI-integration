@@ -72,18 +72,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "002044872555",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "STEVE BOGERS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "",
+                "City/Status": "BUNNELL, FL",
+                "Region": "Florida",
+                "Mgmt Area": "",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "002044872555",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -158,18 +158,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "002044872555",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "STEVE BOGERS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "",
+                "City/Status": "BUNNELL, FL",
+                "Region": "Florida",
+                "Mgmt Area": "",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "002044872555",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -244,19 +244,19 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                "Contact": "STEVE BOGERS",
+            "etdWork": {
+                "Contact": "TONY BARK",
                 "Phone 1": "(314)555-5555",
                 "Phone 2": "",
                 "Node": "",
-                "City/Status": "BUNNELL, FL",
+                "City/Status": "BEVERLY BEACH, FL",
                 "Region": "Florida",
-                "Mgmt Area": "",
+                "Mgmt": "East Florida (BHN)",
                 "SLA Call Time": "9/9/22 9:30 AM",
                 "Account": "12345628454",
                 "Avail same day": "",
-                "Reason": "Must Do: Hazardous/Safety Situation"
-        }
+                "Reason": "Go Back: Work Not Completed"
+            }
         },
         {
             "Ticket": "11177856",
@@ -330,19 +330,19 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                "Contact": "STEVE BOGERS",
+            "etdWork": {
+                "Contact": "BRUCE FANNER",
                 "Phone 1": "(314)555-5555",
                 "Phone 2": "",
-                "Node": "",
-                "City/Status": "BUNNELL, FL",
-                "Region": "Florida",
-                "Mgmt Area": "",
+                "Node": "HZ098",
+                "City/Status": "HENDERSON, NC",
+                "Region": "Carolinas",
+                "Mgmt": "Eastern NC (TWC)",
                 "SLA Call Time": "9/9/22 9:30 AM",
                 "Account": "20547851544",
                 "Avail same day": "",
                 "Reason": "Must Do: Hazardous/Safety Situation"
-        }
+            }
         },
         {
             "Ticket": "11177952",
@@ -416,18 +416,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8012587497545488",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "PETER BARKER",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "SP039A",
+                "City/Status": "SAINT PETERS, MO",
+                "Region": "",
+                "Mgmt": "Central States (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8012587497545488",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -502,18 +502,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8035454787741269",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "ORORO MANROE",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "BURBANK, CA",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8035454787741269",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -588,18 +588,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8100856565985974",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "LA, CA",
+                "Region": "Florida",
+                "Mgmt": "",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -674,18 +674,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "004584457488",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "LUKE CHUCK",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "BAK-G15",
+                "City/Status": "TAFT, CA",
+                "Region": "Northwest",
+                "Mgmt": "Sierra Nevada (BHN)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "004584457488",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -760,18 +760,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "5748526453",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "SUSAN FANVERS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "G15",
+                "City/Status": "TAFT, CA",
+                "Region": "Northwest",
+                "Mgmt": "Sierra Nevada (BHN)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "5748526453",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -846,18 +846,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8124548787956233",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "STEPHEN BRANGE",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "SP039A",
+                "City/Status": "OFALLON, MO",
+                "Region": "",
+                "Mgmt": "Central States (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8124548787956233",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -932,18 +932,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8010015448787963",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "JIMBO HOWLETT",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "SP039A",
+                "City/Status": "OFALLON, MO",
+                "Region": "",
+                "Mgmt": "Central States (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8010015448787963",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1018,18 +1018,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8035454787741269",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "ORORO MANROE",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "BURBANK, CA",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8035454787741269",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1104,18 +1104,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8100856565985974",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "LA, CA",
+                "Region": "Florida",
+                "Mgmt": "",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1190,18 +1190,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8150100043364396",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "PETER PARKER",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "DL31",
+                "City/Status": "NEW YORK,NY",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8150100043364396",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1276,18 +1276,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "5748526435",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "JADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "H15",
+                "City/Status": "CENTRAL NY,(TWC)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "5748526435",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1362,18 +1362,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "84482000015715658",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "JEREMY SIMPSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "1D20M",
+                "City/Status": "HAWAII ,(TWC)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "84482000015715658",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1448,18 +1448,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8100856565980625",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "PETE THOMAS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "1SMO1",
+                "City/Status": "MICHIGAN, (BHN)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565980625",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1534,18 +1534,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8100856565981111",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "EMILY MURPHY",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "KENTUCKY, (TWC)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565981111",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1620,18 +1620,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8100856565985974",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL222A",
+                "City/Status": "EAST FLORIDA ,(BHN)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         },
         {
@@ -1706,18 +1706,18 @@
                     }
                 ]
             ],
-            "etdWork":  {
-                    "Contact": "STEVE BOGERS",
-                    "Phone 1": "(314)555-5555",
-                    "Phone 2": "",
-                    "Node": "",
-                    "City/Status": "BUNNELL, FL",
-                    "Region": "Florida",
-                    "Mgmt Area": "",
-                    "SLA Call Time": "9/9/22 9:30 AM",
-                    "Account": "8100856565985974",
-                    "Avail same day": "",
-                    "Reason": "Must Do: Hazardous/Safety Situation"
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "LA, CA",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
             }
         }
     ],

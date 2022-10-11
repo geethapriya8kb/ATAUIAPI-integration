@@ -21,7 +21,7 @@ export class EtdService extends BaseService {
     const val: QueryParam[] =
       [{ key: "accountId", value: accountId.toString()},
       { key: "identifier", value: identifier.toString()},
-      { key: "id", value: applicationId.toString()}
+      { key: "applicationId", value: applicationId.toString()}
     ];
     return this.doGet(endpoint,[],val);
   }

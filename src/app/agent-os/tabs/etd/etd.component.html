@@ -99,13 +99,14 @@
                     <ng-container *ngIf="!filterAlert.length">
                         <tbody *ngFor="let user of data?.content| keyvalue" class="table-bordered">
                             <tr>
-                                <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)"
-                                    (click)="user.value.flag=!user.value.flag"
-                                    [ngClass]="{'row-selected-clr': user.value.flag === true}" style="border: 1px solid lightgray;">
-                                    <ng-container *ngIf="i.key!='etd'&& i.key!='etdWork' && i.key!='flag'">
+                                <ng-container *ngFor="let i of user.value | keyvalue:returnZero">
+                                    <td *ngIf="i.key!='etd'&& i.key!='etdWork'&& i.key!='flag'"
+                                        (click)="clickvalue(user.value)" (click)="user.value.flag=!user.value.flag"
+                                        [ngClass]="{'row-selected-clr': user.value.flag === true}"
+                                        style="border: 1px solid lightgray;">
                                         {{i.value}}
-                                    </ng-container>
-                                </td>
+                                    </td>
+                                </ng-container>
                             </tr>
                         </tbody>
                     </ng-container>

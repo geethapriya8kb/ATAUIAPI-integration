@@ -13,7 +13,7 @@ export class EtdWorkTicketComponent implements OnInit {
   workTicketId: string;
   etddata: any;
   tempData: any;
-  etdTicketdata: any;
+  etdTicketdata: any ="";
   accountVal: unknown;
   data: any;
   accountId = new UntypedFormGroup({
@@ -29,6 +29,7 @@ export class EtdWorkTicketComponent implements OnInit {
     const accountNumber = this.searchService.getAccountNumber();
     this.accountServ.ticketId.subscribe((value) => {
       this.workTicketId = value;
+console.log();
 
     });
     this.getCardData(accountNumber);
@@ -71,11 +72,17 @@ export class EtdWorkTicketComponent implements OnInit {
       next: (resp) => {
         this.data = resp.content;
         this.tempData = this.data;
-        for (let i = 0; i <= this.tempData.content?.length; i++) {
+        for (let i = 0; i < this.tempData.content?.length; i++) {
+          console.log(this.tempData.content[i]?.Ticket);
           if (this.tempData.content[i]?.Ticket === this.workTicketId) 
           {
+            console.log("true");
+            
             this.etdTicketdata = this.tempData.content[i];
             console.log(this.etdTicketdata);
+            
+            console.log(this.etdTicketdata.etdWork);
+            
           }
         }
       }
