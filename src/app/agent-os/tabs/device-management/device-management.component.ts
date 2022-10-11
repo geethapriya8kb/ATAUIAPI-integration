@@ -40,7 +40,7 @@ export class DeviceManagementComponent implements OnInit {
     let cardName = "device-summary";
     this.deviceManagementService.getdatafromDeviceManagementAPI(accountNumber, cardName).subscribe(
       (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data = resp.content;
       },
       (err) => console.error(err),
       () => {

@@ -14,7 +14,7 @@ import { EtdService } from './etd.service';
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
-  data: ETDRoot;
+  data: EtdResponse;
   etddata: any;
   workTicketId: string;
   etdDetailData: any;
@@ -117,20 +117,20 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data =resp.content;
         this.tempData = this.data;
       },
       error: (err) => console.log(err),
       complete: () => {
         this.tableDatatest = this.data.content;
         this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.content.etdcol;
-        this.histableDatatest = this.data.content.historytab;
+        this.columnsToDisplay = this.data.etdcol;
+        this.histableDatatest = this.data.historytab;
         this.hisDataSource.data = this.histableDatatest;
-        this.hisColumnsToDisplay = this.data.content.historycol;
-        this.ticketColumnsToDisplay = this.data.content.myticketcol;
+        this.hisColumnsToDisplay = this.data.historycol;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
       },
     });
   }
