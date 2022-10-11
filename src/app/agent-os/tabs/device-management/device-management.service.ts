@@ -14,14 +14,13 @@ export class DeviceManagementService extends BaseService {
   constructor(http: HttpClient, settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromDeviceManagementAPI(
-    id: number,
-    identifier: string
-  ): Observable<DeviceManagementRoot> {
+  getdatafromDeviceManagementAPI(id: number,identifier: string, applicationId :number ):
+   Observable<DeviceManagementRoot> {
     const endpoint = Endpoints.getetdaccount;
     const val: QueryParam[] = [
-      { key: 'id', value: id.toString() },
+      { key: 'accountId', value: id.toString() },
       { key: 'identifier', value: identifier.toString() },
+      { key: "applicationId", value: applicationId.toString()}
     ];
     return this.doGet(endpoint, [], val);
   }
