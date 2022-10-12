@@ -1,0 +1,77 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8345",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "7800",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "ST LOUIS",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "601 E Polo Drive Clayton, MO 63105-2629",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "63105262910038",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "OV - Sdv Overland",
+        "type": "label"
+      },
+      "Node": {
+        "value": "OV544A",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "OV",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+
+    "email":{
+  
+      "value":"MasterClark@charter.com"
+  
+    },
+  
+    "phone":{
+  
+      "value1":"(314) 862-1267",
+  
+      "value2":"(314) 232-5876"
+  
+    }
+  
+  }
+}
