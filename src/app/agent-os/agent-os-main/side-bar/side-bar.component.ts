@@ -213,6 +213,7 @@ export class SideBarComponent implements OnInit {
     this.searchService.setAccountNumber('empty');
     this.storeService.location.next(this.storeService?.locationEmpty);
     this.storeService.customer=null
+    this.storeService.editAccount=null
   }
 
   returnZero() {

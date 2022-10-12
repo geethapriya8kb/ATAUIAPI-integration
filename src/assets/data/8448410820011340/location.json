@@ -1,0 +1,77 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8448",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "4100",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "BANNING",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "10321 BEL AIR DR CHERRY VALLEY, CA 92223-5581",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "92223558105067",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "Z2 - Banning 02",
+        "type": "label"
+      },
+      "Node": {
+        "value": "CJ001",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "YU",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+"contact":{
+
+  "email":{
+
+    "value":"attheTopATA@charter.com"
+
+  },
+
+  "phone":{
+
+    "value1":"(213) 243-1267",
+
+    "value2":"(316) 232-5876"
+
+  }
+
+}
+}

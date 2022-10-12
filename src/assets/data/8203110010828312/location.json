@@ -1,0 +1,77 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8203",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1100",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "UTICA",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "34 Burr Ave New York Mills, NY 13417-1305",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "8015630",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "SR-CNY-Syracuse",
+        "type": "label"
+      },
+      "Node": {
+        "value": "UT390",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "UT",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+
+    "email":{
+  
+      "value":"chefNYC@charter.com"
+  
+    },
+  
+    "phone":{
+  
+      "value1":"(315) 845-1267",
+  
+      "value2":"(212) 786-1234"
+  
+    }
+  
+  }
+}

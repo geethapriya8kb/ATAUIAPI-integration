@@ -1,0 +1,34 @@
+{
+    "content":{
+
+    "Video":{
+        "Audio":["Audio Issue"],
+        "Community Solution":["SCS-DTA","SCS-QAM","SCS-Remote Control Issue","Spectrum Guide","Missing Channel"],
+        "Customer Education":["Customer Education"],
+        "Customer Self Install Trees":["Customer Self Install"],
+        "Equipment":["Cable Card Issue","Equipment Issue","DVR Functionality","Remote Control Issue"],
+        "Feature":["VOD/PPV Issue","Accessibility"]
+    },
+    "Internet":{
+        "Community Solution":["SCS Cannnot Connect Troubleshooting","SCS Email Troubleshooting","SCS Managed Wifi",""],
+        "Connectivity":["Cannot Connect","Slow Speeds","Wi-Fi Coverage","Intermittency"],
+        "Customer Self Install Trees":["Customer Self Install"],
+        "Internet Services":["Email","My Spectrum App","Advanced Home Wi-Fi Features","cDVR","TV Channel Apps"],
+        "Support Tress":["Automation Source Trees"]
+    },
+    "Phone":{
+        "Community Solution":["No Dial Tone","SCS Phone-Features","SCS Degraded Services"],
+         "Customer Self Install Trees":["Customer Self Install"],
+         "PAC":["PAC Convergence"],
+         "Pilot Trees":["MAC Tire 3 Only-BYOD","MAC Tire 3 Only-Stolen Devices","MAC Tire 3 Only-Past Due Port","MAC Tire 3 Only-Line Move Request"],
+         "Support Tress":["Automation Source Trees"]
+    },
+    "Billing":{
+        "Support Trees":["Balance Transfer","ETD Troubleshooting"]
+    },
+    "Mobile":{
+        "Support Trees":["Audio Issue", "Data Not Working"]
+    }
+}
+
+}

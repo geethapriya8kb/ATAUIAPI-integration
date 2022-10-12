@@ -1,0 +1,61 @@
+{
+  "orderStatusTable": [
+    {
+      "position": "1",
+      "Order": "1234123412341234",
+      "OrderType": "NewConnect",
+      "Status": "Closed",
+      "Reason": "INBOUND",
+      "SalesID": "44142",
+      "expand": {
+        "Job #": "123456",
+        "Job Description": "NC TRIPLE",
+        "Job Comments": "TESTINg",
+        "Job Class": "INSHSD",
+        "Resolution": "NOT AVAILABLE",
+        "Resolution Date and Time": "NOT AVAILABLE",
+        "Job Type": "New Connect Or Install",
+        "Scheduled": "2022-08-22 02:00 PM - 03:00 PM",
+        "Duration": "145 minutes",
+        "Job Status": "Open",
+        "Tech ID": "0000",
+        "Created On": "2019-08-22"
+      }
+    }
+  ],
+  "orderStatusColumns": [
+    "Order",
+    "OrderType",
+    "Status",
+    "Reason",
+    "SalesID",
+    "icon"
+  ],
+  "statusLabel": "Order Status",
+  "status": [
+    "ALL",
+    "OPEN",
+    "COMPLETED",
+    "CANCELLED"
+  ],
+  "typeLabel": "Order Types",
+  "type": [
+    "ALL",
+    "PRODUCT",
+    "SPECIAL REQUEST",
+    "TROUBLE CALL"
+  ],
+  "heading": "Orders",
+  "tasks": [
+    {
+      "label": "Unified Case Management",
+      "dialog": "EditCustomerDialogComponent",
+      "width": "60"
+    },
+    {
+      "label": "View Shipping Details",
+      "dialog": "EditAccountDialogComponent",
+      "width": "60"
+    }
+  ]
+}

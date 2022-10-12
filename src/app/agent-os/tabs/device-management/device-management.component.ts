@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { CardDataService } from '../../services/card-data.service';
 import { SearchService } from '../../services/search.service';
 import { DeviceManagementResponse, EventHistoryTable } from './device-management.response';
@@ -20,25 +21,25 @@ export class DeviceManagementComponent implements OnInit {
   showData=false;
   ngOnInit(): void {  
     const accountNumber = this.searchService.getAccountNumber();
-    this.getCardData(accountNumber);
+    this.getdatafromDeviceManagement(accountNumber);
   }
   ngAfterViewInit() {
    
     this.searchService.sharedValue$.subscribe((val) => {
       this.accountVal = val;
       if (this.accountVal) {
-        this.getCardData(this.accountVal);
+        this.getdatafromDeviceManagement(this.accountVal);
       } else {
-        this.getCardData('');
+        this.getdatafromDeviceManagement('');
       }
     });
   }
 
-  getCardData(accountNumber) {
+  getdatafromDeviceManagement(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.styleVal = (accountNumber === 'empty') ? true : false;
     let cardName = "device-summary";
-    this.deviceManagementService.getdatafromDeviceManagementAPI(accountNumber, cardName).subscribe(
+        this.deviceManagementService.getdatafromDeviceManagementAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe(
       (resp) => {
         this.data = resp.content;
       },

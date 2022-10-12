@@ -1,0 +1,77 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8381",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1900",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "OPELOUSAS",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "115 NEWMAN ST OPELOUSAS, LA 70570-3529",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "70570352905028",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "",
+        "type": "label"
+      },
+      "Node": {
+        "value": "O07030",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "O0",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+"contact":{
+
+  "email":{
+
+    "value":"PStevensATA@charter.com"
+
+  },
+
+  "phone":{
+
+    "value1":"(337) 948-8378",
+
+    "value2":""
+
+  }
+
+}
+}
