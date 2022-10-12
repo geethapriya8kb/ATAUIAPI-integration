@@ -75,7 +75,6 @@ export class EditCustomerComponent implements OnInit {
   submit() {
     this.storeService.accountDetails.content.Account['Authorized Users'].value = this.form.controls['authUser'].value;
     this.storeService.customer.contactRows[0].columns[1].value =  this.form.controls['authUser'].value;
-
     this.storeService.customer.contactRows[0].columns[0].value =  this.form.controls['phone'].value;
     this.storeService.customer.contactRows[1].columns[0].value =  this.form.controls['phone2'].value;
     this.storeService.customer.contactRows[2].columns[0].value =  this.form.controls['email'].value;
@@ -101,6 +100,8 @@ export class EditCustomerComponent implements OnInit {
     this.storeService.customer.contactRows[5].columns[0].value = this.form.controls['city'].value;    
     this.storeService.customer.contactRows[6].columns[0].value = this.form.controls['state'].value;
     this.storeService.customer.contactRows[7].columns[0].value = this.form.controls['zip'].value;
+-   console.log( this.form.controls['zip'].value);
+console.log(this.storeService.customer);
 
     this.dialogRef.close('Updated Successfully');
   }

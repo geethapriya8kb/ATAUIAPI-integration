@@ -1,0 +1,36 @@
+{
+  "heading": "Service Status",
+  "channel": [
+    {
+      "type": "Event Board",
+      "Video": "yes",
+      "Internet": "yes",
+      "Voice": "yes"
+    },
+    {
+      "type": "Device Status",
+      "Video": "yes",
+      "Internet": "yes",
+      "Voice": "yes"
+    }
+  ],
+  "serviceDetails": [
+    {
+      "Subscribed": "yes",
+      "Speed": "E31T2V1 3.1",
+      "200 Mbps": "1 Gbps",
+      "Mbps": "1 Gbps"
+    },
+    {
+      "Subscribed": "yes",
+      "Speed": "Provisioned Speed",
+      "200 Mbps": "1 Gbps",
+      "Mbps": "2 Gbps"
+    }
+  ],
+  "modem": [
+    {
+      "Modem MAC": "08:7D:67:5E:12:C6"
+    }
+  ]
+}

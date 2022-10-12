@@ -17,6 +17,7 @@ export class StorageService {
   public serviceStatusAccount:any;
   public customer:any;
   public locationEmpty:any;
+  public editAccount:any;
  
   constructor() {
    

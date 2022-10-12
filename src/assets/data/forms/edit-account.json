@@ -18,12 +18,13 @@
     }      
     },
     "input":[
-        {
-            "fieldName": "SecurityCode",
-            "fieldType": "text",
-            "required": null,
-            "controlName":"code",
-            "placeHolder":"7613"
+        {          
+          "label": "SecurityCode:",
+          "type": "text",
+          "class": "col col-md-6",
+          "value": "7613",
+          "controlName": "code",
+          "required": false
         }
     ],
 "futureInfo":{

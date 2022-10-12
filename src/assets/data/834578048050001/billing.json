@@ -1,0 +1,96 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "Billing": {
+      "Amount Due": {
+        "value": "$198.18",
+        "type": "label"
+      },
+      "Date": {
+        "value": "10/23/2022",
+        "type": "label"
+      },
+      "Last Paid": {
+        "value": "$198.18",
+        "type": "label"
+      },
+      "Date": {
+        "value": "09/10/2022",
+        "type": "label"
+      },
+      "Monthly Rate": {
+        "value": "$186.96",
+        "type": "label"
+      }
+    },
+    "": {
+      "Last Statement Balance": {
+        "value": "$198.18",
+        "type": "label"
+      },
+      "Pending Payment": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "PPV Limit": {
+        "value": "$75.00",
+        "type": "label"
+      },
+      "PPV Usage": {
+        "value": "$0.00",
+        "type": "label"
+      },
+      "Autopay Date": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "View Statement PDFs",
+      "dialog": "View Statement PDFs",
+      "width": "60%"
+    },
+    { 
+      "label": "View Statements",
+      "dialog": "View Statements",
+      "width": "60%"
+    },
+    {
+      "label": "Take a Payment",
+      "dialog": "TakePaymentFormComponent",
+      "width": "60%"
+    },
+    {
+      "label": "Manage Autopay",
+      "dialog": "AutoPayComponent",
+      "width": "60%"
+    },
+    {
+      "label": "Manage Wallet",
+      "dialog": "ManageWalletComponent",
+      "width": "60%"
+    },
+    {
+      "label": "Manage Future Payment",
+      "dialog": "ManageFuturePaymentComponent",
+      "width": "60%"
+    },
+    {
+      "label": "PPV",
+      "dialog": "PPVtableComponent",
+      "width": "60%"
+    },
+    {
+      "label": "View Adjustment History",
+      "dialog": "View Statement PDFs",
+      "width": "60%"
+    },
+    {
+      "label": "Credit Calculator",
+      "dialog": "View Statement PDFs",
+      "width": "60%"
+    }
+  ]
+}

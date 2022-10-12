@@ -1,0 +1,13 @@
+{
+    "eventHistoryTable": [
+      
+    ],
+    "eventHistoryColumns": [
+      "Created",
+      "Problem Description",
+      "Ticket ID",
+      "Product",
+      "Reason"
+    ]
+  }
+  
