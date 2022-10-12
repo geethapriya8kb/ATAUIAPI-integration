@@ -76,6 +76,6 @@ export class VideoClass {
 
 export class DeviceManagementRoot {
   accountId: string;
-  content: string;
+  content: DeviceManagementResponse;
   identifier: string;
 }

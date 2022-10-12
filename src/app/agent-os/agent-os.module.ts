@@ -78,6 +78,7 @@ import { SuccessManageWalletComponent } from './common/modals/success-manage-wal
 import { AgingAmountComponent } from './common/aging-amount/aging-amount.component';
 
 import { SearchFilterPipe } from '../pipes/filter.pipe';
+import { OutageHistoryComponent } from './common/outage-history/outage-history.component';
 
 
 
@@ -124,7 +125,8 @@ import { SearchFilterPipe } from '../pipes/filter.pipe';
     VerifyAuthentiacteComponent,
     SuccessManageWalletComponent,
     AgingAmountComponent,
-    SearchFilterPipe 
+    SearchFilterPipe,
+    OutageHistoryComponent 
   ],
   imports: [
     CommonModule,

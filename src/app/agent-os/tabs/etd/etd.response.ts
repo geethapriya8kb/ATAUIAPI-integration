@@ -35,6 +35,7 @@ export class TicketInformation {
     Owner: string;
     ['Cust Type']: string;
     "etd":ETD;
+    "etdWork":Array<string>
 }
 
 export class Info {
@@ -59,6 +60,6 @@ export class ETD {
 
 export class ETDRoot{
     accountId:string;
-    content:any;
+    content:EtdResponse;
     identifier:string;
 }

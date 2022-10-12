@@ -5,7 +5,7 @@ import { Endpoints } from '../../entities/enums/Endpoints';
 import { BaseService } from '../../service-demo/base-service';
 import { QueryParam } from '../../service-demo/QueryParam';
 import { SettingsService } from '../../service-demo/settings.service';
-import { EtdResponse, ETDRoot } from './etd.response';
+import { ETDRoot } from './etd.response';
 
 @Injectable({
   providedIn: 'root',
@@ -21,13 +21,8 @@ export class EtdService extends BaseService {
     const val: QueryParam[] =
       [{ key: "accountId", value: accountId.toString()},
       { key: "identifier", value: identifier.toString()},
-      { key: "id", value: applicationId.toString()}
+      { key: "applicationId", value: applicationId.toString()}
     ];
-      
-      
-      
-      
     return this.doGet(endpoint,[],val);
-
   }
 }
