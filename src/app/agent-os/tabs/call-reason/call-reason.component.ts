@@ -12,7 +12,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CourseListService } from '../../services/course-list.service';
 import { CallReasonService } from './call-reason.services';
 import { CallReasonResponse, CallReasonRoot, PaymentHistoryTable } from './call-reason.response';
-import { CallReasonTroubleResponse } from './call-reason-trouble.response';
+import { CallReasonTroubleResponse, CallReasonTroubleRoot } from './call-reason-trouble.response';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 
 @Component({
   selector: 'app-call-reason',
@@ -129,10 +130,10 @@ export class CallReasonComponent implements OnInit {
       this.accountNoFlag = true
     }
 
-    this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({      
+    this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({      
       next: (resp: CallReasonRoot) => {
         console.log(resp);        
-        this.data = JSON.parse(resp.content);
+        this.data = resp.content;
         console.log(this.data);          
 
       },
@@ -140,6 +141,7 @@ export class CallReasonComponent implements OnInit {
         console.error(err)
       },
       complete: () => {
+        debugger;
         this.tableDatatest = this.data.paymentHistoryTable;
         console.log(this.tableDatatest);
         this.dataSource.data = this.tableDatatest;
@@ -160,10 +162,9 @@ export class CallReasonComponent implements OnInit {
   getTroubleData(accountNumber) {
     if (accountNumber !== 'empty') {
       let cardName = "callreason-troubleshoot"
-
-      this.callReasonService.getdatafromCallReasonAPI(accountNumber, cardName).subscribe({
-        next: (resp: CallReasonRoot) => {
-          this.troubleData = JSON.parse(resp.content);
+      this.callReasonService.getdatafromTroubleDataAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+        next: (resp: CallReasonTroubleRoot) => {
+          this.troubleData = resp.content;
         },
         error: (err: any) => {
           console.error(err)

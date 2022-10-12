@@ -1,3 +1,10 @@
+export class CallReasonTroubleRoot
+{
+  accountId: string;
+  content: CallReasonTroubleResponse;
+  identifier: string;
+}
+
 export class CallReasonTroubleResponse {
   content: Content;
 }
