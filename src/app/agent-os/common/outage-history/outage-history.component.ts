@@ -24,7 +24,13 @@ export class OutageHistoryComponent implements OnInit {
   ];
 
   barChartData: ChartDataSets[] = [
-    { data: [0, 60, 60, 60], label: 'Outage History' },
+    {
+      data: [0, 60, 60, 60],
+      label: 'Outage History',
+      barPercentage: 0.6,
+      barThickness: 8,
+      maxBarThickness: 8,
+    },
   ];
 
   constructor() {}
