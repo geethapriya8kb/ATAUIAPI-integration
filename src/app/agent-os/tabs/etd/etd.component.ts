@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { faSliders } from '@fortawesome/free-solid-svg-icons';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
-import { EtdResponse,  ETDRoot,  Mytickettab, TicketInformation } from './etd.response';
+import { EtdResponse, ETDRoot, Mytickettab, TicketInformation } from './etd.response';
 import { EtdService } from './etd.service';
 
 @Component({
@@ -14,8 +14,9 @@ import { EtdService } from './etd.service';
 })
 export class EtdComponent implements OnInit {
   flag: boolean = false;
-  data: ETDRoot;
+  data: EtdResponse;
   etddata: any;
+  workTicketId: string;
   etdDetailData: any;
   etdDetail: any;
   unassignData: any;
@@ -45,17 +46,20 @@ export class EtdComponent implements OnInit {
   tempData: any;
   assignFlag: boolean = true;
   statusFlag: boolean = false;
+
   constructor(
     private searchService: SearchService,
     private etdservice: EtdService,
     private accountServ: AccountService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.etdData();
     this.etdDropData();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
+
   }
 
   ngAfterViewInit() {
@@ -113,20 +117,20 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName,"AgentOs").subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
-        this.data = resp;
+        this.data =resp.content;
         this.tempData = this.data;
       },
       error: (err) => console.log(err),
       complete: () => {
-        this.tableDatatest =  this.data.content.content;
+        this.tableDatatest = this.data.content;
         this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.content.etdcol;
-        this.histableDatatest = this.data.content.historytab;
+        this.columnsToDisplay = this.data.etdcol;
+        this.histableDatatest = this.data.historytab;
         this.hisDataSource.data = this.histableDatatest;
-        this.hisColumnsToDisplay = this.data.content.historycol;
-        this.ticketColumnsToDisplay = this.data.content.myticketcol;
+        this.hisColumnsToDisplay = this.data.historycol;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
       },
     });
   }
@@ -174,6 +178,11 @@ export class EtdComponent implements OnInit {
     }
   }
 
+  sendTicket() {
+    this.workTicketId = this.testData.Ticket;
+    this.accountServ.ticketId.next(this.workTicketId)
+  }
+
   assign() {
     this.assignFlag = !this.assignFlag;
     if (!this.assignFlag) {
@@ -182,7 +191,7 @@ export class EtdComponent implements OnInit {
           if (this.testData.Status === "OPEN") {
             this.testData.Status = "IN PROGRESS"
           }
-          this.data.content.content.splice(i, 1);
+          this.data.content.splice(i, 1);
         }
       }
       this.myticketTabTableDatatest.push(this.testData)
@@ -197,7 +206,7 @@ export class EtdComponent implements OnInit {
           this.myticketTabTableDatatest.splice(i, 1);
         }
       }
-      this.data.content.content.push(this.unassignData);
+      this.data.content.push(this.unassignData);
       console.log(this.data);
       console.log(this.myticketTabTableDatatest);
     }

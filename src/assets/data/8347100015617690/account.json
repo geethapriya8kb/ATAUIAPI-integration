@@ -84,7 +84,7 @@
     {
       "label": "Edit Customer",
       "dialog": "EditCustomerDialogComponent",
-      "width": "60%"
+      "width": "90%"
     },
     {
       "label": "Edit Account Access",

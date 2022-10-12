@@ -19,10 +19,10 @@ export class CoPilotUpdateData{
 export class coPilotInfo{
     ['11/20/2021']:string;
     ['02/04/2021']:string;
-    ['12/23/2021 – 12/26/2021']:string
-    ['11/21/2021']:string
-    ['11/17/2021']:string
-    ['11/14/2021']:string
+    ['12/23/2021 – 12/26/2021']:string;
+    ['11/21/2021']:string;
+    ['11/17/2021']:string;
+    ['11/14/2021']:string;
 }
 
 export class ActionData{
@@ -30,10 +30,10 @@ export class ActionData{
 }
 
 export class actionInfo{
-    icon:string
-    scr:string
-    status:string
-    time:string
+    icon:string;
+    scr:string;
+    status:string;
+    time:string;
 }
 export class LinkData{
     content:LinkInfo;
@@ -47,5 +47,5 @@ export class ArticleData{
 }
 
 export class ArticleInfo{
-    ['Recommended Articles']:string
+    ['Recommended Articles']:string;
 }

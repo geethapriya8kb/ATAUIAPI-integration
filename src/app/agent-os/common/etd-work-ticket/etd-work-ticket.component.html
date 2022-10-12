@@ -1,8 +1,19 @@
 <div class="div-style">
-    <p>Ticket: 11177952 > Work Ticket</p>
+    <p>Ticket: {{workTicketId}} > Work Ticket</p>
 </div>
 <mat-card class="card-style">
-    <app-data-card cardName="etd-workTicket"></app-data-card>
+    <div class="col-md-12 col-sm-12">
+        <div class="row">
+            <div class="col-md-4 col-sm-4" *ngFor="let i of etdTicketdata?.etdWork|keyvalue:returnZero">
+                <div class="col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6"><span class="fw-bold">{{i.key}}</span>:</div>
+                    <div class="col-md-8 col-sm-6">{{i.value}}</div>
+                </div> 
+            </div>
+            </div>
+        </div>
+    </div>
 </mat-card>
 
 <mat-card>
@@ -29,7 +40,7 @@
                     <div class="col-md-7 col-sm-7">
                         <select disabled class="form-select form-select-sm ms-1 f-sty-width">
                             <option disabled selected></option>
-                            <option  *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
+                            <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
                                 {{i.value}}
                             </option>
                         </select>
@@ -179,13 +190,15 @@
     <div class="col-md-12 col-sm-12">
         <div class="row mt-4">
             <div class="col col-md-3 col-sm-3">
-                <button type="button" class="btn btn-outline-primary btn-sm btn-md" disabled>Cancel/Back to Queue</button>
+                <button type="button" class="btn btn-outline-primary btn-sm btn-md" disabled>Cancel/Back to
+                    Queue</button>
             </div>
-            <div class="col col-md-7 col-sm-7" >
-                <button type="button" class="btn btn-outline-primary btn-sm btn-md float-end" disabled>Save Changes</button>
+            <div class="col col-md-7 col-sm-7">
+                <button type="button" class="btn btn-outline-primary btn-sm btn-md float-end" disabled>Save
+                    Changes</button>
             </div>
             <div class="col col-md-2 col-sm-2">
-                <button type="button" class="btn btn-success btn-sm btn-md" >Save & Close Ticket</button>
+                <button type="button" class="btn btn-success btn-sm btn-md">Save & Close Ticket</button>
             </div>
         </div>
     </div>

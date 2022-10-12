@@ -1,13 +1,13 @@
 export class EtdResponse
 {
       content:Array<TicketInformation>; 
-      etdcol :Array<string>
-      historytab : Array<string> 
-      historycol : Array<string> 
-      etd :Array<Array<ETD>> 
-      myticketcol: Array<string>
-      mytickettab:Mytickettab
-      CustType:Array<string>
+      etdcol :Array<string>;
+      historytab : Array<string>;
+      historycol : Array<string>;
+      etd :Array<Array<ETD>> ;
+      myticketcol: Array<string>;
+      mytickettab:Mytickettab;
+      CustType:Array<string>;
 }
 
 export class Mytickettab {
@@ -20,7 +20,7 @@ export class Mytickettab {
     Status: string;
     Owner: string;
     ['Cust Type']: string;
-    "etd":ETD
+    "etd":ETD;
     
 }
 
@@ -35,6 +35,7 @@ export class TicketInformation {
     Owner: string;
     ['Cust Type']: string;
     "etd":ETD;
+    "etdWork":Array<string>
 }
 
 export class Info {

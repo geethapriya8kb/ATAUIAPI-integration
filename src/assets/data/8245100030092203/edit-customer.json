@@ -30,7 +30,7 @@
         },
         {
           "label": "Authorized Users:",
-          "type": "select",
+          "type": "text",
           "class": "col col-md-6",
           "value": "Jessica Creek",
           "controlName": "authUser",
@@ -116,9 +116,10 @@
       "columns": [
         {
           "label": "State",
-          "type": "text",
+          "type": "select",
           "class": "col col-md-6",
-          "value": "Minnesota",
+          "option": ["-Select State-", "Alabama","Alaska", "American Samoa","Arizona","Arkansas","California", "Colorado","Connecticut", "Delaware","District Of Columbia","Federated States Of Micronesia"],
+          "value": "-Select State-",
           "controlName": "state",
           "required": false
         }

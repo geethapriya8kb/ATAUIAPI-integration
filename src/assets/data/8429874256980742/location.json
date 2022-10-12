@@ -1,0 +1,77 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "first": {
+      "SYS": {
+        "value": "8429",
+        "type": "label"
+      },
+      "PRIN": {
+        "value": "1200",
+        "type": "label"
+      },
+      "Agent": {
+        "value": "0110",
+        "type": "label"
+      },
+      "Rate/Center": {
+        "value": "ATLANTA SO",
+        "type": "label"
+      },
+      "Comments": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "second": {
+      "Address": {
+        "value": "278 Sunny St MCDONOUGH, GA 30252-4054",
+        "type": "label"
+      },
+      "Location Id": {
+        "value": "30252405410086",
+        "type": "label"
+      },
+      "Location Type": {
+        "value": "RSSINFAM (Single Family Home)",
+        "type": "label"
+      }
+    },
+    "third": {
+      "Status": {
+        "value": "Never",
+        "type": "label"
+      },
+      "Headend": {
+        "value": "",
+        "type": "label"
+      },
+      "Node": {
+        "value": "HCIT",
+        "type": "label"
+      },
+      "Hub": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": null,
+  "contact":{
+
+    "email":{
+  
+      "value":"tony.tellerATA@charter.com"
+  
+    },
+  
+    "phone":{
+  
+      "value1":"(770) 898-8282",
+  
+      "value2":""
+  
+    }
+  
+  }
+}
