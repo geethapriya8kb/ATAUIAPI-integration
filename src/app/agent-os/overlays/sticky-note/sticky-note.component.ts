@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AgentOsFlowsService } from '../../services/agent-os-flows.service';
 import { CourseListService } from '../../services/course-list.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-sticky-note',
@@ -18,7 +19,8 @@ export class StickyNoteComponent implements OnInit {
   constructor(
     private snackbar: MatSnackBar,
     private courseListService: CourseListService,
-    private flowService: AgentOsFlowsService
+    private flowService: AgentOsFlowsService,
+    private storeService: StorageService
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +44,7 @@ export class StickyNoteComponent implements OnInit {
       );
       this.accountNumbers = this.flowList.groups[0].options[index].accountList;
     }
+    this.storeService.courseListAccounts = this.accountNumbers;
   }
 
   copyData(accountNumber: string) {

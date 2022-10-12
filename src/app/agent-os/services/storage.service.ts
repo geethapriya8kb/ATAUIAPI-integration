@@ -18,7 +18,7 @@ export class StorageService {
   public customer:any;
   public locationEmpty:any;
   public editAccount:any;
- 
+  public courseListAccounts:any;
   constructor() {
    
   }
