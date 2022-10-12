@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
 import { EtdService } from '../../tabs/etd/etd.service';
@@ -16,13 +16,24 @@ export class EtdWorkTicketComponent implements OnInit {
   etdTicketdata: any ="";
   accountVal: unknown;
   data: any;
+  b:boolean=false;
+  WorkTicketForm!:FormGroup;
   accountId = new UntypedFormGroup({
     accountNumber: new UntypedFormControl(),
     locationId: new UntypedFormControl()
   })
   constructor(private searchService: SearchService,
     private etdservice: EtdService,
-    private accountServ: AccountService) { }
+    private accountServ: AccountService,
+    private fb:FormBuilder) {
+
+
+      this.WorkTicketForm=this.fb.group({
+        CustomerSla:["",[Validators.required,Validators.min(0)]],
+        FieldOffs:["",[Validators.required,Validators.min(0)]],
+        select:["",[Validators.required]],
+      })
+     }
 
   ngOnInit(): void {
     this.etdDropData();
@@ -34,6 +45,8 @@ console.log();
     });
     this.getCardData(accountNumber);
   }
+
+
 
   ngAfterViewInit() {
     this.searchService.sharedValue$.subscribe((val) => {
