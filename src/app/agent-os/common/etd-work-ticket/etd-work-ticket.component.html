@@ -15,7 +15,7 @@
         </div>
     </div>
 </mat-card>
-<form [formGroup]="WorkTicketForm" >
+<form [formGroup]="workTicketForm" >
 <mat-card>
     <div class="row w-100">
         <div class="col col-md-5 col-sm-4">
@@ -31,8 +31,8 @@
                                 {{i.value}}
                             </option>
                         </select>
-                        <div *ngIf="WorkTicketForm.get('select')?.invalid && (WorkTicketForm.get('select')?.dirty || WorkTicketForm.get('select')?.touched)" class="alert alert-danger">
-                            Please select any one value
+                        <div *ngIf="workTicketForm.get('select')?.invalid && (workTicketForm.get('select')?.dirty || workTicketForm.get('select')?.touched)" class="alert alert-danger">
+                            Type comments!
                      </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                         <label class="fw-bold">No Truck Roll Req: </label>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="checkbox" id="a" class="ms-1" #inputID [(ngModel)]="b" >
+                        <input type="checkbox" id="a" class="ms-1" #inputID [(ngModel)]="b" [ngModelOptions]="{standalone: true}">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -133,7 +133,7 @@
                         <label class="fw-bold">Customer SLA Refused: </label>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="checkbox" id="a" formControlName="check" class="formControl">
+                        <input type="checkbox" id="a" class="formControl">
                     </div>
                 </div>
                 <div class="row mb-3" class="form-group">
@@ -141,7 +141,7 @@
                         <label class="fw-bold">Customer SLA Comments: </label>
                         <span class="float-end fw-bold">Remaining Character:256</span>
                         <textarea class="form-control form-control-md form-control-sm" rows="4" cols="50" class="form-control" formControlName="CustomerSla"></textarea>
-                        <div *ngIf="WorkTicketForm.get('CustomerSla')?.invalid && (WorkTicketForm.get('CustomerSla')?.dirty || WorkTicketForm.get('CustomerSla')?.touched)" class="alert alert-danger">
+                        <div *ngIf="workTicketForm.get('CustomerSla')?.invalid && (workTicketForm.get('CustomerSla')?.dirty || workTicketForm.get('CustomerSla')?.touched)" class="alert alert-danger">
                             Enter the characters more than 0
                      </div> 
                     </div>
@@ -163,7 +163,7 @@
                                 {{i.value}}
                             </option>
                         </select>
-                        <div *ngIf="WorkTicketForm.get('s')?.invalid && (WorkTicketForm.get('s')?.dirty || WorkTicketForm.get('s')?.touched)" class="alert alert-danger">
+                        <div *ngIf="workTicketForm.get('s')?.invalid && (workTicketForm.get('s')?.dirty || workTicketForm.get('s')?.touched)" class="alert alert-danger">
                             Enter the characters more than 0
                      </div>
                     </div>
@@ -183,7 +183,7 @@
                         <label class="fw-bold">Field Ops Comments: </label>
                         <span class="float-end fw-bold">Remaining Character:256</span>
                         <textarea class="form-control form-control-md form-control-sm" rows="6" cols="150"  class="form-control" formControlName="FieldOffs"></textarea>
-                        <div *ngIf="WorkTicketForm.get('FieldOffs')?.invalid && (WorkTicketForm.get('FieldOffs')?.dirty || WorkTicketForm.get('FieldOffs')?.touched)" class="alert alert-danger">
+                        <div *ngIf="workTicketForm.get('FieldOffs')?.invalid && (workTicketForm.get('FieldOffs')?.dirty || workTicketForm.get('FieldOffs')?.touched)" class="alert alert-danger">
                             Enter the characters more than 0
                      </div> 
                     </div>
@@ -210,7 +210,7 @@
                     Changes</button>
             </div>
             <div class="col col-md-2 col-sm-2">
-                <button type="button" class="btn btn-success btn-sm btn-md" [disabled]="WorkTicketForm.invalid">Save & Close Ticket</button>
+                <button type="button" class="btn btn-success btn-sm btn-md" [disabled]="workTicketForm.invalid">Save & Close Ticket</button>
             </div>
         </div>
     </div>

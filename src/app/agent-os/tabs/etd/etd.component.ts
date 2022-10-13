@@ -174,7 +174,9 @@ export class EtdComponent implements OnInit {
         }
       }
       this.etdDetail = this.etdDetailData;
-      console.log(this.etdDetail);
+      this.accountServ.TicketDetail.next(this.etdDetailData);
+      
+      
     }
   }
 

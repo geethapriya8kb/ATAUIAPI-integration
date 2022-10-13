@@ -11,13 +11,15 @@ import { ApplicationEnum } from 'src/app/models/setting-enum';
 })
 export class EtdWorkTicketComponent implements OnInit {
   workTicketId: string;
+  jobId:any;
   etddata: any;
   tempData: any;
-  etdTicketdata: any ="";
+  workTicketDetails: any = "";
+  etdTicketdata: any = "";
   accountVal: unknown;
   data: any;
-  b:boolean=false;
-  WorkTicketForm!:FormGroup;
+  b: boolean = false;
+  workTicketForm!: FormGroup;
   accountId = new UntypedFormGroup({
     accountNumber: new UntypedFormControl(),
     locationId: new UntypedFormControl()
@@ -25,25 +27,28 @@ export class EtdWorkTicketComponent implements OnInit {
   constructor(private searchService: SearchService,
     private etdservice: EtdService,
     private accountServ: AccountService,
-    private fb:FormBuilder) {
-
-
-      this.WorkTicketForm=this.fb.group({
-        CustomerSla:["",[Validators.required,Validators.min(0)]],
-        FieldOffs:["",[Validators.required,Validators.min(0)]],
-        select:["",[Validators.required]],
-      })
-     }
+    private fb: FormBuilder) {
+    this.workTicketForm = this.fb.group({
+      CustomerSla: ["", [Validators.required, Validators.min(0)]],
+      FieldOffs: ["", [Validators.required, Validators.min(0)]],
+      select: ["", [Validators.required]],
+    })
+  }
 
   ngOnInit(): void {
     this.etdDropData();
     const accountNumber = this.searchService.getAccountNumber();
     this.accountServ.ticketId.subscribe((value) => {
       this.workTicketId = value;
-console.log();
-
     });
     this.getCardData(accountNumber);
+    this.accountServ.TicketDetail.subscribe((res) => {
+      this.workTicketDetails=res;
+      // console.log( this.workTicketDetails);
+      this.jobId=this.workTicketDetails[1][0].info;
+      console.log(this.jobId);
+      
+    });
   }
 
 
@@ -57,10 +62,6 @@ console.log();
         this.getCardData('');
       }
     });
-  }
-
-  findAccount() {
-    console.log(this.accountId.value);
   }
 
   etdDropData() {
@@ -81,21 +82,13 @@ console.log();
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-     this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName, Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data = resp.content;
         this.tempData = this.data;
         for (let i = 0; i < this.tempData.content?.length; i++) {
-          console.log(this.tempData.content[i]?.Ticket);
-          if (this.tempData.content[i]?.Ticket === this.workTicketId) 
-          {
-            console.log("true");
-            
+          if (this.tempData.content[i]?.Ticket === this.workTicketId) {
             this.etdTicketdata = this.tempData.content[i];
-            console.log(this.etdTicketdata);
-            
-            console.log(this.etdTicketdata.etdWork);
-            
           }
         }
       }
