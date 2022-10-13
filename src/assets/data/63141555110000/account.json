@@ -4,15 +4,15 @@
   "content": {
     "Account": {
       "Salutation": {
-        "value": "MR",
+        "value": "",
         "type": "label"
       },
       "Customer Name": {
-        "value": "DAVID CREEK",
+        "value": "",
         "type": "label"
       },
       "Solo Account ID": {
-        "value": "435368",
+        "value": "",
         "type": "label"
       },
       "National Account": {
@@ -20,19 +20,18 @@
         "type": "label"
       },
       "Acct Type": {
-        "value": "RESIDENTIAL",
+        "value": "",
         "type": "label"
       },
       "Authorized Users": {
-        "value": "Jessica Creek",
+        "value": "",
         "type": "select",
         "options": [
-          "Jessica Creek",
-          "William Brown"
+          ""
         ]
       },
       "Responsible Party": {
-        "value": "CAREOF TEST",
+        "value": "",
         "type": "label"
       },
       "Seasonal Begin Date": {
@@ -44,9 +43,9 @@
         "type": "label"
       }
     },
-    "Acct: 8245100030092203": {
+    "Acct: ": {
       "Account Status": {
-        "value": "Active",
+        "value": "",
         "type": "label"
       },
       "Disconnect Type": {
@@ -54,51 +53,51 @@
         "type": "label"
       },
       "Classification": {
-        "value": "DEFAULT",
+        "value": "",
         "type": "label"
       },
       "Bulk": {
-        "value": "No",
+        "value": "",
         "type": "label"
       },
       "Prorated Monthly": {
-        "value": "Yes",
+        "value": "",
         "type": "label"
       },
       "Connection Date": {
-        "value": "02/12/2020",
+        "value": "",
         "type": "label"
       },
       "Auto Pay": {
-        "value": "No",
+        "value": "",
         "type": "label"
       },
       "Online Customer Portal": {
-        "value": "Not Registered",
+        "value": "",
         "type": "label"
       }
     }
   },
   "tasks": [
     {
-      "label": "Edit Customer",
-      "dialog": "EditCustomerDialogComponent",
-      "width": "90%"
-    },
-    {
-      "label": "Edit Account Access",
-      "dialog": "EditAccountDialogComponent",
-      "width": "40%"
-    },
-    {
-      "label": "Contact Preferences",
-      "dialog": "ContactPreferencesComponent",
-      "width": "60%"
-    },
-    {
-      "label": "CIMT",
+      "label": "",
       "dialog": "",
-      "width": "60%"
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
     }
   ]
 }

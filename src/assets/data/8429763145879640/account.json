@@ -8,15 +8,11 @@
         "type": "label"
       },
       "Customer Name": {
-        "value": "DAVID CREEK",
+        "value": "JOHN SMITH",
         "type": "label"
       },
       "Solo Account ID": {
         "value": "435368",
-        "type": "label"
-      },
-      "National Account": {
-        "value": "",
         "type": "label"
       },
       "Acct Type": {
@@ -24,11 +20,10 @@
         "type": "label"
       },
       "Authorized Users": {
-        "value": "Jessica Creek",
+        "value": "Jessica Smith",
         "type": "select",
         "options": [
-          "Jessica Creek",
-          "William Brown"
+          "Jessica Smith"
         ]
       },
       "Responsible Party": {
@@ -44,7 +39,7 @@
         "type": "label"
       }
     },
-    "Acct: 8245100030092203": {
+    "Acct: 8429763145879640": {
       "Account Status": {
         "value": "Active",
         "type": "label"
@@ -62,15 +57,15 @@
         "type": "label"
       },
       "Prorated Monthly": {
-        "value": "Yes",
+        "value": "No",
         "type": "label"
       },
       "Connection Date": {
-        "value": "02/12/2020",
+        "value": "03/25/2022",
         "type": "label"
       },
       "Auto Pay": {
-        "value": "No",
+        "value": "Yes",
         "type": "label"
       },
       "Online Customer Portal": {
