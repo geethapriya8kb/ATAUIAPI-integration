@@ -141,7 +141,6 @@ export class CallReasonComponent implements OnInit {
         console.error(err)
       },
       complete: () => {
-        debugger;
         this.tableDatatest = this.data.paymentHistoryTable;
         console.log(this.tableDatatest);
         this.dataSource.data = this.tableDatatest;
