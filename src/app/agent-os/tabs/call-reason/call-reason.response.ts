@@ -1,6 +1,6 @@
 export class CallReasonRoot {
   accountId: string;
-  content: string;
+  content: CallReasonResponse;
   identifier: string;
 }
 
