@@ -72,10 +72,10 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-5 col-sm-5" >
-                        <label class="fw-bold">Job: </label>
+                        <label class="fw-bold">Job: {{jobId}} </label>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="text" id="a" class="ms-1 f-sty-width" [disabled]="inputID.checked">
+                        <input type="text" id="a" class="ms-1 f-sty-width" [disabled]="inputID.checked" >
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -154,7 +154,7 @@
                 <div class="row mb-3">
                     <div class="col-md-3 col-sm-3">
                         <label class="fw-bold">OOC: </label>
-                        <input type="checkbox" class="ms-2" id="a" #OOC [(ngModel)]="b">
+                        <input type="checkbox" class="ms-2" id="a" #OOC [(ngModel)]="b" [ngModelOptions]="{standalone: true}">
                     </div>
                     <div class="col-md-7 col-sm-7">
                         <select class="form-select form-select-sm f-sty-width-20 ms-2"   [disabled]="!OOC.checked">

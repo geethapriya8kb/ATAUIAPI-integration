@@ -75,7 +75,6 @@ export class EtdComponent implements OnInit {
 
   filter() {
     const searchTicket = this.etdValue.value;
-    console.log(searchTicket);
     if (searchTicket) {
       this.filterAlert = [];
       for (let i = 0; i < this.tempData.content?.length; i++) {
@@ -107,11 +106,9 @@ export class EtdComponent implements OnInit {
         ) {
           let temp = this.tempData.content[i];
           this.filterAlert.push(temp);
-          console.log(this.filterAlert);
         }
       }
     }
-    console.log(this.filterAlert);
   }
 
   getCardData(accountNumber) {
@@ -163,20 +160,16 @@ export class EtdComponent implements OnInit {
   clickvalue(test: any) {
     this.testData = test;
     if (this.testData.Status === "OPEN") {
-      console.log(this.testData.Status);
       this.statusFlag = true;
     }
     if (this.testData) {
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
           this.etdDetailData = this.tempData.content[i].etd;
-          console.log(this.etdDetailData);
         }
       }
       this.etdDetail = this.etdDetailData;
-      this.accountServ.TicketDetail.next(this.etdDetailData);
-      
-      
+      this.accountServ.TicketDetail.next(this.etdDetailData);     
     }
   }
 
@@ -209,8 +202,6 @@ export class EtdComponent implements OnInit {
         }
       }
       this.data.content.push(this.unassignData);
-      console.log(this.data);
-      console.log(this.myticketTabTableDatatest);
     }
   }
 }

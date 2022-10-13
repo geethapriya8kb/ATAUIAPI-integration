@@ -42,15 +42,16 @@ export class EtdWorkTicketComponent implements OnInit {
       this.workTicketId = value;
     });
     this.getCardData(accountNumber);
-    this.accountServ.TicketDetail.subscribe((res) => {
-      this.workTicketDetails=res;
-      // console.log( this.workTicketDetails);
-      this.jobId=this.workTicketDetails[1][0].info;
-      console.log(this.jobId);
-      
-    });
+    this.s();
   }
-
+s(){
+  this.accountServ.TicketDetail.subscribe((res) => {
+    this.workTicketDetails=res;
+    console.log(this.workTicketDetails);
+    this.jobId=this.workTicketDetails[1][0].info.Job;
+    console.log(this.jobId); 
+  });
+}
 
 
   ngAfterViewInit() {
@@ -72,7 +73,7 @@ export class EtdWorkTicketComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-        console.log(this.etddata);
+        // console.log(this.etddata);
       }
     );
   }
