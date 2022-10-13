@@ -5,6 +5,7 @@ import { ReplaySubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+
 export class StorageService {
   public billingWidgetAccount: any;
   public helpfulAccount: any;  
@@ -18,12 +19,12 @@ export class StorageService {
   public customer:any;
   public locationEmpty:any;
   public editAccount:any;
- 
+  public courseListAccounts:any;
   constructor() {
    
   }
 
- 
+
   public sethelpfulAccount(helpfulAccount: any): void {
     this.helpfulAccount = helpfulAccount;
   }

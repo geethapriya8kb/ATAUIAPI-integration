@@ -1,0 +1,40 @@
+{
+    "content": [
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "Verification Success",
+            "time": "Sep 15, 2022, 10:57 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "One Time Payment with Auto Pay Enrollment Success",
+            "time": "Sep 14, 2022, 10:57 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-fingerprint",
+            "scr": "AgentOS",
+            "status": "Verification Success",
+            "time": "Aug 15, 2022, 10:57 AM GMT+5:30"
+        },
+        {
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication Sent successfully",
+            "time": "Jul 15, 2022, 10:57 AM GMT+5:30"
+        },
+		{
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "Communication Sent successfully",
+            "time": "Jun 15, 2022, 10:57 AM GMT+5:30"
+        },
+		{
+            "icon": "fa fa-comment-alt",
+            "scr": "AgentOS",
+            "status": "One Time Payment Failure",
+            "time": "May 15, 2022, 10:57 AM GMT+5:30"
+        }
+    ]
+}

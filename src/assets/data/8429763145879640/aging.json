@@ -1,0 +1,7 @@
+{
+    "title": "Aging Amounts due:",
+    "content":[{
+        "non-deliquent":[{"0-30 days":"$285.44"}],
+        "deliquent":[{"31-60 days":"$0.00"},{"61-90 days":"$0.00"},{"91+ days":"$0.00"}]
+    }]
+}

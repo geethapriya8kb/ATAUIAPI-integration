@@ -3,6 +3,7 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SearchService } from '../../services/search.service';
 import { SharedService } from '../../services/shared.service';
+import { StorageService } from '../../services/storage.service';
 @Component({
   selector: 'app-search-dialog',
   templateUrl: './search-dialog.component.html',
@@ -21,7 +22,9 @@ export class SearchDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<SearchDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private searchService: SearchService,
-    private sharedService: SharedService) {
+    private sharedService: SharedService,
+    private storeService: StorageService
+    ) {
   }
 
   ngOnInit(): void {
@@ -42,6 +45,7 @@ export class SearchDialogComponent implements OnInit {
   findAccount() {   
     this.searchService.sharedValue$.next(this.searchAccountForm.value.accountNumber)// setting using subject & works in ngAfterViewInit   
     this.searchService.setAccountNumber(this.searchAccountForm.value.accountNumber);// setting using service & works in ngOnInit
+    
 
     this.sharedService.sendData({
       type: 'init-search'

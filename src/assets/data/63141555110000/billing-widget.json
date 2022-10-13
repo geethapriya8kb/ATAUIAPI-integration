@@ -1,0 +1,90 @@
+{
+  "orientation": "horizontal",
+  "labelAlignment": "right",
+  "content": {
+    "03/29/21": {
+      "Previous_Bal": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "$285.44",
+        "type": "label"
+      }
+    },
+    "04/29/21": {
+      "Previous_Bal": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "$285.44",
+        "type": "label"
+      }
+    },
+    "05/29/21": {
+      "Previous_Bal": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "$285.44",
+        "type": "label"
+      }
+    },
+    "06/29/21": {
+      "Previous_Bal": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "$285.44",
+        "type": "label"
+      }
+    },
+    "07/29/21": {
+      "Previous_Bal": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "$285.44",
+        "type": "label"
+      }
+    },
+    "08/29/21": {
+      "Previous_Bal": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Payments": {
+        "value": "$285.78",
+        "type": "label"
+      },
+      "Balance": {
+        "value": "$285.44",
+        "type": "label"
+      }
+    }
+  }
+}

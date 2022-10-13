@@ -1,14 +1,27 @@
 <i class="fa fa-close float-end" (click)="close()"></i>
-<h4 class="fw-bold">Edit Account Acess</h4>
-<mat-card class="bg-light mt-2">
-    <div class="row">
+<h5 class="fw-bold">Edit Account Acess</h5>
+<div class="row bg-light mt-2">
+    <!-- <div class="row">
         <div class="col-md-3" *ngFor="let item of data?.info | keyvalue:returnZero">
             <p class="fw-bold">{{item.key}}</p>
             <p>{{item.value.value}}</p>
         </div>
+    </div> -->
+    <div class="row fs-14" >
+        <div class="col-md-3">Account No:</div>
+        <div class="col-md-3">First Name:</div>
+        <div class="col-md-3">Last Name:</div>
+        <div class="col-md-3">SSN/Tax Id:</div>
     </div>
-</mat-card>
-<h4 class="fw-bold mt-3">Security Information</h4>
+    <div class="row fs-14">
+        <div class="col-md-3">{{searchService.getAccountNumber()}}</div>
+        <div class="col-md-3">{{firstName}}</div>
+        <div class="col-md-3">{{lastName}}</div>
+        <div class="col-md-3">******2497</div>
+    </div>
+
+</div>
+<h5 class="fw-bold mt-3">Security Information</h5>
 <hr>
 <div *ngFor="let item of data?.input">
     <form [formGroup]="form">
@@ -20,7 +33,7 @@
 </div>
 <div class="row mt-3">
     <div class="col-md-2">
-        <button class="rounded-pill" (click)="submit();openSnackbar()" mat-raised-button color="primary">Submit</button>
+        <button class="rounded-pill" (click)="submit();openSnackbar()" mat-raised-button color="primary">Update</button>
     </div>
     <div class="col-md-8">
         <button class="rounded-pill " mat-raised-button color="primary" >Reset</button>

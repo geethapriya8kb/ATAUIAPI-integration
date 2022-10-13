@@ -16,13 +16,14 @@ export class MobileService extends BaseService {
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getDataFromAPI(id:number,identifier:string): Observable<MobileRoot> {
+  getDataFromAPI(accountId:number,identifier:string,applicationId :number): Observable<MobileRoot> {
     const endpoint = Endpoints.getmobile ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      
-    
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
     return this.doGet(endpoint,[],val);
   }
 }

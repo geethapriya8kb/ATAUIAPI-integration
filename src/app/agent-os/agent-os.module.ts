@@ -79,6 +79,7 @@ import { AgingAmountComponent } from './common/aging-amount/aging-amount.compone
 
 import { SearchFilterPipe } from '../pipes/filter.pipe';
 import { OutageHistoryComponent } from './common/outage-history/outage-history.component';
+import { StorageService } from './services/storage.service';
 
 
 
@@ -165,6 +166,7 @@ import { OutageHistoryComponent } from './common/outage-history/outage-history.c
     CardDataService,
     UtilsService,
     MatIconRegistry,
+    StorageService,
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }]
 })
 export class AgentOsModule { }

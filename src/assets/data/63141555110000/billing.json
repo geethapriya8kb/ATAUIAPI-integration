@@ -1,0 +1,96 @@
+{
+  "orientation": "horizontal",
+  "content": {
+    "Billing": {
+      "Amount Due": {
+        "value": "",
+        "type": "label"
+      },
+      "Date": {
+        "value": "",
+        "type": "label"
+      },
+      "Last Paid": {
+        "value": "--",
+        "type": "label"
+      },
+      "Date": {
+        "value": "",
+        "type": "label"
+      },
+      "Monthly Rate": {
+        "value": "--",
+        "type": "label"
+      }
+    },
+    "": {
+      "Last Statement Balance": {
+        "value": "-",
+        "type": "label"
+      },
+      "Pending Payment": {
+        "value": "--",
+        "type": "label"
+      },
+      "PPV Limit": {
+        "value": "",
+        "type": "label"
+      },
+      "PPV Usage": {
+        "value": "",
+        "type": "label"
+      },
+      "Autopay Date": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    { 
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    }
+  ]
+}

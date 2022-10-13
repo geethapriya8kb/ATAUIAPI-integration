@@ -1,0 +1,103 @@
+{
+  "orientation": "horizontal",
+  "labelAlignment": "right",
+  "content": {
+    "Account": {
+      "Salutation": {
+        "value": "",
+        "type": "label"
+      },
+      "Customer Name": {
+        "value": "",
+        "type": "label"
+      },
+      "Solo Account ID": {
+        "value": "",
+        "type": "label"
+      },
+      "National Account": {
+        "value": "",
+        "type": "label"
+      },
+      "Acct Type": {
+        "value": "",
+        "type": "label"
+      },
+      "Authorized Users": {
+        "value": "",
+        "type": "select",
+        "options": [
+          ""
+        ]
+      },
+      "Responsible Party": {
+        "value": "",
+        "type": "label"
+      },
+      "Seasonal Begin Date": {
+        "value": "",
+        "type": "label"
+      },
+      "Seasonal End Date": {
+        "value": "",
+        "type": "label"
+      }
+    },
+    "Acct: ": {
+      "Account Status": {
+        "value": "",
+        "type": "label"
+      },
+      "Disconnect Type": {
+        "value": "",
+        "type": "label"
+      },
+      "Classification": {
+        "value": "",
+        "type": "label"
+      },
+      "Bulk": {
+        "value": "",
+        "type": "label"
+      },
+      "Prorated Monthly": {
+        "value": "",
+        "type": "label"
+      },
+      "Connection Date": {
+        "value": "",
+        "type": "label"
+      },
+      "Auto Pay": {
+        "value": "",
+        "type": "label"
+      },
+      "Online Customer Portal": {
+        "value": "",
+        "type": "label"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    },
+    {
+      "label": "",
+      "dialog": "",
+      "width": ""
+    }
+  ]
+}
