@@ -45,16 +45,16 @@ export class EtdWorkTicketComponent implements OnInit {
     this.s();
   }
 s(){
-  // this.accountServ.ticketDetail.subscribe((res) => {
-  //   this.workTicketDetails="";
-  //   this.workTicketDetails=res;
-  //   this.jobId=this.workTicketDetails[1][0].info.Job;
-  //   console.log(this.jobId); 
-  // });
-this.workTicketDetails=this.accountServ.ticketDetail;
-console.log( this.accountServ.ticketDetail);
-this.jobId=this.workTicketDetails[1][0].info.Job;
-console.log(this.jobId);
+  this.accountServ.ticketDetail.subscribe((res) => {
+    this.workTicketDetails="";
+    this.workTicketDetails=res;
+    this.jobId=this.workTicketDetails[1][0].info.Job;
+    console.log(this.jobId); 
+  });
+// this.workTicketDetails=this.accountServ.ticketDetail;
+// console.log( this.accountServ.ticketDetail);
+// this.jobId=this.workTicketDetails[1][0].info.Job;
+// console.log(this.jobId);
 
 }
 

@@ -10,7 +10,8 @@ const httpOptions = {
 })
 export class AccountService {
   ticketId = new BehaviorSubject("");
-  public ticketDetail:any ;
+  // public ticketDetail:any ;
+  ticketDetail = new BehaviorSubject([]);
 
 constructor(private http: HttpClient) { 
   
