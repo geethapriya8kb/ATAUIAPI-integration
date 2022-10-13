@@ -14,7 +14,7 @@ export class EtdWorkTicketComponent implements OnInit {
   jobId:any;
   etddata: any;
   tempData: any;
-  workTicketDetails: any = "";
+  workTicketDetails: any;
   etdTicketdata: any = "";
   accountVal: unknown;
   data: any;
@@ -45,12 +45,17 @@ export class EtdWorkTicketComponent implements OnInit {
     this.s();
   }
 s(){
-  this.accountServ.TicketDetail.subscribe((res) => {
-    this.workTicketDetails=res;
-    console.log(this.workTicketDetails);
-    this.jobId=this.workTicketDetails[1][0].info.Job;
-    console.log(this.jobId); 
-  });
+  // this.accountServ.ticketDetail.subscribe((res) => {
+  //   this.workTicketDetails="";
+  //   this.workTicketDetails=res;
+  //   this.jobId=this.workTicketDetails[1][0].info.Job;
+  //   console.log(this.jobId); 
+  // });
+this.workTicketDetails=this.accountServ.ticketDetail;
+console.log( this.accountServ.ticketDetail);
+this.jobId=this.workTicketDetails[1][0].info.Job;
+console.log(this.jobId);
+
 }
 
 

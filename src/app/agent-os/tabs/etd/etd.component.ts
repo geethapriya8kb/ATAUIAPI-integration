@@ -163,19 +163,23 @@ export class EtdComponent implements OnInit {
       this.statusFlag = true;
     }
     if (this.testData) {
+      console.log("clicked");
+      
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
           this.etdDetailData = this.tempData.content[i].etd;
         }
       }
       this.etdDetail = this.etdDetailData;
-      this.accountServ.TicketDetail.next(this.etdDetailData);     
+      this.accountServ.ticketDetail=this.etdDetailData;    
+      console.log(this.accountServ.ticketDetail);
+       
     }
   }
 
   sendTicket() {
     this.workTicketId = this.testData.Ticket;
-    this.accountServ.ticketId.next(this.workTicketId)
+    this.accountServ.ticketId.next(this.workTicketId);
   }
 
   assign() {
