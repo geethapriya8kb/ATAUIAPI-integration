@@ -9,8 +9,7 @@ import { SearchService } from '../services/search.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { AgentOsFlowsService } from '../services/agent-os-flows.service';
 import { CourseListService } from '../services/course-list.service';
-import { CourseAccount, StorageService } from '../services/storage.service';
-import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-agent-os-main',
@@ -68,7 +67,6 @@ export class AgentOsMainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
     const label = this.courseListService.getData();
     this.currentCourse = label ? label : '';
     this.flowList = this.flowService.getFlowInfo(this.currentCourse);
@@ -92,7 +90,7 @@ export class AgentOsMainComponent implements OnInit {
       
       this.accountNumbers = this.flowList.groups[0].options[index].accountList;
     }
-  if(this.isTroubleShoot==true)
+    this.storeService.courseListAccounts= this.accountNumbers;
     console.log(this.storeService.courseListAccounts);
     this.openSnackbar();
 

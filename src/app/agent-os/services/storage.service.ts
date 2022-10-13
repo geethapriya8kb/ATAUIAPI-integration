@@ -6,12 +6,6 @@ import { ReplaySubject } from 'rxjs';
   providedIn: 'root',
 })
 
-export class CourseAccount{
-public accountNumbers:string;
-public isDisableTroubleShoot:boolean;
-}
-
-
 export class StorageService {
   public billingWidgetAccount: any;
   public helpfulAccount: any;  
@@ -25,7 +19,7 @@ export class StorageService {
   public customer:any;
   public locationEmpty:any;
   public editAccount:any;
-  public courseListAccounts:Array<CourseAccount>;
+  public courseListAccounts:any;
   constructor() {
    
   }
