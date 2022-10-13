@@ -15,6 +15,8 @@ import { HistoryTable,HistoryResponse } from './history.response';
 import { Symptoms } from './symptoms.response';
 import { Internet, Video } from './tsissues.response';
 import { HitHistoryResponse,History } from './hithistory.response';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-troubleshooting',
@@ -60,7 +62,8 @@ export class TroubleshootingComponent implements OnInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private searchService: SearchService,
-    private troubleShootService:TroubleShootingService
+    private troubleShootService:TroubleShootingService,
+    private authService: AuthService, private router: Router
   ) {
     this.dataSourceTs.data = [];
     const icons = {
@@ -81,6 +84,19 @@ export class TroubleshootingComponent implements OnInit {
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
+   
+		// this.authService.isAccountAuthenticated().subscribe(
+		// 	authenticated => {
+		// 		if (authenticated) {
+		// 			let url = this.authService.getRedirectUrl();
+		// 			console.log('Redirect Url:' + url);
+		// 			this.router.navigate([url]);
+		// 		} else {
+		// 			console.log('Invalid Credentials. Try again.') 
+		// 		}
+		// 	}
+		// );
+
     this.getAlertsData(accountNumber);
     this.getValuetoTable(accountNumber);
     this.getValuetoHitTable(accountNumber);

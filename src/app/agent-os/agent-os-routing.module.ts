@@ -16,6 +16,7 @@ import { ToolsComponent } from './tabs/tools/tools.component';
 import { EtdWorkTicketComponent } from './common/etd-work-ticket/etd-work-ticket.component';
 import { VerifyAuthentiacteComponent } from './common/verify-authentiacte/verify-authentiacte.component';
 import { AgingAmountComponent } from './common/aging-amount/aging-amount.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 
@@ -36,7 +37,7 @@ const routes: Routes = [
                     { path: 'billing', component: BillingComponent },
                     { path: 'device-management', component: DeviceManagementComponent },
                     { path: 'ordering', component: OrderingComponent },
-                    { path: 'troubleshooting', component: TroubleshootingComponent },
+                    { path: 'troubleshooting', component: TroubleshootingComponent, canActivate : [AuthGuardService]  },
                     { path: 'mobile', component: MobileComponent },
                     { path: 'tools', component: ToolsComponent },
                     { path: 'etd/work-ticket', component: EtdWorkTicketComponent },
