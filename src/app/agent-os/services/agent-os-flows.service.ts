@@ -18,6 +18,7 @@ export class AgentOsFlowsService {
         },
         {
           name: 'Billing',
+          istroubleshooting:false,
           options: [
             {
               name: 'Payments',
@@ -106,6 +107,7 @@ export class AgentOsFlowsService {
       groups: [
         {
           name: 'Repair',
+          istroubleshooting:false,
           options: [
             {
               name: 'Create New Connect Order',
@@ -387,6 +389,7 @@ export class AgentOsFlowsService {
       groups: [
         {
           name: 'Repair',
+          istroubleshooting:true,
           options: [
             {
               name: 'Cannot Connect',
@@ -409,6 +412,7 @@ export class AgentOsFlowsService {
       groups: [
         {
           name: 'Repair',
+          istroubleshooting:true,
           options: [
             {
               name: 'Missing Channels',
@@ -622,6 +626,7 @@ export class AgentOsFlowsService {
     {
       name: 'mobile',
       display: 'Mobile',
+      istroubleshooting:false,
       groups: [
         {
           name: 'Repair',
