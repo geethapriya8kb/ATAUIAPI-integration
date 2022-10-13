@@ -13,6 +13,7 @@ export class AgentOsFlowsService {
       groups: [
         {
           name: 'Ordering',
+          istroubleshoot:false,
           options: [],
         },
         {
@@ -324,6 +325,7 @@ export class AgentOsFlowsService {
       groups: [
         {
           name: 'Repair',
+          istroubleshooting:false,
           options: [
             {
               name: 'Take a Payment / Autopay',

@@ -9,7 +9,8 @@ import { SearchService } from '../services/search.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { AgentOsFlowsService } from '../services/agent-os-flows.service';
 import { CourseListService } from '../services/course-list.service';
-import { StorageService } from '../services/storage.service';
+import { CourseAccount, StorageService } from '../services/storage.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-agent-os-main',
@@ -26,6 +27,7 @@ export class AgentOsMainComponent implements OnInit {
   currentCourse = '';
   flowList: any = null;
   accountNumbers: any[];
+  isTroubleShoot: boolean;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -38,7 +40,7 @@ export class AgentOsMainComponent implements OnInit {
     private domSanitizer: DomSanitizer,
     private courseListService: CourseListService,
     private flowService: AgentOsFlowsService,
-    private storeService: StorageService
+    private storeService: StorageService,
   ) {
     this.route.queryParams.subscribe((_) => {
       const navExtras = this.router.getCurrentNavigation();
@@ -66,6 +68,7 @@ export class AgentOsMainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    debugger;
     const label = this.courseListService.getData();
     this.currentCourse = label ? label : '';
     this.flowList = this.flowService.getFlowInfo(this.currentCourse);
@@ -84,9 +87,12 @@ export class AgentOsMainComponent implements OnInit {
           (item: { name: string }) => item.name === courseType
         )
       );
+      if(this.flowList.groups[0].istroubleshooting!==undefined)
+      this.isTroubleShoot=Boolean(this.flowList.groups[0].istroubleshooting);
+      
       this.accountNumbers = this.flowList.groups[0].options[index].accountList;
     }
-    this.storeService.courseListAccounts = this.accountNumbers;
+  if(this.isTroubleShoot==true)
     console.log(this.storeService.courseListAccounts);
     this.openSnackbar();
 

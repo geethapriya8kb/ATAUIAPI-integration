@@ -8,9 +8,10 @@ export class AuthService {
 
   constructor(private storeService: StorageService) {}
   isAccountAuthenticated(): boolean {
+    debugger;
     const testAccount = this.storeService.courseListAccounts;
     console.log(testAccount);
-    if (testAccount === '') {
+    if (testAccount.length>0) {
       this.isloggedIn = true;
     } else {
       this.isloggedIn = false;
