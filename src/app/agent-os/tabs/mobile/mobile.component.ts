@@ -9,6 +9,7 @@ import { MobileLearnMoreComponent } from '../../common/modals/mobile-learn-more/
 import { MobileViewMoreComponent } from '../../common/modals/mobile-view-more/mobile-view-more.component';
 import { MobileService } from './mobile.service';
 import { MobileResponse } from './mobile.response';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 @Component({
   selector: 'app-mobile',
   templateUrl: './mobile.component.html',
@@ -67,9 +68,9 @@ export class MobileComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.accNum=accountNumber
     const cardName = `mobile-existingcust`;
-    this.mobileService.getDataFromAPI(accountNumber, cardName).subscribe(
+    this.mobileService.getDataFromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe(
       (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data = resp.content;
       },
       (err) => console.error(err),
       () => {

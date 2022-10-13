@@ -19,6 +19,6 @@ export class MobileResponse
 
 export class MobileRoot{
     accountId:string;
-    content:string;
+    content:MobileResponse;
     identifier:string;
 }
