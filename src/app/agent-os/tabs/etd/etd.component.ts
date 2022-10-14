@@ -187,10 +187,9 @@ export class EtdComponent implements OnInit {
     this.fieldOpps = this.accountServ.fieldOpp;
     this.accountServ.ticketDetail.subscribe((val) => {
       this.etdDetailData = val;
-      if(this.sla & this.fieldOpps){
       this.etdDetailData[1].column[1].info.comment= this.sla;
       this.etdDetailData[2].column[1].info.comment= this.fieldOpps;
-      }
+      
     })
 
   }
