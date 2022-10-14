@@ -11,6 +11,6 @@ export class HistoryTable {
 
 export class HistoryRoot{
     accountId:string;
-    content:string;
+    content:HistoryResponse;
     identifier:string;
 }

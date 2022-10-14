@@ -21,66 +21,77 @@ export class TroubleShootingService extends BaseService {
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromAlertResponseAPI(id:number,identifier:string): Observable<AlertRoot> {
+  getdatafromAlertResponseAPI(accountId:number,identifier:string,applicationId:number): Observable<AlertRoot> {
     const endpoint = Endpoints.getetdaccount ;
-    const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      
-      
-      
+    const val: QueryParam[] = [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];                 
     return this.doGet(endpoint,[],val);
 
   }
-  getdatafromEventHistoryAPI(id:number,identifier:string): Observable<EventHistoryRoot> {
+  getdatafromEventHistoryAPI(accountId:number,identifier:string,applicationId:number): Observable<EventHistoryRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      
-      
-      
-    return this.doGet(endpoint,[],val);
-  }
-
-  getdatafromHitHistoryAPI(id:number,identifier:string): Observable<HitHistoryRoot> {
-    const endpoint = Endpoints.getetdaccount ;
-    const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
       
       
       
     return this.doGet(endpoint,[],val);
   }
 
-  getdatafromHistoryAPI(id:number,identifier:string): Observable<HistoryRoot> {
+  getdatafromHitHistoryAPI(accountId:number,identifier:string,applicationId:number): Observable<HitHistoryRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
       
       
     return this.doGet(endpoint,[],val);
   }
 
-  getDataFromSymptomsAPI(id:number,identifier:string): Observable<SymptomsRoot> {
+  getdatafromHistoryAPI(accountId:number,identifier:string,applicationId:number): Observable<HistoryRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
       
       
     return this.doGet(endpoint,[],val);
   }
 
-  getDataFromTsIssuesAPI(id:number,identifier:string): Observable<TsIssuesRoot> {
+  getDataFromSymptomsAPI(accountId:number,identifier:string,applicationId:number): Observable<SymptomsRoot> {
     const endpoint = Endpoints.getetdaccount ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
+      
+      
+    return this.doGet(endpoint,[],val);
+  }
+
+  getDataFromTsIssuesAPI(accountId:number,identifier:string,applicationId:number): Observable<TsIssuesRoot> {
+    const endpoint = Endpoints.getetdaccount ;
+    const val: QueryParam[] =
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
       
       
       
