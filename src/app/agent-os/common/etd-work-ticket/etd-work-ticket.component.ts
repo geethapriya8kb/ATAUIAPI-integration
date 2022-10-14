@@ -29,8 +29,8 @@ export class EtdWorkTicketComponent implements OnInit {
     private accountServ: AccountService,
     private fb: FormBuilder) {
     this.workTicketForm = this.fb.group({
-      CustomerSla: ["", [Validators.required, Validators.min(0)]],
-      FieldOffs: ["", [Validators.required, Validators.min(0)]],
+      customerSla: ["", [Validators.required, Validators.min(0)]],
+      fieldOpps: ["", [Validators.required, Validators.min(0)]],
       select: ["", [Validators.required]],
     })
   }
@@ -44,19 +44,20 @@ export class EtdWorkTicketComponent implements OnInit {
     this.getCardData(accountNumber);
     this.s();
   }
-s(){
-  this.accountServ.ticketDetail.subscribe((res) => {
-    this.workTicketDetails="";
-    this.workTicketDetails=res;
-    this.jobId=this.workTicketDetails[1][0].info.Job;
-    console.log(this.jobId); 
-  });
-// this.workTicketDetails=this.accountServ.ticketDetail;
-// console.log( this.accountServ.ticketDetail);
-// this.jobId=this.workTicketDetails[1][0].info.Job;
-// console.log(this.jobId);
-
-}
+  s(){
+    this.accountServ.ticketDetail.subscribe((res) => {
+      this.workTicketDetails="";
+      this.workTicketDetails=res;
+      this.jobId="";
+      this.jobId=this.workTicketDetails[1].column[0]?.info.Job;
+      console.log(this.jobId); 
+    });
+    //   this.jobId="";
+    // this.workTicketDetails=this.accountServ.ticketDetail;
+    // console.log( this.accountServ.ticketDetail);
+    // this.jobId=this.workTicketDetails[1][0].info.Job;
+    // console.log(this.jobId);
+    }
 
 
   ngAfterViewInit() {
@@ -99,5 +100,11 @@ s(){
         }
       }
     })
+  }
+
+  etd(){
+    console.log(this.workTicketForm.value);
+    this.accountServ.slaComment =  this.workTicketForm.value.customerSla;
+    this.accountServ.fieldOpp = this.workTicketForm.value.fieldOpps;
   }
 }

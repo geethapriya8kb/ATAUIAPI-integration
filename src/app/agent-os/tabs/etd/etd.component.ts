@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
@@ -33,6 +34,10 @@ export class EtdComponent implements OnInit {
   public searchFilter: any = '';
   filterAlert: Array<TicketInformation> = [];
   query: any;
+
+  sla:any;
+  fieldOpps:any;
+
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl({ disabled: true }),
     endDate: new UntypedFormControl(),
@@ -59,7 +64,7 @@ export class EtdComponent implements OnInit {
     this.etdDropData();
     const accountNumber = this.searchService.getAccountNumber();
     this.getCardData(accountNumber);
-
+    this.etdDataUpdate();
   }
 
   ngAfterViewInit() {
@@ -164,20 +169,32 @@ export class EtdComponent implements OnInit {
     }
     if (this.testData) {
       console.log("clicked");
-      
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
+          this.etdDetailData = "";
           this.etdDetailData = this.tempData.content[i].etd;
         }
       }
       this.etdDetail = this.etdDetailData;
       // this.accountServ.ticketDetail=this.etdDetailData;    
       // console.log(this.accountServ.ticketDetail);
-      this.accountServ.ticketDetail.next(this.etdDetailData);
-       
+      this.accountServ.ticketDetail.next(this.etdDetail);
     }
   }
 
+  etdDataUpdate(){
+    this.sla = this.accountServ.slaComment;
+    this.fieldOpps = this.accountServ.fieldOpp;
+    this.accountServ.ticketDetail.subscribe((val) => {
+      this.etdDetailData = val;
+      if(this.sla & this.fieldOpps){
+      this.etdDetailData[1].column[1].info.comment= this.sla;
+      this.etdDetailData[2].column[1].info.comment= this.fieldOpps;
+      }
+    })
+
+  }
+  
   sendTicket() {
     this.workTicketId = this.testData.Ticket;
     this.accountServ.ticketId.next(this.workTicketId);

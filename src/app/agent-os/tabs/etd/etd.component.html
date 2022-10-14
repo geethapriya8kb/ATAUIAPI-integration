@@ -82,49 +82,52 @@
                         </div>
                     </div>
                 </form>
-                <table class="table table-hover table-sm mt-4">
-                    <thead class="text-center tab-bg-color " >
-                        <tr style="border: 1px solid lightgray;">
-                            <th scope="col">Ticket</th>
-                            <th scope="col">SLA Call Time</th>
-                            <th scope="col">Account</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Node</th>
-                            <th scope="col">Reason</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Owner</th>
-                            <th scope="col">Cust Type</th>
-                        </tr>
-                    </thead>
-                    <ng-container *ngIf="!filterAlert.length">
-                        <tbody *ngFor="let user of data?.content| keyvalue" class="table-bordered">
-                            <tr>
-                                <ng-container *ngFor="let i of user.value | keyvalue:returnZero">
-                                    <td *ngIf="i.key!='etd'&& i.key!='etdWork'&& i.key!='flag'"
-                                        (click)="clickvalue(user.value)" (click)="user.value.flag=!user.value.flag"
-                                        [ngClass]="{'row-selected-clr': user.value.flag === true}"
-                                        style="border: 1px solid lightgray;">
-                                        {{i.value}}
-                                    </td>
-                                </ng-container>
+                <div class="table-scroll mt-4">
+                    <table class="table table-hover table-sm ">
+                        <thead class="text-center tab-bg-color">
+                            <tr style="border: 1px solid lightgray;">
+                                <th scope="col">Ticket</th>
+                                <th scope="col">SLA Call Time</th>
+                                <th scope="col">Account</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Node</th>
+                                <th scope="col">Reason</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Owner</th>
+                                <th scope="col">Cust Type</th>
                             </tr>
-                        </tbody>
-                    </ng-container>
-                    <ng-container *ngIf="filterAlert.length">
-                        <tbody class="table table-bordered">
-                            <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
-                                <td *ngFor="let item of i.value| keyvalue:returnZero" (click)="clickvalue(user.value)">
-                                    <ng-container *ngIf="item.key!='etd'">
-                                        {{item.value}}
+                        </thead>
+                        <ng-container *ngIf="!filterAlert.length">
+                            <tbody *ngFor="let user of data?.content| keyvalue" class="table-bordered">
+                                <tr>
+                                    <ng-container *ngFor="let i of user.value | keyvalue:returnZero">
+                                        <td *ngIf="i.key!='etd'&& i.key!='etdWork'&& i.key!='flag'"
+                                            (click)="clickvalue(user.value)" (click)="user.value.flag=!user.value.flag"
+                                            [ngClass]="{'row-selected-clr': user.value.flag === true}"
+                                            style="border: 1px solid lightgray;">
+                                            {{i.value}}
+                                        </td>
                                     </ng-container>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </ng-container>
-                </table>
-                <div *ngIf="tableDatatest?.length === 0">
-                    <p class="no-records">No Ticket found</p>
+                                </tr>
+                            </tbody>
+                        </ng-container>
+                        <ng-container *ngIf="filterAlert.length">
+                            <tbody class="table table-bordered">
+                                <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
+                                    <td *ngFor="let item of i.value| keyvalue:returnZero"
+                                        (click)="clickvalue(user.value)">
+                                        <ng-container *ngIf="item.key!='etd'">
+                                            {{item.value}}
+                                        </ng-container>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </ng-container>
+                    </table>
                 </div>
+                <!-- <div *ngIf="tableDatatest?.length === 0">
+                    <p class="no-records">No Ticket found</p>
+                </div> -->
             </mat-card>
         </mat-tab>
         <mat-tab label="My Tickets">
@@ -224,8 +227,9 @@
         <mat-tab-group mat-align-tabs="start">
             <mat-tab label="Details">
                 <div class="row mx-0 my-1" *ngIf="etdDetailData && etdDetailData?.length">
-                    <div class="col" *ngFor="let etdList of etdDetailData">
-                        <mat-card class="card-edit" *ngFor="let etd of etdList">
+                    <div class="col" *ngFor="let etdList of etdDetailData|keyvalue">
+                        <div *ngFor="let i of etdList.value|keyvalue">
+                        <mat-card class="card-edit" *ngFor="let etd of i.value">
                             <ng-container *ngIf="etd.header">
                                 <mat-card-header class="header-edit" *ngFor="let p of etd.header | keyvalue:returnZero">
                                     <mat-card-title class="title-font mb-0">
@@ -243,6 +247,7 @@
                                 </mat-card-content>
                             </ng-container>
                         </mat-card>
+                        </div>
                     </div>
                 </div>
             </mat-tab>

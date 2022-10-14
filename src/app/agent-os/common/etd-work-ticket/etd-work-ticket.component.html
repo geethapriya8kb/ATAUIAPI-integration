@@ -67,7 +67,7 @@
                         <label class="fw-bold">No Truck Roll Req: </label>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="checkbox" id="a" class="ms-1" #inputID [(ngModel)]="b" [ngModelOptions]="{standalone: true}">
+                        <input type="checkbox" id="a" class="ms-1">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -75,7 +75,7 @@
                         <label class="fw-bold">Job:</label>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="text" id="a" class="ms-1 f-sty-width" [disabled]="inputID.checked" [value]="jobId">
+                        <input type="text" id="a" class="ms-1 f-sty-width"  [value]="jobId">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -83,7 +83,7 @@
                         <label class="fw-bold">Arrival Date: </label>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="date" class="ms-1 f-sty-width" [disabled]="inputID.checked" >
+                        <input type="date" class="ms-1 f-sty-width"  >
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -92,13 +92,13 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                         <div class="row">
-                            <select class="form-select form-select-sm f-sty-width-25 ms-3" [disabled]="inputID.checked">
+                            <select class="form-select form-select-sm f-sty-width-25 ms-3">
                                 <option disabled selected></option>
                                 <option *ngFor="let i of etddata?.hour | keyvalue" [value]="i.value">
                                     {{i.value}}
                                 </option>
                             </select>
-                            <select class="form-select form-select-sm f-sty-width-25 ms-2" [disabled]="inputID.checked">
+                            <select class="form-select form-select-sm f-sty-width-25 ms-2" >
                                 <option disabled selected></option>
                                 <option *ngFor="let i of etddata?.time | keyvalue" [value]="i.value">
                                     {{i.value}}
@@ -113,13 +113,13 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                         <div class="row">
-                            <select class="form-select form-select-sm f-sty-width-25 ms-3" [disabled]="inputID.checked">
+                            <select class="form-select form-select-sm f-sty-width-25 ms-3">
                                 <option disabled selected></option>
                                 <option *ngFor="let i of etddata?.hour | keyvalue" [value]="i.value">
                                     {{i.value}}
                                 </option>
                             </select>
-                            <select class="form-select form-select-sm f-sty-width-25 ms-2" [disabled]="inputID.checked">
+                            <select class="form-select form-select-sm f-sty-width-25 ms-2">
                                 <option disabled selected></option>
                                 <option *ngFor="let i of etddata?.time | keyvalue" [value]="i.value">
                                     {{i.value}}
@@ -140,8 +140,8 @@
                     <div class="col-md-12 col-sm-12">
                         <label class="fw-bold">Customer SLA Comments: </label>
                         <span class="float-end fw-bold">Remaining Character:256</span>
-                        <textarea class="form-control form-control-md form-control-sm" rows="4" cols="50" class="form-control" formControlName="CustomerSla"></textarea>
-                        <div *ngIf="workTicketForm.get('CustomerSla')?.invalid && (workTicketForm.get('CustomerSla')?.dirty || workTicketForm.get('CustomerSla')?.touched)" class="alert alert-danger">
+                        <textarea class="form-control form-control-md form-control-sm" rows="4" cols="50" class="form-control" formControlName="customerSla"></textarea>
+                        <div *ngIf="workTicketForm.get('customerSla')?.invalid && (workTicketForm.get('customerSla')?.dirty || workTicketForm.get('customerSla')?.touched)" class="alert alert-danger">
                             Enter the characters more than 0
                      </div> 
                     </div>
@@ -182,8 +182,8 @@
                         <label class="fw-bold mb-3">Create Work: </label><br>
                         <label class="fw-bold">Field Ops Comments: </label>
                         <span class="float-end fw-bold">Remaining Character:256</span>
-                        <textarea class="form-control form-control-md form-control-sm" rows="6" cols="150"  class="form-control" formControlName="FieldOffs"></textarea>
-                        <div *ngIf="workTicketForm.get('FieldOffs')?.invalid && (workTicketForm.get('FieldOffs')?.dirty || workTicketForm.get('FieldOffs')?.touched)" class="alert alert-danger">
+                        <textarea class="form-control form-control-md form-control-sm" rows="6" cols="150"  class="form-control" formControlName="fieldOpps"></textarea>
+                        <div *ngIf="workTicketForm.get('fieldOpps')?.invalid && (workTicketForm.get('fieldOpps')?.dirty || workTicketForm.get('fieldOpps')?.touched)" class="alert alert-danger">
                             Enter the characters more than 0
                      </div> 
                     </div>
@@ -216,3 +216,5 @@
     </div>
 </mat-card>
 </form>
+
+<button (click)="etd()" routerLink=".."></button>
