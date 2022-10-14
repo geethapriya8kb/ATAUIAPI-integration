@@ -4,7 +4,7 @@ export class Symptoms {
 
 export class SymptomsRoot{
     accountId:string;
-    content:string;
+    content:Symptoms;
     identifier:string;
 }
 export class Content {
