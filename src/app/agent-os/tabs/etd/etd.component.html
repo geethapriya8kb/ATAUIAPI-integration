@@ -17,11 +17,11 @@
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="custType" class="fw-bold medium mb-2">Cust Type:</label>
-                                <mat-select formControlName="custType" multiple class="form-select form-select-sm">
-                                    <mat-option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
+                                <select formControlName="custType" class="form-select form-select-sm">
+                                    <option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
                                         {{i.value}}
-                                    </mat-option>
-                                </mat-select>
+                                    </option>
+                                </select>
                             </div>
                             <div class="col-md-3 col-sm-3 p-1">
                                 <label for="reasons" class="fw-bold medium mb-2">Reasons:</label>

@@ -6,215 +6,229 @@
         <div class="row">
             <div class="col-md-4 col-sm-4" *ngFor="let i of etdTicketdata?.etdWork|keyvalue:returnZero">
                 <div class="col-md-12 col-sm-12">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6"><span class="fw-bold">{{i.key}}</span>:</div>
-                    <div class="col-md-8 col-sm-6">{{i.value}}</div>
-                </div> 
-            </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6"><span class="fw-bold">{{i.key}}</span>:</div>
+                        <div class="col-md-8 col-sm-6">{{i.value}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </mat-card>
-<form [formGroup]="workTicketForm" >
-<mat-card>
-    <div class="row w-100">
-        <div class="col col-md-5 col-sm-4">
-            <div class="col-md-12 col-sm-12 col">
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">1st Contact Attempt: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <select class="form-select form-select-sm ms-1 f-sty-width" class="form-control"  formControlName="select">
-                            <option disabled selected></option>
-                            <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
-                                {{i.value}}
-                            </option>
-                        </select>
-                        <div *ngIf="workTicketForm.get('select')?.invalid && (workTicketForm.get('select')?.dirty || workTicketForm.get('select')?.touched)" class="alert alert-danger">
-                            Type comments!
-                     </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">2nd Contact Attempt: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <select disabled class="form-select form-select-sm ms-1 f-sty-width">
-                            <option disabled selected></option>
-                            <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
-                                {{i.value}}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">3rd Contact Attempt: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <select disabled class="form-select form-select-sm ms-1 f-sty-width">
-                            <option disabled selected></option>
-                            <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
-                                {{i.value}}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">No Truck Roll Req: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <input type="checkbox" id="a" class="ms-1">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5" >
-                        <label class="fw-bold">Job:</label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <input type="text" id="a" class="ms-1 f-sty-width"  [value]="jobId">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">Arrival Date: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <input type="date" class="ms-1 f-sty-width"  >
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">Between: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <div class="row">
-                            <select class="form-select form-select-sm f-sty-width-25 ms-3">
+<form [formGroup]="workTicketForm">
+    <mat-card>
+        <div class="row w-100">
+            <div class="col col-md-5 col-sm-4">
+                <div class="col-md-12 col-sm-12 col">
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">1st Contact Attempt: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <select class="form-select form-select-sm ms-1 f-sty-width" class="form-control"
+                                formControlName="contactOne">
                                 <option disabled selected></option>
-                                <option *ngFor="let i of etddata?.hour | keyvalue" [value]="i.value">
+                                <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
                                     {{i.value}}
                                 </option>
                             </select>
-                            <select class="form-select form-select-sm f-sty-width-25 ms-2" >
+                            <div *ngIf="workTicketForm.get('select')?.invalid && (workTicketForm.get('select')?.dirty || workTicketForm.get('select')?.touched)"
+                                class="alert alert-danger">
+                                Type comments!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">2nd Contact Attempt: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <select disabled class="form-select form-select-sm ms-1 f-sty-width">
                                 <option disabled selected></option>
-                                <option *ngFor="let i of etddata?.time | keyvalue" [value]="i.value">
+                                <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
                                     {{i.value}}
                                 </option>
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">And: </label>
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <div class="row">
-                            <select class="form-select form-select-sm f-sty-width-25 ms-3">
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">3rd Contact Attempt: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <select disabled class="form-select form-select-sm ms-1 f-sty-width">
                                 <option disabled selected></option>
-                                <option *ngFor="let i of etddata?.hour | keyvalue" [value]="i.value">
-                                    {{i.value}}
-                                </option>
-                            </select>
-                            <select class="form-select form-select-sm f-sty-width-25 ms-2">
-                                <option disabled selected></option>
-                                <option *ngFor="let i of etddata?.time | keyvalue" [value]="i.value">
+                                <option *ngFor="let i of etddata?.attempt| keyvalue" [value]="i.value">
                                     {{i.value}}
                                 </option>
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-5 col-sm-5">
-                        <label class="fw-bold">Customer SLA Refused: </label>
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">No Truck Roll Req: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <input type="checkbox" id="a" class="ms-1" formControlName="noTruckCheck">
+                        </div>
                     </div>
-                    <div class="col-md-7 col-sm-7">
-                        <input type="checkbox" id="a" class="formControl">
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">Job:</label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <input type="text" id="a" class="ms-1 f-sty-width" [value]="jobId">
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3" class="form-group">
-                    <div class="col-md-12 col-sm-12">
-                        <label class="fw-bold">Customer SLA Comments: </label>
-                        <span class="float-end fw-bold">Remaining Character:256</span>
-                        <textarea class="form-control form-control-md form-control-sm" rows="4" cols="50" class="form-control" formControlName="customerSla"></textarea>
-                        <div *ngIf="workTicketForm.get('customerSla')?.invalid && (workTicketForm.get('customerSla')?.dirty || workTicketForm.get('customerSla')?.touched)" class="alert alert-danger">
-                            Enter the characters more than 0
-                     </div> 
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">Arrival Date: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <input type="date" class="ms-1 f-sty-width" [(ngModel)]="slaDate" formControlName="slaDate">
+                        </div>
                     </div>
-                </div>
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">Between: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <div class="row">
+                                <select class="form-select form-select-sm f-sty-width-25 ms-3"
+                                    formControlName="startHour">
+                                    <option disabled selected></option>
+                                    <option *ngFor="let i of etddata?.hour | keyvalue" [value]="i.value">
+                                        {{i.value}}
+                                    </option>
+                                </select>
+                                <select class="form-select form-select-sm f-sty-width-25 ms-2"
+                                    formControlName="startTime">
+                                    <option disabled selected></option>
+                                    <option *ngFor="let i of etddata?.time | keyvalue" [value]="i.value">
+                                        {{i.value}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">And: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <div class="row">
+                                <select class="form-select form-select-sm f-sty-width-25 ms-3"
+                                    formControlName="endHour">
+                                    <option disabled selected></option>
+                                    <option *ngFor="let i of etddata?.hour | keyvalue" [value]="i.value">
+                                        {{i.value}}
+                                    </option>
+                                </select>
+                                <select class="form-select form-select-sm f-sty-width-25 ms-2"
+                                    formControlName="endTime">
+                                    <option disabled selected></option>
+                                    <option *ngFor="let i of etddata?.time | keyvalue" [value]="i.value">
+                                        {{i.value}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-5 col-sm-5">
+                            <label class="fw-bold">Customer SLA Refused: </label>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <input type="checkbox" id="a" class="formControl">
+                        </div>
+                    </div>
 
-            </div>
-        </div>
-        <div class="col col-md-7 col-sm-7">
-            <div class="col-md-12 col-sm-12 col">
-                <div class="row mb-3">
-                    <div class="col-md-3 col-sm-3">
-                        <label class="fw-bold">OOC: </label>
-                        <input type="checkbox" class="ms-2" id="a" #OOC [(ngModel)]="b" [ngModelOptions]="{standalone: true}">
+                    <div class="row mb-3" class="form-group">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="fw-bold">Customer SLA Comments:</label>
+                            <span class="float-end fw-bold">Remaining Character:256</span>
+                            <textarea class="form-control form-control-md form-control-sm" rows="4" cols="50"
+                                class="form-control" formControlName="customerSla" [(ngModel)]="example"></textarea>
+                            <div *ngIf="workTicketForm.get('customerSla')?.invalid && (workTicketForm.get('customerSla')?.dirty || workTicketForm.get('customerSla')?.touched)"
+                                class="alert alert-danger">
+                                Enter the characters more than 0
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-7 col-sm-7">
-                        <select class="form-select form-select-sm f-sty-width-20 ms-2"   [disabled]="!OOC.checked">
-                            <option disabled selected></option>
-                            <option *ngFor="let i of etddata?.ooc | keyvalue" [value]="i.value">
-                                {{i.value}}
-                            </option>
-                        </select>
-                        <div *ngIf="workTicketForm.get('s')?.invalid && (workTicketForm.get('s')?.dirty || workTicketForm.get('s')?.touched)" class="alert alert-danger">
-                            Enter the characters more than 0
-                     </div>
-                    </div>
+
                 </div>
-                <div class="row mb-3">
-                    <div class="col-md-3 col-sm-3">
-                        <label class="fw-bold">Outage: </label>
-                        <input type="checkbox" class="ms-2" id="a">
-                    </div>
-                    <div class="col-md-7 col-sm-7">
-                        <input type="text" id="a" class="ms-1 f-sty-width">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-12 col-sm-12">
-                        <label class="fw-bold mb-3">Create Work: </label><br>
-                        <label class="fw-bold">Field Ops Comments: </label>
-                        <span class="float-end fw-bold">Remaining Character:256</span>
-                        <textarea class="form-control form-control-md form-control-sm" rows="6" cols="150"  class="form-control" formControlName="fieldOpps"></textarea>
-                        <div *ngIf="workTicketForm.get('fieldOpps')?.invalid && (workTicketForm.get('fieldOpps')?.dirty || workTicketForm.get('fieldOpps')?.touched)" class="alert alert-danger">
-                            Enter the characters more than 0
-                     </div> 
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-12 col-sm-12">
-                        <label class="fw-bold">Customer Care Comments: </label>
-                        <span class="float-end fw-bold">Remaining Character:256</span>
-                        <textarea class="form-control form-control-md form-control-sm" disabled rows="6"
-                            cols="150"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12 col-sm-12">
-        <div class="row mt-4">
-            <div class="col col-md-3 col-sm-3">
-                <button type="button" class="btn btn-outline-primary btn-sm btn-md" disabled>Cancel/Back to
-                    Queue</button>
             </div>
             <div class="col col-md-7 col-sm-7">
-                <button type="button" class="btn btn-outline-primary btn-sm btn-md float-end" disabled>Save
-                    Changes</button>
-            </div>
-            <div class="col col-md-2 col-sm-2">
-                <button type="button" class="btn btn-success btn-sm btn-md" [disabled]="workTicketForm.invalid">Save & Close Ticket</button>
+                <div class="col-md-12 col-sm-12 col">
+                    <div class="row mb-3">
+                        <div class="col-md-3 col-sm-3">
+                            <label class="fw-bold">OOC: </label>
+                            <input type="checkbox" class="ms-2" id="a" #OOC [(ngModel)]="b" formControlName="oocCheck">
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <select class="form-select form-select-sm f-sty-width-20 ms-2" formControlName="ooc"
+                                [disabled]="!OOC.checked">
+                                <option disabled selected></option>
+                                <option *ngFor="let i of etddata?.ooc | keyvalue" [value]="i.value">
+                                    {{i.value}}
+                                </option>
+                            </select>
+                            <div *ngIf="workTicketForm.get('s')?.invalid && (workTicketForm.get('s')?.dirty || workTicketForm.get('s')?.touched)"
+                                class="alert alert-danger">
+                                Comment Not Entered.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 col-sm-3">
+                            <label class="fw-bold">Outage: </label>
+                            <input type="checkbox" class="ms-2" id="a">
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <input type="text" id="a" class="ms-1 f-sty-width" disabled>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="fw-bold mb-3">Create Work: </label><br>
+                            <label class="fw-bold">Field Ops Comments: </label>
+                            <span class="float-end fw-bold">Remaining Character:256</span>
+                            <textarea class="form-control form-control-md form-control-sm" rows="6" cols="150"
+                                class="form-control" formControlName="fieldOpps"></textarea>
+                            <div *ngIf="workTicketForm.get('fieldOpps')?.invalid && (workTicketForm.get('fieldOpps')?.dirty || workTicketForm.get('fieldOpps')?.touched)"
+                                class="alert alert-danger">
+                                Comment Not Entered.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12 col-sm-12">
+                            <label class="fw-bold">Customer Care Comments: </label>
+                            <span class="float-end fw-bold">Remaining Character:256</span>
+                            <textarea class="form-control form-control-md form-control-sm" disabled rows="6"
+                                cols="150"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</mat-card>
+        <div class="col-md-12 col-sm-12">
+            <div class="row mt-4">
+                <div class="col col-md-3 col-sm-3">
+                    <button type="button" class="btn btn-outline-primary btn-sm btn-md" disabled>Cancel/Back to
+                        Queue</button>
+                </div>
+                <div class="col col-md-7 col-sm-7">
+                    <button type="button" class="btn btn-outline-primary btn-sm btn-md float-end"
+                        [disabled]="workTicketForm.invalid" (click)="etd()" routerLink="..">Save
+                        Changes</button>
+                </div>
+                <div class="col col-md-2 col-sm-2">
+                    <button type="button" class="btn btn-success btn-sm btn-md" [disabled]="workTicketForm.invalid"
+                        (click)="etd()" routerLink="..">Save
+                        & Close Ticket</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
 </form>
-
-<button (click)="etd()" routerLink=".."></button>
