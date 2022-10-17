@@ -1,6 +1,18 @@
-<h6 class="fw-bold m-2" >Outage History</h6>
-<div class="chart-wrapper">
-    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors">
-    </canvas>
+<div class="row">
+    <h6 class="fw-bold col-md-10">Outage History</h6>
+    <button class="btn-chart col-md-2" type="button" (click)="view()">
+        <i class="fa fa-bar-chart icon-font"></i>
+        <span *ngIf="!showchart">View as Charts</span>
+        <span *ngIf="showchart">View as List</span>
+    </button>
+</div>
+<div *ngIf="showchart">
+    <div class="chart-wrapper">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors">
+        </canvas>
+    </div>
+</div>
+<div *ngIf="!showchart">
+    No data Available
 </div>
