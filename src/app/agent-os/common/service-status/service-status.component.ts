@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { GroupService } from '../../service-demo/group.service';
 import { SearchService } from '../../services/search.service';
 import { StorageService } from '../../services/storage.service';
@@ -59,7 +60,7 @@ export class ServiceStatusComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
 
-    this.groupservice.getdatafromAPI(accountNumber,'service-status').subscribe(
+    this.groupservice.getdatafromAPI(accountNumber,'service-status', Number(ApplicationEnum.AgentOs)).subscribe(
       (resp) => {
         this.data= JSON.parse(resp.content);
         this.storeService.serviceStatusAccount = this.data;

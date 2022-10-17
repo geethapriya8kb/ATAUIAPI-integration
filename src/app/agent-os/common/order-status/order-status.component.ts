@@ -5,6 +5,7 @@ import { OrderStatus } from '../../interfaces/OrderStatus';
 import { SearchService } from '../../services/search.service';
 import { GroupService } from '../../service-demo/group.service';
 import { StorageService } from '../../services/storage.service';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 
 @Component({
   selector: 'app-order-status',
@@ -71,7 +72,7 @@ export class OrderStatusComponent implements OnInit {
 
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    this.groupservice.getdatafromAPI(accountNumber,'order-status').subscribe(
+    this.groupservice.getdatafromAPI(accountNumber,'order-status',Number(ApplicationEnum.AgentOs)).subscribe(
       (resp) => {
         this.data= JSON.parse(resp.content);
         this.storeService.orderStatusAccount = this.data;
