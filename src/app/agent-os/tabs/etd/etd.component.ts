@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { AccountService } from '../../services/account.service';
 import { SearchService } from '../../services/search.service';
@@ -35,9 +34,17 @@ export class EtdComponent implements OnInit {
   filterAlert: Array<TicketInformation> = [];
   query: any;
 
-  sla:any;
-  fieldOpps:any;
-
+  sla: any;
+  fieldOpps: any;
+  truckCheck: any;
+  oocCheck: any;
+  ooc: any;
+  startTime:any;
+  startHour:any;
+  endHour:any;
+  endTime:any;
+  arrivalTime:any;
+  slaDate:any;
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl({ disabled: true }),
     endDate: new UntypedFormControl(),
@@ -51,6 +58,7 @@ export class EtdComponent implements OnInit {
   tempData: any;
   assignFlag: boolean = true;
   statusFlag: boolean = false;
+
 
   constructor(
     private searchService: SearchService,
@@ -119,9 +127,9 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName, Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
-        this.data =resp.content;
+        this.data = resp.content;
         this.tempData = this.data;
       },
       error: (err) => console.log(err),
@@ -176,24 +184,48 @@ export class EtdComponent implements OnInit {
         }
       }
       this.etdDetail = this.etdDetailData;
-      // this.accountServ.ticketDetail=this.etdDetailData;    
-      // console.log(this.accountServ.ticketDetail);
       this.accountServ.ticketDetail.next(this.etdDetail);
     }
   }
 
-  etdDataUpdate(){
+  etdDataUpdate() {
     this.sla = this.accountServ.slaComment;
     this.fieldOpps = this.accountServ.fieldOpp;
+    this.ooc =this.accountServ.ooc;
+    this.startHour =this.accountServ.sHour;
+    this.startTime =this.accountServ.sTime;
+    this.endHour =this.accountServ.eHour;
+    this.endTime =this.accountServ.eTime;
+    this.arrivalTime= this.startHour+this.startTime +'-'+this.endHour+this.endTime;
+    this.slaDate= this.accountServ.slaDate;
+    console.log(this.slaDate);
+    
+     
+
     this.accountServ.ticketDetail.subscribe((val) => {
       this.etdDetailData = val;
-      this.etdDetailData[1].column[1].info.comment= this.sla;
-      this.etdDetailData[2].column[1].info.comment= this.fieldOpps;
-      
+      this.etdDetailData[1].column[1].info.comment = this.sla;
+      this.etdDetailData[2].column[1].info.comment = this.fieldOpps;
+      this.etdDetailData[1].column[2].info['OOC Reason'] = this.ooc;
+      this.etdDetailData[1].column[0].info['Arrival Window'] = this.arrivalTime;
+      this.etdDetailData[0].column[0].info['SLA Call Time'] = this.slaDate;
     })
 
+    if (this.accountServ.oocCheck == true) {
+      this.etdDetailData[1].column[2].header['Out Of Compliance:'] = "yes"
+    }
+    else {
+      this.etdDetailData[1].column[2].header['Out Of Compliance:'] = "No"
+    }
+
+    if(this.accountServ.slaCheck == true){
+      this.etdDetailData[1].column[0].info['Customer SLA refused'] = "yes"
+    }
+    else {
+      this.etdDetailData[1].column[0].info['Customer SLA refused'] = "No"
+    }
   }
-  
+
   sendTicket() {
     this.workTicketId = this.testData.Ticket;
     this.accountServ.ticketId.next(this.workTicketId);

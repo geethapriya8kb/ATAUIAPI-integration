@@ -11,7 +11,6 @@ import { ApplicationEnum } from 'src/app/models/setting-enum';
 })
 export class EtdWorkTicketComponent implements OnInit {
   workTicketId: string;
-  jobId:any;
   etddata: any;
   tempData: any;
   workTicketDetails: any;
@@ -19,6 +18,19 @@ export class EtdWorkTicketComponent implements OnInit {
   accountVal: unknown;
   data: any;
   b: boolean = false;
+  jobId:any;
+  customerSla: any;
+  fieldOpps: any;
+  contactOne: any;
+  noTruckCheck: any;
+  oocCheck:any;
+  ooc:any;
+  startHour:any;
+  startTime:any;
+  endHour: any;
+  endTime:any;
+  slaDate:Date;
+  example:any;
   workTicketForm!: FormGroup;
   accountId = new UntypedFormGroup({
     accountNumber: new UntypedFormControl(),
@@ -31,7 +43,15 @@ export class EtdWorkTicketComponent implements OnInit {
     this.workTicketForm = this.fb.group({
       customerSla: ["", [Validators.required, Validators.min(0)]],
       fieldOpps: ["", [Validators.required, Validators.min(0)]],
-      select: ["", [Validators.required]],
+      contactOne: ["", [Validators.required]],
+      noTruckCheck:[""],
+      oocCheck:[""],
+      ooc:[""],
+      startHour:[""],
+      startTime:[""],
+      endHour:[""],
+      endTime:[""],
+      slaDate:[""]
     })
   }
 
@@ -51,12 +71,14 @@ export class EtdWorkTicketComponent implements OnInit {
       this.jobId="";
       this.jobId=this.workTicketDetails[1].column[0]?.info.Job;
       console.log(this.jobId); 
+      this.slaDate=this.workTicketDetails[0].column[0].info['SLA Call Time'];
+      console.log(this.slaDate);
+      this.example=""
+      this.example=this.workTicketDetails[1].column[1]?.info['comment'];
+      console.log(this.example);
+      
+
     });
-    //   this.jobId="";
-    // this.workTicketDetails=this.accountServ.ticketDetail;
-    // console.log( this.accountServ.ticketDetail);
-    // this.jobId=this.workTicketDetails[1][0].info.Job;
-    // console.log(this.jobId);
     }
 
 
@@ -103,8 +125,17 @@ export class EtdWorkTicketComponent implements OnInit {
   }
 
   etd(){
-    console.log(this.workTicketForm.value);
     this.accountServ.slaComment =  this.workTicketForm.value.customerSla;
     this.accountServ.fieldOpp = this.workTicketForm.value.fieldOpps;
+    this.accountServ.truckCheck = this.workTicketForm.value.noTruckCheck;
+    this.accountServ.oocCheck = this.workTicketForm.value.oocCheck;
+    this.accountServ.ooc = this.workTicketForm.value.ooc;
+    this.accountServ.slaCheck = this.workTicketForm.value.slaCheck;
+    this.accountServ.sHour=this.workTicketForm.value.startHour;
+    this.accountServ.sTime=this.workTicketForm.value.startTime;
+    this.accountServ.eHour=this.workTicketForm.value.endHour;
+    this.accountServ.eTime=this.workTicketForm.value.endTime;
+    this.accountServ.slaDate=this.workTicketForm.value.slaDate;
+
   }
 }
