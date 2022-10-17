@@ -12,10 +12,14 @@
                             </mat-tab>
                         </ng-container>
                         <ng-template #other_content>
-                            <ng-container *ngIf="isTroubleShoot">
+                            <ng-container *ngIf="isTroubleShoot; else disableTs">
                                 <mat-tab label="{{ menu.label }}"
                                     [ngClass]="{'mat-tab-label-active': i === selectedIdx}"></mat-tab>
                             </ng-container>
+                            <ng-template #disableTs>
+                                <mat-tab label="{{ menu.label }}"
+                                    [ngClass]="{'mat-tab-label-active': i === selectedIdx}" disabled></mat-tab>
+                            </ng-template>
                         </ng-template>
                     </ng-container>
                 </mat-tab-group>
