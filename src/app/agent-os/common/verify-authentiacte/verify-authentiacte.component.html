@@ -3,7 +3,7 @@
   </button>
 <div class="row">
     <div class="col-md-8">
-        <div class="card">
+        <div >
             <h4 class="m-1">Verify</h4>
             <hr>
             <div class="col-md-12">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="card mt-2">
+        <div>
             <h4 class="m-1">Authenticate</h4>
             <hr>
             <div class="col-md-12 col-sm-12">
@@ -38,10 +38,10 @@
                         <span class="ms-2"><b>Security code</b></span>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [formControl]="securityCode">
                     </div>
                     <div class="col-md-2 col-sm-2 p-1">
-                        <button mat-raised-button color="secondary" class="btn-rounded">
+                        <button mat-raised-button color="grey" class="btn-rounded" style="padding:3px 50px;" [disabled]="!securityCode.valid">
                             <span class="text-size">Authenticate</span>
                         </button>
                     </div>
@@ -53,10 +53,11 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                         <span class="input ms-2"><b>What is the name of your first pet?</b></span>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [formControl]="securityQuestion">
                     </div>
                     <div class="col-md-2 col-sm-2 p-1">
-                        <button mat-raised-button color="secondary" class="btn-rounded">
+                        <button mat-raised-button color="grey" class="btn-rounded"  style="padding:3px 50px;" [disabled]="!securityQuestion.valid">
+                            
                             <span class="text-size">Authenticate</span>
                         </button>
                     </div>
@@ -67,10 +68,10 @@
                         <span class="ms-2"><b>Pin code</b></span>
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [formControl]="pinCode">
                     </div>
                     <div class="col-md-2 col-sm-2 p-1">
-                        <button mat-raised-button color="secondary" class="btn-rounded">
+                        <button mat-raised-button color="grey" class="btn-rounded"  style="padding:3px 50px;" [disabled]="!pinCode.valid">
                             <span class="text-size">Authenticate</span>
                         </button>
                     </div>
@@ -82,21 +83,21 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                         <div class="input-group h-50">
-                            <select #teams class="custom-select w-100" id="inputGroupSelect01" (change)="onSelectType($event)" >
+                            <select #teams class="custom-select w-100" id="inputGroupSelect01" (change)="onSelectType($event)" [formControl]="securityToken" >
                                 <option disabled selected></option>
                                 <option *ngFor="let item of typeList"
                              value="{{item.VerifyType}}">{{item.VerifyType}}</option>
                             </select>
                         </div>
                         <div class="input-group h-50 mt-1" *ngIf="verifyList.length">
-                            <select class="custom-select w-100" id="inputGroupSelect01">
+                            <select class="custom-select w-100" id="inputGroupSelect01" [formControl]="SecurityTokenExpand">
                                 <option disabled selected></option>
                                 <option value="{{verify}}" *ngFor="let verify of verifyList">{{verify}}</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 p-1">
-                        <button mat-raised-button color="secondary" class="btn-rounded">
+                        <button mat-raised-button color="grey" class="btn-rounded"  style="padding:3px 50px;"  [disabled]="!securityToken.valid && !securityTokenExpand.valid" >
                             <span class="text-size">Send Token</span>
                         </button>
                     </div>

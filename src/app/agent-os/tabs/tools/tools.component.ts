@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { CardDataService } from '../../services/card-data.service';
+import { Content, ToolsResponse } from './tools.response';
 
 @Component({
   selector: 'app-tools',
@@ -8,20 +9,20 @@ import { CardDataService } from '../../services/card-data.service';
   styleUrls: ['./tools.component.scss'],
 })
 export class ToolsComponent implements OnInit {
-  data: any = {};
-  filterData: any = [];
+  data: ToolsResponse;
+  filterData: Array<Content>;
   flag: boolean;
   constructor(private toolsService: CardDataService) { }
 
   ngOnInit(): void {
     this.gettool();
   }
-  gettool() {
+
+  
+    gettool() {
     const dataFileName = `assets/data/tools-image.json`;
     this.toolsService.getCardData(dataFileName).subscribe(
-      (resp) => {
-        this.data = resp;
-      },
+      (resp) => { this.data = resp; },
       (err) => console.error(err),
       () => {
       }
