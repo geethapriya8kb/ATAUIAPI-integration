@@ -74,7 +74,7 @@ export class OrderStatusComponent implements OnInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.groupservice.getdatafromAPI(accountNumber,'order-status',Number(ApplicationEnum.AgentOs)).subscribe(
       (resp) => {
-        this.data= JSON.parse(resp.content);
+        this.data= resp.content;
         this.storeService.orderStatusAccount = this.data;
       },
       (err) => console.error(err),

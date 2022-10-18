@@ -68,7 +68,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.groupservice.getdatafromAPI(accountNumber, this.cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data = resp.content;
         if (accountNumber != 'empty') {
           switch (this.cardName) {
             case 'location':

@@ -62,7 +62,7 @@ export class ServiceStatusComponent implements OnInit {
 
     this.groupservice.getdatafromAPI(accountNumber,'service-status', Number(ApplicationEnum.AgentOs)).subscribe(
       (resp) => {
-        this.data= JSON.parse(resp.content);
+        this.data= resp.content;
         this.storeService.serviceStatusAccount = this.data;
       },
       (err) => console.error(err),
