@@ -1,3 +1,4 @@
+import { FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../services/account.service';
 
@@ -12,8 +13,16 @@ export class VerifyAuthentiacteComponent implements OnInit {
   verifyList:any[]=[];
   selectedCallType = '';
   flag!: boolean;
-  constructor(private accountserv:AccountService) { }
+  
+  
+  securityCode=new FormControl("",Validators.required);
+  securityQuestion=new FormControl("",Validators.required);
+  pinCode=new FormControl("",Validators.required);
+  securityToken=new FormControl("",Validators.required);
+  securityTokenExpand=new FormControl("",Validators.required);
 
+  constructor(private accountserv:AccountService) { }
+ 
   ngOnInit(): void {
     this.verifydata()
   }
