@@ -1,6 +1,6 @@
 export class TsIssuesRoot{
     accountId:string;
-    content:string;
+    content:TsIssuesResponse;
     identifier:string;
 }
 

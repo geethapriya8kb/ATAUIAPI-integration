@@ -17,15 +17,13 @@ export class DataCardService extends BaseService {
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromAPI(id:number,identifier:string): Observable<DataCardRoot> {
+  getdatafromAPI(accountId:number,identifier:string,applicationId :number): Observable<DataCardRoot> {
     const endpoint = Endpoints.getetdaccount ;
-    const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
-      
-      
-      
-      
+    const val: QueryParam[] =[
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
     return this.doGet(endpoint,[],val);
 
   }

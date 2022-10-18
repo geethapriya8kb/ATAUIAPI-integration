@@ -13,6 +13,6 @@ export class History {
 
 export class HitHistoryRoot{
     accountId:string;
-    content:string;
+    content:HitHistoryResponse;
     identifier:string;
 }

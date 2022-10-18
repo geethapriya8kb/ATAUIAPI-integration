@@ -81,3 +81,8 @@
 .row-selected-clr{
     background-color:rgba(255, 0, 0, 0.502)
 }
+
+.table-scroll{
+    overflow-y: scroll;
+    max-height: 250px;
+}

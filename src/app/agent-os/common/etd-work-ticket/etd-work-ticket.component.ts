@@ -13,11 +13,25 @@ export class EtdWorkTicketComponent implements OnInit {
   workTicketId: string;
   etddata: any;
   tempData: any;
-  etdTicketdata: any ="";
+  workTicketDetails: any;
+  etdTicketdata: any = "";
   accountVal: unknown;
   data: any;
-  b:boolean=false;
-  WorkTicketForm!:FormGroup;
+  b: boolean = false;
+  jobId:any;
+  customerSla: any;
+  fieldOpps: any;
+  contactOne: any;
+  noTruckCheck: any;
+  oocCheck:any;
+  ooc:any;
+  startHour:any;
+  startTime:any;
+  endHour: any;
+  endTime:any;
+  slaDate:Date;
+  example:any;
+  workTicketForm!: FormGroup;
   accountId = new UntypedFormGroup({
     accountNumber: new UntypedFormControl(),
     locationId: new UntypedFormControl()
@@ -25,27 +39,47 @@ export class EtdWorkTicketComponent implements OnInit {
   constructor(private searchService: SearchService,
     private etdservice: EtdService,
     private accountServ: AccountService,
-    private fb:FormBuilder) {
-
-
-      this.WorkTicketForm=this.fb.group({
-        CustomerSla:["",[Validators.required,Validators.min(0)]],
-        FieldOffs:["",[Validators.required,Validators.min(0)]],
-        select:["",[Validators.required]],
-      })
-     }
+    private fb: FormBuilder) {
+    this.workTicketForm = this.fb.group({
+      customerSla: ["", [Validators.required, Validators.min(0)]],
+      fieldOpps: ["", [Validators.required, Validators.min(0)]],
+      contactOne: ["", [Validators.required]],
+      noTruckCheck:[""],
+      oocCheck:[""],
+      ooc:[""],
+      startHour:[""],
+      startTime:[""],
+      endHour:[""],
+      endTime:[""],
+      slaDate:[""]
+    })
+  }
 
   ngOnInit(): void {
     this.etdDropData();
     const accountNumber = this.searchService.getAccountNumber();
     this.accountServ.ticketId.subscribe((value) => {
       this.workTicketId = value;
-console.log();
-
     });
     this.getCardData(accountNumber);
+    this.s();
   }
+  s(){
+    this.accountServ.ticketDetail.subscribe((res) => {
+      this.workTicketDetails="";
+      this.workTicketDetails=res;
+      this.jobId="";
+      this.jobId=this.workTicketDetails[1].column[0]?.info.Job;
+      console.log(this.jobId); 
+      this.slaDate=this.workTicketDetails[0].column[0].info['SLA Call Time'];
+      console.log(this.slaDate);
+      this.example=""
+      this.example=this.workTicketDetails[1].column[1]?.info['comment'];
+      console.log(this.example);
+      
 
+    });
+    }
 
 
   ngAfterViewInit() {
@@ -59,10 +93,6 @@ console.log();
     });
   }
 
-  findAccount() {
-    console.log(this.accountId.value);
-  }
-
   etdDropData() {
     const dataFileName = `assets/data/etd-table.json`;
     this.accountServ.getverifydata(dataFileName).subscribe(
@@ -71,7 +101,7 @@ console.log();
       },
       (err) => console.error(err),
       () => {
-        console.log(this.etddata);
+        // console.log(this.etddata);
       }
     );
   }
@@ -81,24 +111,31 @@ console.log();
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-     this.etdservice.getdatafromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+    this.etdservice.getdatafromAPI(accountNumber, cardName, Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data = resp.content;
         this.tempData = this.data;
         for (let i = 0; i < this.tempData.content?.length; i++) {
-          console.log(this.tempData.content[i]?.Ticket);
-          if (this.tempData.content[i]?.Ticket === this.workTicketId) 
-          {
-            console.log("true");
-            
+          if (this.tempData.content[i]?.Ticket === this.workTicketId) {
             this.etdTicketdata = this.tempData.content[i];
-            console.log(this.etdTicketdata);
-            
-            console.log(this.etdTicketdata.etdWork);
-            
           }
         }
       }
     })
+  }
+
+  etd(){
+    this.accountServ.slaComment =  this.workTicketForm.value.customerSla;
+    this.accountServ.fieldOpp = this.workTicketForm.value.fieldOpps;
+    this.accountServ.truckCheck = this.workTicketForm.value.noTruckCheck;
+    this.accountServ.oocCheck = this.workTicketForm.value.oocCheck;
+    this.accountServ.ooc = this.workTicketForm.value.ooc;
+    this.accountServ.slaCheck = this.workTicketForm.value.slaCheck;
+    this.accountServ.sHour=this.workTicketForm.value.startHour;
+    this.accountServ.sTime=this.workTicketForm.value.startTime;
+    this.accountServ.eHour=this.workTicketForm.value.endHour;
+    this.accountServ.eTime=this.workTicketForm.value.endTime;
+    this.accountServ.slaDate=this.workTicketForm.value.slaDate;
+
   }
 }

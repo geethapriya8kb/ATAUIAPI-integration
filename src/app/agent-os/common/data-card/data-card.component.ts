@@ -1,6 +1,7 @@
 import { ComponentType } from '@angular/cdk/portal';
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 import { GroupService } from '../../service-demo/group.service';
 import { SearchService } from '../../services/search.service';
 import { StorageService } from '../../services/storage.service';
@@ -65,7 +66,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
 
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    this.groupservice.getdatafromAPI(accountNumber, this.cardName).subscribe({
+    this.groupservice.getdatafromAPI(accountNumber, this.cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data = JSON.parse(resp.content);
         if (accountNumber != 'empty') {

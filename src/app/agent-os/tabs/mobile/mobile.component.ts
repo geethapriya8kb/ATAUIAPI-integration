@@ -74,7 +74,7 @@ export class MobileComponent implements OnInit {
       },
       (err) => console.error(err),
       () => {
-        this.dataTest = this.data.mobileDeviceTable;
+        this.dataTest = this.data?.mobileDeviceTable;
         this.dataSource.data = this.dataTest;
         this.columnsToDisplay=this.data.orderStatusColumns;
 

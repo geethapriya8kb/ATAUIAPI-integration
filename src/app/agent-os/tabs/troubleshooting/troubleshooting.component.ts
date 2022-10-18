@@ -15,6 +15,7 @@ import { HistoryTable,HistoryResponse } from './history.response';
 import { Symptoms } from './symptoms.response';
 import { Internet, Video } from './tsissues.response';
 import { HitHistoryResponse,History } from './hithistory.response';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 
 @Component({
   selector: 'app-troubleshooting',
@@ -111,7 +112,7 @@ export class TroubleshootingComponent implements OnInit {
   getAlertsData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName="troubleshooting-alerts"
-    this.troubleShootService.getdatafromAlertResponseAPI(accountNumber, cardName).subscribe({
+    this.troubleShootService.getdatafromAlertResponseAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.eventAlertsData = JSON.parse(resp.content);
       },
@@ -123,7 +124,7 @@ export class TroubleshootingComponent implements OnInit {
   getValuetoTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName="ts-event-history"
-    this.troubleShootService.getdatafromEventHistoryAPI(accountNumber, cardName).subscribe({
+    this.troubleShootService.getdatafromEventHistoryAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data  = JSON.parse(resp.content);
       },
@@ -138,8 +139,8 @@ export class TroubleshootingComponent implements OnInit {
    getValuetoHitTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName="hit-history"
-    this.troubleShootService.getdatafromHitHistoryAPI(accountNumber,cardName).subscribe({
-      next: (resp) => (this.hitData =  JSON.parse(resp.content)),
+    this.troubleShootService.getdatafromHitHistoryAPI(accountNumber,cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+      next: (resp) => (this.hitData =  resp.content),
       error: (err) => console.error(err),
       complete: () => {
         this.dataSourceHit.data = this.hitData.hithistory;
@@ -151,8 +152,8 @@ export class TroubleshootingComponent implements OnInit {
   getValuetoTShistoryTable(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
        let cardName="troubleshooting-history"
-     this.troubleShootService.getdatafromHistoryAPI(accountNumber,cardName).subscribe({
-      next: (resp) => (this.tsHistoryData = JSON.parse(resp.content)),
+     this.troubleShootService.getdatafromHistoryAPI(accountNumber,cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+      next: (resp) => (this.tsHistoryData = resp.content),
       error: (err) => console.error(err),
       complete: () => {
         this.dataSourceTs.data = this.tsHistoryData.eventHistoryTable;
@@ -164,8 +165,8 @@ export class TroubleshootingComponent implements OnInit {
   getSymptomsData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName="symptoms"
-    this.troubleShootService.getDataFromSymptomsAPI(accountNumber,cardName).subscribe({
-      next: (resp) => (this.symptomsData = JSON.parse(resp.content)),
+    this.troubleShootService.getDataFromSymptomsAPI(accountNumber,cardName,Number(ApplicationEnum.AgentOs)).subscribe({
+      next: (resp) => (this.symptomsData = resp.content),
       error: (err) => console.error(err),
       complete: () => {
        
@@ -176,9 +177,9 @@ export class TroubleshootingComponent implements OnInit {
   getvideoIssuesData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName="ts-issues"
-    this.troubleShootService.getDataFromTsIssuesAPI(accountNumber,cardName).subscribe({
+    this.troubleShootService.getDataFromTsIssuesAPI(accountNumber,cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
-        let content= JSON.parse(resp.content)
+        let content=resp.content
         this.videoIssuesData = content.video;
         this.internetIssuesData = content.internet;
       },

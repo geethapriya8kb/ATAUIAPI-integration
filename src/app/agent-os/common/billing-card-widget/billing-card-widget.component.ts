@@ -4,6 +4,7 @@ import { SharedService } from '../../services/shared.service';
 import { UtilsService } from '../../services/utils.service';
 import { GroupService } from '../../service-demo/group.service';
 import { StorageService } from '../../services/storage.service';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 
 @Component({
   selector: 'app-billing-card-widget',
@@ -50,7 +51,7 @@ export class BillingCardWidgetComponent implements OnInit {
 
   getBillingCardWidgetData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    this.groupservice.getdatafromAPI(accountNumber, this.cardName).subscribe({
+    this.groupservice.getdatafromAPI(accountNumber, this.cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.billingwidget = resp.content;
         this.data = JSON.parse(this.billingwidget);

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -10,8 +10,19 @@ const httpOptions = {
 })
 export class AccountService {
   ticketId = new BehaviorSubject("");
+  ticketDetail = new BehaviorSubject({});
+  public slaCheck:boolean;
+  public slaComment :string;
+  public fieldOpp:any;
+  public truckCheck:boolean;
+  public oocCheck:boolean;
+  public ooc: any;
+  public sTime:any;
+  public sHour:any;
+  public eHour:any;
+  public eTime:any;
+  public slaDate:any;
 constructor(private http: HttpClient) { 
-  
 }
 
 getAccountData(url: any) {

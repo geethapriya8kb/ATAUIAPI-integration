@@ -14,11 +14,12 @@ export class GroupService extends BaseService {
   constructor(http: HttpClient, settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getdatafromAPI(id: number, identifier: string): Observable<any> {
+  getdatafromAPI(accountId:number,identifier:string,applicationId :number): Observable<any> {
     const endpoint = Endpoints.getbillingwidget;
-    const val: QueryParam[] = [
-      { key: 'id', value: id.toString() },
-      { key: 'identifier', value: identifier.toString() },
+    const val: QueryParam[] =  [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
     ];
 
     return this.doGet(endpoint, [], val);

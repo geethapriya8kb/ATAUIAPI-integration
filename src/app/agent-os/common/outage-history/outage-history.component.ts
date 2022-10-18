@@ -32,8 +32,12 @@ export class OutageHistoryComponent implements OnInit {
       maxBarThickness: 8,
     },
   ];
-
+  showchart: boolean = true;
   constructor() {}
 
   ngOnInit(): void {}
+
+  view() {
+    this.showchart = !this.showchart;
+  }
 }
