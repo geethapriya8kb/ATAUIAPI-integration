@@ -15,6 +15,7 @@ import { EtdService } from './etd.service';
 export class EtdComponent implements OnInit {
   flag: boolean = false;
   data: EtdResponse;
+  dataFlag: boolean = false;
   etddata: any;
   workTicketId: string;
   etdDetailData: any;
@@ -33,18 +34,18 @@ export class EtdComponent implements OnInit {
   public searchFilter: any = '';
   filterAlert: Array<TicketInformation> = [];
   query: any;
-
   sla: any;
   fieldOpps: any;
   truckCheck: any;
   oocCheck: any;
   ooc: any;
-  startTime:any;
-  startHour:any;
-  endHour:any;
-  endTime:any;
-  arrivalTime:any;
-  slaDate:any;
+  startTime: any;
+  startHour: any;
+  endHour: any;
+  endTime: any;
+  arrivalTime: any;
+  slaDate: any;
+  updateTicket:any;
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl({ disabled: true }),
     endDate: new UntypedFormControl(),
@@ -58,6 +59,7 @@ export class EtdComponent implements OnInit {
   tempData: any;
   assignFlag: boolean = true;
   statusFlag: boolean = false;
+  updateStatus:any;
 
 
   constructor(
@@ -71,8 +73,8 @@ export class EtdComponent implements OnInit {
     this.etdData();
     this.etdDropData();
     const accountNumber = this.searchService.getAccountNumber();
-    this.getCardData(accountNumber);
     this.etdDataUpdate();
+    this.getCardData(accountNumber);
   }
 
   ngAfterViewInit() {
@@ -86,14 +88,45 @@ export class EtdComponent implements OnInit {
     });
   }
 
+  getCardData(accountNumber) {
+    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
+    let cardName = 'etd-account';
+    this.updateStatus=this.accountServ.statusUpdate;
+    this.updateTicket=this.accountServ.etdworkTicket;
+    console.log(this.updateStatus);
+    this.etdservice.getdatafromAPI(accountNumber, cardName, Number(ApplicationEnum.AgentOs)).subscribe({
+      next: (resp) => {
+        this.data = resp.content;
+        this.tempData = this.data;
+        this.accountServ.allData = this.data;
+        if(this.updateTicket){
+          for (let i = 0; i < this.data.content?.length; i++) 
+          {
+            if (this.data.content[i].Ticket === this.updateTicket) {
+              this.data.content[i].Status = this.updateStatus;
+            }
+          }
+        }
+      },
+      error: (err) => console.log(err),
+      complete: () => {
+        this.tableDatatest = this.data.content;
+        this.dataSource.data = this.tableDatatest;
+        this.columnsToDisplay = this.data.etdcol;
+        this.histableDatatest = this.data.historytab;
+        this.hisDataSource.data = this.histableDatatest;
+        this.hisColumnsToDisplay = this.data.historycol;
+        this.ticketColumnsToDisplay = this.data.myticketcol;
+      },
+    });
+  }
+
   filter() {
     const searchTicket = this.etdValue.value;
     if (searchTicket) {
       this.filterAlert = [];
       for (let i = 0; i < this.tempData.content?.length; i++) {
-        let customer = this.etdValue.controls['custType'].value
-          .toString()
-          .charAt(0);
+        let customer = this.etdValue.controls['custType'].value.toString().charAt(0);
         if (
           (!this.etdValue.controls['search'].value ||
             String(this.tempData.content[i].Ticket)
@@ -111,7 +144,8 @@ export class EtdComponent implements OnInit {
               String(this.tempData.content[i].Reason)
             )) &&
           (!this.etdValue.controls['custType'].value ||
-            customer.includes(String(this.tempData.content[i]['Cust Type']))) &&
+            customer.includes(String(this.tempData.content[i]['Cust Type'])
+            )) &&
           (!this.etdValue.controls['managmentArea'].value ||
             this.etdValue.controls['managmentArea'].value.includes(
               String(this.tempData.content[i].City)
@@ -119,30 +153,10 @@ export class EtdComponent implements OnInit {
         ) {
           let temp = this.tempData.content[i];
           this.filterAlert.push(temp);
+          console.log(this.filterAlert);
         }
       }
     }
-  }
-
-  getCardData(accountNumber) {
-    if (!accountNumber || accountNumber === '') accountNumber = 'empty';
-    let cardName = 'etd-account';
-    this.etdservice.getdatafromAPI(accountNumber, cardName, Number(ApplicationEnum.AgentOs)).subscribe({
-      next: (resp) => {
-        this.data = resp.content;
-        this.tempData = this.data;
-      },
-      error: (err) => console.log(err),
-      complete: () => {
-        this.tableDatatest = this.data.content;
-        this.dataSource.data = this.tableDatatest;
-        this.columnsToDisplay = this.data.etdcol;
-        this.histableDatatest = this.data.historytab;
-        this.hisDataSource.data = this.histableDatatest;
-        this.hisColumnsToDisplay = this.data.historycol;
-        this.ticketColumnsToDisplay = this.data.myticketcol;
-      },
-    });
   }
 
   etdDropData() {
@@ -152,7 +166,7 @@ export class EtdComponent implements OnInit {
         this.etddata = resp;
       },
       (err) => console.error(err),
-      () => { }
+      () => {}
     );
   }
 
@@ -176,7 +190,6 @@ export class EtdComponent implements OnInit {
       this.statusFlag = true;
     }
     if (this.testData) {
-      console.log("clicked");
       for (let i = 0; i < this.tempData.content?.length; i++) {
         if (this.tempData.content[i].Ticket === this.testData.Ticket) {
           this.etdDetailData = "";
@@ -191,25 +204,23 @@ export class EtdComponent implements OnInit {
   etdDataUpdate() {
     this.sla = this.accountServ.slaComment;
     this.fieldOpps = this.accountServ.fieldOpp;
-    this.ooc =this.accountServ.ooc;
-    this.startHour =this.accountServ.sHour;
-    this.startTime =this.accountServ.sTime;
-    this.endHour =this.accountServ.eHour;
-    this.endTime =this.accountServ.eTime;
-    this.arrivalTime= this.startHour+this.startTime +'-'+this.endHour+this.endTime;
-    this.slaDate= this.accountServ.slaDate;
-    console.log(this.slaDate);
-    
-     
+    this.ooc = this.accountServ.ooc;
+    this.startHour = this.accountServ.sHour;
+    this.startTime = this.accountServ.sTime;
+    this.endHour = this.accountServ.eHour;
+    this.endTime = this.accountServ.eTime;
+    this.arrivalTime = this.startHour + this.startTime + '-' + this.endHour + this.endTime;
+    this.slaDate = this.accountServ.slaDate;
 
     this.accountServ.ticketDetail.subscribe((val) => {
       this.etdDetailData = val;
-      this.etdDetailData[1].column[1].info.comment = this.sla;
-      this.etdDetailData[2].column[1].info.comment = this.fieldOpps;
-      this.etdDetailData[1].column[2].info['OOC Reason'] = this.ooc;
-      this.etdDetailData[1].column[0].info['Arrival Window'] = this.arrivalTime;
-      this.etdDetailData[0].column[0].info['SLA Call Time'] = this.slaDate;
     })
+
+    this.etdDetailData[1].column[1].info.comment = this.sla;
+    this.etdDetailData[2].column[1].info.comment = this.fieldOpps;
+    this.etdDetailData[1].column[2].info['OOC Reason'] = this.ooc;
+    this.etdDetailData[1].column[0].info['Arrival Window'] = this.arrivalTime;
+    this.etdDetailData[0].column[0].info['SLA Call Time'] = this.slaDate;
 
     if (this.accountServ.oocCheck == true) {
       this.etdDetailData[1].column[2].header['Out Of Compliance:'] = "yes"
@@ -218,7 +229,7 @@ export class EtdComponent implements OnInit {
       this.etdDetailData[1].column[2].header['Out Of Compliance:'] = "No"
     }
 
-    if(this.accountServ.slaCheck == true){
+    if (this.accountServ.slaCheck == true) {
       this.etdDetailData[1].column[0].info['Customer SLA refused'] = "yes"
     }
     else {
@@ -229,6 +240,7 @@ export class EtdComponent implements OnInit {
   sendTicket() {
     this.workTicketId = this.testData.Ticket;
     this.accountServ.ticketId.next(this.workTicketId);
+    this.dataFlag = true;
   }
 
   assign() {
@@ -256,5 +268,6 @@ export class EtdComponent implements OnInit {
       }
       this.data.content.push(this.unassignData);
     }
+
   }
 }

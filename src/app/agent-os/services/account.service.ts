@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -22,6 +23,9 @@ export class AccountService {
   public eHour:any;
   public eTime:any;
   public slaDate:any;
+  public statusUpdate:any;
+  public allData:any;
+  public etdworkTicket :any;
 constructor(private http: HttpClient) { 
 }
 

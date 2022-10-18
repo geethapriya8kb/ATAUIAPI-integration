@@ -17,7 +17,8 @@
                             </div>
                             <div class="col-md-1 col-sm-1 p-1 w-10">
                                 <label for="custType" class="fw-bold medium mb-2">Cust Type:</label>
-                                <select formControlName="custType" class="form-select form-select-sm">
+                                <select formControlName="custType" class="form-select form-select-sm" >
+                                    <option disabled selected>-All-</option>
                                     <option *ngFor="let i of etddata?.custType | keyvalue" [value]="i.value">
                                         {{i.value}}
                                     </option>
@@ -112,14 +113,17 @@
                             </tbody>
                         </ng-container>
                         <ng-container *ngIf="filterAlert.length">
-                            <tbody class="table table-bordered">
-                                <tr *ngFor="let i of filterAlert| keyvalue:returnZero">
-                                    <td *ngFor="let item of i.value| keyvalue:returnZero"
-                                        (click)="clickvalue(user.value)">
-                                        <ng-container *ngIf="item.key!='etd'">
-                                            {{item.value}}
+                            <tbody class="table table-bordered" *ngFor="let user of filterAlert| keyvalue:returnZero">
+                                <tr >
+                                    <ng-container *ngFor="let i of user.value| keyvalue:returnZero">
+                                    <td *ngIf="i.key!='etd'&& i.key!='etdWork'&& i.key!='flag'" (click)="user.value.flag=!user.value.flag"
+                                        (click)="clickvalue(user.value)" [ngClass]="{'row-selected-clr': user.value.flag === true}"
+                                        style="border: 1px solid lightgray;">
+                                        <ng-container *ngIf="i.key!='etd'">
+                                            {{i.value}}
                                         </ng-container>
                                     </td>
+                                </ng-container>
                                 </tr>
                             </tbody>
                         </ng-container>
@@ -150,7 +154,7 @@
                         class="table table-bordered text-center">
                         <tr>
                             <td *ngFor="let i of user.value | keyvalue:returnZero" (click)="clickvalue(user.value)">
-                                <ng-container *ngIf="i.key!='etd'">
+                                <ng-container *ngIf="i.key!='etd'&& i.key!='etdWork'&& i.key!='flag'">
                                     {{i.value}}
                                 </ng-container>
                             </td>
@@ -161,7 +165,7 @@
                     <tbody *ngFor="let i of filterAlert| keyvalue:returnZero" class="table table-bordered">
                         <tr>
                             <td *ngFor="let item of i.value| keyvalue:returnZero">
-                                <ng-container *ngIf="item.key!='etd'">
+                                <ng-container *ngIf="item.key!='etd'&& item.key!='etdWork'&& item.key!='flag'">
                                     {{item.value}}
                                 </ng-container>
                             </td>

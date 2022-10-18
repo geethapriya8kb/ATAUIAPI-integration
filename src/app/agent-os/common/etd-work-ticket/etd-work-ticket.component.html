@@ -148,7 +148,7 @@
                             <label class="fw-bold">Customer SLA Comments:</label>
                             <span class="float-end fw-bold">Remaining Character:256</span>
                             <textarea class="form-control form-control-md form-control-sm" rows="4" cols="50"
-                                class="form-control" formControlName="customerSla" [(ngModel)]="example"></textarea>
+                                class="form-control" formControlName="customerSla" [(ngModel)]="slaUpdated"></textarea>
                             <div *ngIf="workTicketForm.get('customerSla')?.invalid && (workTicketForm.get('customerSla')?.dirty || workTicketForm.get('customerSla')?.touched)"
                                 class="alert alert-danger">
                                 Enter the characters more than 0
@@ -163,11 +163,10 @@
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-3">
                             <label class="fw-bold">OOC: </label>
-                            <input type="checkbox" class="ms-2" id="a" #OOC [(ngModel)]="b" formControlName="oocCheck">
+                            <input type="checkbox" class="ms-2" id="a" #OOC [(ngModel)]="b" formControlName="oocCheck" >
                         </div>
                         <div class="col-md-7 col-sm-7">
-                            <select class="form-select form-select-sm f-sty-width-20 ms-2" formControlName="ooc"
-                                [disabled]="!OOC.checked">
+                            <select class="form-select form-select-sm f-sty-width-20 ms-2" formControlName="ooc" [value]="oocValue">
                                 <option disabled selected></option>
                                 <option *ngFor="let i of etddata?.ooc | keyvalue" [value]="i.value">
                                     {{i.value}}
@@ -194,7 +193,7 @@
                             <label class="fw-bold">Field Ops Comments: </label>
                             <span class="float-end fw-bold">Remaining Character:256</span>
                             <textarea class="form-control form-control-md form-control-sm" rows="6" cols="150"
-                                class="form-control" formControlName="fieldOpps"></textarea>
+                                class="form-control" formControlName="fieldOpps" [(ngModel)]="fieldOpUpdated"></textarea>
                             <div *ngIf="workTicketForm.get('fieldOpps')?.invalid && (workTicketForm.get('fieldOpps')?.dirty || workTicketForm.get('fieldOpps')?.touched)"
                                 class="alert alert-danger">
                                 Comment Not Entered.
@@ -225,7 +224,7 @@
                 </div>
                 <div class="col col-md-2 col-sm-2">
                     <button type="button" class="btn btn-success btn-sm btn-md" [disabled]="workTicketForm.invalid"
-                        (click)="etd()" routerLink="..">Save
+                        (click)="etd()" routerLink=".." (click)="closeTicket()">Save
                         & Close Ticket</button>
                 </div>
             </div>
