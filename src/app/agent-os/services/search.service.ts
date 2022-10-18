@@ -8,8 +8,7 @@ export class SearchService {
 
   private defaultValue = 'empty';
 
-  private accountNumber: string = this.defaultValue;
-  private locationId: string = this.defaultValue;
+  private accountNumber: string = this.defaultValue; 
 
   sharedValue$ = new Subject();
 
@@ -19,7 +18,6 @@ export class SearchService {
     if (!acctNumber || acctNumber.trim() == '') {
       acctNumber = this.defaultValue;
     }
-
     this.accountNumber = acctNumber;
   }
 
@@ -28,7 +26,6 @@ export class SearchService {
   }
 
   public clearSearchFields(): void {
-    this.accountNumber = this.defaultValue;
-    this.locationId = this.defaultValue;
+    this.accountNumber = this.defaultValue;   
   }
 }
