@@ -5,6 +5,7 @@ import { SearchService } from '../../services/search.service';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { OrderingResponse } from './ordering.response';
 import { OrderingService } from './ordering.service';
+import { ApplicationEnum } from 'src/app/models/setting-enum';
 @Component({
   selector: 'app-ordering',
   templateUrl: './ordering.component.html',
@@ -58,9 +59,9 @@ export class OrderingComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     const cardName = `order-move`;
-    this. orderService.getDataFromAPI(accountNumber, cardName).subscribe({
+    this. orderService.getDataFromAPI(accountNumber, cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
-        this.data = JSON.parse(resp.content);
+        this.data = resp.content;
       },
       error: (err) => console.error(err),
       complete: () => {
