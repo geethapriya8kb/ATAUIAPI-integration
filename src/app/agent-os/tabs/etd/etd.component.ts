@@ -157,7 +157,7 @@ export class EtdComponent implements OnInit {
   }
 
   etdData() {
-    // console.log(this.etdValue.value);
+    console.log(this.etdValue.value);
   }
 
   reset() {

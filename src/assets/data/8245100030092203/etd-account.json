@@ -49,8 +49,8 @@
                             "header": {
                                 "Customer SLA Comments": ""
                             },
-                            "info":{
-                                "comment":""
+                            "info": {
+                                "comment": ""
                             }
                         },
                         {
@@ -94,6 +94,1868 @@
                 "Mgmt Area": "",
                 "SLA Call Time": "9/9/22 9:30 AM",
                 "Account": "002044872555",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177548",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "002044872555",
+            "City": "BUNNELL, FL",
+            "Node": "",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "OUTAGE",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "STEVE BOGERS",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "",
+                                "City/Status": "BUNNELL, FL",
+                                "Region": "Florida",
+                                "Mgmt": "",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "002044872555 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Hazardous/Safety",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "STEVE BOGERS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "",
+                "City/Status": "BUNNELL, FL",
+                "Region": "Florida",
+                "Mgmt Area": "",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "002044872555",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177521",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "12345628454",
+            "City": "BEVERLY BEACH, FL",
+            "Node": "",
+            "Reason": "Go Back: Work Not Completed",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "TONY BARK",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "",
+                                "City/Status": "BEVERLY BEACH, FL",
+                                "Region": "Florida",
+                                "Mgmt": "East Florida (BHN)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "12345628454 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Go Back: Work Not Completed",
+                                "Job": "",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "TONY BARK",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "",
+                "City/Status": "BEVERLY BEACH, FL",
+                "Region": "Florida",
+                "Mgmt": "East Florida (BHN)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "12345628454",
+                "Avail same day": "",
+                "Reason": "Go Back: Work Not Completed"
+            }
+        },
+        {
+            "Ticket": "11177856",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "20547851544",
+            "City": "HENDERSON, NC",
+            "Node": "HZ098",
+            "Reason": "Go Back: Customer Missed Appointment",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "BRUCE FANNER",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "HZ098",
+                                "City/Status": "HENDERSON, NC",
+                                "Region": "Carolinas",
+                                "Mgmt": "Eastern NC (TWC)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "20547851544 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Go Back: Customer Missed Appointment",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "BRUCE FANNER",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "HZ098",
+                "City/Status": "HENDERSON, NC",
+                "Region": "Carolinas",
+                "Mgmt": "Eastern NC (TWC)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "20547851544",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177952",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8012587497545488",
+            "City": "SAINT PETERS, MO",
+            "Node": "SP039A",
+            "Reason": "No dial tone with no phone alternative/No dial tone all phones",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "PETER BARKER",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "SP039A",
+                                "City/Status": "SAINT PETERS, MO",
+                                "Region": "",
+                                "Mgmt": "Central States (Charter)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8012587497545488 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: No dial tone with no phone alternative/No dial tone all phones",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "PETER BARKER",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "SP039A",
+                "City/Status": "SAINT PETERS, MO",
+                "Region": "",
+                "Mgmt": "Central States (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8012587497545488",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177941",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8035454787741269",
+            "City": "BURBANK, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Quota Not Available within the SLA",
+            "Status": "IN-PROGRESS",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "ORORO MANROE",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL232A",
+                                "City/Status": "BURBANK, CA",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8035454787741269 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "'Must Do: Quota Not Available within the SLA",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "ORORO MANROE",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "BURBANK, CA",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8035454787741269",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177547",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565985974",
+            "City": "LA, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "CLOSED",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "WADE BILSON",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL232A",
+                                "City/Status": "LA, CA",
+                                "Region": "Florida",
+                                "Mgmt": "",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8100856565985974 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Hazardous/Safety Situation",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "LA, CA",
+                "Region": "Florida",
+                "Mgmt": "",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177564",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "004584457488",
+            "City": "TAFT, CA",
+            "Node": "BAK-G15",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "IN-PROGRESS",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "LUKE CHUCK",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "BAK-G15",
+                                "City/Status": "TAFT, CA",
+                                "Region": "Northwest",
+                                "Mgmt": "Sierra Nevada (BHN)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "004584457488 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Hazardous/Safety Situation",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "LUKE CHUCK",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "BAK-G15",
+                "City/Status": "TAFT, CA",
+                "Region": "Northwest",
+                "Mgmt": "Sierra Nevada (BHN)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "004584457488",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177879",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "5748526453",
+            "City": "TAFT, CA",
+            "Node": "G15",
+            "Reason": "Go Back: Work Not Completed",
+            "Status": "OUTAGE",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "SUSAN FANVERS",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "G15",
+                                "City/Status": "TAFT, CA",
+                                "Region": "Northwest",
+                                "Mgmt": "Sierra Nevada (BHN)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "5748526453 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Go Back: Work Not Completed",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "SUSAN FANVERS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "G15",
+                "City/Status": "TAFT, CA",
+                "Region": "Northwest",
+                "Mgmt": "Sierra Nevada (BHN)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "5748526453",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177465",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8124548787956233",
+            "City": "OFALLON, MO",
+            "Node": "SP039A",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "IN-PROCESS",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "STEPHEN BRANGE",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "SP039A",
+                                "City/Status": "OFALLON, MO",
+                                "Region": "",
+                                "Mgmt": "Central States (Charter)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8124548787956233 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Hazardous/Safety Situation",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "STEPHEN BRANGE",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "SP039A",
+                "City/Status": "OFALLON, MO",
+                "Region": "",
+                "Mgmt": "Central States (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8124548787956233",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177458",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8010015448787963",
+            "City": "OFALLON, MO",
+            "Node": "SP039A",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "CLOSED",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "JIMBO HOWLETT",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "SP039A",
+                                "City/Status": "OFALLON, MO",
+                                "Region": "",
+                                "Mgmt": "Central States (Charter)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8010015448787963 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Hazardous/Safety Situation",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "JIMBO HOWLETT",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "SP039A",
+                "City/Status": "OFALLON, MO",
+                "Region": "",
+                "Mgmt": "Central States (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8010015448787963",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177941",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8035454787741269",
+            "City": "BURBANK, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Quota Not Available within the SLA",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "ORORO MANROE",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL232A",
+                                "City/Status": "BURBANK, CA",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/9/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8035454787741269 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "'Must Do: Quota Not Available within the SLA",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "ORORO MANROE",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "BURBANK, CA",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/9/22 9:30 AM",
+                "Account": "8035454787741269",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177547",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565985974",
+            "City": "LA, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Hazardous/Safety Situation",
+            "Status": "OPEN",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "WADE BILSON",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL232A",
+                                "City/Status": "LA, CA",
+                                "Region": "Florida",
+                                "Mgmt": "",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8100856565985974 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Hazardous/Safety Situation",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "LA, CA",
+                "Region": "Florida",
+                "Mgmt": "",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11188358",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8150100043364396",
+            "City": "NEW YORK,NY",
+            "Node": "DL31",
+            "Reason": "Must Do: Quota Not Available within the SLA",
+            "Status": "CLOSED",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "PETER PARKER",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "DL31",
+                                "City/Status": "NEW YORK,NY",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8150100043364396 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Quota Not Available within the SLA",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "PETER PARKER",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "DL31",
+                "City/Status": "NEW YORK,NY",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8150100043364396",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177876",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "5748526435",
+            "City": "CENTRAL NY,(TWC)",
+            "Node": "H15",
+            "Reason": "Go Back: Work Not Completed",
+            "Status": "OUTAGE",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "JADE BILSON",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "H15",
+                                "City/Status": "CENTRAL NY,(TWC)",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "5748526435 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Go Back: Work Not Completed",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "JADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "H15",
+                "City/Status": "CENTRAL NY,(TWC)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "5748526435",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11188357",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "84482000015715658",
+            "City": "HAWAII ,(TWC)",
+            "Node": "1D20M",
+            "Reason": "Must Do: Customer Missed Appointment",
+            "Status": "CLOSED",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "JEREMY SIMPSON",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "1D20M",
+                                "City/Status": "HAWAII ,(TWC)",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "84482000015715658 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Customer Missed Appointment",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "JEREMY SIMPSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "1D20M",
+                "City/Status": "HAWAII ,(TWC)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "84482000015715658",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11188389",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565980625",
+            "City": "MICHIGAN, (BHN)",
+            "Node": "1SMO1",
+            "Reason": "Must Do: Quota Not Available within the SLA",
+            "Status": "CLOSED",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "PETE THOMAS",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "1SMO1",
+                                "City/Status": "MICHIGAN, (BHN)",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8100856565980625 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Quota Not Available within the SLA",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "PETE THOMAS",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "1SMO1",
+                "City/Status": "MICHIGAN, (BHN)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565980625",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177574",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565981111",
+            "City": "KENTUCKY, (TWC)",
+            "Node": "GL232A",
+            "Reason": "Must Do: Quota Not Available within the SLA",
+            "Status": "OUTAGE",
+            "Owner": "",
+            "Cust Type": "C",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "EMILY MURPHY",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL232A",
+                                "City/Status": "KENTUCKY, (TWC)",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8100856565981111 (C)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "Must Do: Quota Not Available within the SLA",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "EMILY MURPHY",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "KENTUCKY, (TWC)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565981111",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11188367",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565985974",
+            "City": "EAST FLORIDA ,(BHN)",
+            "Node": "GL222A",
+            "Reason": "GO BACK: WORK NOT COMPLETED",
+            "Status": "IN-PROGRESS",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "WADE BILSON",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL222A",
+                                "City/Status": "EAST FLORIDA ,(BHN)",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8100856565985974 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "GO BACK: WORK NOT COMPLETED",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL222A",
+                "City/Status": "EAST FLORIDA ,(BHN)",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
+                "Avail same day": "",
+                "Reason": "Must Do: Hazardous/Safety Situation"
+            }
+        },
+        {
+            "Ticket": "11177544",
+            "SLA Call Time": "9/9/22 9:30 AM",
+            "Account": "8100856565985974",
+            "City": "LA, CA",
+            "Node": "GL232A",
+            "Reason": "Must Do: Technician Missed Appointment",
+            "Status": "IN-PROGRESS",
+            "Owner": "",
+            "Cust Type": "R",
+            "flag": false,
+            "etd": [
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Contact": "WADE BILSON",
+                                "Phone 1": "(314)555-5555",
+                                "Phone 2": "",
+                                "Node": "GL232A",
+                                "City/Status": "LA, CA",
+                                "Region": "",
+                                "Mgmt": "So Cal Central (Charter)",
+                                "SLA Call Time": "9/28/22 9:30 AM"
+                            },
+                            "header": {
+                                "Acct:": "8100856565985974 (R)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "info": {
+                                "Reason": "GO BACK: WORK NOT COMPLETED",
+                                "Job": "222355458",
+                                "Arrival Window": "",
+                                "Owner": "",
+                                "Customer SLA refused": ""
+                            },
+                            "header": {
+                                "Customer Contact made": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Customer SLA Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        },
+                        {
+                            "header": {
+                                "Out Of Compliance:": ""
+                            },
+                            "info": {
+                                "OOC Reason": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                    "column": [
+                        {
+                            "header": {
+                                "Customer Care Comments:": ""
+                            },
+                            "info": {
+                                "COMMERCIAL": "NO CALL FROM DIALER"
+                            }
+                        },
+                        {
+                            "header": {
+                                "Field Ops Comments": ""
+                            },
+                            "info": {
+                                "comment": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "etdWork": {
+                "Contact": "WADE BILSON",
+                "Phone 1": "(314)555-5555",
+                "Phone 2": "",
+                "Node": "GL232A",
+                "City/Status": "LA, CA",
+                "Region": "",
+                "Mgmt": "So Cal Central (Charter)",
+                "SLA Call Time": "9/28/22 9:30 AM",
+                "Account": "8100856565985974",
                 "Avail same day": "",
                 "Reason": "Must Do: Hazardous/Safety Situation"
             }
