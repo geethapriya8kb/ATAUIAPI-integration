@@ -41,7 +41,7 @@ export class OrderingComponent implements OnInit {
       this.isOrderMove = true;
     }
     const accountNumber = this.searchService.getAccountNumber();
-    this.getCardData(accountNumber);  
+ //   this.getCardData(accountNumber);  
 
   }
 
@@ -49,7 +49,7 @@ export class OrderingComponent implements OnInit {
     this.searchService.sharedValue$.subscribe((val) => {
       this.accountVal = val;
       if (this.accountVal) {
-        this.getCardData(this.accountVal);
+    //    this.getCardData(this.accountVal);
       } else {
         this.getCardData('');
       }

@@ -7,7 +7,7 @@
             <div class="col col-md-11">
                 <mat-tab-group class="app-tabs" (focusChange)="handleFocusChange($event)" [selectedIndex]="selectedIdx">
                     <ng-container *ngFor="let menu of menuItems; let i = index">
-                        <ng-container *ngIf="menu.label!='Troubleshooting'; else other_content">
+                        <ng-container *ngIf="menu.label!='Troubleshooting' && menu.label!='Ordering' && menu.label!='Field Operations'; else other_content">
                             <mat-tab label="{{ menu.label }}" [ngClass]="{'mat-tab-label-active': i === selectedIdx}">
                             </mat-tab>
                         </ng-container>

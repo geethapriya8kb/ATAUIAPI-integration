@@ -82,12 +82,12 @@ export class TroubleshootingComponent implements OnInit {
 
   ngOnInit(): void {
     const accountNumber = this.searchService.getAccountNumber();
-    this.getAlertsData(accountNumber);
-    this.getValuetoTable(accountNumber);
-    this.getValuetoHitTable(accountNumber);
-    this.getValuetoTShistoryTable(accountNumber);
-    this.getSymptomsData(accountNumber);
-    this.getvideoIssuesData(accountNumber);
+    // this.getAlertsData(accountNumber);
+    // this.getValuetoTable(accountNumber);
+    // this.getValuetoHitTable(accountNumber);
+    // this.getValuetoTShistoryTable(accountNumber);
+     this.getSymptomsData(accountNumber);
+    // this.getvideoIssuesData(accountNumber);
   }
 
   ngAfterViewInit() {
