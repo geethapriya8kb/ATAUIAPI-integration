@@ -13,7 +13,7 @@ import { EtdService } from './etd.service';
   styleUrls: ['./etd.component.scss'],
 })
 export class EtdComponent implements OnInit {
-  flag: boolean = false;
+  flag: boolean = true;
   data: EtdResponse;
   dataFlag: boolean = false;
   etddata: any;
@@ -60,7 +60,8 @@ export class EtdComponent implements OnInit {
   assignFlag: boolean = true;
   statusFlag: boolean = false;
   updateStatus:any;
-
+  selectEtdTicket:any;
+  selectedStatus:any;
 
   constructor(
     private searchService: SearchService,
@@ -254,7 +255,9 @@ export class EtdComponent implements OnInit {
           this.data.content.splice(i, 1);
         }
       }
-      this.myticketTabTableDatatest.push(this.testData)
+      this.myticketTabTableDatatest.push(this.testData);
+      console.log(this.myticketTabTableDatatest);
+      
     }
     else if (this.assignFlag) {
       for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
@@ -269,5 +272,10 @@ export class EtdComponent implements OnInit {
       this.data.content.push(this.unassignData);
     }
 
+  }
+
+  selectTicket(event:any, item:any){
+    this.selectEtdTicket = item.Ticket;
+    this.selectedStatus = item.Status;
   }
 }
