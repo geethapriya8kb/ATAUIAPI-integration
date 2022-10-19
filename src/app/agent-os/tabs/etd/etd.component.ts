@@ -45,7 +45,7 @@ export class EtdComponent implements OnInit {
   endTime: any;
   arrivalTime: any;
   slaDate: any;
-  updateTicket:any;
+  updateTicket: any;
   etdValue = new UntypedFormGroup({
     startDate: new UntypedFormControl({ disabled: true }),
     endDate: new UntypedFormControl(),
@@ -59,9 +59,9 @@ export class EtdComponent implements OnInit {
   tempData: any;
   assignFlag: boolean = true;
   statusFlag: boolean = false;
-  updateStatus:any;
-  selectEtdTicket:any;
-  selectedStatus:any;
+  updateStatus: any;
+  selectEtdTicket: any;
+  selectedStatus: any;
 
   constructor(
     private searchService: SearchService,
@@ -92,17 +92,16 @@ export class EtdComponent implements OnInit {
   getCardData(accountNumber) {
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     let cardName = 'etd-account';
-    this.updateStatus=this.accountServ.statusUpdate;
-    this.updateTicket=this.accountServ.etdworkTicket;
+    this.updateStatus = this.accountServ.statusUpdate;
+    this.updateTicket = this.accountServ.etdworkTicket;
     console.log(this.updateStatus);
     this.etdservice.getdatafromAPI(accountNumber, cardName, Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {
         this.data = resp.content;
         this.tempData = this.data;
         this.accountServ.allData = this.data;
-        if(this.updateTicket){
-          for (let i = 0; i < this.data.content?.length; i++) 
-          {
+        if (this.updateTicket) {
+          for (let i = 0; i < this.data.content?.length; i++) {
             if (this.data.content[i].Ticket === this.updateTicket) {
               this.data.content[i].Status = this.updateStatus;
             }
@@ -167,7 +166,7 @@ export class EtdComponent implements OnInit {
         this.etddata = resp;
       },
       (err) => console.error(err),
-      () => {}
+      () => { }
     );
   }
 
@@ -257,7 +256,7 @@ export class EtdComponent implements OnInit {
       }
       this.myticketTabTableDatatest.push(this.testData);
       console.log(this.myticketTabTableDatatest);
-      
+
     }
     else if (this.assignFlag) {
       for (let i = 0; i < this.myticketTabTableDatatest?.length; i++) {
@@ -274,7 +273,7 @@ export class EtdComponent implements OnInit {
 
   }
 
-  selectTicket(event:any, item:any){
+  selectTicket(event: any, item: any) {
     this.selectEtdTicket = item.Ticket;
     this.selectedStatus = item.Status;
   }

@@ -141,6 +141,7 @@ export class EtdWorkTicketComponent implements OnInit {
     this.accountServ.eHour = this.workTicketForm.value.endHour;
     this.accountServ.eTime = this.workTicketForm.value.endTime;
     this.accountServ.slaDate = this.workTicketForm.value.slaDate;
+    this.accountServ.updateFlag=true;
   }
 
   closeTicket() {

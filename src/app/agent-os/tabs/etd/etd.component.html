@@ -107,7 +107,6 @@
                                             (click)="selectTicket($event, user.value)" 
                                             [class.highlighted]="user.value.Ticket === selectEtdTicket && user.value.Status === selectedStatus"
                                             class="border-style">
-                                            {{j}}
                                             {{i.value}}
                                         </td>
                                     </ng-container>
@@ -123,7 +122,7 @@
                                             (click)="selectTicket($event, user.value)" 
                                             [class.highlighted]="user.value.Ticket === selectEtdTicket && user.value.Status === selectedStatus"
                                             class="border-style">
-                                            <ng-container *ngIf="i.key!='etd'">
+                                            <ng-container>
                                                 {{i.value}}
                                             </ng-container>
                                         </td>
@@ -209,9 +208,11 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-md-3"><strong>Ticket:</strong>{{testData.Ticket}}<span class="text-danger">(Escalated
-                        1)</span>
-                    <br> <strong>Status:</strong>{{testData.Status}}
+                <div class="col-md-3">
+                    <strong>Ticket:</strong>{{testData.Ticket}}
+                    <span class="text-danger">(Escalated 1)</span>
+                    <br> 
+                    <strong>Status:</strong>{{testData.Status}}
                 </div>
                 <div class="col-md-4 text-end">
                     <strong>Video</strong>
