@@ -12,6 +12,7 @@ const httpOptions = {
 export class AccountService {
   ticketId = new BehaviorSubject("");
   ticketDetail = new BehaviorSubject({});
+  public ticket = this.ticketId;
   public slaCheck:boolean;
   public slaComment :string;
   public fieldOpp:any;
@@ -26,6 +27,7 @@ export class AccountService {
   public statusUpdate:any;
   public allData:any;
   public etdworkTicket :any;
+  public updateFlag:boolean;
 constructor(private http: HttpClient) { 
 }
 

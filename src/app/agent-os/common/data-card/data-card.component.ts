@@ -64,7 +64,7 @@ export class DataCardComponent implements OnInit, AfterViewInit {
     });
   }
 
-  getCardData(accountNumber) {
+  getCardData(accountNumber) {    
     if (!accountNumber || accountNumber === '') accountNumber = 'empty';
     this.groupservice.getdatafromAPI(accountNumber, this.cardName,Number(ApplicationEnum.AgentOs)).subscribe({
       next: (resp) => {

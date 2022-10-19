@@ -1,0 +1,26 @@
+{ 
+    "custType":"ineligible",
+    "content":{
+        "Eligibility Requirements":{
+            "Account is In- Footprint":{
+                "type":"text"
+            },
+            "Account status Active":{
+                "type":"text"
+            },
+            "Residential Customer":{
+                "type":"text"
+            },
+            "Primary User":{
+                "type":"text"
+            },
+           "HSD Active or Pending Connect":{
+            "type":"text"
+           },
+           "Non-delinquent Account":{
+            "type":"text"
+           }
+
+        }
+    }
+}
