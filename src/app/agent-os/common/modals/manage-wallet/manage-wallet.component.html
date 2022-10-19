@@ -1,10 +1,14 @@
 <i class="fa fa-close float-end" (click)="close()"></i>
 <h4 class="fw-bold">Manage Wallet</h4>
 <hr>
-<div class="row">
-    <div class="col-md-4" *ngFor="let i of data?.info  | keyvalue">
-        <p>{{i.key}}</p>
-        <p class="fw-bold text-dark">{{i.value}}</p>
+<div class="row">   
+    <div class="col-md-4">
+        <p>Account #</p>
+        <p class="fw-bold text-dark">{{this.searchService.getAccountNumber()}}</p>
+    </div>
+    <div class="col-md-4">
+        <p>Customer Name</p>
+        <p class="fw-bold text-dark">{{custName}}</p>
     </div>
 </div>
 <h4 class="fw-bold">Add New Payment Method</h4>
@@ -16,7 +20,7 @@
                 <label class="ms-2">{{i.key}}</label>                             
         </div>
     </ng-container>   
-</div>
+
 <ng-container *ngIf="radioSelected==='credit'">
 <ng-container *ngIf="data?.rows && data?.rows.length ">
     <form [formGroup]="form">
@@ -47,6 +51,7 @@
     </form>
     </ng-container>
 </ng-container>
+</div>
 <div class="row text-center mt-3">
     <div class="col-md-6">
         <button class="rounded-pill w-100" (click)="openDialog()" mat-raised-button color="primary">Save</button>
