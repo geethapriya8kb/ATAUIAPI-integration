@@ -11,6 +11,6 @@ export class OrderingResponse
 
 export class OrderingRoot{
     accountId:string;
-    content:string;
+    content:OrderingResponse;
     identifier:string;
 }

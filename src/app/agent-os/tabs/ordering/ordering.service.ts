@@ -16,11 +16,14 @@ export class OrderingService extends BaseService {
     settingsService: SettingsService) {
     super(http, settingsService);
   }
-  getDataFromAPI(id:number,identifier:string): Observable<OrderingRoot> {
+  getDataFromAPI(accountId:number,identifier:string,applicationId :number): Observable<OrderingRoot> {
     const endpoint = Endpoints.getorder ;
     const val: QueryParam[] =
-      [{ key: "id", value: id.toString()},
-      { key: "identifier", value: identifier.toString()}];
+    [
+      { key: "accountId", value: accountId.toString()},
+      { key: "identifier", value: identifier.toString()},
+      { key: "applicationId", value: applicationId.toString()}
+    ];
       
     
     return this.doGet(endpoint,[],val);

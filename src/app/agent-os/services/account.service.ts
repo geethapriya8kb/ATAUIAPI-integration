@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -11,6 +12,7 @@ const httpOptions = {
 export class AccountService {
   ticketId = new BehaviorSubject("");
   ticketDetail = new BehaviorSubject({});
+  public ticket = this.ticketId;
   public slaCheck:boolean;
   public slaComment :string;
   public fieldOpp:any;
@@ -22,6 +24,10 @@ export class AccountService {
   public eHour:any;
   public eTime:any;
   public slaDate:any;
+  public statusUpdate:any;
+  public allData:any;
+  public etdworkTicket :any;
+  public updateFlag:boolean;
 constructor(private http: HttpClient) { 
 }
 

@@ -1,6 +1,8 @@
 <h4>PPV</h4>
 <div class="skill-list">
-    <p class="me-2" *ngFor="let item of data?.ppvData[0] | keyvalue: returnZero">{{item.key}}:{{item.value}}</p>
+    <p class="me-2" *ngFor="let item of data?.ppvData[0] | keyvalue: returnZero">
+        <span class="m-1">{{item.key}}:{{item.value}}</span>
+    </p>
 </div>
 <div class=row>
     <div class="col-md-6">
@@ -42,7 +44,9 @@
     <tr mat-row *matRowDef="let element; columns: oeColumnsToDisplay;" class="example-element-row"></tr>
 </table>
 <div class="skill-list">
-    <p class="me-2 mt-2" *ngFor="let item of data?.ppvAmount[0] | keyvalue: returnZero">{{item.key}}:{{item.value}}</p>
+    <p class="me-2 mt-2" *ngFor="let item of data?.ppvAmount[0] | keyvalue: returnZero">
+        <span class="m-1">{{item.key}}:{{item.value}}</span>
+    </p>
 </div>
 <div class="mt-2 row">
     <div class="col-md-6">
